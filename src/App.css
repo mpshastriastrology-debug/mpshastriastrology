@@ -1,0 +1,180 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#000;
+  color:white;
+  font-family:Arial, sans-serif;
+}
+
+.website{
+  min-height:100vh;
+}
+
+/* HERO */
+
+.hero{
+  text-align:center;
+  padding:120px 20px;
+}
+
+.hero h1{
+  font-size:60px;
+  line-height:1.2;
+}
+
+.hero h1 span{
+  color:#facc15;
+}
+
+.hero p{
+  color:#b3b3b3;
+  margin-top:20px;
+  font-size:18px;
+}
+
+.heroButtons{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.primaryBtn{
+  background:#facc15;
+  color:black;
+  padding:15px 30px;
+  border:none;
+  border-radius:40px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.secondaryBtn{
+  background:transparent;
+  color:white;
+  padding:15px 30px;
+  border:1px solid #facc15;
+  border-radius:40px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* SERVICES */
+
+.services{
+  padding:80px 20px;
+  background:#111;
+}
+
+.services h2{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:50px;
+}
+
+.serviceGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.card{
+  background:#1a1a1a;
+  padding:30px;
+  border-radius:25px;
+}
+
+.card h3{
+  color:#facc15;
+  margin-bottom:15px;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+  padding:80px 20px;
+}
+
+.testimonials h2{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:50px;
+}
+
+.testimonialGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.stars{
+  display:flex;
+  gap:5px;
+  color:#facc15;
+  margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid #222;
+  padding:30px;
+  text-align:center;
+  color:#999;
+}
+
+/* FLOATING BUTTONS */
+
+.floatingButtons{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.callBtn,
+.whatsappBtn{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+}
+
+.callBtn{
+  background:#facc15;
+  color:black;
+}
+
+.whatsappBtn{
+  background:#25D366;
+  color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .services h2,
+  .testimonials h2{
+    font-size:32px;
+  }
+
+}

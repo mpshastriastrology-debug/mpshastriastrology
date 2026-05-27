@@ -1,0 +1,154 @@
+.aboutSection{
+  min-height:100vh;
+  background:linear-gradient(
+    135deg,
+    #fff7dc,
+    #f9e7a8,
+    #fff3cc
+  );
+
+  padding:100px 8%;
+  overflow:hidden;
+}
+
+.aboutContainer{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+/* CONTENT */
+
+.aboutTag{
+  background:#facc15;
+  color:black;
+  padding:10px 22px;
+  border-radius:30px;
+  font-weight:600;
+  display:inline-block;
+  margin-bottom:25px;
+}
+
+.aboutContent h1{
+  font-size:58px;
+  line-height:1.2;
+  margin-bottom:25px;
+  color:#1a1a1a;
+}
+
+.aboutContent p{
+  font-size:18px;
+  line-height:1.9;
+  color:#4a4a4a;
+  margin-bottom:22px;
+}
+
+/* POINTS */
+
+.aboutPoints{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:35px;
+}
+
+.point{
+  background:rgba(255,255,255,0.5);
+  padding:18px;
+  border-radius:18px;
+  font-weight:600;
+  color:#222;
+  backdrop-filter:blur(10px);
+
+  transition:0.4s;
+}
+
+.point:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* BUTTON */
+
+.aboutBtn{
+  margin-top:40px;
+  background:#111;
+  color:#facc15;
+  border:none;
+  padding:16px 34px;
+  border-radius:40px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.aboutBtn:hover{
+  transform:scale(1.05);
+  background:#000;
+}
+
+/* IMAGE */
+
+.aboutImage{
+  position:relative;
+}
+
+.aboutImage img{
+  width:100%;
+  border-radius:35px;
+  object-fit:cover;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,0.15);
+
+  animation:floatImage 5s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes floatImage{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-15px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+  .aboutContainer{
+    grid-template-columns:1fr;
+  }
+
+  .aboutContent h1{
+    font-size:42px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .aboutSection{
+    padding:70px 25px;
+  }
+
+  .aboutContent h1{
+    font-size:34px;
+  }
+
+  .aboutPoints{
+    grid-template-columns:1fr;
+  }
+
+}
