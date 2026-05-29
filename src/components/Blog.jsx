@@ -19,7 +19,7 @@ function Blog() {
     <div className="galleryCard">
 
       <img
-        src="https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?q=80&w=1200&auto=format&fit=crop"
+        src="./v12.png"
         alt=""
       />
 
@@ -37,7 +37,7 @@ function Blog() {
     <div className="galleryCard">
 
       <img
-        src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop"
+        src="./v1.png"
         alt=""
       />
 
@@ -46,11 +46,48 @@ function Blog() {
     <div className="galleryCard">
 
       <img
-        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
+        src="/v7.png"
         alt=""
       />
 
     </div>
+
+        <div className="galleryCard">
+
+      <img
+        src="/v11.png"
+        alt=""
+      />
+
+    </div>
+
+        <div className="galleryCard">
+
+      <img
+        src="/v13.png"
+        alt=""
+      />
+
+    </div>
+
+        <div className="galleryCard">
+
+      <img
+        src="/v14.png"
+        alt=""
+      />
+
+    </div>
+
+        <div className="galleryCard">
+
+      <img
+        src="/v15.png"
+        alt=""
+      />
+
+    </div>
+
 
   </div>
 

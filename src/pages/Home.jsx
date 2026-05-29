@@ -1,6 +1,11 @@
 import Hero from '../components/Hero';
 import { Helmet } from "react-helmet";
-
+import About from '../components/About';
+import Contact from '../components/Contact';
+import Astrology from '../components/Astrology';
+import Vastu from '../components/Vastu';
+import Face from '../components/Face-reading';
+import Tantra from '../components/Tantra';
 
 import Services1 from '../components/Services1';
 <script type="application/ld+json">
@@ -40,7 +45,12 @@ function Home() {
 </Helmet>
       <Hero />
       <Services1/>
-
+      <About/>
+      <Contact/>
+<Astrology/>
+<Vastu/>
+<Face/>
+<Tantra/>
 
 
     </>
