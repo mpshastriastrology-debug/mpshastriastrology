@@ -1,106 +1,198 @@
-import { Menu } from 'lucide-react'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import './Navbar.css'
+import "./Navbar.css";
 
-function Navbar() {
+import { Link } from "react-router-dom";
 
-  const [menuOpen, setMenuOpen] = useState(false)
+import {
+  Phone,
+  ChevronDown,
+  Menu,
+  X
+} from "lucide-react";
+
+import { useState } from "react";
+
+function Header() {
+
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
-    <nav className="navbar">
+
+    <header className="header">
 
       {/* LOGO */}
-      <Link to="/" className="logo">
-        Mpshastri Astrology
-      </Link>
 
-      {/* DESKTOP MENU */}
-      <ul className="navLinks">
-
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-
-        <li>
-          <Link to="/services">Services</Link>
-        </li>
-
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-
-
-        <li>
-          <Link to="/Contact">Contact</Link>
-        </li>
-
-      </ul>
-
-      {/* BOOK BUTTON */}
-      <Link to="/contact">
-        <button className="bookBtn">
-          Book Now
-        </button>
-      </Link>
-
-      {/* MOBILE MENU ICON */}
-      <div
-        className="menuIcon"
-        onClick={() => setMenuOpen(!menuOpen)}
+      <Link
+        to="/"
+        className="headerLogo"
       >
-        <Menu />
-      </div>
 
-      {/* MOBILE MENU */}
-      {menuOpen && (
+        <div className="logoCircle">
 
-        <div className="mobileMenu">
-
-          <Link
-            to="/"
-            onClick={() => setMenuOpen(false)}
-          >
-            Home
-          </Link>
-
-          <Link
-            to="/services"
-            onClick={() => setMenuOpen(false)}
-          >
-            Services
-          </Link>
-
-          <Link
-            to="/about"
-            onClick={() => setMenuOpen(false)}
-          >
-            About
-          </Link>
-
-
-          <Link
-            to="/contact"
-            onClick={() => setMenuOpen(false)}
-          >
-            Contact
-          </Link>
-
-          <Link
-            to="/contact"
-            onClick={() => setMenuOpen(false)}
-          >
-            <button className="mobileBookBtn">
-              Book Now
-            </button>
-          </Link>
+          <img
+            src="/logo.png"
+            alt="MP Shastri Logo"
+          />
 
         </div>
 
-      )}
+        <div className="logoText">
 
-    </nav>
-  )
+          <h2>MP Shastri</h2>
+
+          <span>Astrology & Vastu</span>
+
+        </div>
+
+      </Link>
+
+      {/* DESKTOP MENU */}
+
+      <nav className="headerMenu">
+
+        <Link to="/">Home</Link>
+
+        <Link to="/about">
+          About
+        </Link>
+
+        {/* DROPDOWN */}
+
+        <div className="dropdown">
+
+          <div className="dropdownTitle">
+
+            Services
+
+            <ChevronDown size={16} />
+
+          </div>
+
+          <div className="dropdownMenu">
+
+            <Link to="/astrology">
+              Astrology
+            </Link>
+
+            <Link to="/vastu">
+              Vastu
+            </Link>
+
+            <Link to="/face-reading">
+              Face Reading
+            </Link>
+
+            <Link to="/tantra">
+              Tantra
+            </Link>
+
+          </div>
+
+        </div>
+
+  
+
+        <Link to="/blog">
+          Gallary
+        </Link>
+
+        <Link to="/contact">
+          Contact
+        </Link>
+
+      </nav>
+
+      {/* CALL BUTTON */}
+
+      <a
+        href="tel:+918073258799"
+        className="headerCall"
+      >
+
+        <Phone size={18} />
+
+        +91 80732 58799
+
+      </a>
+
+      {/* MOBILE BUTTON */}
+
+      <button
+        className="mobileMenuBtn"
+        onClick={() =>
+          setMobileMenu(!mobileMenu)
+        }
+      >
+
+        {mobileMenu ? <X /> : <Menu />}
+
+      </button>
+
+      {/* MOBILE MENU */}
+
+      <div
+        className={
+          mobileMenu
+            ? "mobileMenu showMenu"
+            : "mobileMenu"
+        }
+      >
+
+        <Link to="/">
+          Home
+        </Link>
+
+        <Link to="/about">
+          About
+        </Link>
+
+        {/* DROPDOWN */}
+
+        <div className="dropdown">
+
+          <div className="dropdownTitle">
+
+            Services
+
+            <ChevronDown size={16} />
+
+          </div>
+
+          <div className="dropdownMenu">
+
+            <Link to="/astrology">
+              Astrology
+            </Link>
+
+            <Link to="/vastu">
+              Vastu
+            </Link>
+
+            <Link to="/face-reading">
+              Face Reading
+            </Link>
+
+            <Link to="/tantra">
+              Tantra
+            </Link>
+
+          </div>
+
+        </div>
+
+
+        <Link to="/blog">
+          Gallery
+        </Link>
+
+
+        <Link to="/contact">
+          Contact
+        </Link>
+
+      </div>
+
+    </header>
+  );
 }
 
-export default Navbar
+export default Header;

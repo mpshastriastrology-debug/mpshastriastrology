@@ -1,76 +1,80 @@
+import { Link } from 'react-router-dom'
 import './Services.css'
+
 const services = [
+
   {
-    icon: "🏠",
-    title: "Vastu Consultation",
-    desc: "Improve positive energy and harmony in your home and workplace through expert vastu guidance."
+    icon:'🔮',
+    title:'Astrology Reading',
+    desc:'Accurate horoscope analysis and future predictions based on Vedic astrology.'
   },
 
   {
-    icon: "🔮",
-    title: "Astrology Reading",
-    desc: "Accurate horoscope reading and life predictions based on ancient Vedic astrology."
+    icon:'🏠',
+    title:'Vastu Consultation',
+    desc:'Balance positive energy and remove vastu dosha from home and office.'
   },
 
   {
-    icon: "🔢",
-    title: "Numerology",
-    desc: "Discover your lucky numbers and life path with personalized numerology analysis."
+    icon:'❤️',
+    title:'Love Problem Solution',
+    desc:'Spiritual guidance and remedies for relationship and marriage issues.'
   },
 
   {
-    icon: "🌙",
-    title: "Horoscope Analysis",
-    desc: "Detailed kundli analysis for marriage, career, finance and spiritual growth."
+    icon:'💼',
+    title:'Career Guidance',
+    desc:'Career and business astrology consultation for growth and success.'
   },
 
   {
-    icon: "💼",
-    title: "Business Vastu",
-    desc: "Enhance success, growth and positive vibrations in business spaces and offices."
+    icon:'🔢',
+    title:'Numerology',
+    desc:'Discover lucky numbers and personalized numerology insights.'
   },
 
   {
-    icon: "🪔",
-    title: "Online Spiritual Guidance",
-    desc: "Get online consultation and spiritual remedies for peace and positivity."
-  },
+    icon:'🪔',
+    title:'Online Pooja',
+    desc:'Book personalized pooja and spiritual rituals for positivity.'
+  }
+
 ]
 
 function Services() {
-  return (
 
+  return (
+<section>
     <section className="servicesSection">
 
-      {/* HEADING */}
+      {/* TOP */}
 
-      <div className="servicesHeading">
+      <div className="servicesTop">
 
-        <p className="serviceTag">
-          Spiritual Services
-        </p>
+        <span className="servicesTag">
+          Our Services
+        </span>
 
         <h2>
-          Ancient Wisdom Services
+          Spiritual & Astrology Services
         </h2>
 
-        <p className="serviceSubtitle">
-          Discover powerful astrology and spiritual
-          solutions designed to bring positivity,
-          peace and success into your life.
+        <p>
+          Trusted astrology consultation and vastu guidance
+          for personal, professional and spiritual growth.
         </p>
 
       </div>
 
-      {/* SERVICES GRID */}
+      {/* GRID */}
 
       <div className="servicesGrid">
 
-        {services.map((item, index) => (
+        {services.map((item,index)=>(
 
           <div
-            key={index}
             className="serviceCard"
+            key={index}
           >
 
             <div className="serviceIcon">
@@ -85,9 +89,13 @@ function Services() {
               {item.desc}
             </p>
 
-            <button>
-              Book Consultation
-            </button>
+            <Link to="/contact">
+
+              <button>
+                Book Consultation
+              </button>
+
+            </Link>
 
           </div>
 
@@ -96,7 +104,45 @@ function Services() {
       </div>
 
     </section>
+    
+{/* CONTACT STRIP */}
 
+<section className="contactStrip">
+
+  <div className="contactStripBox">
+
+    <h2>
+      Need Instant Consultation?
+    </h2>
+
+    <p>
+      Talk directly with MP Shastri for
+      astrology, vastu and spiritual guidance.
+    </p>
+
+  </div>
+
+  <div className="contactStripButtons">
+
+    <a href="tel:+918073258799">
+      Call Now
+    </a>
+
+    <a
+      href="https://wa.me/918073258799"
+      target="_blank"
+      rel="noreferrer"
+    >
+      WhatsApp
+    </a>
+
+  </div>
+
+</section>
+
+
+
+</section>
   )
 }
 

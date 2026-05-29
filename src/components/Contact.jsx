@@ -1,5 +1,11 @@
 import './Contact.css'
+import {
 
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope
+
+} from "react-icons/fa";
 function Contact() {
   return (
 
@@ -7,146 +13,213 @@ function Contact() {
 
       {/* TOP */}
 
-      <div className="contactHeading">
-
-        <span className="contactTag">
-          Contact Us
-        </span>
-
-        <h1>
-          Connect With
-          Mpshastri Astrology
-        </h1>
-
-        <p>
-          Get expert astrology consultation and spiritual
-          guidance for love, marriage, career and life problems.
-        </p>
-
-      </div>
 
       {/* CONTAINER */}
 
-      <div className="contactContainer">
 
-        {/* LEFT INFO */}
+      {/* APPOINTMENT SECTION */}
 
-        <div className="contactInfo">
+<section className="appointmentSection">
 
-          <div className="infoCard">
+  <div className="appointmentLeft">
 
-            <div className="infoIcon">
-              📞
-            </div>
+    <p>
+      ✦ BOOK YOUR APPOINTMENT
+    </p>
 
-            <div>
-              <h3>Call Us</h3>
-              <p>+91 80732 58799</p>
-            </div>
+    <h2>
+      Start Your Spiritual
+      Journey Today
+    </h2>
 
-          </div>
+    <span>
+      Connect with MP Shastri Astrology for
+      accurate astrology predictions, vastu
+      consultation and spiritual healing solutions.
+    </span>
 
-          <div className="infoCard">
+    <div className="appointmentFeatures">
 
-            <div className="infoIcon">
-              ✉️
-            </div>
+      <div className="appointmentItem">
+        ✔ Personal Consultation
+      </div>
 
-            <div>
-              <h3>Email</h3>
-              <p>mpshastriastrology@gmail.com</p>
-            </div>
+      <div className="appointmentItem">
+        ✔ 100% Confidential
+      </div>
 
-          </div>
+      <div className="appointmentItem">
+        ✔ Online Video Call Available
+      </div>
 
-          <div className="infoCard">
+      <div className="appointmentItem">
+        ✔ Instant WhatsApp Support
+      </div>
 
-            <div className="infoIcon">
-              📍
-            </div>
+    </div>
 
-            <div>
-              <h3>Location</h3>
-              <p>Bangalore, India</p>
-            </div>
+  </div>
 
-          </div>
+  <div className="appointmentRight">
 
-          <div className="infoCard">
+    <form className="appointmentForm">
 
-            <div className="infoIcon">
-              🕒
-            </div>
+      <input
+        type="text"
+        placeholder="Your Name"
+      />
 
-            <div>
-              <h3>Working Hours</h3>
-              <p>9:00 AM - 9:00 PM</p>
-            </div>
+      <input
+        type="tel"
+        placeholder="Phone Number"
+      />
+
+      <input
+        type="email"
+        placeholder="Email Address"
+      />
+
+      <select>
+
+        <option>
+          Select Service
+        </option>
+
+        <option>
+          Astrology
+        </option>
+
+        <option>
+          Vastu Consultation
+        </option>
+
+        <option>
+          Face Reading
+        </option>
+
+        <option>
+          Tantra
+        </option>
+
+      </select>
+
+      <textarea
+        placeholder="Describe Your Problem"
+      ></textarea>
+
+      <button type="submit">
+        Book Consultation
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+{/* CONTACT INFO + MAP */}
+
+<section className="contactLocation">
+
+  <div className="contactContainer">
+
+    {/* LEFT */}
+
+    <div className="contactInfo">
+
+      <p className="contactTag">
+        ✦ CONTACT DETAILS
+      </p>
+
+      <h2>
+        Visit MP Shastri Astrology Center
+      </h2>
+
+      <p className="contactText">
+        Get personalized astrology consultation,
+        vastu guidance, face reading and tantra
+        solutions from experienced spiritual experts.
+      </p>
+
+      <div className="contactDetails">
+
+        <div className="contactItem">
+
+          <span>
+  <FaMapMarkerAlt />
+</span>
+
+          <div>
+
+            <h4>Office Address</h4>
+
+            <p>
+              Mahalakshmi Layout, Bangalore, Karnataka, India
+            </p>
 
           </div>
 
         </div>
 
-        {/* FORM */}
+        <div className="contactItem">
 
-        <form className="contactForm">
+          <span>
+  <FaPhoneAlt />
+</span>
 
-          <h2>
-            Book Consultation
-          </h2>
+          <div>
 
-          <input
-            type="text"
-            placeholder="Your Name"
-          />
+            <h4>Call Us</h4>
 
-          <input
-            type="email"
-            placeholder="Email Address"
-          />
+            <a href="tel:+918073258799">
+              +91 80732 58799
+            </a>
 
-          <input
-            type="tel"
-            placeholder="Phone Number"
-          />
+          </div>
 
-          <select>
+        </div>
 
-            <option>
-              Select Service
-            </option>
+        <div className="contactItem">
 
-            <option>
-              Astrology Reading
-            </option>
+         <span>
+  <FaEnvelope />
+</span>
 
-            <option>
-              Vastu Consultation
-            </option>
+          <div>
 
-            <option>
-              Numerology
-            </option>
+            <h4>Email</h4>
 
-            <option>
-              Horoscope Analysis
-            </option>
+            <a href="mailto:mpshastriastrology@gmail.com">
+              mpshastriastrology@gmail.com
+            </a>
 
-          </select>
+          </div>
 
-          <textarea
-            rows="5"
-            placeholder="Your Message"
-          ></textarea>
-
-          <button type="submit">
-            Send Message
-          </button>
-
-        </form>
+        </div>
 
       </div>
 
+    </div>
+
+    {/* RIGHT MAP */}
+
+    <div className="mapArea">
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.3704405499357!2d77.54223207507717!3d13.012065987306977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAwJzQzLjQiTiA3N8KwMzInNDEuMyJF!5e0!3m2!1sen!2sin!4v1780058308354!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        width="100%"
+        height="100%"
+        style={{ border:0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Google Map"
+      ></iframe>
+
+    </div>
+
+  </div>
+
+</section>
     </section>
 
   )

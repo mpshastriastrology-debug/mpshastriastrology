@@ -1,99 +1,119 @@
-// =========================
-// QuickActions.jsx
-// Chat / Call / Pooja / Video Call Section
-// =========================
+import { Link } from 'react-router-dom'
+
+import './QuickServices.css'
 
 import {
   MessageCircle,
-  Phone,
-  Flower2,
+  PhoneCall,
   Video,
-} from "lucide-react";
+  Flame
+} from 'lucide-react'
 
-export default function QuickActions() {
-
-  // FUNCTIONS
-  const handleChat = () => {
-    window.open("https://wa.me/919876543210", "_blank");
-  };
-
-  const handleCall = () => {
-    window.location.href = "tel:+919876543210";
-  };
-
-  const handlePooja = () => {
-    window.location.href = "/book-pooja";
-  };
-
-  const handleVideoCall = () => {
-    window.open("https://meet.google.com/", "_blank");
-  };
+function QuickServices() {
 
   return (
-    <section className="bg-[#F3EFE7] py-20 px-6">
-      
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        
-        {/* CHAT */}
-        <button
-          onClick={handleChat}
-          className="bg-white border border-[#efc9a7] rounded-3xl p-10 flex flex-col items-center justify-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300"
-        >
-          
-          <div className="w-20 h-20 rounded-full bg-[#d9c6f3] flex items-center justify-center mb-6">
-            <MessageCircle className="text-[#5B2C83]" size={34} />
-          </div>
 
-          <h3 className="text-3xl font-medium text-[#111111]">
-            Chat with Astrologer
-          </h3>
-        </button>
+    <section className="quickServices">
 
-        {/* CALL */}
-        <button
-          onClick={handleCall}
-          className="bg-white border border-[#efc9a7] rounded-3xl p-10 flex flex-col items-center justify-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300"
-        >
-          
-          <div className="w-20 h-20 rounded-full bg-[#d9c6f3] flex items-center justify-center mb-6">
-            <Phone className="text-[#5B2C83]" size={34} />
-          </div>
+      {/* CHAT */}
 
-          <h3 className="text-3xl font-medium text-[#111111]">
-            Talk to Astrologer
-          </h3>
-        </button>
+      <a
+        href="https://wa.me/918073258799"
+        target="_blank"
+        rel="noreferrer"
+        className="quickCard"
+      >
 
-        {/* BOOK POOJA */}
-        <button
-          onClick={handlePooja}
-          className="bg-white border border-[#efc9a7] rounded-3xl p-10 flex flex-col items-center justify-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300"
-        >
-          
-          <div className="w-20 h-20 rounded-full bg-[#d9c6f3] flex items-center justify-center mb-6">
-            <Flower2 className="text-[#5B2C83]" size={34} />
-          </div>
+        <div className="quickIcon chatBg">
 
-          <h3 className="text-3xl font-medium text-[#111111]">
-            Book Pooja
-          </h3>
-        </button>
+          <MessageCircle size={34} />
 
-        {/* VIDEO CALL */}
-        <button
-          onClick={handleVideoCall}
-          className="bg-white border border-[#efc9a7] rounded-3xl p-10 flex flex-col items-center justify-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300"
-        >
-          
-          <div className="w-20 h-20 rounded-full bg-[#d9c6f3] flex items-center justify-center mb-6">
-            <Video className="text-[#5B2C83]" size={34} />
-          </div>
+        </div>
 
-          <h3 className="text-3xl font-medium text-[#111111]">
-            Video Call with Astrologer
-          </h3>
-        </button>
-      </div>
+        <h3>
+          Chat with Astrologer
+        </h3>
+
+        <p>
+          Instant WhatsApp consultation
+        </p>
+
+      </a>
+
+      {/* CALL */}
+
+      <a
+        href="tel:+918073258799"
+        className="quickCard"
+      >
+
+        <div className="quickIcon callBg">
+
+          <PhoneCall size={34} />
+
+        </div>
+
+        <h3>
+          Talk to Astrologer
+        </h3>
+
+        <p>
+          Direct phone consultation
+        </p>
+
+      </a>
+
+      {/* POOJA */}
+
+      <Link
+        to="/contact"
+        className="quickCard"
+      >
+
+        <div className="quickIcon poojaBg">
+
+          <Flame size={34} />
+
+        </div>
+
+        <h3>
+          Book Pooja
+        </h3>
+
+        <p>
+          Personalized spiritual rituals
+        </p>
+
+      </Link>
+
+      {/* VIDEO */}
+
+      <a
+        href="https://wa.me/918073258799"
+        target="_blank"
+        rel="noreferrer"
+        className="quickCard"
+      >
+
+        <div className="quickIcon videoBg">
+
+          <Video size={34} />
+
+        </div>
+
+        <h3>
+          Video Consultation
+        </h3>
+
+        <p>
+          Online video astrology guidance
+        </p>
+
+      </a>
+
     </section>
-  );
+
+  )
 }
+
+export default QuickServices

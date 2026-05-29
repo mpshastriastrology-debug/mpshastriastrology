@@ -1,77 +1,161 @@
-import {
-  Phone,
-  Mail,
-  MapPin,
-} from 'lucide-react'
+import "./Footer.css";
 
-import './Footer.css'
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaWhatsapp,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+} from "react-icons/fa";
+
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <footer className="footer">
 
-      <div className="footerGlow"></div>
+      {/* TOP */}
 
       <div className="footerTop">
 
-        {/* ABOUT */}
-        <div className="footerBox fadeUp">
-          <h2>Mpshastri Atsrology</h2>
+        {/* CONTACT */}
 
-          <p>
-            Trusted online astrology consultation for
-            love, marriage, career and spiritual guidance.
-          </p>
+        <div className="footerBox">
+
+          <h3>CONTACT INFO</h3>
+
+          <a href="tel:+918073258799" className="footerItem">
+            <FaPhoneAlt />
+            <span>CALL +91 80732 58799</span>
+          </a>
+
+          <a href="mailto:mpshastri@gmail.com" className="footerItem">
+            <FaEnvelope />
+            <span>mpshastriastrology@gmail.com</span>
+          </a>
+
+          <div className="footerItem">
+            <FaMapMarkerAlt />
+            <span>
+              Mahalakshmi, Bangalore, Karnataka, India
+            </span>
+          </div>
+
         </div>
 
         {/* LINKS */}
-        <div className="footerBox fadeUp delay1">
-          <h3>Quick Links</h3>
 
-          <a href="#">Home</a>
-          <a href="./Services">Services</a>
-          <a href="./About">About</a>
-          <a href="./Contact">Contact</a>
+        <div className="footerBox">
+
+          <h3>USEFUL LINKS</h3>
+
+          <Link to="/">HOME</Link>
+
+          <Link to="/about">ABOUT</Link>
+
+          <Link to="/astrology">SERVICES</Link>
+
+          <Link to="/contact">CONTACT</Link>
+
         </div>
 
         {/* SERVICES */}
-        <div className="footerBox fadeUp delay2">
-          <h3>Services</h3>
 
-          <a href="#">Vedic Astrology</a>
-          <a href="#">Family Problem</a>
-          <a href="#">Numerology</a>
-          <a href="#">Career Guidance</a>
+        <div className="footerBox">
+
+          <h3>SPECIALITIES</h3>
+
+          <Link to="/astrology">ASTROLOGY</Link>
+
+          <Link to="/vastu">VASTU CONSULTATION</Link>
+
+          <Link to="/Face-reading">FACE READING</Link>
+
+          <Link to="/tantra">TANTRA</Link>
+
         </div>
 
-        {/* CONTACT */}
-        <div className="footerBox fadeUp delay3">
-          <h3>Contact</h3>
+        {/* IMPORTANT */}
 
-          <div className="contactItem">
-            <Phone size={18} />
-            <span>+91 80732 58799</span>
-          </div>
+        <div className="footerBox">
 
-          <div className="contactItem">
-            <Mail size={18} />
-            <span>mpshastriastrology@gmail.com</span>
-          </div>
+          <h3>IMPORTANT</h3>
 
-          <div className="contactItem">
-            <MapPin size={18} />
-            <span>Bangalore, India</span>
-          </div>
+          <a href="#">BEST ASTROLOGER IN INDIA</a>
+
+          <a href="#">ONLINE ASTROLOGY CONSULTATION</a>
+
+          <a href="#"> MARRIAGE PROBLEM</a>
+
+          <a href="#">CAREER GUIDANCE</a>
+
         </div>
 
       </div>
 
+      {/* BOTTOM */}
+
       <div className="footerBottom">
-        © 2026 Astrology Website. All Rights Reserved.
+
+        {/* LOGO */}
+
+        <div className="footerLogo">
+
+          <h2>MP Shastri Astrology</h2>
+
+        </div>
+
+        {/* COPYRIGHT */}
+
+       <p>
+  Copyright © {new Date().getFullYear()} MP Shastri Astrology.
+  All rights reserved.
+</p>
+
+        {/* SOCIAL */}
+
+        <div className="socialIcons">
+
+          <a
+            href="https://www.facebook.com/share/1Zr42k8BYn/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaFacebookF />
+          </a>
+
+          <a
+            href="https://www.instagram.com/manjunatha_bhat_astrologer?igsh=MW95eDR3NnJwc21oaw%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaInstagram />
+          </a>
+
+          <a
+            href="https://youtube.com/@bestastrol?si=ZoeE6TycEIcDMw5w"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaYoutube />
+          </a>
+
+          <a
+            href="https://wa.me/918073258799"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaWhatsapp />
+          </a>
+
+        </div>
+
       </div>
 
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
