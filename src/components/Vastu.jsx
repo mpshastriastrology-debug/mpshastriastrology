@@ -49,7 +49,7 @@ function Vastu() {
         <div className="vastuImage">
 
           <img
-            src="v4.png"
+            src="vasthu.webp"
             alt="Vastu Consultation"
           />
 

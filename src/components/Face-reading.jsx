@@ -49,7 +49,7 @@ function FaceReading() {
         <div className="faceImage">
 
           <img
-            src="/v6.png"
+            src="/facereading.webp"
             alt="Face Reading"
           />
 
@@ -127,7 +127,7 @@ function FaceReading() {
           <div className="faceCard">
 
             <img
-              src="/v11.png"
+              src="/personality-reading.webp"
               alt="Personality Reading"
             />
 
@@ -150,7 +150,7 @@ function FaceReading() {
           <div className="faceCard">
 
             <img
-              src="./v12.png"
+              src="./career.webp"
               alt="Career Reading"
             />
 

@@ -12,7 +12,7 @@ function Hero() {
       <div className="heroCircle">
 
         <img
-          src="/spin.png"
+          src="/MPShastriAstrology.webp"
           alt="MP Shastri Astrology"
         />
 

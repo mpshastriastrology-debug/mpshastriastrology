@@ -157,7 +157,7 @@ function Tantra() {
           <div className="tantraCard">
 
             <img
-              src="/v13.png"
+              src="/healing.webp"
               alt="Healing"
             />
 

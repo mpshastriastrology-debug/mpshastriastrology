@@ -1,102 +1,83 @@
-import './Services1'
 
-{/* GALLERY SECTION */}
-function Blog() {
+function Gallery() {
   return (
     <section>
-<section className="gallerySection">
 
-  <div className="sectionHeading">
+      {/* GALLERY SECTION */}
+      <section className="gallerySection">
 
-    <p>✦ SPIRITUAL MOMENTS</p>
+        <div className="sectionHeading">
 
-    <h2>Our Astrology Gallery</h2>
+          <p>✦ SPIRITUAL MOMENTS</p>
 
-  </div>
+          <h2>Astrology & Vastu Gallery</h2>
 
-  <div className="galleryGrid">
+        </div>
 
-    <div className="galleryCard">
+        <div className="galleryGrid">
 
-      <img
-        src="./v12.png"
-        alt=""
-      />
+          <div className="galleryCard">
+            <img
+              src="/career.webp"
+              alt="Astrology consultation session MP Shastri Bangalore"
+            />
+          </div>
 
-    </div>
+          <div className="galleryCard">
+            <img
+              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop"
+              alt="Spiritual astrology and meditation guidance energy healing"
+            />
+          </div>
 
-    <div className="galleryCard">
+          <div className="galleryCard">
+            <img
+              src="/vasthu.webp"
+              alt="Vastu consultation home correction Bangalore expert"
+            />
+          </div>
 
-      <img
-        src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop"
-        alt=""
-      />
+          <div className="galleryCard">
+            <img
+              src="/facereading.webp"
+              alt="Best astrologer in Bangalore horoscope reading session"
+            />
+          </div>
 
-    </div>
+          <div className="galleryCard">
+            <img
+              src="/personality-reading.webp"
+              alt="Astrology prediction and kundli analysis consultation"
+            />
+          </div>
 
-    <div className="galleryCard">
+          <div className="galleryCard">
+            <img
+              src="/healing.webp"
+              alt="Vastu shastra correction for home and office Bangalore"
+            />
+          </div>
 
-      <img
-        src="./v1.png"
-        alt=""
-      />
+          <div className="galleryCard">
+            <img
+              src="/vastuconsultant.webp"
+              alt="Face reading astrology personality analysis expert"
+            />
+          </div>
 
-    </div>
+          <div className="galleryCard">
+            <img
+              src="/face-read.webp"
+              alt="Spiritual healing and astrology consultation India"
+            />
+          </div>
 
-    <div className="galleryCard">
+        </div>
 
-      <img
-        src="/v7.png"
-        alt=""
-      />
+      </section>
 
-    </div>
-
-        <div className="galleryCard">
-
-      <img
-        src="/v11.png"
-        alt=""
-      />
-
-    </div>
-
-        <div className="galleryCard">
-
-      <img
-        src="/v13.png"
-        alt=""
-      />
-
-    </div>
-
-        <div className="galleryCard">
-
-      <img
-        src="/v14.png"
-        alt=""
-      />
-
-    </div>
-
-        <div className="galleryCard">
-
-      <img
-        src="/v15.png"
-        alt=""
-      />
-
-    </div>
-
-
-  </div>
-
-
-</section>
-
-</section>
-
+    </section>
   )
 }
 
-export default Blog
+export default Gallery

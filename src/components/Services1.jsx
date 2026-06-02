@@ -1,589 +1,211 @@
 import "./Services1.css";
-import {
-  PhoneCall,
-  MessageCircle
-} from "lucide-react";
-import {
-  FaOm,
-  FaHome,
-  FaEye,
-} from "react-icons/fa";
-
+import { PhoneCall, MessageCircle } from "lucide-react";
+import { FaOm, FaHome, FaEye } from "react-icons/fa";
 import { GiMeditation } from "react-icons/gi";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Services() {
+
+  const navigate = useNavigate();
   return (
-    <section>
+    <section className="servicesPage">
+
       {/* CTA SECTION */}
+      <section className="ctaSection">
+        <div className="ctaOverlay">
+          <p>✦ PERSONALIZED SPIRITUAL CONSULTATION</p>
 
-<section className="ctaSection">
+          <h2>Get Accurate Astrology Guidance From MP Shastri</h2>
 
-  <div className="ctaOverlay">
+          <span>
+            Expert solutions for love, marriage, business, career, vastu and spiritual healing.
+          </span>
 
-    <p>
-      ✦ PERSONALIZED SPIRITUAL CONSULTATION
-    </p>
+          <div className="ctaButtons">
+            <a href="tel:+918073258799" className="callNowBtn">
+              Call Now
+            </a>
 
-    <h2>
-      Get Accurate Astrology Guidance
-      From MP Shastri
-    </h2>
+            <a
+              href="https://wa.me/918073258799"
+              target="_blank"
+              rel="noreferrer"
+              className="whatsappNowBtn"
+            >
+              WhatsApp Chat
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <span>
-      Expert solutions for love, marriage,
-      business, career, vastu and spiritual healing.
-    </span>
+      {/* BENEFITS */}
+      <section className="benefitsSection">
+        <div className="sectionHeading">
+          <p>✦ WHY CHOOSE MP SHASTRI</p>
+          <h2>Benefits Of Our Guidance</h2>
+        </div>
 
-    <div className="ctaButtons">
+        <div className="benefitsGrid">
+          {[
+            ["Positive Energy", "Remove negativity and attract peace, happiness and prosperity."],
+            ["Accurate Predictions", "Detailed horoscope analysis with trusted spiritual solutions."],
+            ["Career Growth", "Guidance for business success, career stability and finances."],
+            ["Relationship Solutions", "Love marriage and relationship problem guidance and remedies."]
+          ].map(([title, desc]) => (
+            <div className="benefitCard" key={title}>
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <a
-        href="tel:+918073258799"
-        className="callNowBtn"
+      {/* STATS */}
+      <section className="statsSection">
+        {[
+          ["25K+", "Happy Clients"],
+          ["17+", "Years Experience"],
+          ["100%", "Private Consultation"],
+          ["24/7", "Online Support"]
+        ].map(([num, label]) => (
+          <div className="statsCard" key={label}>
+            <h2>{num}</h2>
+            <p>{label}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* SERVICES */}
+      <section className="services">
+        <div className="servicesTitle">
+          <h2>Our Best Astrology Services</h2>
+        </div>
+
+        <div className="servicesGrid">
+
+          <div className="serviceCard">
+            <div className="serviceImage astrology"><FaOm /></div>
+            <h3>Astrology</h3>
+            <p>Accurate horoscope predictions, kundli analysis and spiritual guidance.</p>
+                  <button
+        type="button"
+        onClick={() => navigate("/astrology")}
       >
-        Call Now
-      </a>
-
-      <a
-        href="https://wa.me/918073258799"
-        target="_blank"
-        rel="noreferrer"
-        className="whatsappNowBtn"
-      >
-        WhatsApp Chat
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-{/* BENEFITS SECTION */}
-
-<section className="benefitsSection">
-
-  <div className="sectionHeading">
-
-    <p>✦ WHY CHOOSE MP SHASTRI</p>
-
-    <h2>Benefits Of Our Guidance</h2>
-
-  </div>
-
-  <div className="benefitsGrid">
-
-    <div className="benefitCard">
-
-      <h3>
-        Positive Energy
-      </h3>
-
-      <p>
-        Remove negativity and attract
-        peace, happiness and prosperity.
-      </p>
-
-    </div>
-
-    <div className="benefitCard">
-
-      <h3>
-        Accurate Predictions
-      </h3>
-
-      <p>
-        Detailed horoscope analysis with
-        trusted spiritual solutions.
-      </p>
-
-    </div>
-
-    <div className="benefitCard">
-
-      <h3>
-        Career Growth
-      </h3>
-
-      <p>
-        Guidance for business success,
-        career stability and finances.
-      </p>
-
-    </div>
-
-    <div className="benefitCard">
-
-      <h3>
-        Relationship Solutions
-      </h3>
-
-      <p>
-        Love marriage and relationship
-        problem guidance and remedies.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-{/* STATS SECTION */}
-
-<section className="statsSection">
-
-  <div className="statsCard">
-
-    <h2>25K+</h2>
-
-    <p>
-      Happy Clients
-    </p>
-
-  </div>
-
-  <div className="statsCard">
-
-    <h2>17+</h2>
-
-    <p>
-      Years Experience
-    </p>
-
-  </div>
-
-  <div className="statsCard">
-
-    <h2>100%</h2>
-
-    <p>
-      Private Consultation
-    </p>
-
-  </div>
-
-  <div className="statsCard">
-
-    <h2>24/7</h2>
-
-    <p>
-      Online Support
-    </p>
-
-  </div>
-
-</section>
-    <section className="services">
-
-      <div className="servicesTitle">
-        <h2>Our Best Astrology Services</h2>
-      </div>
-
-      <div className="servicesGrid">
-
-        {/* ASTROLOGY */}
-
-        <div className="serviceCard">
-
-          <div className="serviceImage astrology">
-            <FaOm />
+        ✦ LEARN MORE
+      </button>
+            
           </div>
 
-          <h3>Astrology</h3>
-
-          <div className="divider">
-            ─ ✦ ─
+          <div className="serviceCard">
+            <div className="serviceImage vastu"><FaHome /></div>
+            <h3>Vastu</h3>
+            <p>Bring harmony and positive vibrations into your home and office.</p>
+            <button onClick={() => navigate("/Vastu")}>✦ LEARN MORE</button>
           </div>
 
-          <p>
-            Accurate horoscope predictions, kundli analysis
-            and spiritual guidance for success and positivity.
-          </p>
-
-          <button>
-            ✦ LEARN MORE
-          </button>
-
-        </div>
-
-        {/* VASTU */}
-
-        <div className="serviceCard">
-
-          <div className="serviceImage vastu">
-            <FaHome />
+          <div className="serviceCard">
+            <div className="serviceImage face"><FaEye /></div>
+            <h3>Face Reading</h3>
+            <p>Discover personality traits and future opportunities.</p>
+            <button onClick={() => navigate("/Face-reading")}>✦ LEARN MORE</button>
           </div>
 
-          <h3>Vastu</h3>
-
-          <div className="divider">
-            ─ ✦ ─
-          </div>
-
-          <p>
-            Bring harmony and positive vibrations into
-            your home and office with vastu consultation.
-          </p>
-
-          <button>
-            ✦ LEARN MORE
-          </button>
-
-        </div>
-
-        {/* FACE READING */}
-
-        <div className="serviceCard">
-
-          <div className="serviceImage face">
-            <FaEye />
-          </div>
-
-          <h3>Face Reading</h3>
-
-          <div className="divider">
-            ─ ✦ ─
-          </div>
-
-          <p>
-            Discover personality traits, future opportunities
-            and emotional patterns through face reading.
-          </p>
-
-          <button>
-            ✦ LEARN MORE
-          </button>
-
-        </div>
-
-        {/* TANTRA */}
-
-        <div className="serviceCard">
-
-          <div className="serviceImage tantra">
-            <GiMeditation />
-          </div>
-
-          <h3>Tantra</h3>
-
-          <div className="divider">
-            ─ ✦ ─
-          </div>
-
-          <p>
-            Powerful tantra rituals and spiritual healing
-            solutions for positivity and protection.
-          </p>
-
-          <button>
-            ✦ LEARN MORE
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-   
-
-{/* PROCESS SECTION */}
-
-<section className="processSection">
-
-  <div className="sectionHeading">
-
-    <p>✦ SIMPLE CONSULTATION PROCESS</p>
-
-    <h2>How Consultation Works</h2>
-
-  </div>
-
-  <div className="processGrid">
-
-    <div className="processCard">
-
-      <div className="processNumber">01</div>
-
-      <h3>Book Appointment</h3>
-
-      <p>
-        Schedule your astrology or vastu consultation
-        online through WhatsApp or direct call.
-      </p>
-
-    </div>
-
-    <div className="processCard">
-
-      <div className="processNumber">02</div>
-
-      <h3>Consult Expert</h3>
-
-      <p>
-        Speak directly with our experienced astrologer
-        for accurate spiritual guidance and remedies.
-      </p>
-
-    </div>
-
-    <div className="processCard">
-
-      <div className="processNumber">03</div>
-
-      <h3>Get Solutions</h3>
-
-      <p>
-        Receive personalized remedies, vastu tips and
-        positive spiritual solutions for life problems.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-{/* FLOATING CONTACT */}
-
-<div className="floatingContact">
-
-  {/* CALL */}
-
-  <a
-    href="tel:+918073258799"
-    className="floatingCall"
-  >
-
-    <PhoneCall size={26} />
-
-  </a>
-
-  {/* WHATSAPP */}
-
-  <a
-    href="https://wa.me/918073258799"
-    target="_blank"
-    rel="noreferrer"
-    className="floatingWhatsapp"
-  >
-
-    <MessageCircle size={26} />
-
-  </a>
-
-</div>
-{/* FAQ SECTION */}
-
-<section className="faqSection">
-
-  <div className="sectionHeading">
-
-    <p>✦ FREQUENTLY ASKED QUESTIONS</p>
-
-    <h2>Common Questions</h2>
-
-  </div>
-
-  <div className="faqContainer">
-
-    <div className="faqItem">
-
-      <h3>
-        How can astrology help in life?
-      </h3>
-
-      <p>
-        Astrology provides guidance for career,
-        relationships, marriage, business and
-        personal growth through spiritual insights.
-      </p>
-
-    </div>
-
-    <div className="faqItem">
-
-      <h3>
-        Do you provide online consultation?
-      </h3>
-
-      <p>
-        Yes, online consultation is available
-        through WhatsApp chat, voice call and
-        video consultation worldwide.
-      </p>
-
-    </div>
-
-    <div className="faqItem">
-
-      <h3>
-        Which services do you provide?
-      </h3>
-
-      <p>
-        We provide astrology, vastu consultation,
-        face reading, numerology, tantra and
-        spiritual healing services.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-{/* GOOGLE REVIEWS SECTION */}
-
-<section className="googleReviewSection">
-
-  <div className="sectionHeading">
-
-    <p>✦ GOOGLE REVIEWS</p>
-
-    <h2>What Clients Say About Us</h2>
-
-  </div>
-
-  <div className="googleReviewGrid">
-
-    {/* REVIEW 1 */}
-
-    <div className="googleReviewCard">
-
-      <div className="googleTop">
-
-        <div className="googleProfile">
-
-          
-
-          <div>
-            <h3>Ramesh Kumar</h3>
-
-            <span>
-              Local Guide • 18 Reviews
-            </span>
+          <div className="serviceCard">
+            <div className="serviceImage tantra"><GiMeditation /></div>
+            <h3>Tantra</h3>
+            <p>Spiritual healing solutions for positivity and protection.</p>
+            <button onClick={() => navigate("/Tantra")}>✦ LEARN MORE</button>
           </div>
 
         </div>
+      </section>
 
-        <img
-          className="googleIcon"
-          src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-          alt="Google"
-        />
-
-      </div>
-
-      <div className="reviewStars">
-        ★★★★★
-      </div>
-
-      <p>
-        Very accurate astrology consultation.
-        MP Shastri provided excellent guidance
-        for my business and family problems.
-        Highly recommended astrologer in Bangalore.
-      </p>
-
-      <small>
-        2 weeks ago
-      </small>
-
-    </div>
-
-    {/* REVIEW 2 */}
-
-    <div className="googleReviewCard">
-
-      <div className="googleTop">
-
-        <div className="googleProfile">
-
-          
-
-          <div>
-            <h3>Priya Sharma</h3>
-
-            <span>
-              12 Reviews
-            </span>
-          </div>
-
+      {/* PROCESS */}
+      <section className="processSection">
+        <div className="sectionHeading">
+          <p>✦ SIMPLE CONSULTATION PROCESS</p>
+          <h2>How Consultation Works</h2>
         </div>
 
-        <img
-          className="googleIcon"
-          src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-          alt="Google"
-        />
+        <div className="processGrid">
+          {[
+            ["01", "Book Appointment", "Schedule consultation via WhatsApp or call."],
+            ["02", "Consult Expert", "Speak directly with experienced astrologer."],
+            ["03", "Get Solutions", "Receive personalized remedies and guidance."]
+          ].map(([num, title, desc]) => (
+            <div className="processCard" key={num}>
+              <div className="processNumber">{num}</div>
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
+      {/* FLOATING CONTACT */}
+      <div className="floatingContact">
+        <a href="tel:+918073258799" className="floatingCall" aria-label="Call Now">
+          <PhoneCall size={26} />
+        </a>
+
+        <a
+          href="https://wa.me/918073258799"
+          target="_blank"
+          rel="noreferrer"
+          className="floatingWhatsapp"
+          aria-label="WhatsApp Chat"
+        >
+          <MessageCircle size={26} />
+        </a>
       </div>
 
-      <div className="reviewStars">
-        ★★★★★
-      </div>
-
-      <p>
-        Best vastu consultation experience.
-        Positive changes started happening
-        after following the remedies suggested.
-      </p>
-
-      <small>
-        1 month ago
-      </small>
-
-    </div>
-
-    {/* REVIEW 3 */}
-
-    <div className="googleReviewCard">
-
-      <div className="googleTop">
-
-        <div className="googleProfile">
-
-                   <div>
-            <h3>Naveen Raj</h3>
-
-            <span>
-              28 Reviews
-            </span>
-          </div>
-
+      {/* FAQ */}
+      <section className="faqSection">
+        <div className="sectionHeading">
+          <p>✦ FREQUENTLY ASKED QUESTIONS</p>
+          <h2>Common Questions</h2>
         </div>
 
-        <img
-          className="googleIcon"
-          src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-          alt="Google"
-        />
+        <div className="faqContainer">
+          <div className="faqItem">
+            <h3>How can astrology help in life?</h3>
+            <p>Provides guidance for career, relationships and growth.</p>
+          </div>
 
-      </div>
+          <div className="faqItem">
+            <h3>Do you provide online consultation?</h3>
+            <p>Yes, via WhatsApp, call and video worldwide.</p>
+          </div>
 
-      <div className="reviewStars">
-        ★★★★★
-      </div>
+          <div className="faqItem">
+            <h3>Which services do you provide?</h3>
+            <p>Astrology, vastu, face reading, numerology and tantra.</p>
+          </div>
+        </div>
+      </section>
 
-      <p>
-        Genuine astrologer with deep knowledge.
-        Professional consultation and very supportive.
-        Highly satisfied with the predictions.
-      </p>
+      {/* REVIEWS */}
+      <section className="googleReviewSection">
+        <div className="sectionHeading">
+          <p>✦ GOOGLE REVIEWS</p>
+          <h2>What Clients Say About Us</h2>
+        </div>
 
-      <small>
-        3 weeks ago
-      </small>
-
-    </div>
-
-  </div>
-
-</section>
+        <div className="googleReviewGrid">
+          {[
+            ["Ramesh Kumar", "Very accurate astrology consultation..."],
+            ["Priya Sharma", "Best vastu consultation experience..."],
+            ["Naveen Raj", "Genuine astrologer with deep knowledge..."]
+          ].map(([name, text]) => (
+            <div className="googleReviewCard" key={name}>
+              <h3>{name}</h3>
+              <div aria-label="5 star rating">★★★★★</div>
+              <p>{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
     </section>
   );

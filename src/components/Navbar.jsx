@@ -29,7 +29,7 @@ function Header() {
         <div className="logoCircle">
 
           <img
-            src="/logo.png"
+            src="/MPShastriLogo.webp"
             alt="MP Shastri Logo"
           />
 
