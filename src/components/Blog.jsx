@@ -10,9 +10,11 @@ function Gallery() {
 
           <p>✦ SPIRITUAL MOMENTS</p>
 
+          <h1>Best Astrology & Vastu in Bangalore</h1>
+
           <h2>Astrology & Vastu Gallery</h2>
 
-        </div>
+          </div>
 
         <div className="galleryGrid">
 

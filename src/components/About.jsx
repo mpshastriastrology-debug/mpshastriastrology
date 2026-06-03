@@ -24,7 +24,7 @@ function AboutSection() {
         <div className="aboutContent">
 
           <span className="aboutTag">
-            About MP Shastri Astrology
+            <h1>About MP Shastri Astrology</h1>
           </span>
 
           <h2>

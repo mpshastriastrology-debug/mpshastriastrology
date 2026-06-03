@@ -1,254 +1,80 @@
-.servicesSection{
-
-  min-height:100vh;
-
-  padding:110px 8%;
-
-  background:
-  linear-gradient(
-    135deg,
-    #ffffff,
-    #fffdf7,
-    #fdf2c9
-  );
-
-  position:relative;
-
-  overflow:hidden;
+.services-page {
+  background: #f3efe7;
+  padding: 120px 20px 80px;
+  min-height: 100vh;
 }
 
-/* GLOW */
-
-.servicesSection::before{
-
-  content:'';
-
-  position:absolute;
-
-  width:500px;
-  height:500px;
-
-  background:
-  radial-gradient(
-    rgba(212,175,55,0.15),
-    transparent
-  );
-
-  top:-200px;
-  right:-150px;
-
-  filter:blur(100px);
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-/* HEADING */
-
-.servicesHeading{
-  text-align:center;
-  margin-bottom:80px;
-  position:relative;
-  z-index:2;
+.services-header h1 {
+  font-size: 52px;
+  color: #6b3418;
+  margin-bottom: 15px;
+  font-family: Georgia, serif;
 }
 
-.serviceTag{
-
-  display:inline-block;
-
-  background:#d4af37;
-
-  color:white;
-
-  padding:12px 28px;
-
-  border-radius:40px;
-
-  font-size:14px;
-
-  letter-spacing:3px;
-
-  text-transform:uppercase;
-
-  margin-bottom:28px;
-
-  font-weight:600;
+.services-header p {
+  font-size: 18px;
+  color: #666;
 }
 
-.servicesHeading h2{
-
-  font-size:58px;
-
-  color:#111;
-
-  margin-bottom:25px;
-
-  line-height:1.2;
+.services-grid {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 
-.serviceSubtitle{
-
-  max-width:750px;
-
-  margin:auto;
-
-  color:#666;
-
-  font-size:18px;
-
-  line-height:1.9;
+.service-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 35px;
+  border: 1px solid #e7ddd0;
+  transition: 0.3s;
 }
 
-/* GRID */
-
-.servicesGrid{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(auto-fit,minmax(320px,1fr));
-
-  gap:35px;
-
-  position:relative;
-  z-index:2;
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
-/* CARD */
-
-.serviceCard{
-
-  background:
-  rgba(255,255,255,0.72);
-
-  border:
-  1px solid rgba(212,175,55,0.15);
-
-  backdrop-filter:blur(12px);
-
-  padding:45px 35px;
-
-  border-radius:35px;
-
-  transition:0.5s;
-
-  position:relative;
-
-  overflow:hidden;
-
-  box-shadow:
-  0 10px 30px rgba(0,0,0,0.05);
+.service-card h3 {
+  color: #6b3418;
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-family: Georgia, serif;
 }
 
-.serviceCard::before{
-
-  content:'';
-
-  position:absolute;
-
-  width:240px;
-  height:240px;
-
-  background:
-  radial-gradient(
-    rgba(212,175,55,0.12),
-    transparent
-  );
-
-  top:-100px;
-  right:-100px;
+.service-card p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 20px;
 }
 
-.serviceCard:hover{
-
-  transform:
-  translateY(-12px);
-
-  box-shadow:
-  0 25px 45px rgba(212,175,55,0.18);
+.service-card button {
+  background: #6b3418;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-/* ICON */
-
-.serviceIcon{
-
-  width:80px;
-  height:80px;
-
-  border-radius:50%;
-
-  background:
-  rgba(212,175,55,0.15);
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  font-size:34px;
-
-  margin-bottom:30px;
+.service-card button:hover {
+  background: #d89b1d;
+  color: #111;
 }
 
-/* TEXT */
-
-.serviceCard h3{
-
-  font-size:28px;
-
-  color:#111;
-
-  margin-bottom:20px;
-}
-
-.serviceCard p{
-
-  color:#666;
-
-  line-height:1.9;
-
-  margin-bottom:35px;
-}
-
-/* BUTTON */
-
-.serviceCard button{
-
-  background:#d4af37;
-
-  color:white;
-
-  border:none;
-
-  padding:15px 30px;
-
-  border-radius:40px;
-
-  cursor:pointer;
-
-  font-size:15px;
-
-  transition:0.4s;
-}
-
-.serviceCard button:hover{
-
-  background:#111;
-
-  transform:scale(1.05);
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-  .servicesSection{
-    padding:80px 25px;
+@media (max-width: 768px) {
+  .services-header h1 {
+    font-size: 36px;
   }
 
-  .servicesHeading h2{
-    font-size:38px;
+  .service-card {
+    padding: 25px;
   }
-
-  .serviceSubtitle{
-    font-size:16px;
-  }
-
 }
