@@ -184,7 +184,7 @@ function Contact() {
           <div className="mapArea">
 <div className="map-container">
   <iframe
-    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.3704405499357!2d77.54223207507717!3d13.012065987306977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAwJzQzLjQiTiA3N8KwMzInNDEuMyJF!5e0!3m2!1sen!2sin!4v1780481994517!5m2!1sen!2sin"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.37261676429!2d77.54216647484208!3d13.01192718730717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d638c735a1b%3A0x801d40c1a280a9a5!2sMP%20Shastri%20Astrology!5e0!3m2!1sen!2sin!4v1780487686385!5m2!1sen!2sin"
     width="100%"
     height="450"
     style={{ border: 0 }}

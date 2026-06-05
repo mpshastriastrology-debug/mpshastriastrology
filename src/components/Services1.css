@@ -405,9 +405,6 @@
 
 }
 
-
-
-
 /* CTA SECTION */
 
 .ctaSection{
@@ -419,7 +416,7 @@
     rgba(0,0,0,0.75),
     rgba(0,0,0,0.75)
   ),
-  url('./v1.png');
+  url('./bestastrology.webp');
 
   background-size:cover;
   background-position:center;
@@ -1685,7 +1682,7 @@
   overflow:hidden;
 
   background:
-  url('./v1.png');
+  url('./bestastrology.webp');
 
   background-size:cover;
   background-position:center;
