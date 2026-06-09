@@ -8,6 +8,11 @@ import Face from '../components/Face-reading';
 import Tantra from '../components/Tantra';
 
 import Services1 from '../components/Services1';
+
+function Home() {
+  return (
+    <>
+    <Helmet>
 <script type="application/ld+json">
 {`
 {
@@ -23,14 +28,9 @@ import Services1 from '../components/Services1';
 }
 `}
 </script>
-function Home() {
-  return (
-    <>
-    <Helmet>
-
-  <title>
-    MP Shastri Astrology | Best Astrologer in Bangalore
-  </title>
+<title>
+Best Astrologer in Bangalore | Online Astrology & Vastu Expert | MP Shastri
+</title>
 
   <meta
     name="description"
@@ -39,8 +39,66 @@ function Home() {
 
   <meta
     name="keywords"
-    content="Astrologer Bangalore, Vastu Consultant, Online Astrology, Face Reading, Tantra"
+    content="Consult MP Shastri, Best Astrologer in Bangalore for online astrology consultation, vastu expert guidance, face reading, marriage prediction, career astrology and spiritual solutions across India."
   />
+
+<meta
+  name="keywords"
+  content="
+  best astrologer in bangalore,
+  online astrologer,
+  astrologer near me,
+  astrologer in india,
+  vastu expert,
+  vastu consultant bangalore,
+  astrology consultation,
+  marriage astrologer,
+  career astrology,
+  face reading"
+/>
+<link
+  rel="canonical"
+  href="https://mpshastriastrology.com/"
+/>
+<meta property="og:title" content="Best Astrologer in Bangalore | MP Shastri" />
+
+<meta
+  property="og:description"
+  content="Online astrology consultation, vastu expert guidance, marriage and career astrology services."
+/>
+
+<meta
+  property="og:url"
+  content="https://mpshastriastrology.com/"
+/>
+
+<meta property="og:type" content="website" />
+
+<script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "MP Shastri Astrology",
+  "url": "https://mpshastriastrology.com",
+  "telephone": "+918073258799",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bangalore",
+    "addressRegion": "Karnataka",
+    "addressCountry": "India"
+  },
+  "areaServed": "India",
+  "serviceType": [
+    "Astrology Consultation",
+    "Online Astrology",
+    "Vastu Consultation",
+    "Face Reading",
+    "Tantra Consultation"
+  ]
+}
+`}
+</script>
 
 </Helmet>
       <Hero />

@@ -24,7 +24,7 @@ function AboutSection() {
         <div className="aboutContent">
 
           <span className="aboutTag">
-            <h1>About MP Shastri Astrology</h1>
+            <h2>About MP Shastri Astrology</h2>
           </span>
 
           <h2>
@@ -230,6 +230,35 @@ function AboutSection() {
         </div>
 
       </section>
+<section className="about-section">
+  <div className="about-content">
+    <h2>Best Astrologer in Bangalore</h2>
+
+    <p>
+      MP Shastri is a trusted astrologer in Bangalore offering online astrology
+      consultations, horoscope reading, marriage guidance, career astrology,
+      numerology, and Vastu consultation services. With over 17 years of
+      experience, we have successfully guided thousands of clients across
+      Bangalore and India.
+    </p>
+
+    <h3>Online Astrology Consultation</h3>
+
+    <p>
+      Get professional astrology consultation through phone calls, WhatsApp,
+      and video calls from anywhere in India. Receive personalized guidance for
+      career, marriage, relationships, finance, and life challenges.
+    </p>
+
+    <h3>Vastu Expert in Bangalore</h3>
+
+    <p>
+      Our Vastu consultation services help create positive energy, prosperity,
+      success, and harmony in homes, offices, apartments, and commercial
+      spaces. Get expert Vastu solutions for a balanced and successful life.
+    </p>
+  </div>
+</section>
 
       {/* FAQ SECTION */}
       <section className="faqSection">
@@ -303,9 +332,9 @@ function AboutSection() {
             ✦ INDIA’S TRUSTED ASTROLOGY EXPERT IN BANGALORE
           </p>
 
-          <h1>
+          <h2>
             Discover Your Destiny With <span>MP Shastri Astrology</span>
-          </h1>
+          </h2>
 
           <p className="heroDescription">
             Experience accurate astrology consultation, vastu guidance, face reading and spiritual healing solutions for success, positivity and peaceful life.

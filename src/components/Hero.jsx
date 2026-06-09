@@ -13,7 +13,7 @@ function Hero() {
 
         <img
           src="/MPShastriAstrology.webp"
-          alt="MP Shastri Astrology"
+          alt="Best Astrologer in Bangalore MP Shastri"
         />
 
       </div>
@@ -27,15 +27,15 @@ function Hero() {
         </span>
 
         <h1>
-          A Deeper Understanding
-          of Your Life Begins Here
-        </h1>
+  Best Astrologer in Bangalore | Online Astrology & Vastu Expert
+</h1>
 
         <p>
-          Accurate astrology consultation, vastu guidance,
-          numerology and spiritual solutions to bring
-          positivity, success and peace into your life.
-        </p>
+  Consult MP Shastri, a trusted astrologer in Bangalore offering
+  online astrology consultation, vastu guidance, numerology,
+  marriage prediction, career astrology and spiritual solutions
+  across India.
+</p>
 
         <div className="heroButtons">
 

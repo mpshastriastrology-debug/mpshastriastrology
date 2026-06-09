@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-DisAllow: /
 Sitemap: https://www.mpshastriastrology.com/sitemap.xml
