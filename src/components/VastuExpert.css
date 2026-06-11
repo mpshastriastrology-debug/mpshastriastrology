@@ -1,0 +1,186 @@
+.vastuPage {
+  background: #fffdf8;
+  overflow-x: hidden;
+}
+
+/* HERO */
+
+.vastuHero {
+  background: linear-gradient(
+    180deg,
+    #fff8ea 0%,
+    #fff2d8 100%
+  );
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.vastuHeroContent {
+  max-width: 950px;
+  margin: auto;
+}
+
+.vastuBadge {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgba(240, 172, 0, 0.962);
+  color: #8b6508;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.vastuHero h1 {
+  font-size: 56px;
+  color: #5c3b00;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.vastuHero p {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: auto;
+}
+
+.vastuButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.vastuCallBtn,
+.vastuWhatsappBtn {
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.vastuCallBtn {
+  background: #d4a017;
+  color: white;
+}
+
+.vastuWhatsappBtn {
+  background: #25d366;
+  color: white;
+}
+
+.vastuCallBtn:hover,
+.vastuWhatsappBtn:hover {
+  transform: translateY(-3px);
+}
+
+/* CONTENT */
+
+.vastuSection {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.vastuSection h2 {
+  text-align: center;
+  font-size: 40px;
+  color: #5c3b00;
+  margin-bottom: 20px;
+}
+
+.vastuSection > p {
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* GRID */
+
+.vastuGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.vastuCard {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #f0e1b8;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.vastuCard h3 {
+  color: #7a5200;
+  margin-bottom: 15px;
+}
+
+.vastuCard p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* CTA */
+
+.vastuCTA {
+  background: linear-gradient(
+    135deg,
+    #b8860b,
+    #d4a017
+  );
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.vastuCTA h2 {
+  color: white;
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.vastuCTA p {
+  color: white;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.vastuCTA a {
+  display: inline-block;
+  margin-top: 30px;
+  background: white;
+  color: #8b6508;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .vastuHero h1 {
+    font-size: 36px;
+  }
+
+  .vastuHero p {
+    font-size: 17px;
+  }
+
+  .vastuSection h2 {
+    font-size: 30px;
+  }
+
+  .vastuCTA h2 {
+    font-size: 30px;
+  }
+}

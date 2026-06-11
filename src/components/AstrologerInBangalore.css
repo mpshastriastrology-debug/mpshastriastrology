@@ -1,0 +1,186 @@
+.bangalorePage {
+  background: #fffdf8;
+  overflow-x: hidden;
+}
+
+/* HERO */
+
+.bangaloreHero {
+  background: linear-gradient(
+    180deg,
+    #fff8ea 0%,
+    #fff2d8 100%
+  );
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.bangaloreHeroContent {
+  max-width: 950px;
+  margin: auto;
+}
+
+.bangaloreBadge {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgba(184, 134, 11, 0.12);
+  color: #8b6508;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.bangaloreHero h1 {
+  font-size: 56px;
+  color: #5c3b00;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.bangaloreHero p {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: auto;
+}
+
+.bangaloreButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.bangaloreCallBtn,
+.bangaloreWhatsappBtn {
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.bangaloreCallBtn {
+  background: #d4a017;
+  color: white;
+}
+
+.bangaloreWhatsappBtn {
+  background: #25d366;
+  color: white;
+}
+
+.bangaloreCallBtn:hover,
+.bangaloreWhatsappBtn:hover {
+  transform: translateY(-3px);
+}
+
+/* SECTIONS */
+
+.bangaloreSection {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.bangaloreSection h2 {
+  text-align: center;
+  font-size: 40px;
+  color: #5c3b00;
+  margin-bottom: 20px;
+}
+
+.bangaloreSection > p {
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* GRID */
+
+.bangaloreGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.bangaloreCard {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #f0e1b8;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.bangaloreCard h3 {
+  color: #7a5200;
+  margin-bottom: 15px;
+}
+
+.bangaloreCard p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* CTA */
+
+.bangaloreCTA {
+  background: linear-gradient(
+    135deg,
+    #b8860b,
+    #d4a017
+  );
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.bangaloreCTA h2 {
+  color: white;
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.bangaloreCTA p {
+  color: white;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.bangaloreCTA a {
+  display: inline-block;
+  margin-top: 30px;
+  background: white;
+  color: #8b6508;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .bangaloreHero h1 {
+    font-size: 36px;
+  }
+
+  .bangaloreHero p {
+    font-size: 17px;
+  }
+
+  .bangaloreSection h2 {
+    font-size: 30px;
+  }
+
+  .bangaloreCTA h2 {
+    font-size: 30px;
+  }
+}

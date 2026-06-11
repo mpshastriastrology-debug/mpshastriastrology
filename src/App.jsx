@@ -14,6 +14,10 @@ import Face from './components/Face-reading'
 import Tantra from './components/Tantra' 
 import AOS from "aos";
 import Scrol from "./Scrol";
+import AstrologerInBangalore from './components/astrologer-in-bangalore' 
+import OnlineAstrologer from './components/online-astrologer' 
+import AstrologerInIndia from './components/astrologer-in-india' 
+import VastuExpert from './components/vastu-expert' 
 function App() {
 
   useEffect(() => {
@@ -80,7 +84,15 @@ function App() {
                    <Route
           path="/tantra"
           element={<Tantra />}
-        />
+
+            />
+            <Route path="/astrologer-in-bangalore" element={<AstrologerInBangalore />} />
+
+<Route path="/online-astrologer" element={<OnlineAstrologer />} />
+
+<Route path="/astrologer-in-india" element={<AstrologerInIndia />} />
+
+<Route path="/vastu-expert" element={<VastuExpert />} />
  </Routes>
       <Footer />
 

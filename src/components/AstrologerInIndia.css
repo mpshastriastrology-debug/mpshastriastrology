@@ -1,0 +1,172 @@
+.indiaPage {
+  background: #fffdf8;
+  overflow-x: hidden;
+}
+
+/* HERO */
+
+.indiaHero {
+  background: linear-gradient(180deg,#fff8ea,#fff2d8);
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.indiaHeroContent {
+  max-width: 950px;
+  margin: auto;
+}
+
+.indiaBadge {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgba(184,134,11,.12);
+  color: #8b6508;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.indiaHero h1 {
+  font-size: 56px;
+  color: #5c3b00;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.indiaHero p {
+  font-size: 20px;
+  color: #5f5f5f;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: auto;
+}
+
+.indiaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.indiaCallBtn,
+.indiaWhatsappBtn {
+  text-decoration: none;
+  padding: 15px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.indiaCallBtn {
+  background: #d4a017;
+  color: white;
+}
+
+.indiaWhatsappBtn {
+  background: #25d366;
+  color: white;
+}
+
+/* CONTENT */
+
+.indiaSection {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.indiaSection h2 {
+  text-align: center;
+  font-size: 40px;
+  color: #5c3b00;
+  margin-bottom: 20px;
+}
+
+.indiaSection > p {
+  text-align: center;
+  color: #666;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: auto;
+}
+
+/* GRID */
+
+.indiaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.indiaCard {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid #f0e1b8;
+  box-shadow: 0 8px 20px rgba(0,0,0,.05);
+  text-align: center;
+}
+
+.indiaCard h3 {
+  color: #7a5200;
+  margin-bottom: 15px;
+}
+
+.indiaCard p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* CTA */
+
+.indiaCTA {
+  background: linear-gradient(135deg,#b8860b,#d4a017);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.indiaCTA h2 {
+  color: white;
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.indiaCTA p {
+  color: white;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.indiaCTA a {
+  display: inline-block;
+  margin-top: 30px;
+  background: white;
+  color: #8b6508;
+  text-decoration: none;
+  padding: 15px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .indiaHero h1 {
+    font-size: 36px;
+  }
+
+  .indiaHero p {
+    font-size: 17px;
+  }
+
+  .indiaSection h2 {
+    font-size: 30px;
+  }
+
+  .indiaCTA h2 {
+    font-size: 30px;
+  }
+}

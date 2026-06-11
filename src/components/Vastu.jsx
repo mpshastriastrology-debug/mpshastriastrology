@@ -3,7 +3,20 @@ import "./Vastu.css";
 function Vastu() {
 
   return (
+<>
+<Helmet>
+  <title>Vastu Expert in Bangalore | MP Shastri Astrology</title>
 
+  <meta
+    name="description"
+    content="Professional vastu expert in Bangalore for home, office and commercial vastu consultation. Get personalized vastu guidance from MP Shastri."
+  />
+
+  <link
+    rel="canonical"
+    href="https://www.mpshastriastrology.com/vastu-expert"
+  />
+</Helmet>
     <section className="vastuPage">
 
       {/* HERO */}
@@ -196,6 +209,7 @@ function Vastu() {
       </div>
 
     </section>
+    </>
   );
 }
 
