@@ -1,8 +1,10 @@
+import { Helmet } from "react-helmet";
 import "./OnlineAstrology.css";
 
 function OnlineAstrology() {
   return (
-  <><Helmet>
+    <>
+    <Helmet>
   <title>Online Astrologer Consultation | MP Shastri Astrology</title>
 
   <meta

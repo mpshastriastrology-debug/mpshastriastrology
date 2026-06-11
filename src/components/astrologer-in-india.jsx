@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import "./AstrologerInIndia.css";
 
 function AstrologerInIndia() {

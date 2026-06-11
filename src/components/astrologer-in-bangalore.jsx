@@ -1,20 +1,24 @@
+import { Helmet } from "react-helmet";
 import "./AstrologerInBangalore.css";
 
 function AstrologerInBangalore() {
+  
   return (
-    <><Helmet>
-  <title>Best Astrologer in Bangalore | MP Shastri Astrology</title>
+        <>
+      <Helmet>
+        <title>Best Astrologer in Bangalore | MP Shastri Astrology</title>
 
-  <meta
-    name="description"
-    content="Consult MP Shastri, Best Astrologer in Bangalore for marriage guidance, career astrology, horoscope reading, vastu consultation and online astrology services."
-  />
+        <meta
+          name="description"
+          content="Consult MP Shastri, Best Astrologer in Bangalore for marriage guidance, career astrology, horoscope reading, vastu consultation and online astrology services."
+        />
 
-  <link
-    rel="canonical"
-    href="https://www.mpshastriastrology.com/astrologer-in-bangalore"
-  />
-</Helmet>
+        <link
+          rel="canonical"
+          href="https://www.mpshastriastrology.com/astrologer-in-bangalore"
+        />
+      </Helmet>
+
     <div className="bangalorePage">
 
       {/* HERO SECTION */}
