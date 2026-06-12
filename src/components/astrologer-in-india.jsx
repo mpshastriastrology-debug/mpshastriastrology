@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import "./AstrologerInIndia.css";
+import { Link } from "react-router-dom";
 
 function AstrologerInIndia() {
   return (
@@ -61,7 +62,19 @@ function AstrologerInIndia() {
         </div>
 
       </section>
+<div className="service-links">
+  <Link to="/online-astrologer">
+    Online Astrology Consultation
+  </Link>
 
+  <Link to="/vastu-expert">
+    Vastu Expert Services
+  </Link>
+
+  <Link to="/astrologer-in-bangalore">
+    Astrology Services Across Bangalore
+  </Link>
+</div>
       <section className="indiaSection">
 
         <h2>

@@ -45,7 +45,23 @@ function AboutSection() {
 
       {/* BLOG SECTION */}
       <section className="blogSection">
+<div className="service-links">
+    <Link to="/astrologer-in-bangalore">
+    Astrology Services in Bangalore
+  </Link>
+  <Link to="/online-astrologer">
+    Online Astrology Consultation
+  </Link>
 
+  <Link to="/vastu-expert">
+    Vastu Expert Services
+  </Link>
+
+  <Link to="/astrologer-in-india">
+    Best Astrologer in India
+  </Link>
+</div>
+<br/>
         <div className="sectionHeading">
 
           <p>✦ LATEST ARTICLES</p>

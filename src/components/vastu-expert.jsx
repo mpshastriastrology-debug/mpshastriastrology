@@ -1,4 +1,5 @@
 import "./VastuExpert.css";
+import { Link } from "react-router-dom";
 
 function VastuExpert() {
   return (
@@ -50,7 +51,19 @@ function VastuExpert() {
       </section>
 
       {/* ABOUT */}
+<div className="service-links">
+  <Link to="/online-astrologer">
+    Online Astrology Consultation
+  </Link>
 
+  <Link to="/vastu-expert">
+    Vastu Expert Services
+  </Link>
+
+  <Link to="/astrologer-in-bangalore">
+    Astrology Services in Bangalore
+  </Link>
+</div>
       <section className="vastuSection">
 
         <h2>
