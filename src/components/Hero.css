@@ -365,3 +365,20 @@
   }
 
 }
+
+.mobileVideo{
+  display:none;
+}
+
+@media(max-width:768px){
+  .mobileVideo{
+    display:block;
+  }
+
+.mobileVideo video{
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
+  border-radius: 16px;
+}
+}

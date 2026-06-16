@@ -8,6 +8,7 @@ import Face from '../components/Face-reading';
 import Tantra from '../components/Tantra';
 
 import Services1 from '../components/Services1';
+import Astrologyservices from '../components/Astrologyservices';
 
 function Home() {
   return (
@@ -102,6 +103,7 @@ Best Astrologer in Bangalore | Online Astrology & Vastu Expert | MP Shastri
 
 </Helmet>
       <Hero />
+      <Astrologyservices/>
       <Services1/>
       <About/>
       <Contact/>

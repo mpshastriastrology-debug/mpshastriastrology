@@ -213,7 +213,37 @@ function Header() {
 
         </div>
 
+ <div className="dropdown">
 
+          <div className="dropdownTitle">
+
+            Top Services
+
+            <ChevronDown size={16} />
+
+          </div>
+
+          <div className="dropdownMenu">
+
+            <Link to="/astrologer-in-bangalore">
+              Astrologer in Bangalore
+            </Link>
+
+            <Link to="/astrologer-in-india">
+              Astrologer in india
+            </Link>
+
+            <Link to="/online-astrologer">
+              Online Astrologer
+            </Link>
+
+            <Link to="/vastu-expert">
+              Vastu Expert
+            </Link>
+
+          </div>
+
+        </div>
         <Link to="/blog">
           Gallery
         </Link>

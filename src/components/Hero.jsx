@@ -25,7 +25,16 @@ function Hero() {
         <span className="heroTag">
           ✦ Vedic Astrology & Spiritual Guidance
         </span>
-
+<div className="mobileVideo">
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+  >
+    <source src="/hanumanastrology.mp4" type="video/mp4" />
+  </video>
+</div>
         <h1>
   Best Astrologer in Bangalore | Online Astrology & Vastu Expert
 </h1>
