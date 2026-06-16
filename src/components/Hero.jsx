@@ -34,7 +34,7 @@ function Hero() {
   >
     <source src="/hanumanastrology.mp4" type="video/mp4" />
   </video>
-</div>
+</div><br/>
         <h1>
   Best Astrologer in Bangalore | Online Astrology & Vastu Expert
 </h1>
