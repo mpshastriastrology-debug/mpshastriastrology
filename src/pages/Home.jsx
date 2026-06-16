@@ -2,7 +2,7 @@ import Hero from '../components/Hero';
 import { Helmet } from "react-helmet";
 import About from '../components/About';
 import Contact from '../components/Contact';
-import Astrology from '../components/Astrology';
+
 import Vastu from '../components/Vastu';
 import Face from '../components/Face-reading';
 import Tantra from '../components/Tantra';
@@ -105,7 +105,7 @@ Best Astrologer in Bangalore | Online Astrology & Vastu Expert | MP Shastri
       <Services1/>
       <About/>
       <Contact/>
-<Astrology/>
+
 <Vastu/>
 <Face/>
 <Tantra/>

@@ -1,4 +1,5 @@
 import "./FaceReading.css";
+import { Link } from 'react-router-dom'
 
 function FaceReading() {
 
@@ -111,7 +112,23 @@ function FaceReading() {
       {/* SERVICES */}
 
       <div className="faceServices">
+<div className="service-links">
+    <Link to="/astrologer-in-bangalore">
+    Astrology Services in Bangalore
+  </Link>
+  <Link to="/online-astrologer">
+    Online Astrology Consultation
+  </Link>
 
+  <Link to="/vastu-expert">
+    Vastu Expert Services
+  </Link>
+
+  <Link to="/astrologer-in-india">
+    Best Astrologer in India
+  </Link>
+</div>
+<br/><br/>
         <div className="sectionHeading">
 
           <p>✦ FACE READING SERVICES</p>

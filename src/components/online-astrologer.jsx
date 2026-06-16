@@ -66,8 +66,8 @@ function OnlineAstrology() {
 
       </section>
 <div className="service-links">
-  <Link to="/online-astrologer">
-    Online Astrology Consultation
+  <Link to="/astrologer-in-bangalore">
+    Best Astrologer in Bangalore
   </Link>
 
   <Link to="/vastu-expert">

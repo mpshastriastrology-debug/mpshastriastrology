@@ -19,13 +19,16 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://your-backend-url.onrender.com/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
-      });
+      const res = await fetch(
+  `${import.meta.env.VITE_API_URL}/api/contact`,
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(form),
+  }
+);
 
       const data = await res.json();
 
@@ -154,7 +157,7 @@ function Contact() {
                 <FaMapMarkerAlt />
                 <div>
                   <h4>Office Address</h4>
-                  <p>Mahalakshmi Layout, Bangalore</p>
+                  <p>607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmipuram Layout, Mahalakshmi Layout, Bengaluru, Karnataka 560086</p>
                 </div>
               </div>
 

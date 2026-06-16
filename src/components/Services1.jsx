@@ -4,7 +4,7 @@ import { FaOm, FaHome, FaEye } from "react-icons/fa";
 import { GiMeditation } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import Astrology from '../components/Astrology';
 function Services() {
 
   const navigate = useNavigate();
@@ -38,6 +38,7 @@ function Services() {
           </div>
         </div>
       </section>
+            <Astrology/>
 
       {/* BENEFITS */}
       <section className="benefitsSection">

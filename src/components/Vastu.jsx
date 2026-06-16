@@ -1,4 +1,5 @@
 import "./Vastu.css";
+import { Link } from 'react-router-dom'
 
 function Vastu() {
 
@@ -111,7 +112,23 @@ function Vastu() {
       {/* SERVICES */}
 
       <div className="vastuServices">
+<div className="service-links">
+    <Link to="/astrologer-in-bangalore">
+    Astrology Services in Bangalore
+  </Link>
+  <Link to="/online-astrologer">
+    Online Astrology Consultation
+  </Link>
 
+  <Link to="/vastu-expert">
+    Vastu Expert Services
+  </Link>
+
+  <Link to="/astrologer-in-india">
+    Best Astrologer in India
+  </Link>
+</div>
+<br/><br/>
         <div className="sectionHeading">
 
           <p>✦ OUR VASTU SERVICES</p>
@@ -192,6 +209,166 @@ function Vastu() {
           </div>
 
         </div>
+        <section className="vastuImportance">
+
+  <div className="vastuImportanceContainer">
+
+    <div className="vastuImportanceHeader">
+      <p>✦ IMPORTANCE OF VASTU SHASTRA</p>
+
+      <h2>
+        Why Is Vastu Important for Homes, Offices and Businesses?
+      </h2>
+
+      <p>
+        Vastu Shastra is an ancient architectural science that focuses on
+        balancing natural energies within a property. A Vastu-compliant
+        environment can support peace, prosperity, growth and overall
+        well-being for individuals, families and businesses.
+      </p>
+    </div>
+
+    <div className="vastuBenefitsGrid">
+
+      <div className="vastuBox">
+        <h3>Financial Growth</h3>
+        <p>
+          Proper Vastu alignment may help create a positive environment
+          that supports financial stability, business growth and wealth
+          opportunities.
+        </p>
+      </div>
+
+      <div className="vastuBox">
+        <h3>Career Success</h3>
+        <p>
+          A balanced workplace can improve focus, productivity,
+          confidence and professional development.
+        </p>
+      </div>
+
+      <div className="vastuBox">
+        <h3>Family Harmony</h3>
+        <p>
+          Vastu principles aim to create a peaceful atmosphere that
+          encourages healthy family relationships and emotional balance.
+        </p>
+      </div>
+
+      <div className="vastuBox">
+        <h3>Health & Well-Being</h3>
+        <p>
+          Proper placement of rooms and energy flow can contribute to a
+          comfortable and positive living environment.
+        </p>
+      </div>
+
+    </div>
+
+    <div className="vastuDoshaSection">
+
+      <h2>
+        What Happens When Vastu Is Not Properly Balanced?
+      </h2>
+
+      <p>
+        According to Vastu beliefs, imbalances in a property's layout,
+        directions or energy flow may contribute to various challenges
+        in personal and professional life.
+      </p>
+
+      <div className="vastuProblems">
+
+        <div className="problemCard">
+          <span>💰</span>
+          <h4>Financial Challenges</h4>
+          <p>Unexpected expenses, financial instability or business difficulties.</p>
+        </div>
+
+        <div className="problemCard">
+          <span>💼</span>
+          <h4>Career Obstacles</h4>
+          <p>Delays in growth, lack of opportunities or workplace stress.</p>
+        </div>
+
+        <div className="problemCard">
+          <span>❤️</span>
+          <h4>Relationship Issues</h4>
+          <p>Frequent misunderstandings and lack of harmony among family members.</p>
+        </div>
+
+        <div className="problemCard">
+          <span>🏠</span>
+          <h4>Property Issues</h4>
+          <p>Construction delays, tenant problems or difficulties related to property matters.</p>
+        </div>
+
+        <div className="problemCard">
+          <span>📚</span>
+          <h4>Study & Focus Problems</h4>
+          <p>Difficulty concentrating, reduced productivity or learning challenges.</p>
+        </div>
+
+        <div className="problemCard">
+          <span>⚖️</span>
+          <h4>Business & Legal Concerns</h4>
+          <p>Partnership disputes, operational challenges or prolonged delays.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section className="vastuServicesSection">
+
+  <div className="sectionHeading">
+    <p>✦ VASTU CONSULTATION SERVICES</p>
+
+    <h2>
+      All Types of Vastu Consultation Services in Bangalore
+    </h2>
+
+    <p className="vastuDescription">
+      We provide expert Vastu consultation for homes, offices, apartments,
+      commercial properties, plots, factories, shops and businesses. Our
+      Vastu guidance helps improve financial growth, career success,
+      relationships, health and overall prosperity.
+    </p>
+  </div>
+
+  <div className="vastuServiceTags">
+
+    <span>Home Vastu Consultation</span>
+    <span>Apartment Vastu</span>
+    <span>Villa Vastu</span>
+    <span>New House Vastu</span>
+    <span>Plot Vastu Analysis</span>
+
+    <span>Office Vastu Consultation</span>
+    <span>Commercial Vastu</span>
+    <span>Shop Vastu</span>
+    <span>Factory Vastu</span>
+    <span>Warehouse Vastu</span>
+
+    <span>Business Vastu</span>
+    <span>Vastu Remedies</span>
+    <span>Vastu Defect Analysis</span>
+    <span>Vastu for Financial Growth</span>
+
+    <span>Vastu for Career Success</span>
+    <span>Vastu for Marriage Harmony</span>
+    <span>Vastu for Health</span>
+    <span>Vastu for Family Peace</span>
+
+    <span>Industrial Vastu</span>
+    <span>Residential Vastu</span>
+
+  </div>
+
+</section>
 
       </div>
 
