@@ -295,6 +295,7 @@
 
   transform:
   translate(-50%,-50%);
+  
 }
 
 /* MOBILE */
@@ -346,7 +347,7 @@
 
   .heroContent h1{
 
-    font-size:40px;
+    font-size:30px;
   }
 
   .heroContent p{
