@@ -1,12 +1,5 @@
 import Hero from '../components/Hero';
 import { Helmet } from "react-helmet";
-import About from '../components/About';
-import Contact from '../components/Contact';
-
-import Vastu from '../components/Vastu';
-import Face from '../components/Face-reading';
-import Tantra from '../components/Tantra';
-
 import Services1 from '../components/Services1';
 import Astrologyservices from '../components/Astrologyservices';
 
@@ -20,7 +13,7 @@ function Home() {
   "@context":"https://schema.org",
   "@type":"ProfessionalService",
   "name":"MP Shastri Astrology",
-  "telephone":"+919999999999",
+  "telephone":"+918073258799",
   "address":{
     "@type":"PostalAddress",
     "addressLocality":"Bangalore",
@@ -105,12 +98,6 @@ Best Astrologer in Bangalore | Online Astrology & Vastu Expert | MP Shastri
       <Hero />
       <Astrologyservices/>
       <Services1/>
-      <About/>
-      <Contact/>
-
-<Vastu/>
-<Face/>
-<Tantra/>
 
 
     </>
