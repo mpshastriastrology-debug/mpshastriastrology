@@ -126,7 +126,7 @@ function Header() {
   
 
         <Link to="/blog">
-          Gallary
+          Gallery
         </Link>
 
         <Link to="/contact">
