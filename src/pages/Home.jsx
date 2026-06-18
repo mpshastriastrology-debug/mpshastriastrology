@@ -10,12 +10,12 @@ function Home() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://mpshastriastrology.com/#localbusiness",
+        "@id": "https://www.mpshastriastrology.com/#localbusiness",
         "name": "MP Shastri Astrology",
-        "url": "https://mpshastriastrology.com/",
+        "url": "https://www.mpshastriastrology.com/",
         "telephone": "+918073258799",
         "priceRange": "$$",
-        "image": "https://mpshastriastrology.com/logo.png",
+        "image": "https://www.mpshastriastrology.com/logo.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Mahalakshmi Layout",
@@ -47,7 +47,7 @@ function Home() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://mpshastriastrology.com/#faq",
+        "@id": "https://www.mpshastriastrology.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -77,9 +77,9 @@ function Home() {
       },
       {
         "@type": "Product",
-        "@id": "https://mpshastriastrology.com/#product-consultation",
+        "@id": "https://www.mpshastriastrology.com/#product-consultation",
         "name": "Vedic Astrology & Vastu Consultation Services",
-        "image": "https://mpshastriastrology.com/MPShastriAstrology.webp",
+        "image": "https://www.mpshastriastrology.com/MPShastriAstrology.webp",
         "description": "Professional Vedic astrology chart readings, corporate business forecasting, compatibility matching, and traditional Vastu Shastra architectural assessments by Shri MP Shastri.",
         "brand": {
           "@type": "Brand",
@@ -124,16 +124,16 @@ function Home() {
           name="description"
           content="Consult MP Shastri for authentic Vedic astrology, accurate Kundali matching, and Vastu solutions in Bangalore. Book your online or in-person session today."
         />
-        <link rel="canonical" href="https://mpshastriastrology.com/" />
+        <link rel="canonical" href="https://www.mpshastriastrology.com/" />
 
         <meta property="og:title" content="Vedic Astrologer &amp; Vastu Consultant in Bangalore | MP Shastri" />
         <meta
           property="og:description"
           content="Get accurate life predictions, marriage matching, and home Vastu corrections from expert Bangalore astrologer MP Shastri."
         />
-        <meta property="og:url" content="https://mpshastriastrology.com/" />
+        <meta property="og:url" content="https://www.mpshastriastrology.com/" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://mpshastriastrology.com/og-image.jpg" />
+        <meta property="og:image" content="https://www.mpshastriastrology.com/og-image.jpg" />
 
         {/* This single script block injects all your SEO data perfectly */}
         <script type="application/ld+json">
