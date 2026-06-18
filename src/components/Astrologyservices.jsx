@@ -1,116 +1,112 @@
-
 import "./Astrology.css";
 import "./Services1.css";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Astrology() {
+  // Centralized data array makes handling clean alt tags and structured URLs infinitely easier
+  const servicesData = [
+    {
+      title: "Horoscope Reading",
+      desc: "Accurate Vedic birth chart analysis with personalized future predictions and practical remedies.",
+      img: "/topastronuts.avif",
+      alt: "Vedic birth chart and horoscope reading consultation",
+      path: "/services/horoscope-reading"
+    },
+    {
+      title: "Career Astrology",
+      desc: "Strategic guidance for employment choices, promotion timing, corporate growth, and business expansion.",
+      img: "/careerproblem.webp",
+      alt: "Professional career growth and business astrology consultation",
+      path: "/services/career-astrology"
+    },
+    {
+      title: "Marriage Matching",
+      desc: "Comprehensive Kundali matching and Guna Milan compatibility analysis for a blissful marital life.",
+      img: "/marriage-astrology.webp",
+      alt: "Vedic Kundali matching for marriage compatibility",
+      path: "/services/marriage-matching"
+    },
+    {
+      title: "Financial Solutions",
+      desc: "Astrological path corrections for debt relief, wealth preservation, and ancestral property stability.",
+      img: "/financialproblem.webp",
+      alt: "Astrological guidance for wealth management and financial stability",
+      path: "/services/financial-solutions"
+    },
+    {
+      title: "Love & Relationships",
+      desc: "Empathetic guidance to navigate personal relationships, emotional blocks, and partnership issues.",
+      img: "/loveproblem.webp",
+      alt: "Relationship counseling and planetary alignment solutions",
+      path: "/services/love-and-relationships"
+    },
+    {
+      title: "Family Conflict Resolution",
+      desc: "Resolve underlying domestic friction and restore long-term peace and harmony within your household.",
+      img: "/familyconflict.webp",
+      alt: "Spiritual healing solutions for family peace and harmony",
+      path: "/services/family-conflict-resolution"
+    },
+    {
+      title: "Business Astrology",
+      desc: "Analyze business charts to determine optimal times for partnerships, investments, and market launches.",
+      img: "/businessproblem.webp",
+      alt: "Commercial growth predictions and corporate business astrology",
+      path: "/services/business-astrology"
+    },
+    {
+      title: "Vastu Consultation",
+      desc: "Residential and commercial structural layout analysis to channel positive energy, peace, and abundance.",
+      img: "/vastuproblem.webp",
+      alt: "Traditional Indian Vastu Shastra consultation for homes and offices",
+      path: "/services/vastu-consultation"
+    },
+    {
+      title: "Numerology Analysis",
+      desc: "Align your identity through deep validation of life paths, name balancing, and signature adjustments.",
+      img: "/numerology.webp",
+      alt: "Name and birth-date numerology analysis",
+      path: "/services/numerology"
+    },
+    {
+      title: "Foreign Settlement",
+      desc: "Planetary combination assessment for overseas education, visa pathways, and international migration.",
+      img: "/foreign.webp",
+      alt: "Astrology tracking for immigration and international travel success",
+      path: "/services/foreign-settlement"
+    },
+    {
+      title: "Health Astrology",
+      desc: "Proactive, preventative tracking of physical energy pathways aligned with traditional planetary transits.",
+      img: "/healthproblem.webp",
+      alt: "Astrological analysis for health and physical well-being",
+      path: "/services/health-astrology"
+    }
+  ];
 
   return (
-    <section>{/* SERVICES */}
-<div className="astroServices">
-  <div className="sectionHeading">
-    <p>✦ OUR SPECIALITIES</p>
-    <h2>Astrology Services in Bangalore</h2>
-  </div>
+    <section>
+      <div className="astroServices">
+        <div className="sectionHeading">
+          <p>✦ OUR SPECIALITIES</p>
+          <h2>Comprehensive Astrology &amp; Vastu Consultations</h2>
+        </div>
 
-  <div className="astroServiceGrid">
-
-    <div className="astroCard">
-      <img src="/topastronuts.avif" alt="Horoscope Reading Astrology Service Bangalore" />
-      <div className="astroCardContent">
-        <h3>Horoscope Reading</h3>
-        <p>Accurate horoscope analysis with personalized future predictions and remedies.</p>
+        <div className="astroServiceGrid">
+          {servicesData.map((service, index) => (
+            <Link to={service.path} key={index} className="astroCardLink">
+              <div className="astroCard">
+                <img src={service.img} alt={service.alt} loading="lazy" />
+                <div className="astroCardContent">
+                  <h3>{service.title}</h3>
+                  <p>{service.desc}</p>
+                  <span className="readMoreLabel">Learn More &rarr;</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/careerproblem.webp" alt="Career Astrology Consultation Bangalore" />
-      <div className="astroCardContent">
-        <h3>Career Astrology</h3>
-        <p>Career guidance for jobs, promotions, business growth and success.</p>
-      </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/marriage-astrology.webp" alt="Marriage Matching Astrology Bangalore" />
-      <div className="astroCardContent">
-        <h3>Marriage Matching</h3>
-        <p>Kundali matching and compatibility analysis for successful marriages.</p>
-      </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/financialproblem.webp" alt="Financial Problem Astrology Bangalore" />
-      <div className="astroCardContent">
-        <h3>Financial Problem Solution</h3>
-        <p>Astrological guidance for debt relief, wealth growth and financial stability.</p>
-      </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/loveproblem.webp" alt="Love Problem Astrology Consultation Bangalore" />
-      <div className="astroCardContent">
-        <h3>Love Problem Solution</h3>
-        <p>Guidance for love life, relationships and emotional challenges.</p>
-      </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/relationship.webp" alt="Relationship Problem Astrology Bangalore" />
-      <div className="astroCardContent">
-        <h3>Relationship Problems</h3>
-        <p>Resolve misunderstandings and strengthen personal relationships.</p>
-      </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/familyconflict.webp" alt="Family Conflict Astrology Bangalore" />
-      <div className="astroCardContent">
-        <h3>Family Conflict Resolution</h3>
-        <p>Astrological guidance for family harmony and peaceful relationships.</p>
-      </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/businessproblem.webp" alt="Business Astrology Consultation Bangalore" />
-      <div className="astroCardContent">
-        <h3>Business Astrology</h3>
-        <p>Business growth, investment and partnership guidance through astrology.</p>
-      </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/vastuproblem.webp" alt="Vastu Consultation Bangalore" />
-      <div className="astroCardContent">
-        <h3>Vastu Consultation</h3>
-        <p>Residential and commercial Vastu solutions for prosperity and success.</p>
-      </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/numerology.webp" alt="Numerology Consultation Bangalore" />
-      <div className="astroCardContent">
-        <h3>Numerology Consultation</h3>
-        <p>Name, mobile number and date-of-birth numerology analysis.</p>
-      </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/foreign.webp" alt="Foreign Settlement Astrology Bangalore" />
-      <div className="astroCardContent">
-        <h3>Foreign Settlement</h3>
-        <p>Guidance for overseas education, jobs, travel and immigration.</p>
-      </div>
-    </div>
-
-    <div className="astroCard">
-      <img src="/healthproblem.webp" alt="Health Astrology Guidance Bangalore" />
-      <div className="astroCardContent">
-        <h3>Health Astrology</h3>
-        <p>Health-related astrological analysis and preventive guidance.</p>
-      </div>
-    </div>
-    </div></div>
     </section>
   );
 }

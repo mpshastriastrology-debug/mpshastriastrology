@@ -2,52 +2,47 @@ import { Link } from 'react-router-dom'
 import './Hero.css'
 
 function Hero() {
-
   return (
-
     <section className="heroSection">
-
       {/* SPINNING CIRCLE */}
-
       <div className="heroCircle">
-
         <img
           src="/MPShastriAstrology.webp"
-          alt="Best Astrologer in Bangalore MP Shastri"
+          alt="Shri MP Shastri - Vedic Astrologer and Vastu Expert" // Natural alt text over stuffed keyword string
         />
-
       </div>
 
       {/* LEFT CONTENT */}
-
       <div className="heroContent">
-
         <span className="heroTag">
           ✦ Vedic Astrology & Spiritual Guidance
         </span>
-<div className="mobileVideo">
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-  >
-    <source src="/hanumanastrology.mp4" type="video/mp4" />
-  </video>
-</div><br/><br/>
-        <h1>
-  Best Astrologer in Bangalore | Online Astrology & Vastu Expert
-</h1>
+        
+        <div className="mobileVideo">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/hanumanastrology.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <br/><br/>
 
+        {/* Clean, high-authority header targeting your top local intent phrase */}
+        <h1>
+          Vedic Astrologer & Vastu Expert in Bangalore
+        </h1>
+
+        {/* Persuasive copy that hits multiple keyword intents naturally while maintaining professional E-E-A-T */}
         <p>
-  Consult MP Shastri, a trusted astrologer in Bangalore offering
-  online astrology consultation, vastu guidance, numerology,
-  marriage prediction, career astrology and spiritual solutions
-  across India.
-</p>
+          Find clarity and alignment in your life. Shri MP Shastri provides trusted, 
+          insightful solutions across India for career growth, marriage compatibility, 
+          and home Vastu corrections through both online and in-person consultations.
+        </p>
 
         <div className="heroButtons">
-
           <Link to="/contact">
             <button className="primaryHeroBtn">
               Book Consultation
@@ -59,13 +54,10 @@ function Hero() {
               Explore Services
             </button>
           </Link>
-
         </div>
 
         {/* STATS */}
-
         <div className="heroStats">
-
           <div className="statCard">
             <h3>17+</h3>
             <p>Years Experience</p>
@@ -80,26 +72,18 @@ function Hero() {
             <h3>98%</h3>
             <p>Positive Feedback</p>
           </div>
-
         </div>
-
       </div>
 
       {/* RIGHT IMAGE 
-
       <div className="heroImage">
-
         <div className="imageGlow"></div>
-
         <img
           src="/logo1.png"
           alt="MP Shastri"
         />
-
       </div>*/}
-
     </section>
-
   )
 }
 
