@@ -3,51 +3,68 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
 
 function Contact() {
-  const [form, setForm] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    service: "",
-    message: ""
-  });
+const [form, setForm] = useState({
+  name: "",
+  phone: "",
+  email: "",
+  service: "",
+  message: ""
+});
+
+const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      const res = await fetch(
-  `${import.meta.env.VITE_API_URL}/api/contact`,
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(form),
-  }
-);
+  if (loading) return;
 
-      const data = await res.json();
+  setLoading(true);
 
-      if (data.success) {
-        alert("Appointment booked successfully!");
-        setForm({
-          name: "",
-          phone: "",
-          email: "",
-          service: "",
-          message: ""
-        });
-      } else {
-        alert("Something went wrong!");
+  try {
+
+    console.log("API URL:", import.meta.env.VITE_API_URL);
+    const res = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/contact`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
       }
-    } catch (error) {
-      alert("Server error. Please try again later.");
+    );
+
+    if (!res.ok) {
+  const errorData = await res.json();
+  throw new Error(errorData.error || "Server Error");
+}
+
+const data = await res.json();
+
+    if (data.success) {
+      alert("Appointment booked successfully!");
+
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        service: "",
+        message: "",
+      });
+    } else {
+      alert(data.error || "Something went wrong!");
     }
-  };
+  } catch (error) {
+  console.error("Contact Form Error:", error);
+  alert(error.message || "Server error. Please try again later.");
+} finally {
+    setLoading(false);
+  }
+};
 
   return (
     <section className="contactSection">
@@ -125,10 +142,9 @@ function Contact() {
               required
             />
 
-            <button type="submit">
-              Book Consultation
-            </button>
-
+<button type="submit" disabled={loading}>
+  {loading ? "Submitting..." : "Book Consultation"}
+</button>
           </form>
 
         </div>
