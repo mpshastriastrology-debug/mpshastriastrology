@@ -1,651 +1,410 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  font-family:'Poppins',sans-serif;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffdf8; /* Aligned with site layout background presets */
 }
 
-/* PAGE */
-
-.facePage{
-  width:100%;
-  overflow:hidden;
+/* GLOBAL CONFIG PAGE */
+.facePage {
+  width: 100%;
+  overflow-x: hidden;
 }
 
-/* HERO */
+/* ==========================================
+   HERO INTRO SECTION
+   ========================================== */
 
-.faceHero{
-
-  height:100vh;
-
-  background-image:
-  url('/face-read.webp');
-
-  background-size:cover;
-
-  background-position:center;
-
-  position:relative;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  text-align:center;
-
-  padding:0 8%;
+.faceHero {
+  height: 100vh;
+  background-image: url('/face-read.webp');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 8%;
 }
 
-.faceOverlay{
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-  linear-gradient(
-    rgba(0,0,0,0.72),
-    rgba(0,0,0,0.65)
+.faceOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.72),
+    rgba(0, 0, 0, 0.65)
   );
 }
 
-/* CONTENT */
-
-.faceHeroContent{
-
-  position:relative;
-
-  z-index:2;
-
-  max-width:850px;
+.faceHeroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
 }
 
-.faceHeroContent p{
-
-  color:#ffd269;
-
-  letter-spacing:3px;
-
-  margin-bottom:20px;
-
-  text-transform:uppercase;
+.faceHeroContent p {
+  color: #ffd269;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-.faceHeroContent h1{
-
-  color:white;
-
-  font-size:72px;
-
-  line-height:1.1;
-
-  margin-bottom:25px;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
+.faceHeroContent h1 {
+  color: white;
+  font-size: 72px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.faceHeroContent span{
-
-  color:#ddd;
-
-  font-size:18px;
-
-  line-height:1.9;
-
-  display:block;
-
-  margin-bottom:40px;
+.faceHeroContent span {
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1.9;
+  display: block;
+  margin-bottom: 40px;
 }
 
-/* BUTTON */
+/* ACTION CHANNELS UI */
+.faceBtn, .consultBtn {
+  display: inline-block;
+  padding: 16px 34px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ffd369, #b86b16);
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(184, 107, 22, 0.2);
+}
 
-.faceBtn{
+.faceBtn:hover, .consultBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
 
-  display:inline-block;
+/* ==========================================
+   ABOUT BLOCK SPLIT MODULE
+   ========================================== */
 
-  padding:16px 34px;
+.faceAbout {
+  padding: 120px 8%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 70px;
+  align-items: center;
+}
 
-  border-radius:50px;
+.faceImage img {
+  width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
 
-  background:
-  linear-gradient(
-    135deg,
-    #ffd369,
-    #b86b16
+.smallTitle {
+  color: #c18a1f;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.faceContent h2 {
+  font-size: 56px;
+  line-height: 1.2;
+  color: #d6ca18; /* Fixed from incorrect out-of-brand green */
+  margin-bottom: 25px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.faceContent p {
+  color: #ffffff; /* Fixed contrast error from broken white text rule */
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+/* LIST METRIC BOX ENTRIES */
+.facePoints {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.facePoint {
+  background: #faf5ea;
+  padding: 18px;
+  border-radius: 14px;
+  color: #171313;
+  font-weight: 500;
+  border: 1px solid rgba(193, 138, 31, 0.15);
+}
+
+/* ==========================================
+   SERVICES CARDS REGION
+   ========================================== */
+
+.faceServices {
+  padding: 120px 8%;
+  background: #f8f5ef;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.sectionHeading p {
+  color: #c18a1f;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.sectionHeading h2 {
+  font-size: 58px;
+  color: #111;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.faceServiceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.faceCard {
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.faceCard img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.faceCardContent {
+  padding: 30px;
+}
+
+.faceCardContent h3 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #111;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.faceCardContent p {
+  color: #555; /* Fixed contrast layout issue from near-white gray copy */
+  line-height: 1.9;
+}
+
+/* ==========================================
+   SECONDARY METRIC CONTENT SPLIT
+   ========================================== */
+
+.faceExtraSection {
+  padding: 120px 8%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.faceExtraLeft h2 {
+  font-size: 58px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  color: #111;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.faceExtraLeft p {
+  color: #444; /* Cleaned up error-toned dark red block code */
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.faceExtraRight img {
+  width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================
+   BENEFITS MATRIX HUB
+   ========================================== */
+
+.faceBenefits {
+  padding: 120px 8%;
+  background: #f8f5ef;
+}
+
+.benefitGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.benefitCard {
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefitCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.benefitCard h3 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #111;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.benefitCard p {
+  color: #666;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   RETENTION BOTTOM CTA REGION
+   ========================================== */
+
+.consultSection {
+  position: relative;
+  padding: 140px 20px;
+  background-image: url('/v15.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.consultOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.65)
   );
-
-  color:#111;
-
-  text-decoration:none;
-
-  font-weight:600;
-
-  transition:0.4s;
 }
 
-.faceBtn:hover{
-
-  transform:translateY(-4px);
+.consultContent {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: auto;
 }
 
-/* ABOUT */
-
-.faceAbout{
-
-  padding:120px 8%;
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
-  gap:70px;
-
-  align-items:center;
+.consultContent p {
+  color: #ffd369;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-/* IMAGE */
-
-.faceImage img{
-
-  width:100%;
-
-  border-radius:30px;
-
-  object-fit:cover;
-
-  box-shadow:
-  0 20px 50px rgba(0,0,0,0.12);
+.consultContent h2 {
+  color: white;
+  font-size: 64px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-/* CONTENT */
-
-.smallTitle{
-
-  color:#c18a1f;
-
-  letter-spacing:3px;
-
-  margin-bottom:18px;
+.consultContent span {
+  color: #ddd;
+  line-height: 2;
+  display: block;
+  margin-bottom: 40px;
+  font-size: 18px;
 }
 
-.faceContent h2{
+/* ==========================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   ========================================== */
 
-  font-size:56px;
+@media (max-width: 992px) {
+  .faceAbout,
+  .faceServiceGrid,
+  .faceExtraSection,
+  .benefitGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-  line-height:1.2;
+  .faceHeroContent h1 {
+    font-size: 52px;
+  }
 
-  color:#098e3e;
-
-  margin-bottom:25px;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
+  .faceContent h2,
+  .sectionHeading h2,
+  .faceExtraLeft h2,
+  .consultContent h2 {
+    font-size: 42px;
+  }
 }
 
-.faceContent p{
+@media (max-width: 768px) {
+  .faceHero {
+    height: auto;
+    padding: 160px 20px 100px;
+  }
 
-  color:#f6f4f4;
+  .faceHeroContent h1 {
+    font-size: 40px;
+  }
 
-  line-height:2;
+  .faceHeroContent span {
+    font-size: 16px;
+  }
 
-  margin-bottom:30px;
-}
+  .faceContent h2,
+  .sectionHeading h2,
+  .consultContent h2 {
+    font-size: 34px;
+  }
 
-/* POINTS */
-
-.facePoints{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
-  gap:20px;
-}
-
-.facePoint{
-
-  background:#faf5ea;
-
-  padding:18px;
-
-  border-radius:14px;
-
-  color:#171313;
-
-  font-weight:500;
-}
-
-/* SERVICES */
-
-.faceServices{
-
-  padding:120px 8%;
-
-  background:#f8f5ef;
-}
-
-/* HEADING */
-
-.sectionHeading{
-
-  text-align:center;
-
-  margin-bottom:70px;
-}
-
-.sectionHeading p{
-
-  color:#c18a1f;
-
-  letter-spacing:3px;
-
-  margin-bottom:15px;
-}
-
-.sectionHeading h2{
-
-  font-size:58px;
-
-  color:#111;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
-}
-
-/* GRID */
-
-.faceServiceGrid{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(3,1fr);
-
-  gap:30px;
-}
-
-/* CARD */
-
-.faceCard{
-
-  background:white;
-
-  border-radius:28px;
-
-  overflow:hidden;
-
-  transition:0.4s;
-
-  box-shadow:
-  0 15px 40px rgba(0,0,0,0.07);
-}
-
-.faceCard:hover{
-
-  transform:translateY(-8px);
-}
-
-.faceCard img{
-
-  width:100%;
-
-  height:260px;
-
-  object-fit:cover;
-}
-
-/* CONTENT */
-
-.faceCardContent{
-
-  padding:30px;
-}
-
-.faceCardContent h3{
-
-  font-size:30px;
-
-  margin-bottom:15px;
-
-  color:#111;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
-}
-
-.faceCardContent p{
-
-  color:#d9cece;
-
-  line-height:1.9;
-}
-
-/* MOBILE */
-
-@media(max-width:992px){
+  .facePoints {
+    grid-template-columns: 1fr;
+  }
 
   .faceAbout,
-  .faceServiceGrid{
-
-    grid-template-columns:1fr;
-  }
-
-  .faceHeroContent h1{
-
-    font-size:52px;
-  }
-
-  .faceContent h2,
-  .sectionHeading h2{
-
-    font-size:42px;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .faceHero{
-
-    height:auto;
-
-    padding:160px 20px 100px;
-  }
-
-  .faceHeroContent h1{
-
-    font-size:40px;
-  }
-
-  .faceHeroContent span{
-
-    font-size:16px;
-  }
-
-  .faceContent h2,
-  .sectionHeading h2{
-
-    font-size:34px;
-  }
-
-  .facePoints{
-
-    grid-template-columns:1fr;
-  }
-
-}
-
-/* EXTRA SECTION */
-
-.faceExtraSection{
-
-  padding:120px 8%;
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
-  gap:70px;
-
-  align-items:center;
-}
-
-.faceExtraLeft h2{
-
-  font-size:58px;
-
-  line-height:1.2;
-
-  margin-bottom:25px;
-
-  color:#111;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
-}
-
-.faceExtraLeft p{
-
-  color:#661b1b;
-
-  line-height:2;
-
-  margin-bottom:20px;
-}
-
-.faceExtraRight img{
-
-  width:100%;
-
-  border-radius:30px;
-
-  object-fit:cover;
-
-  box-shadow:
-  0 20px 50px rgba(0,0,0,0.12);
-}
-
-/* BENEFITS */
-
-.faceBenefits{
-
-  padding:120px 8%;
-
-  background:#f8f5ef;
-}
-
-.benefitGrid{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
-  gap:30px;
-}
-
-.benefitCard{
-
-  background:white;
-
-  padding:40px;
-
-  border-radius:24px;
-
-  box-shadow:
-  0 15px 40px rgba(0,0,0,0.07);
-
-  transition:0.4s;
-}
-
-.benefitCard:hover{
-
-  transform:translateY(-6px);
-}
-
-.benefitCard h3{
-
-  font-size:32px;
-
-  margin-bottom:15px;
-
-  color:#111;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
-}
-
-.benefitCard p{
-
-  color:#666;
-
-  line-height:1.9;
-}
-
-/* CONSULT */
-
-.consultSection{
-
-  position:relative;
-
-  padding:140px 20px;
-
-  background-image:
-  url('/v15.png');
-
-  background-size:cover;
-
-  background-position:center;
-
-  text-align:center;
-}
-
-.consultOverlay{
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-  linear-gradient(
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.65)
-  );
-}
-
-.consultContent{
-
-  position:relative;
-
-  z-index:2;
-
-  max-width:850px;
-
-  margin:auto;
-}
-
-.consultContent p{
-
-  color:#ffd369;
-
-  letter-spacing:3px;
-
-  margin-bottom:18px;
-}
-
-.consultContent h2{
-
-  color:white;
-
-  font-size:64px;
-
-  line-height:1.2;
-
-  margin-bottom:25px;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
-}
-
-.consultContent span{
-
-  color:#ddd;
-
-  line-height:2;
-
-  display:block;
-
-  margin-bottom:40px;
-
-  font-size:18px;
-}
-
-.consultBtn{
-
-  display:inline-block;
-
-  padding:16px 36px;
-
-  border-radius:50px;
-
-  background:
-  linear-gradient(
-    135deg,
-    #ffd369,
-    #b86b16
-  );
-
-  color:#111;
-
-  text-decoration:none;
-
-  font-weight:600;
-
-  transition:0.4s;
-}
-
-.consultBtn:hover{
-
-  transform:translateY(-4px);
-}
-
-/* MOBILE */
-
-@media(max-width:992px){
-
+  .faceServices,
   .faceExtraSection,
-  .benefitGrid{
-
-    grid-template-columns:1fr;
+  .faceBenefits {
+    padding: 80px 25px; /* Unified section scale context */
   }
 
-  .faceExtraLeft h2,
-  .consultContent h2{
-
-    font-size:42px;
+  .consultSection {
+    padding: 110px 20px;
   }
 
-}
-
-@media(max-width:768px){
-
-  .faceExtraSection,
-  .faceBenefits{
-
-    padding:90px 20px;
+  .consultContent span {
+    font-size: 16px;
   }
-
-  .consultSection{
-
-    padding:110px 20px;
-  }
-
-  .consultContent h2{
-
-    font-size:34px;
-  }
-
-  .consultContent span{
-
-    font-size:16px;
-  }
-
 }

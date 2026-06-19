@@ -27,12 +27,15 @@ function Hero() {
           >
             <source src="/hanumanastrology.mp4" type="video/mp4" />
           </video>
-        </div>
+<a href="tel:+918073258799" className="astroCallBox">
+  <span> Call Now</span>
+  <strong>+91 80732 58799</strong>
+</a>        </div>
         <br/><br/>
 
         {/* Clean, high-authority header targeting your top local intent phrase */}
         <h1>
-                   +91 80732 58799<br/><br/> Vedic Astrologer & Vastu Expert in Bangalore
+                   Vedic Astrologer & Vastu Expert in Bangalore
         </h1>
 
         {/* Persuasive copy that hits multiple keyword intents naturally while maintaining professional E-E-A-T */}

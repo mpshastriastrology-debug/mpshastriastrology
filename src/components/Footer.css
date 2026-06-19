@@ -1,146 +1,129 @@
+/* Note: Move the @import font link to your public/index.html head to reduce render-blocking time */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
-.footer{
-  background:#f8f5ef;
-  padding:70px 8%;
-  border-top:1px solid #d6b07b;
+.footer {
+  background: #f8f5ef;
+  padding: 70px 8%;
+  border-top: 1px solid #d6b07b;
 }
 
-/* TOP */
-
-.footerTop{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:50px;
-
-  padding-bottom:50px;
-  border-bottom:1px solid #d6b07b;
+/* TOP GRID LAYOUT */
+.footerTop {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #d6b07b;
 }
 
-/* BOX */
-
-.footerBox h3{
-  color:#b27b31;
-  font-size:28px;
-  margin-bottom:30px;
-  font-family:'Cormorant Garamond', serif;
-  font-weight:600;
+/* SECTION TITLES */
+.footerBox h3 {
+  color: #b27b31;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
 }
 
-/* LINKS */
-
-.footerBox a{
-  display:block;
-  text-decoration:none;
-  color:#111;
-  margin-bottom:18px;
-  font-size:15px;
-  font-family:'Poppins', sans-serif;
-  transition:0.3s;
+/* NAVIGATION ANCHORS */
+.footerBox a {
+  display: block;
+  text-decoration: none;
+  color: #111;
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease, padding 0.3s ease; /* Optimized transition performance profile */
 }
 
-.footerBox a:hover{
-  color:#c38b3c;
-  padding-left:5px;
+.footerBox a:hover {
+  color: #c38b3c;
+  padding-left: 5px;
 }
 
-/* CONTACT */
-
-.footerItem{
-  display:flex !important;
-  gap:15px;
-  align-items:flex-start;
+/* INLINE CONTACT LAYOUT ELEMENTS */
+.footerItem {
+  display: flex !important;
+  gap: 15px;
+  align-items: center; /* Adjusted from flex-start to prevent vertical text misalignment */
 }
 
-.footerItem svg{
-  color:#ff3b5f;
-  margin-top:4px;
-  font-size:18px;
+.footerItem svg {
+  color: #ff3b5f;
+  font-size: 18px;
 }
 
-/* BOTTOM */
-
-.footerBottom{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding-top:35px;
-  gap:20px;
-  flex-wrap:wrap;
+/* BOTTOM SUMMARY CONTAINER */
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 35px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-/* LOGO */
-
-.footerLogo h2{
-  font-size:40px;
-  color:#111;
-  font-family:'Cormorant Garamond', serif;
+/* LOGO SIGNATURE */
+.footerLogo h2 {
+  font-size: 40px;
+  color: #111;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-/* COPYRIGHT */
-
-.footerBottom p{
-  color:#111;
-  font-size:15px;
-  font-family:'Poppins', sans-serif;
+/* COPYRIGHT NOTICE */
+.footerBottom p {
+  color: #111;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* SOCIAL */
-
-.socialIcons{
-  display:flex;
-  gap:15px;
+/* BRAND SOCIAL LINKS Layout */
+.socialIcons {
+  display: flex;
+  gap: 15px;
 }
 
-.socialIcons a{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  background:#ff2e63;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  color:white;
-  font-size:18px;
-
-  transition:0.4s;
+.socialIcons a {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ff2e63;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  transition: transform 0.4s ease, background-color 0.4s ease;
 }
 
-.socialIcons a:hover{
-  transform:translateY(-5px) scale(1.08);
-  background:#111;
+.socialIcons a:hover {
+  transform: translateY(-5px) scale(1.08);
+  background: #111;
 }
 
-/* MOBILE */
+/* MOBILE MEDIA QUERY BREAKPOINTS */
+@media (max-width: 1000px) {
+  .footerTop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-@media(max-width:1000px){
-
-  .footerTop{
-    grid-template-columns:repeat(2,1fr);
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 25px;
   }
 
-}
-
-@media(max-width:768px){
-
-  .footer{
-    padding:60px 25px;
+  .footerTop {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
-  .footerTop{
-    grid-template-columns:1fr;
-    gap:40px;
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .footerBottom{
-    flex-direction:column;
-    text-align:center;
+  .footerLogo h2 {
+    font-size: 34px;
   }
-
-  .footerLogo h2{
-    font-size:34px;
-  }
-
 }

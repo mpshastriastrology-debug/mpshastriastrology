@@ -1,252 +1,116 @@
 import "./Navbar.css";
-
 import { Link } from "react-router-dom";
-
-import {
-  Phone,
-  ChevronDown,
-  Menu,
-  X
-} from "lucide-react";
-
+import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 function Header() {
-
   const [mobileMenu, setMobileMenu] = useState(false);
 
+  // Helper function to auto-collapse the drawer when a link is clicked
+  const closeMenu = () => setMobileMenu(false);
+
   return (
-
     <header className="header">
-
       {/* LOGO */}
-
-      <Link
-        to="/"
-        className="headerLogo"
-      >
-
+      <Link to="/" className="headerLogo" onClick={closeMenu}>
         <div className="logoCircle">
-
           <img
             src="/MPShastriLogo.webp"
             alt="MP Shastri Logo"
           />
-
         </div>
-
         <div className="logoText">
-
           <h2>MP Shastri</h2>
-
-          <span>Astrology & Vastu</span>
-
+          <span>Astrology &amp; Vastu</span>
         </div>
-
       </Link>
 
       {/* DESKTOP MENU */}
-
       <nav className="headerMenu">
-
         <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
 
-        <Link to="/about">
-          About
-        </Link>
-
-        {/* DROPDOWN */}
-
+        {/* CORE SERVICES DROPDOWN */}
         <div className="dropdown">
-
           <div className="dropdownTitle">
-
             Services
-
             <ChevronDown size={16} />
-
           </div>
-
           <div className="dropdownMenu">
-
-            <Link to="/astrology">
-              Astrology
-            </Link>
-
-            <Link to="/vastu">
-              Vastu
-            </Link>
-
-            <Link to="/face-reading">
-              Face Reading
-            </Link>
-
-            <Link to="/tantra">
-              Tantra
-            </Link>
-
+            <Link to="/astrology">Astrology</Link>
+            <Link to="/vastu">Vastu</Link>
+            <Link to="/face-reading">Face Reading</Link>
+            <Link to="/tantra">Tantra</Link>
           </div>
-
         </div>
 
- {/* DROPDOWN */}
-
+        {/* SEO TOP TARGETED SERVICES DROPDOWN */}
         <div className="dropdown">
-
           <div className="dropdownTitle">
-
-           Top Services
-
+            Top Services
             <ChevronDown size={16} />
-
           </div>
-
           <div className="dropdownMenu">
-
-            <Link to="/astrologer-in-bangalore">
-              Astrologer in Bangalore
-            </Link>
-
-            <Link to="/astrologer-in-india">
-              Astrologer in india
-            </Link>
-
-            <Link to="/online-astrologer">
-              Online Astrologer
-            </Link>
-
-            <Link to="/vastu-expert">
-              Vastu Expert
-            </Link>
-
+            <Link to="/astrologer-in-bangalore">Astrologer in Bangalore</Link>
+            <Link to="/astrologer-in-india">Astrologer in India</Link>
+            <Link to="/online-astrologer">Online Astrologer</Link>
+            <Link to="/vastu-expert">Vastu Expert</Link>
           </div>
-
         </div>
 
-  
-
-        <Link to="/contact">
-          Contact
-        </Link>
-
+        <Link to="/contact">Contact</Link>
       </nav>
 
       {/* CALL BUTTON */}
-
-      <a
-        href="tel:+918073258799"
-        className="headerCall"
-      >
-
+      <a href="tel:+918073258799" className="headerCall">
         <Phone size={18} />
-
         +91 80732 58799
-
       </a>
 
-      {/* MOBILE BUTTON */}
-
+      {/* MOBILE HAMBURGER BUTTON */}
       <button
         className="mobileMenuBtn"
-        onClick={() =>
-          setMobileMenu(!mobileMenu)
-        }
+        onClick={() => setMobileMenu(!mobileMenu)}
+        aria-label="Toggle navigation menu"
       >
-
         {mobileMenu ? <X /> : <Menu />}
-
       </button>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE DRAWER OVERLAY */}
+      <div className={mobileMenu ? "mobileMenu showMenu" : "mobileMenu"}>
+        <Link to="/" onClick={closeMenu}>Home</Link>
+        <Link to="/about" onClick={closeMenu}>About</Link>
 
-      <div
-        className={
-          mobileMenu
-            ? "mobileMenu showMenu"
-            : "mobileMenu"
-        }
-      >
-
-        <Link to="/">
-          Home
-        </Link>
-
-        <Link to="/about">
-          About
-        </Link>
-
-        {/* DROPDOWN */}
-
+        {/* MOBILE SERVICES STACK */}
         <div className="dropdown">
-
           <div className="dropdownTitle">
-
             Services
-
             <ChevronDown size={16} />
-
           </div>
-
           <div className="dropdownMenu">
-
-            <Link to="/astrology">
-              Astrology
-            </Link>
-
-            <Link to="/vastu">
-              Vastu
-            </Link>
-
-            <Link to="/face-reading">
-              Face Reading
-            </Link>
-
-            <Link to="/tantra">
-              Tantra
-            </Link>
-
+            <Link to="/astrology" onClick={closeMenu}>Astrology</Link>
+            <Link to="/vastu" onClick={closeMenu}>Vastu</Link>
+            <Link to="/face-reading" onClick={closeMenu}>Face Reading</Link>
+            <Link to="/tantra" onClick={closeMenu}>Tantra</Link>
           </div>
-
         </div>
 
- <div className="dropdown">
-
+        {/* MOBILE SEO TARGETS STACK */}
+        <div className="dropdown">
           <div className="dropdownTitle">
-
             Top Services
-
             <ChevronDown size={16} />
-
           </div>
-
           <div className="dropdownMenu">
-
-            <Link to="/astrologer-in-bangalore">
-              Astrologer in Bangalore
-            </Link>
-
-            <Link to="/astrologer-in-india">
-              Astrologer in india
-            </Link>
-
-            <Link to="/online-astrologer">
-              Online Astrologer
-            </Link>
-
-            <Link to="/vastu-expert">
-              Vastu Expert
-            </Link>
-
+            <Link to="/astrologer-in-bangalore" onClick={closeMenu}>Astrologer in Bangalore</Link>
+            <Link to="/astrologer-in-india" onClick={closeMenu}>Astrologer in India</Link>
+            <Link to="/online-astrologer" onClick={closeMenu}>Online Astrologer</Link>
+            <Link to="/vastu-expert" onClick={closeMenu}>Vastu Expert</Link>
           </div>
-
         </div>
 
-        <Link to="/contact">
-          Contact
-        </Link>
-
-      </div>
-
+        <Link to="/contact" onClick={closeMenu}>Contact</Link>
+      </div> {/* <-- Fixed to matching closing div tag here */}
     </header>
   );
 }

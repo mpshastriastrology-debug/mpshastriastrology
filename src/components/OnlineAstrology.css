@@ -4,8 +4,7 @@
   background: #fffdf8;
 }
 
-/* HERO SECTION */
-
+/* HERO SECTION WRAPPER */
 .onlineAstrologyHero {
   background: linear-gradient(
     180deg,
@@ -31,6 +30,7 @@
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 25px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .onlineAstrologyHeroTitle {
@@ -38,6 +38,7 @@
   color: #5a3a00;
   margin-bottom: 25px;
   line-height: 1.2;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .onlineAstrologyHeroDesc {
@@ -46,8 +47,10 @@
   font-size: 22px;
   line-height: 1.8;
   color: #5f5f5f;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* BUTTON CONTROLS */
 .onlineAstrologyButtons {
   margin-top: 40px;
   display: flex;
@@ -63,26 +66,29 @@
   border-radius: 10px;
   font-size: 18px;
   font-weight: 600;
-  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Explicit hardware acceleration */
 }
 
 .onlineAstrologyCallBtn {
   background: #d4a017;
   color: white;
+  box-shadow: 0 4px 15px rgba(212, 160, 23, 0.2);
 }
 
 .onlineAstrologyWhatsappBtn {
   background: #25d366;
   color: white;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
 }
 
 .onlineAstrologyCallBtn:hover,
 .onlineAstrologyWhatsappBtn:hover {
   transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* CONTENT SECTIONS */
-
+/* GENERAL BLOCK CONTENT COMPONENTS */
 .onlineAstrologySection {
   max-width: 1200px;
   margin: auto;
@@ -94,6 +100,7 @@
   font-size: 42px;
   color: #5a3a00;
   margin-bottom: 25px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .onlineAstrologySection p {
@@ -101,13 +108,13 @@
   font-size: 18px;
   line-height: 1.9;
   color: #555;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* CARDS */
-
+/* LAYOUT CARDS DESIGN SYSTEM */
 .onlineAstrologyGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   margin-top: 50px;
 }
@@ -118,22 +125,23 @@
   border-radius: 15px;
   text-align: center;
   border: 1px solid #f1e0b5;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
 .onlineAstrologyCard h3 {
   color: #7b5200;
   margin-bottom: 15px;
   font-size: 24px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .onlineAstrologyCard p {
   color: #666;
   line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* CTA SECTION */
-
+/* PRIMARY RETENTION CTA MODULE */
 .onlineAstrologyCTA {
   background: linear-gradient(
     135deg,
@@ -148,6 +156,7 @@
   color: white;
   font-size: 42px;
   margin-bottom: 20px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .onlineAstrologyCTA p {
@@ -156,6 +165,7 @@
   margin: auto;
   line-height: 1.8;
   font-size: 18px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .onlineAstrologyCTA a {
@@ -167,10 +177,16 @@
   border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* MOBILE */
+.onlineAstrologyCTA a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
 
+/* RESPONSIFICATION BREAKPOINTS MEDIA CONTROL */
 @media (max-width: 768px) {
   .onlineAstrologyHeroTitle {
     font-size: 36px;

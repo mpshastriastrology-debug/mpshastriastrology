@@ -1,5 +1,4 @@
 import "./Footer.css";
-
 import {
   FaFacebookF,
   FaInstagram,
@@ -9,119 +8,81 @@ import {
   FaPhoneAlt,
   FaEnvelope,
 } from "react-icons/fa";
-
 import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <footer className="footer">
-
-      {/* TOP */}
-
+      {/* TOP CONFIGURATION ROW */}
       <div className="footerTop">
-
-        {/* CONTACT */}
-
+        {/* CONTACT DATA MODULE */}
         <div className="footerBox">
-
           <h3>CONTACT INFO</h3>
-
           <a href="tel:+918073258799" className="footerItem">
-            <FaPhoneAlt />
+            <FaPhoneAlt aria-hidden="true" />
             <span>CALL +91 80732 58799</span>
           </a>
 
-          <a href="mailto:mpshastri@gmail.com" className="footerItem">
-            <FaEnvelope />
+          <a href="mailto:mpshastriastrology@gmail.com" className="footerItem">
+            <FaEnvelope aria-hidden="true" />
             <span>mpshastriastrology@gmail.com</span>
           </a>
 
           <div className="footerItem">
-            <FaMapMarkerAlt />
+            <FaMapMarkerAlt aria-hidden="true" />
             <span>
               Mahalakshmi, Bangalore, Karnataka, India
             </span>
           </div>
-
         </div>
 
-        {/* LINKS */}
-
+        {/* GENERAL PLATFORM LINKS */}
         <div className="footerBox">
-
           <h3>USEFUL LINKS</h3>
-
           <Link to="/">HOME</Link>
-
           <Link to="/about">ABOUT</Link>
-
-          <Link to="/astrology">SERVICES</Link>
-
+          <Link to="/services">SERVICES</Link> {/* Updated from /astrology to point directly to your master hub page */}
           <Link to="/contact">CONTACT</Link>
-
         </div>
 
-        {/* SERVICES */}
-
+        {/* SPECIALTIES INNER CONTENT CATEGORIES */}
         <div className="footerBox">
-
           <h3>SPECIALITIES</h3>
-
           <Link to="/astrology">ASTROLOGY</Link>
-
           <Link to="/vastu">VASTU CONSULTATION</Link>
-
-          <Link to="/Face-reading">FACE READING</Link>
-
+          <Link to="/face-reading">FACE READING</Link> {/* Fixed casing error from "/Face-reading" to lower case */}
           <Link to="/tantra">TANTRA</Link>
-
         </div>
 
-        {/* IMPORTANT */}
-
+        {/* TARGETED SEARCH ENGINES HIGHLIGHT HUBS */}
         <div className="footerBox">
-
           <h3>IMPORTANT</h3>
-
           <Link to="/astrologer-in-bangalore">BEST ASTROLOGER IN BANGALORE</Link>
-
           <Link to="/astrologer-in-india">BEST ASTROLOGER IN INDIA</Link>
-
           <Link to="/online-astrologer">ONLINE ASTROLOGY</Link>
-
-          <Link to="/vastu-expert">VASTHU EXPERT</Link>
-
+          <Link to="/vastu-expert">VASTU EXPERT</Link>
         </div>
-
       </div>
 
-      {/* BOTTOM */}
-
+      {/* BOTTOM LEGAL AND SOCIAL BAR */}
       <div className="footerBottom">
-
-        {/* LOGO */}
-
+        {/* LOGO SUBSECTION */}
         <div className="footerLogo">
-
           <h2>MP Shastri Astrology</h2>
-
         </div>
 
-        {/* COPYRIGHT */}
+        {/* AUTOMATED TIME ZONE STAMP */}
+        <p>
+          Copyright © {new Date().getFullYear()} MP Shastri Astrology. All rights reserved.
+        </p>
 
-       <p>
-  Copyright © {new Date().getFullYear()} MP Shastri Astrology.
-  All rights reserved.
-</p>
-
-        {/* SOCIAL */}
-
+        {/* VERIFIED BRAND SOCIAL OUTLETS */}
         <div className="socialIcons">
-
           <a
             href="https://www.facebook.com/share/1Zr42k8BYn/?mibextid=wwXIfr"
             target="_blank"
             rel="noreferrer"
+            aria-label="Visit our verified Facebook profile page"
           >
             <FaFacebookF />
           </a>
@@ -130,6 +91,7 @@ function Footer() {
             href="https://www.instagram.com/manjunatha_bhat_astrologer?igsh=MW95eDR3NnJwc21oaw%3D%3D&utm_source=qr"
             target="_blank"
             rel="noreferrer"
+            aria-label="Visit our official Instagram feed portfolio"
           >
             <FaInstagram />
           </a>
@@ -138,6 +100,7 @@ function Footer() {
             href="https://youtube.com/@bestastrol?si=ZoeE6TycEIcDMw5w"
             target="_blank"
             rel="noreferrer"
+            aria-label="Visit our video counseling collection on YouTube"
           >
             <FaYoutube />
           </a>
@@ -146,14 +109,12 @@ function Footer() {
             href="https://wa.me/918073258799"
             target="_blank"
             rel="noreferrer"
+            aria-label="Open secure chat panel on WhatsApp"
           >
             <FaWhatsapp />
           </a>
-
         </div>
-
       </div>
-
     </footer>
   );
 }

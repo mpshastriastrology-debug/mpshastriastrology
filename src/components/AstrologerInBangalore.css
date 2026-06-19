@@ -3,14 +3,9 @@
   overflow-x: hidden;
 }
 
-/* HERO */
-
+/* HERO CONTEXT BOX */
 .bangaloreHero {
-  background: linear-gradient(
-    180deg,
-    #fff8ea 0%,
-    #fff2d8 100%
-  );
+  background: linear-gradient(180deg, #fff8ea 0%, #fff2d8 100%);
   padding: 100px 20px;
   text-align: center;
 }
@@ -28,6 +23,7 @@
   border-radius: 50px;
   font-weight: 600;
   margin-bottom: 25px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .bangaloreHero h1 {
@@ -35,6 +31,7 @@
   color: #5c3b00;
   margin-bottom: 20px;
   line-height: 1.2;
+  font-family: 'Cormorant Garamond', serif; /* Aligned header font for brand consistency */
 }
 
 .bangaloreHero p {
@@ -43,8 +40,10 @@
   line-height: 1.8;
   max-width: 850px;
   margin: auto;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* CALL ACTION HANDLERS */
 .bangaloreButtons {
   display: flex;
   justify-content: center;
@@ -59,7 +58,8 @@
   padding: 15px 30px;
   border-radius: 10px;
   font-weight: 600;
-  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease; /* Scoped explicitly from 'all' */
 }
 
 .bangaloreCallBtn {
@@ -77,8 +77,7 @@
   transform: translateY(-3px);
 }
 
-/* SECTIONS */
-
+/* LAYOUT CONTAINER MODULES */
 .bangaloreSection {
   max-width: 1200px;
   margin: auto;
@@ -90,6 +89,7 @@
   font-size: 40px;
   color: #5c3b00;
   margin-bottom: 20px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .bangaloreSection > p {
@@ -98,10 +98,10 @@
   margin: auto;
   color: #666;
   line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* GRID */
-
+/* GRID CONTENT HUB STRUCTURE */
 .bangaloreGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -121,21 +121,19 @@
 .bangaloreCard h3 {
   color: #7a5200;
   margin-bottom: 15px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
 }
 
 .bangaloreCard p {
   color: #666;
   line-height: 1.7;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* CTA */
-
+/* BOTTOM SECTION CTA REGION */
 .bangaloreCTA {
-  background: linear-gradient(
-    135deg,
-    #b8860b,
-    #d4a017
-  );
+  background: linear-gradient(135deg, #b8860b, #d4a017);
   text-align: center;
   padding: 80px 20px;
 }
@@ -144,6 +142,7 @@
   color: white;
   font-size: 42px;
   margin-bottom: 15px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .bangaloreCTA p {
@@ -151,6 +150,7 @@
   max-width: 700px;
   margin: auto;
   line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
 }
 
 .bangaloreCTA a {
@@ -162,30 +162,10 @@
   padding: 15px 30px;
   border-radius: 10px;
   font-weight: 700;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-  .bangaloreHero h1 {
-    font-size: 36px;
-  }
-
-  .bangaloreHero p {
-    font-size: 17px;
-  }
-
-  .bangaloreSection h2 {
-    font-size: 30px;
-  }
-
-  .bangaloreCTA h2 {
-    font-size: 30px;
-  }
-}
-
-
+/* CROSS-LINK INTERNAL INTERFACES BLOCK */
 .service-links {
   display: flex;
   flex-wrap: wrap;
@@ -203,16 +183,17 @@
   border-radius: 50px;
   font-size: 15px;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
   border: 1px solid #e5e5e5;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Fixed performance tracking drag */
 }
 
 .service-links a:hover {
   background: linear-gradient(135deg, #d4af37, #f5d76e);
   color: #000;
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(212,175,55,0.3);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
 }
 
 .service-links a::after {
@@ -225,7 +206,24 @@
   transform: translateX(5px);
 }
 
+/* RESPONSIVE MEDIA STYLING RULES */
 @media (max-width: 768px) {
+  .bangaloreHero h1 {
+    font-size: 36px;
+  }
+
+  .bangaloreHero p {
+    font-size: 17px;
+  }
+
+  .bangaloreSection h2 {
+    font-size: 30px;
+  }
+
+  .bangaloreCTA h2 {
+    font-size: 30px;
+  }
+
   .service-links {
     flex-direction: column;
   }

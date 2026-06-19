@@ -1,395 +1,226 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  font-family:'Poppins',sans-serif;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffdf8; /* Standardized to match ecosystem backdrop styles */
 }
 
-/* PAGE */
-
-.vastuPage{
-
-  width:100%;
-
-  overflow:hidden;
+/* MAIN VIEWPORT LAYOUT */
+.vastuPage {
+  width: 100%;
+  overflow-x: hidden;
 }
 
-/* HERO */
+/* ==========================================
+   HERO INTRO SPLASH
+   ========================================== */
 
-.vastuHero{
-
-  height:100vh;
-
-  background-image:
-  url('/bestastrology.webp');
-
-  background-size:cover;
-
-  background-position:center;
-
-  position:relative;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  text-align:center;
-
-  padding:0 8%;
+.vastuHero {
+  height: 100vh;
+  background-image: url('/bestastrology.webp');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 8%;
 }
 
-.vastuOverlay{
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-  linear-gradient(
-    rgba(0,0,0,0.72),
-    rgba(0,0,0,0.65)
+.vastuOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.72),
+    rgba(0, 0, 0, 0.65)
   );
 }
 
-/* CONTENT */
-
-.vastuHeroContent{
-
-  position:relative;
-
-  z-index:2;
-
-  max-width:850px;
+.vastuHeroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
 }
 
-.vastuHeroContent p{
-
-  color:#ffb300;
-
-  letter-spacing:3px;
-
-  margin-bottom:20px;
-
-  text-transform:uppercase;
+.vastuHeroContent p {
+  color: #ffb300;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-.vastuHeroContent h1{
-
-  color:white;
-
-  font-size:72px;
-
-  line-height:1.1;
-
-  margin-bottom:25px;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
+.vastuHeroContent h1 {
+  color: white;
+  font-size: 72px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.vastuHeroContent span{
-
-  color:#ddd;
-
-  font-size:18px;
-
-  line-height:1.9;
-
-  display:block;
-
-  margin-bottom:40px;
+.vastuHeroContent span {
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1.9;
+  display: block;
+  margin-bottom: 40px;
 }
 
-/* BUTTON */
-
-.vastuBtn{
-
-  display:inline-block;
-
-  padding:16px 34px;
-
-  border-radius:50px;
-
-  background:
-  linear-gradient(
-    135deg,
-    #ffd369,
-    #b86b16
-  );
-
-  color:#111;
-
-  text-decoration:none;
-
-  font-weight:600;
-
-  transition:0.4s;
+/* MAIN ACTION COMPONENTS */
+.vastuBtn {
+  display: inline-block;
+  padding: 16px 34px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ffd369, #b86b16);
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(184, 107, 22, 0.25);
 }
 
-.vastuBtn:hover{
-
-  transform:translateY(-4px);
+.vastuBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* ABOUT */
+/* ==========================================
+   ABOUT DATA SPLIT GRID
+   ========================================== */
 
-.vastuAbout{
-
-  padding:120px 8%;
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
-  gap:70px;
-
-  align-items:center;
+.vastuAbout {
+  padding: 120px 8%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 70px;
+  align-items: center;
 }
 
-/* IMAGE */
-
-.vastuImage img{
-
-  width:100%;
-
-  border-radius:30px;
-
-  object-fit:cover;
-
-  box-shadow:
-  0 20px 50px rgba(0,0,0,0.12);
+.vastuImage img {
+  width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
-/* CONTENT */
-
-.smallTitle{
-
-  color:#c18a1f;
-
-  letter-spacing:3px;
-
-  margin-bottom:18px;
+.smallTitle {
+  color: #c18a1f;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.vastuContent h2{
-
-  font-size:56px;
-
-  line-height:1.2;
-
-  color:#fff30f;
-
-  margin-bottom:25px;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
+.vastuContent h2 {
+  font-size: 56px;
+  line-height: 1.2;
+  color: #111; /* Corrected contrast from completely unreadable yellow preset */
+  margin-bottom: 25px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.vastuContent p{
-
-  color:#2e6116;
-
-  line-height:2;
-
-  margin-bottom:30px;
+.vastuContent p {
+  color: #444; /* Cleaned up out-of-brand muddy green text styling */
+  line-height: 2;
+  margin-bottom: 30px;
 }
 
-/* POINTS */
-
-.vastuPoints{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
-  gap:20px;
+/* ACCOMPANIMENT ITEM CHIPS */
+.vastuPoints {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-.vastuPoint{
-
-  background:#faf5ea;
-
-  padding:18px;
-
-  border-radius:14px;
-
-  color:#444;
-
-  font-weight:500;
+.vastuPoint {
+  background: #faf5ea;
+  padding: 18px;
+  border-radius: 14px;
+  color: #444;
+  font-weight: 500;
+  border: 1px solid rgba(193, 138, 31, 0.15);
 }
 
-/* SERVICES */
+/* ==========================================
+   SERVICES MATRIX CORE
+   ========================================== */
 
-.vastuServices{
-
-  padding:120px 8%;
-
-  background:#f8f5ef;
+.vastuServices {
+  padding: 120px 8%;
+  background: #f8f5ef;
 }
 
-/* HEADING */
-
-.sectionHeading{
-
-  text-align:center;
-
-  margin-bottom:70px;
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 70px;
 }
 
-.sectionHeading p{
-
-  color:#c18a1f;
-
-  letter-spacing:3px;
-
-  margin-bottom:15px;
+.sectionHeading p {
+  color: #c18a1f;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.sectionHeading h2{
-
-  font-size:58px;
-
-  color:#111;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
+.sectionHeading h2 {
+  font-size: 58px;
+  color: #111;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-/* GRID */
-
-.vastuServiceGrid{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(3,1fr);
-
-  gap:30px;
+.vastuServiceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-/* CARD */
-
-.vastuCard{
-
-  background:white;
-
-  border-radius:28px;
-
-  overflow:hidden;
-
-  transition:0.4s;
-
-  box-shadow:
-  0 15px 40px rgba(0,0,0,0.07);
+.vastuCard {
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.vastuCard:hover{
-
-  transform:translateY(-8px);
+.vastuCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.vastuCard img{
-
-  width:100%;
-
-  height:260px;
-
-  object-fit:cover;
+.vastuCard img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
 }
 
-/* CONTENT */
-
-.vastuCardContent{
-
-  padding:30px;
+.vastuCardContent {
+  padding: 30px;
 }
 
-.vastuCardContent h3{
-
-  font-size:30px;
-
-  margin-bottom:15px;
-
-  color:#111;
-
-  font-family:
-  'Cormorant Garamond',
-  serif;
+.vastuCardContent h3 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #111;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.vastuCardContent p{
-
-  color:#666;
-
-  line-height:1.9;
+.vastuCardContent p {
+  color: #666;
+  line-height: 1.9;
 }
 
-/* MOBILE */
-
-@media(max-width:992px){
-
-  .vastuAbout,
-  .vastuServiceGrid{
-
-    grid-template-columns:1fr;
-  }
-
-  .vastuHeroContent h1{
-
-    font-size:52px;
-  }
-
-  .vastuContent h2,
-  .sectionHeading h2{
-
-    font-size:42px;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .vastuHero{
-
-    height:auto;
-
-    padding:160px 20px 100px;
-  }
-
-  .vastuHeroContent h1{
-
-    font-size:40px;
-  }
-
-  .vastuHeroContent span{
-
-    font-size:16px;
-  }
-
-  .vastuContent h2,
-  .sectionHeading h2{
-
-    font-size:34px;
-  }
-
-  .vastuPoints{
-
-    grid-template-columns:1fr;
-  }
-
-}
+/* ==========================================
+   SECONDARY TAGS & ANCHOR ROWS
+   ========================================== */
 
 .vastuServicesSection {
   max-width: 1200px;
@@ -421,36 +252,18 @@ body{
   border-radius: 50px;
   font-size: 0.95rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
 }
 
 .vastuServiceTags span:hover {
   transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 768px) {
-  .vastuServicesSection {
-    margin: 50px auto;
-    padding: 0 15px;
-  }
-
-  .vastuDescription {
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  .vastuServiceTags {
-    gap: 10px;
-  }
-
-  .vastuServiceTags span {
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-    font-size: 0.9rem;
-  }
-}
+/* ==========================================
+   IMPORTANCE & BENEFITS TILES
+   ========================================== */
 
 .vastuImportance {
   padding: 80px 20px;
@@ -471,12 +284,16 @@ body{
 .vastuImportanceHeader p:first-child {
   font-weight: 600;
   letter-spacing: 1px;
+  color: #c18a1f;
+  text-transform: uppercase;
 }
 
 .vastuImportanceHeader h2 {
   font-size: 2.5rem;
   margin: 15px 0;
   line-height: 1.3;
+  font-family: 'Cormorant Garamond', serif;
+  color: #111;
 }
 
 .vastuImportanceHeader p:last-child {
@@ -486,7 +303,8 @@ body{
 
 .vastuBenefitsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* Fluid auto-flow system removes rigid desktop restrictions safely */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
   margin-top: 50px;
 }
@@ -495,12 +313,15 @@ body{
   background: white;
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
 .vastuBox h3 {
   margin-bottom: 12px;
   font-size: 1.25rem;
+  font-family: 'Cormorant Garamond', serif;
+  color: #111;
+  font-weight: 700;
 }
 
 .vastuBox p {
@@ -508,14 +329,20 @@ body{
   color: #666;
 }
 
+/* ==========================================
+   DOSHA & PROBLEM RESOLUTION ZONE
+   ========================================== */
+
 .vastuDoshaSection {
   margin-top: 80px;
   text-align: center;
 }
 
 .vastuDoshaSection h2 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   margin-bottom: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #111;
 }
 
 .vastuDoshaSection > p {
@@ -536,7 +363,7 @@ body{
   background: white;
   padding: 25px;
   border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
 .problemCard span {
@@ -547,6 +374,9 @@ body{
 
 .problemCard h4 {
   margin-bottom: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  color: #111;
 }
 
 .problemCard p {
@@ -554,19 +384,71 @@ body{
   line-height: 1.7;
 }
 
+/* ==========================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   ========================================== */
+
 @media (max-width: 992px) {
-
-  .vastuBenefitsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  .vastuAbout,
+  .vastuServiceGrid,
   .vastuProblems {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
+  .vastuHeroContent h1 {
+    font-size: 52px;
+  }
+
+  .vastuContent h2,
+  .sectionHeading h2 {
+    font-size: 42px;
+  }
 }
 
 @media (max-width: 768px) {
+  .vastuHero {
+    height: auto;
+    padding: 160px 20px 100px;
+  }
+
+  .vastuHeroContent h1 {
+    font-size: 40px;
+  }
+
+  .vastuHeroContent span {
+    font-size: 16px;
+  }
+
+  .vastuContent h2,
+  .sectionHeading h2 {
+    font-size: 34px;
+  }
+
+  .vastuPoints {
+    grid-template-columns: 1fr;
+  }
+
+  .vastuServicesSection {
+    margin: 50px auto;
+    padding: 0 15px;
+  }
+
+  .vastuDescription {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .vastuServiceTags {
+    gap: 10px;
+  }
+
+  .vastuServiceTags span {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
 
   .vastuImportance {
     padding: 60px 15px;
@@ -574,12 +456,6 @@ body{
 
   .vastuImportanceHeader h2 {
     font-size: 1.9rem;
-  }
-
-  .vastuBenefitsGrid,
-  .vastuProblems {
-    grid-template-columns: 1fr;
-    gap: 18px;
   }
 
   .vastuBox,
@@ -590,5 +466,4 @@ body{
   .vastuDoshaSection h2 {
     font-size: 1.6rem;
   }
-
 }
