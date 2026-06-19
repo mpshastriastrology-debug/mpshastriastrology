@@ -157,4 +157,4 @@ function AstrologerInBangalore() {
   );
 }
 
-export default AstrologerInBangalore;s
+export default AstrologerInBangalore;

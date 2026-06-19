@@ -1,6 +1,6 @@
 import "./Services.css";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 
 export default function Services() {
   const services = [
@@ -54,7 +54,7 @@ export default function Services() {
 
       </div>
 
-      <Footer />
+      
     </>
   );
 }
