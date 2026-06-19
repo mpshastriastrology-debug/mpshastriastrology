@@ -1,86 +1,85 @@
 import "./Astrology.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
-
 function Astrology() {
   // Centralized data array makes handling clean alt tags and structured URLs infinitely easier
-  const servicesData = [
-    {
-      title: "Horoscope Reading",
-      desc: "Accurate Vedic birth chart analysis with personalized future predictions and practical remedies.",
-      img: "/topastronuts.avif",
-      alt: "Vedic birth chart and horoscope reading consultation",
-      path: "/services/horoscope-reading"
-    },
-    {
-      title: "Career Astrology",
-      desc: "Strategic guidance for employment choices, promotion timing, corporate growth, and business expansion.",
-      img: "/careerproblem.webp",
-      alt: "Professional career growth and business astrology consultation",
-      path: "/services/career-astrology"
-    },
+const servicesData = [
+  {
+    title: "Horoscope Reading",
+    desc: "Accurate Vedic birth chart analysis with personalized future predictions and practical remedies.",
+    img: "/topastronuts.avif",
+    alt: "Vedic birth chart and horoscope reading consultation",
+    path: "/astrology"
+  },
+  {
+    title: "Career Astrology",
+    desc: "Strategic guidance for employment choices, promotion timing, corporate growth, and business expansion.",
+    img: "/careerproblem.webp",
+    alt: "Professional career growth and business astrology consultation",
+    path: "/astrology"
+  },
     {
       title: "Marriage Matching",
       desc: "Comprehensive Kundali matching and Guna Milan compatibility analysis for a blissful marital life.",
       img: "/marriage-astrology.webp",
       alt: "Vedic Kundali matching for marriage compatibility",
-      path: "/services/marriage-matching"
+      path: "/astrology"
     },
     {
       title: "Financial Solutions",
       desc: "Astrological path corrections for debt relief, wealth preservation, and ancestral property stability.",
       img: "/financialproblem.webp",
       alt: "Astrological guidance for wealth management and financial stability",
-      path: "/services/financial-solutions"
+      path: "/astrology"
     },
     {
       title: "Love & Relationships",
       desc: "Empathetic guidance to navigate personal relationships, emotional blocks, and partnership issues.",
       img: "/loveproblem.webp",
       alt: "Relationship counseling and planetary alignment solutions",
-      path: "/services/love-and-relationships"
+      path: "/astrology"
     },
     {
       title: "Family Conflict Resolution",
       desc: "Resolve underlying domestic friction and restore long-term peace and harmony within your household.",
       img: "/familyconflict.webp",
       alt: "Spiritual healing solutions for family peace and harmony",
-      path: "/services/family-conflict-resolution"
+      path: "/astrology"
     },
     {
       title: "Business Astrology",
       desc: "Analyze business charts to determine optimal times for partnerships, investments, and market launches.",
       img: "/businessproblem.webp",
       alt: "Commercial growth predictions and corporate business astrology",
-      path: "/services/business-astrology"
+      path: "/astrology"
     },
     {
       title: "Vastu Consultation",
       desc: "Residential and commercial structural layout analysis to channel positive energy, peace, and abundance.",
       img: "/vastuproblem.webp",
       alt: "Traditional Indian Vastu Shastra consultation for homes and offices",
-      path: "/services/vastu-consultation"
+      path: "/astrology"
     },
     {
       title: "Numerology Analysis",
       desc: "Align your identity through deep validation of life paths, name balancing, and signature adjustments.",
       img: "/numerology.webp",
       alt: "Name and birth-date numerology analysis",
-      path: "/services/numerology"
+      path: "/astrology"
     },
     {
       title: "Foreign Settlement",
       desc: "Planetary combination assessment for overseas education, visa pathways, and international migration.",
       img: "/foreign.webp",
       alt: "Astrology tracking for immigration and international travel success",
-      path: "/services/foreign-settlement"
+      path: "/astrology"
     },
     {
       title: "Health Astrology",
       desc: "Proactive, preventative tracking of physical energy pathways aligned with traditional planetary transits.",
       img: "/healthproblem.webp",
       alt: "Astrological analysis for health and physical well-being",
-      path: "/services/health-astrology"
+      path: "/astrology"
     }
   ];
 

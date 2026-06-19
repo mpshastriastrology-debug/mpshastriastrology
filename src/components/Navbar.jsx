@@ -125,10 +125,6 @@ function Header() {
 
   
 
-        <Link to="/blog">
-          Gallery
-        </Link>
-
         <Link to="/contact">
           Contact
         </Link>
@@ -244,10 +240,6 @@ function Header() {
           </div>
 
         </div>
-        <Link to="/blog">
-          Gallery
-        </Link>
-
 
         <Link to="/contact">
           Contact

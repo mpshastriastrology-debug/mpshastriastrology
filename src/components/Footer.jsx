@@ -83,13 +83,13 @@ function Footer() {
 
           <h3>IMPORTANT</h3>
 
-          <a href="#">BEST ASTROLOGER IN INDIA</a>
+          <Link to="/astrologer-in-bangalore">BEST ASTROLOGER IN BANGALORE</Link>
 
-          <a href="#">ONLINE ASTROLOGY CONSULTATION</a>
+          <Link to="/astrologer-in-india">BEST ASTROLOGER IN INDIA</Link>
 
-          <a href="#"> MARRIAGE PROBLEM</a>
+          <Link to="/online-astrologer">ONLINE ASTROLOGY</Link>
 
-          <a href="#">CAREER GUIDANCE</a>
+          <Link to="/vastu-expert">VASTHU EXPERT</Link>
 
         </div>
 

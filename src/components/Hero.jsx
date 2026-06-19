@@ -32,7 +32,7 @@ function Hero() {
 
         {/* Clean, high-authority header targeting your top local intent phrase */}
         <h1>
-          Vedic Astrologer & Vastu Expert in Bangalore
+                   +91 80732 58799<br/><br/> Vedic Astrologer & Vastu Expert in Bangalore
         </h1>
 
         {/* Persuasive copy that hits multiple keyword intents naturally while maintaining professional E-E-A-T */}
