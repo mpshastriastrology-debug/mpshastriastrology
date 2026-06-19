@@ -5,178 +5,154 @@ import { Link } from "react-router-dom";
 function AstrologerInIndia() {
   return (
     <>
-    <Helmet>
-  <title>Trusted Astrologer in India | MP Shastri Astrology</title>
+      {/* Search Engine Optimization Meta Configuration */}
+      <Helmet>
+        <title>Top Trusted Astrologer in India | Shri MP Shastri Astrology</title>
+        <meta
+          name="description"
+          content="Consult Shri MP Shastri, a highly trusted astrologer in India. Get accurate online Vedic horoscope readings, career timelines, and remote Vastu corrections."
+        />
+        <link
+          rel="canonical"
+          content="https://www.mpshastriastrology.com/astrologer-in-india"
+        />
+        <meta property="og:title" content="Top Trusted Astrologer in India | Shri MP Shastri Astrology" />
+        <meta
+          property="og:description"
+          content="Access clear insights for professional growth, marital compatibility, and ancestral energy balancing from anywhere in India."
+        />
+        <meta property="og:url" content="https://www.mpshastriastrology.com/astrologer-in-india" />
+      </Helmet>
 
-  <meta
-    name="description"
-    content="Trusted astrologer in India providing online astrology consultation, kundli analysis, marriage guidance, career predictions and vastu solutions."
-  />
+      <div className="indiaPage">
+        {/* HERO SECTION */}
+        <section className="indiaHero">
+          <div className="indiaHeroContent">
+            <span className="indiaBadge">
+              ✦ TRADITIONAL VEDIC CONSULTATIONS NATIONWIDE
+            </span>
+            <h1>Trusted Vedic Astrologer in India</h1>
+            <p>
+              Shri MP Shastri offers comprehensive natal chart investigations, definitive marital compatibility profiling, business timeline forecasting, and remote structural energy analyses for clients throughout India and worldwide.
+            </p>
 
-  <link
-    rel="canonical"
-    href="https://www.mpshastriastrology.com/astrologer-in-india"
-  />
-</Helmet>
-    <div className="indiaPage">
+            <div className="indiaButtons">
+              <a href="tel:+918073258799" className="indiaCallBtn">
+                Call Office
+              </a>
+              <a
+                href="https://wa.me/918073258799"
+                target="_blank"
+                rel="noreferrer"
+                className="indiaWhatsappBtn"
+              >
+                WhatsApp Session
+              </a>
+            </div>
+          </div>
+        </section>
 
-      <section className="indiaHero">
+        {/* UNIFORM INTERNAL ROUTE HUBS */}
+        <div className="service-links">
+          <Link to="/astrology">Vedic Astrology Solutions</Link>
+          <Link to="/vastu">Vastu Shastra Consultant</Link>
+          <Link to="/face-reading">Physiognomy &amp; Face Reading</Link>
+          <Link to="/tantra">Spiritual Healing &amp; Protection</Link>
+        </div>
 
-        <div className="indiaHeroContent">
-
-          <span className="indiaBadge">
-            ✦ TRUSTED ASTROLOGY CONSULTATION ACROSS INDIA
-          </span>
-
-          <h1>
-            Best Astrologer in India
-          </h1>
-
+        {/* CORE ABOUT INTRO */}
+        <section className="indiaSection">
+          <h2>Clear Practical Insights via Online Consultations</h2>
           <p>
-            MP Shastri provides accurate astrology consultation,
-            marriage guidance, career predictions, business solutions,
-            vastu consultation and spiritual remedies for clients
-            across India and worldwide.
+            Distance is no longer a barrier to accessing authentic Vedic wisdom. Through comprehensive phone and digital sessions, Shri MP Shastri helps individuals across India decode complex planetary alignments, clear persistent career bottlenecks, and restore environmental balance in their homes and businesses.
           </p>
+        </section>
 
-          <div className="indiaButtons">
+        {/* SERVICE SPECIALIZATION GRID */}
+        <section className="indiaSection">
+          <h2>Core Assessment Capabilities</h2>
+          <div className="indiaGrid">
+            <div className="indiaCard">
+              <h3>Horoscope Auditing</h3>
+              <p>
+                Meticulous birth chart calculations tracking active planetary periods and their real-world influences.
+              </p>
+            </div>
 
-            <a
-              href="tel:+918073258799"
-              className="indiaCallBtn"
-            >
-              Call Now
-            </a>
+            <div className="indiaCard">
+              <h3>Marital Coordination</h3>
+              <p>
+                Detailed relationship compatibility evaluations designed to minimize conflict and clarify timing.
+              </p>
+            </div>
 
-            <a
-              href="https://wa.me/918073258799"
-              target="_blank"
-              rel="noreferrer"
-              className="indiaWhatsappBtn"
-            >
-              WhatsApp Consultation
-            </a>
+            <div className="indiaCard">
+              <h3>Corporate Guidance</h3>
+              <p>
+                Strategic timeline insights focusing on venture expansions, market investments, and professional changes.
+              </p>
+            </div>
 
+            <div className="indiaCard">
+              <h3>Vastu Corrections</h3>
+              <p>
+                Elemental layouts and spatial balancing rules for commercial buildings and residences without physical demolition.
+              </p>
+            </div>
+
+            <div className="indiaCard">
+              <h3>Physiognomy Profiling</h3>
+              <p>
+                Remote facial structure assessments to clarify personal behavioral patterns and core strengths.
+              </p>
+            </div>
+
+            <div className="indiaCard">
+              <h3>Environmental Cleansing</h3>
+              <p>
+                Traditional protective methods to dissolve stubborn spiritual or emotional stagnations from your environment.
+              </p>
+            </div>
           </div>
+        </section>
 
-        </div>
+        {/* VALUE PROPOSITION AREA */}
+        <section className="indiaSection">
+          <h2>Why Consult Shri MP Shastri?</h2>
+          <div className="indiaGrid">
+            <div className="indiaCard">
+              <h3>Verified Lineage Experience</h3>
+              <p>Years of calculated astrological and architectural consulting practice.</p>
+            </div>
 
-      </section>
-<div className="service-links">
-  <Link to="/online-astrologer">
-    Online Astrology Consultation
-  </Link>
+            <div className="indiaCard">
+              <h3>Comprehensive Case Studies</h3>
+              <p>A proven history of guiding diverse individual, family, and enterprise clients.</p>
+            </div>
 
-  <Link to="/vastu-expert">
-    Vastu Expert Services
-  </Link>
+            <div className="indiaCard">
+              <h3>Seamless Remote Sessions</h3>
+              <p>Highly accurate, dedicated telephone and video consultations for all states.</p>
+            </div>
 
-  <Link to="/astrologer-in-bangalore">
-    Astrology Services Across Bangalore
-  </Link>
-</div>
-      <section className="indiaSection">
-
-        <h2>
-          Trusted Astrology Services Across India
-        </h2>
-
-        <p>
-          Thousands of people across India trust MP Shastri for
-          horoscope reading, marriage consultation, career guidance,
-          vastu advice and spiritual solutions.
-        </p>
-
-      </section>
-
-      <section className="indiaSection">
-
-        <h2>
-          Our Astrology Services
-        </h2>
-
-        <div className="indiaGrid">
-
-          <div className="indiaCard">
-            <h3>Horoscope Reading</h3>
-            <p>Detailed birth chart analysis and predictions.</p>
+            <div className="indiaCard">
+              <h3>Absolute Privacy Standards</h3>
+              <p>Every chart, conversation detail, and personal profile is kept strictly confidential.</p>
+            </div>
           </div>
+        </section>
 
-          <div className="indiaCard">
-            <h3>Marriage Consultation</h3>
-            <p>Solutions for marriage and relationship issues.</p>
-          </div>
-
-          <div className="indiaCard">
-            <h3>Career Guidance</h3>
-            <p>Career growth, jobs and business consultation.</p>
-          </div>
-
-          <div className="indiaCard">
-            <h3>Vastu Consultation</h3>
-            <p>Home and office vastu recommendations.</p>
-          </div>
-
-          <div className="indiaCard">
-            <h3>Face Reading</h3>
-            <p>Personality and future opportunity analysis.</p>
-          </div>
-
-          <div className="indiaCard">
-            <h3>Spiritual Remedies</h3>
-            <p>Personalized remedies for positivity and success.</p>
-          </div>
-
-        </div>
-
-      </section>
-
-      <section className="indiaSection">
-
-        <h2>
-          Why Choose MP Shastri?
-        </h2>
-
-        <div className="indiaGrid">
-
-          <div className="indiaCard">
-            <h3>17+ Years Experience</h3>
-          </div>
-
-          <div className="indiaCard">
-            <h3>25,000+ Happy Clients</h3>
-          </div>
-
-          <div className="indiaCard">
-            <h3>Online Consultation</h3>
-          </div>
-
-          <div className="indiaCard">
-            <h3>100% Confidential</h3>
-          </div>
-
-        </div>
-
-      </section>
-
-      <section className="indiaCTA">
-
-        <h2>
-          Book Your Astrology Consultation Today
-        </h2>
-
-        <p>
-          Connect with MP Shastri for accurate astrology guidance
-          from anywhere in India.
-        </p>
-
-        <a href="tel:+918073258799">
-          Call +91 80732 58799
-        </a>
-
-      </section>
-
-    </div>
+        {/* CALL TO ACTION ROW */}
+        <section className="indiaCTA">
+          <h2>Schedule Your Remote Consultation</h2>
+          <p>
+            Connect directly with our central desk to book a comprehensive digital video review or a secure telephone session from any location.
+          </p>
+          <a href="tel:+918073258799">
+            Call +91 80732 58799
+          </a>
+        </section>
+      </div>
     </>
   );
 }

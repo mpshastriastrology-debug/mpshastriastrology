@@ -1,294 +1,176 @@
 import "./FaceReading.css";
-import { Link } from 'react-router-dom'
+import "./Services1.css";
+import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 function FaceReading() {
-
   return (
+    <>
+      {/* Dynamic Header Controls for the Face Reading Sub-page */}
+      <Helmet>
+        <title>Physiognomy &amp; Face Reading Consultation | MP Shastri</title>
+        <meta
+          name="description"
+          content="Uncover deep personality patterns, psychological strengths, and ancestral timing parameters through specialized Vedic physiognomy and facial structure audits by Shri MP Shastri."
+        />
+        <link rel="canonical" href="https://www.mpshastriastrology.com/face-reading" />
+        <meta property="og:title" content="Physiognomy &amp; Face Reading Consultation | MP Shastri" />
+        <meta
+          property="og:description"
+          content="Gain professional career guidance and character insight through authentic structural and micro-expression analysis."
+        />
+        <meta property="og:url" content="https://www.mpshastriastrology.com/face-reading" />
+      </Helmet>
 
-    <section className="facePage">
-
-      {/* HERO */}
-
-      <div className="faceHero">
-
-        <div className="faceOverlay"></div>
-
-        <div className="faceHeroContent">
-
-          <p>
-            ✦ Ancient Face Reading Science
-          </p>
-
-          <h1>
-            Professional Face Reading Consultation
-          </h1>
-
-          <span>
-            Understand personality, destiny,
-            emotions, career and future possibilities
-            through ancient face reading techniques
-            and spiritual observation.
-          </span>
-
-          <a
-            href="https://wa.me/918073258799"
-            target="_blank"
-            rel="noreferrer"
-            className="faceBtn"
-          >
-            Book Face Reading
-          </a>
-
-        </div>
-
-      </div>
-
-      {/* ABOUT */}
-
-      <div className="faceAbout">
-
-        <div className="faceImage">
-
-          <img
-            src="/facereading.webp"
-            alt="Face Reading"
-          />
-
-        </div>
-
-        <div className="faceContent">
-
-          <p className="smallTitle">
-            ✦ ABOUT FACE READING
-          </p>
-
-          <h2>
-            Reveal Personality Through Facial Features
-          </h2>
-
-          <p>
-
-            Face Reading is an ancient spiritual
-            practice that studies facial structure,
-            expressions and energy patterns to
-            understand a person’s emotions,
-            strengths, future possibilities,
-            relationships and life path.
-
-          </p>
-
-          <div className="facePoints">
-
-            <div className="facePoint">
-
-              ✔ Personality Analysis
-
-            </div>
-
-            <div className="facePoint">
-
-              ✔ Career & Success Guidance
-
-            </div>
-
-            <div className="facePoint">
-
-              ✔ Relationship Understanding
-
-            </div>
-
-            <div className="facePoint">
-
-              ✔ Emotional Energy Reading
-
-            </div>
-
+      <section className="facePage">
+        {/* HERO SECTION */}
+        <div className="faceHero">
+          <div className="faceOverlay"></div>
+          <div className="faceHeroContent">
+            <p>✦ ANCIENT PHYSIOGNOMY ENGINE</p>
+            <h1>Professional Face Reading Consultation</h1>
+            <span>
+              Understand character frameworks, behavioral tendencies, leadership potential, and chronological alignment charts using time-tested facial assessment guidelines.
+            </span>
+            <a
+              href="https://wa.me/918073258799"
+              target="_blank"
+              rel="noreferrer"
+              className="faceBtn"
+            >
+              Book Face Analysis
+            </a>
           </div>
-
         </div>
 
-      </div>
-
-      {/* SERVICES */}
-
-      <div className="faceServices">
-<div className="service-links">
-    <Link to="/astrologer-in-bangalore">
-    Astrology Services in Bangalore
-  </Link>
-  <Link to="/online-astrologer">
-    Online Astrology Consultation
-  </Link>
-
-  <Link to="/vastu-expert">
-    Vastu Expert Services
-  </Link>
-
-  <Link to="/astrologer-in-india">
-    Best Astrologer in India
-  </Link>
-</div>
-<br/><br/>
-        <div className="sectionHeading">
-
-          <p>✦ FACE READING SERVICES</p>
-
-          <h2>Spiritual Face Analysis Solutions</h2>
-
-        </div>
-
-        <div className="faceServiceGrid">
-
-          {/* CARD 1 */}
-
-          <div className="faceCard">
-
+        {/* CORE INTRODUCTION BLOCK */}
+        <div className="faceAbout">
+          <div className="faceImage">
             <img
-              src="/personality-reading.webp"
-              alt="Personality Reading"
+              src="/facereading.webp"
+              alt="Physiognomy structural reference tracing facial grid coordinates"
             />
-
-            <div className="faceCardContent">
-
-              <h3>Personality Reading</h3>
-
-              <p>
-                Discover hidden personality
-                traits, strengths and emotional
-                characteristics through face analysis.
-              </p>
-
-            </div>
-
           </div>
 
-          {/* CARD 2 */}
+          <div className="faceContent">
+            <p className="smallTitle">✦ THE SCIENCE OF EXPRESSION</p>
+            <h2>Decode Inner Character via Bone Structure</h2>
+            <p>
+              Face reading, or Samudrika Shastra, is an authentic methodology that studies precise facial ratios, micro-muscular expressions, and tissue configurations. By examining how structural areas align, face analysis provides a practical framework to identify personal blockages, instinctive leadership habits, and timing transitions across your career path.
+            </p>
 
-          <div className="faceCard">
-
-            <img
-              src="./career.webp"
-              alt="Career Reading"
-            />
-
-            <div className="faceCardContent">
-
-              <h3>Career Guidance</h3>
-
-              <p>
-                Understand leadership qualities,
-                career opportunities and future
-                success possibilities.
-              </p>
-
+            <div className="facePoints">
+              <div className="facePoint">✔ Structural Character Framework Audits</div>
+              <div className="facePoint">✔ Innate Strengths &amp; Professional Talents</div>
+              <div className="facePoint">✔ Emotional Tendency &amp; Communication Analysis</div>
+              <div className="facePoint">✔ Behavioral Timing Transition Windows</div>
             </div>
-
           </div>
-
-          {/* CARD 3 */}
-
-          <div className="faceCard">
-
-            <img
-              src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop"
-              alt="Relationship Reading"
-            />
-
-            <div className="faceCardContent">
-
-              <h3>Relationship Analysis</h3>
-
-              <p>
-                Gain insights into relationships,
-                compatibility and emotional balance
-                through spiritual face reading.
-              </p>
-
-            </div>
-
-          </div>
-
         </div>
 
-      </div>
+        {/* UNIFORM REPAIRED ROUTE HUB */}
+        <div className="service-links">
+          <Link to="/astrology">Vedic Astrology Solutions</Link>
+          <Link to="/vastu">Vastu Shastra Consultant</Link>
+          <Link to="/face-reading">Physiognomy &amp; Face Reading</Link>
+          <Link to="/tantra">Spiritual Healing &amp; Protection</Link>
+        </div>
+        <br /><br />
 
-{/* BENEFITS SECTION */}
+        {/* TARGET SERVICES ROW CONTAINER */}
+        <div className="faceServices">
+          <div className="sectionHeading">
+            <p>✦ ANALYSIS ARCHITECTURES</p>
+            <h2>Spiritual Face Assessment Options</h2>
+          </div>
 
-<div className="faceBenefits">
+          <div className="faceServiceGrid">
+            {/* CARD 1 */}
+            <div className="faceCard">
+              <img
+                src="/personality-reading.webp"
+                alt="Detailed portrait focusing on bone structure tracking landmarks"
+                loading="lazy"
+              />
+              <div className="faceCardContent">
+                <h3>Character Mapping</h3>
+                <p>
+                  Identify sub-conscious behavioral motivators, core emotional responses, and mental processing setups by auditing facial quadrants.
+                </p>
+              </div>
+            </div>
 
-  <div className="sectionHeading">
+            {/* CARD 2 */}
+            <div className="faceCard">
+              <img
+                src="./career.webp"
+                alt="Business professional highlighting structural leadership markers"
+                loading="lazy"
+              />
+              <div className="faceCardContent">
+                <h3>Executive Alignment</h3>
+                <p>
+                  Assess inherent determination metrics, communication styles, and natural executive capabilities to map out clear professional growth.
+                </p>
+              </div>
+            </div>
 
-    <p>
-      ✦ BENEFITS
-    </p>
+            {/* CARD 3 */}
+            <div className="faceCard">
+              <img
+                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop"
+                alt="Cohesive interactive expression displaying emotional understanding"
+                loading="lazy"
+              />
+              <div className="faceCardContent">
+                <h3>Relational Tracking</h3>
+                <p>
+                  Understand natural boundary settings, interactive compatibility frameworks, and empathy variations to balance interpersonal connections.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <h2>
-      Benefits Of Face Reading Consultation
-    </h2>
+        {/* BENEFIT EXPLAINER LAYOUT SECTION */}
+        <div className="faceBenefits">
+          <div className="sectionHeading">
+            <p>✦ PERFORMANCE METRICS</p>
+            <h2>Value of Specialized Physiognomy Audits</h2>
+          </div>
 
-  </div>
+          <div className="benefitGrid">
+            <div className="benefitCard">
+              <h3>Strategic Career Clarity</h3>
+              <p>
+                Map out professional talents and executive habits to identify the business environments most suited to your natural style.
+              </p>
+            </div>
 
-  <div className="benefitGrid">
+            <div className="benefitCard">
+              <h3>Self-Awareness Habits</h3>
+              <p>
+                Spot deep-seated emotional reactions to help build conscious responses, personal stability, and long-term confidence.
+              </p>
+            </div>
 
-    <div className="benefitCard">
+            <div className="benefitCard">
+              <h3>Interpersonal Harmony</h3>
+              <p>
+                Gain clear insight into personal dynamics and compatibility factors to develop reliable, balanced, and communicative relationships.
+              </p>
+            </div>
 
-      <h3>
-        Career Success
-      </h3>
-
-      <p>
-        Understand your professional strengths,
-        leadership qualities and growth opportunities.
-      </p>
-
-    </div>
-
-    <div className="benefitCard">
-
-      <h3>
-        Emotional Balance
-      </h3>
-
-      <p>
-        Discover emotional patterns and improve
-        confidence, positivity and relationships.
-      </p>
-
-    </div>
-
-    <div className="benefitCard">
-
-      <h3>
-        Relationship Guidance
-      </h3>
-
-      <p>
-        Gain spiritual insights about compatibility,
-        trust and future relationship stability.
-      </p>
-
-    </div>
-
-    <div className="benefitCard">
-
-      <h3>
-        Personality Understanding
-      </h3>
-
-      <p>
-        Reveal hidden personality traits,
-        behavior patterns and life potential.
-      </p>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-
-    </section>
+            <div className="benefitCard">
+              <h3>Core Profile Tracking</h3>
+              <p>
+                Examine specific line formations and bone configurations to better understand your baseline behavior models and potential pathways.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 

@@ -1,367 +1,255 @@
-import { Link } from 'react-router-dom'
-import './About.css'
+import { Link } from 'react-router-dom';
+import './About.css';
 
 function AboutSection() {
-
   return (
     <section>
-
-      {/* ABOUT SECTION */}
+      {/* ABOUT INTRO SECTION */}
       <section className="aboutSection">
-
         {/* LEFT IMAGE */}
         <div className="aboutImage">
           <div className="aboutGlow"></div>
-
           <img
             src="/mp-shastri-astrology.webp"
-            alt="Best Astrologer and Vastu Consultant in Bangalore MP Shastri"
+            alt="Shri MP Shastri providing spiritual counseling and horoscope analysis"
           />
-
         </div>
 
         {/* RIGHT CONTENT */}
         <div className="aboutContent">
-
           <span className="aboutTag">
-            <h2>About MP Shastri Astrology</h2>
+            <h1>About MP Shastri Astrology</h1>
           </span>
 
           <h2>
-            Ancient Vedic Wisdom for Modern Life Solutions in Bangalore
+            Ancient Vedic Wisdom providing Clarity for Modern Life Challenges
           </h2>
 
           <p>
-            MP Shastri Astrology provides trusted astrology and vastu consultation in Bangalore, helping people with career, marriage, business, and family problems using Vedic astrology and horoscope analysis.
+            Shri MP Shastri offers trusted cosmic mapping and foundational guidance to clients seeking path corrections. By combining rigorous natal calculation rules with deep family lineage tracking, he delivers direct answers regarding career stagnation, marriage compatibility, business investments, and domestic harmony.
           </p>
 
           <p>
-            We are a leading astrologer in Bangalore offering vastu solutions, horoscope reading, numerology, and spiritual guidance for personal and professional growth.
+            Operating from Bangalore with accessible global outreach channels, our practice integrates authentic horoscope readings, root Vastu layout corrections, and behavioral numerology tracking designed to help you unlock personal clarity and generational peace.
           </p>
-
         </div>
-
       </section>
 
-      {/* BLOG SECTION */}
+      {/* FLOATING INTERNAL CONTEXT LINK HUB */}
       <section className="blogSection">
-<div className="service-links">
-    <Link to="/astrologer-in-bangalore">
-    Astrology Services in Bangalore
-  </Link>
-  <Link to="/online-astrologer">
-    Online Astrology Consultation
-  </Link>
+        <div className="service-links">
+          <Link to="/astrology">Vedic Astrology Solutions</Link>
+          <Link to="/vastu">Vastu Shastra Consultant</Link>
+          <Link to="/face-reading">Physiognomy &amp; Face Reading</Link>
+          <Link to="/tantra">Spiritual Healing &amp; Protection</Link>
+        </div>
+        <br/>
 
-  <Link to="/vastu-expert">
-    Vastu Expert Services
-  </Link>
-
-  <Link to="/astrologer-in-india">
-    Best Astrologer in India
-  </Link>
-</div>
-<br/>
         <div className="sectionHeading">
-
           <p>✦ LATEST ARTICLES</p>
-
-          <h2>Astrology & Vastu Insights in Bangalore</h2>
-
+          <h2>Astrology &amp; Vastu Insights</h2>
         </div>
 
         <div className="blogGrid">
-
           {/* BLOG 1 */}
           <div className="blogCard">
-
             <img
               src="/Astrology.webp"
-              alt="Astrology Career Growth Tips Bangalore"
+              alt="Planetary transit configurations indicating career success"
+              loading="lazy"
             />
-
             <div className="blogContent">
-
               <span>Astrology</span>
-
-              <h3>
-                How Astrology Helps In Career Growth in Bangalore
-              </h3>
-
+              <h3>How Astrology Helps In Navigating Strategic Career Growth</h3>
               <p>
-                Discover how planetary positions influence career success, opportunities and financial growth.
+                Discover how planetary dasha cycles and specific houses influence individual corporate placement, entrepreneurial timing, and professional abundance patterns.
               </p>
-
             </div>
-
           </div>
 
           {/* BLOG 2 */}
           <div className="blogCard">
-
             <img
               src="/vasthu.webp"
-              alt="Vastu Tips for Home Bangalore Positive Energy"
+              alt="Traditional home orientation layout aligned with Vastu rules"
+              loading="lazy"
             />
-
             <div className="blogContent">
-
               <span>Vastu</span>
-
-              <h3>
-                Best Vastu Tips for Home in Bangalore for Positive Energy
-              </h3>
-
+              <h3>Essential Vastu Principles for Attracting Residential Harmony</h3>
               <p>
-                Simple vastu changes for home and office to attract happiness, peace and prosperity.
+                Simple, non-destructive structural adjustments designed to rebalance environmental elemental forces, removing blocks to peace and health.
               </p>
-
             </div>
-
           </div>
 
           {/* BLOG 3 */}
           <div className="blogCard">
-
             <img
               src="/facereading.webp"
-              alt="Face Reading Astrology Personality Analysis Bangalore"
+              alt="Detailed facial lines representing behavioral characteristics"
+              loading="lazy"
             />
-
             <div className="blogContent">
-
               <span>Face Reading</span>
-
-              <h3>
-                Face Reading Astrology: Understand Personality and Future
-              </h3>
-
+              <h3>Understanding Subtle Personality Profiles Through Face Reading</h3>
               <p>
-                Learn ancient techniques to identify emotions, personality and future possibilities through face reading.
+                Learn timeless analytical observation points to identify inherent mental strengths, emotional blockages, and behavioral tendencies.
               </p>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
       {/* WHY CHOOSE US SECTION */}
       <section className="whyChoose">
-
         <div className="whyLeft">
-
-          <p className="sectionTag">
-            ✦ TRUSTED ASTROLOGY & VASTU GUIDANCE IN BANGALORE
-          </p>
-
-          <h2>
-            Transform Your Life Through Vastu & Astrology Guidance in Bangalore
-          </h2>
-
+          <p className="sectionTag">✦ TRUSTED SPIRITUAL REMEDIAL COUNSELING</p>
+          <h2>Transform Your Core Environment Through Practical Guidance</h2>
           <p className="whyText">
-            MP Shastri Astrology provides trusted astrology, vastu and spiritual consultation services in Bangalore to help individuals achieve peace, prosperity, success and positivity in life. Our personalized guidance combines traditional Vedic knowledge with modern solutions.
+            Our practice bridges time-tested ancient calculations with realistic solutions tailored for modern workflows. We reject superstition in favor of clear cosmic analysis, allowing individuals to navigate high-risk decisions with absolute confidence and strategic timing.
           </p>
 
           <div className="whyFeatures">
-
             <div className="featureCard">
               <h3>17+</h3>
               <span>Years Experience</span>
             </div>
-
             <div className="featureCard">
               <h3>25K+</h3>
               <span>Happy Clients</span>
             </div>
-
             <div className="featureCard">
               <h3>100%</h3>
               <span>Private Consultation</span>
             </div>
-
           </div>
-
         </div>
 
         <div className="whyRight">
-
           <img
             src="./bestastrology.webp"
-            alt="Best Astrology Consultation Bangalore MP Shastri"
+            alt="Shri MP Shastri analyzing natal chart details in private office layout"
+            loading="lazy"
           />
-
         </div>
-
       </section>
 
-      {/* EXPERIENCE SECTION */}
+      {/* EXPERIENCE TRACK RECORD SECTION */}
       <section className="experienceSection">
-
         <div className="experienceLeft">
-
-          <p>
-            ✦ PROFESSIONAL ASTROLOGY SERVICES IN BANGALORE
-          </p>
-
-          <h2>
-            Trusted Astrology & Vastu Expert in Bangalore
-          </h2>
-
+          <p>✦ PROFESSIONAL SERVICES ENGINE</p>
+          <h2>Methodical Analysis You Can Rely On</h2>
           <span>
-            We provide accurate astrology consultation, vastu corrections, face reading and spiritual remedies with complete privacy and trust.
+            Every reading provides actionable clarity, utilizing precise tools to analyze your life's path with strict privacy and care.
           </span>
 
           <div className="experienceList">
-
-            <div className="experienceItem">
-              ✔ Accurate Horoscope Reading
-            </div>
-
-            <div className="experienceItem">
-              ✔ Online & Offline Consultation
-            </div>
-
-            <div className="experienceItem">
-              ✔ Love & Marriage Solutions
-            </div>
-
-            <div className="experienceItem">
-              ✔ Business & Career Guidance
-            </div>
-
+            <div className="experienceItem">✔ Detailed Natal Chart Audits</div>
+            <div className="experienceItem">✔ Global Digital Sessions Available</div>
+            <div className="experienceItem">✔ Comprehensive Compatibility Matching</div>
+            <div className="experienceItem">✔ Corporate Vastu &amp; Investment Timing</div>
           </div>
-
         </div>
 
         <div className="experienceRight">
-
           <img
             src="/topastrology.webp"
-            alt="Top Astrologer and Vastu Expert Bangalore MP Shastri"
+            alt="Astrology chart layout items representing professional reading structures"
+            loading="lazy"
           />
-
         </div>
-
       </section>
-<section className="about-section">
-  <div className="about-content">
-    <h2>Best Astrologer in Bangalore</h2>
 
-    <p>
-      MP Shastri is a trusted astrologer in Bangalore offering online astrology
-      consultations, horoscope reading, marriage guidance, career astrology,
-      numerology, and Vastu consultation services. With over 17 years of
-      experience, we have successfully guided thousands of clients across
-      Bangalore and India.
-    </p>
+      {/* EXPERT AUTHORITY EXPLANATION */}
+      <section className="about-section">
+        <div className="about-content">
+          <h2>Trusted Spiritual Consultation System</h2>
+          <p>
+            Shri MP Shastri offers a highly personalized approach to Vedic consultation. Leveraging a deep understanding of natural lifecycles and planetary shifts, his work ensures you are equipped with practical remedies to overcome stubborn blockages.
+          </p>
 
-    <h3>Online Astrology Consultation</h3>
+          <h3>Convenient Digital Sessions</h3>
+          <p>
+            Access accurate guidance from any location globally. Complete, undisturbed sessions are conducted seamlessly via high-definition video channels, direct voice calls, or encrypted messaging lines.
+          </p>
 
-    <p>
-      Get professional astrology consultation through phone calls, WhatsApp,
-      and video calls from anywhere in India. Receive personalized guidance for
-      career, marriage, relationships, finance, and life challenges.
-    </p>
+          <h3>Commercial &amp; Residential Vastu Audits</h3>
+          <p>
+            Align your physical environments with natural flows. Our architectural consultations provide custom balance charts for your home or corporate workplace layout, helping foster consistent abundance and health.
+          </p>
+        </div>
+      </section>
 
-    <h3>Vastu Expert in Bangalore</h3>
-
-    <p>
-      Our Vastu consultation services help create positive energy, prosperity,
-      success, and harmony in homes, offices, apartments, and commercial
-      spaces. Get expert Vastu solutions for a balanced and successful life.
-    </p>
-  </div>
-</section>
-
-      {/* FAQ SECTION */}
+      {/* FAQ INTERACTIVE COMPONENT SECTION */}
       <section className="faqSection">
-
         <div className="sectionHeading">
-
           <p>✦ FREQUENTLY ASKED QUESTIONS</p>
-
-          <h2>Common Questions About Astrology in Bangalore</h2>
-
+          <h2>Common Queries Clarified</h2>
         </div>
 
         <div className="faqContainer">
-
           <div className="faqItem">
             <input type="checkbox" id="faq1" />
             <label htmlFor="faq1">
-              How does astrology consultation work?
+              How does a primary consultation session function?
               <span>+</span>
             </label>
             <div className="faqContent">
-              Astrology consultation helps analyze your horoscope and planetary positions to provide guidance for career, marriage, business, health and relationships.
+              A primary session evaluates your time and place parameters against active dasha houses to pinpoint active timeline bottlenecks affecting your daily career and marriage pathways.
             </div>
           </div>
 
           <div className="faqItem">
             <input type="checkbox" id="faq2" />
             <label htmlFor="faq2">
-              Is online consultation available?
+              Is the precision level maintained during digital sessions?
               <span>+</span>
             </label>
             <div className="faqContent">
-              Yes. We provide online astrology consultation through WhatsApp, phone call and video consultation.
+              Yes, mathematical calculations require only precise birth time inputs. Because the tracking variables remain exactly the same, your remote video or phone sessions yield complete accuracy.
             </div>
           </div>
 
           <div className="faqItem">
             <input type="checkbox" id="faq3" />
             <label htmlFor="faq3">
-              Do vastu remedies really help?
+              Do Vastu changes require complex physical remodeling?
               <span>+</span>
             </label>
             <div className="faqContent">
-              Vastu remedies help improve positive energy, peace and prosperity by balancing the energy flow in your home or office.
+              Most structural adjustments utilize smart balancing tools, optimal elemental shifts, and room function relocations rather than costly or invasive construction alterations.
             </div>
           </div>
 
           <div className="faqItem">
             <input type="checkbox" id="faq4" />
             <label htmlFor="faq4">
-              How can I book consultation?
+              What is the procedure to lock in an active timeslot?
               <span>+</span>
             </label>
             <div className="faqContent">
-              You can book consultation through WhatsApp, direct phone call or contact form available on website.
+              You can coordinate your time options instantly using our direct dashboard communication channels, instant WhatsApp connection links, or secure email options.
             </div>
           </div>
-
         </div>
-
       </section>
 
-      {/* PREMIUM HERO SECTION */}
+      {/* PREMIUM CALL TO ACTION BLOCK */}
       <section className="premiumHero">
-
         <div className="premiumOverlay"></div>
-
         <div className="premiumContent">
-
-          <p className="heroTag">
-            ✦ INDIA’S TRUSTED ASTROLOGY EXPERT IN BANGALORE
-          </p>
-
-          <h2>
-            Discover Your Destiny With <span>MP Shastri Astrology</span>
-          </h2>
-
+          <p className="heroTag">✦ INDIA'S INDEPENDENT VEDIC ADVISOR</p>
+          <h2>Map Out Your Future with Absolute Precision</h2>
           <p className="heroDescription">
-            Experience accurate astrology consultation, vastu guidance, face reading and spiritual healing solutions for success, positivity and peaceful life.
+            Gain clear visibility into your relationship timelines, financial trajectory, and workspace alignments through verified calculation parameters.
           </p>
 
           <div className="heroButtons">
-
-            <a href="/contact" className="heroPrimaryBtn">
+            {/* Standard Link component replaces state-destroying regular anchor tags */}
+            <Link to="/contact" className="heroPrimaryBtn">
               Book Consultation
-            </a>
-
+            </Link>
             <a
               href="https://wa.me/918073258799"
               target="_blank"
@@ -370,34 +258,26 @@ function AboutSection() {
             >
               WhatsApp Chat
             </a>
-
           </div>
 
           <div className="heroTrust">
-
             <div className="trustBox">
               <h3>25K+</h3>
               <span>Happy Clients</span>
             </div>
-
             <div className="trustBox">
               <h3>17+</h3>
               <span>Years Experience</span>
             </div>
-
             <div className="trustBox">
               <h3>4.9★</h3>
               <span>Client Rating</span>
             </div>
-
           </div>
-
         </div>
-
       </section>
-
     </section>
-  )
+  );
 }
 
-export default AboutSection
+export default AboutSection;

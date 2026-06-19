@@ -1,237 +1,181 @@
 import { Helmet } from "react-helmet";
 import "./OnlineAstrology.css";
 import { Link } from "react-router-dom";
-import Services1 from '../components/Services1';
+
 function OnlineAstrology() {
   return (
     <>
-    <Helmet>
-  <title>Online Astrologer Consultation | MP Shastri Astrology</title>
+      {/* Search Engine Optimization Meta Configuration */}
+      <Helmet>
+        <title>Online Astrology Consultation | Shri MP Shastri Astrology</title>
+        <meta
+          name="description"
+          content="Connect with Shri MP Shastri for professional online astrology consultations via secure telephone or video sessions. Get accurate natal readings and ancestral guidance."
+        />
+        <link
+          rel="canonical"
+          content="https://www.mpshastriastrology.com/online-astrologer"
+        />
+        <meta property="og:title" content="Online Astrology Consultation | Shri MP Shastri Astrology" />
+        <meta
+          property="og:description"
+          content="Access clear insights for career transitions, relationship timelines, and home architectural configurations remotely from anywhere globally."
+        />
+        <meta property="og:url" content="https://www.mpshastriastrology.com/online-astrologer" />
+      </Helmet>
 
-  <meta
-    name="description"
-    content="Get online astrology consultation through phone, WhatsApp and video call. Trusted astrology guidance from MP Shastri."
-  />
+      <div className="onlineAstrologyPage">
+        {/* HERO SECTION */}
+        <section className="onlineAstrologyHero">
+          <div className="onlineAstrologyHeroContent">
+            <p className="onlineAstrologyHeroTag">
+              ✦ REMOTE METAPHYSICAL EVALUATIONS GLOBAL
+            </p>
+            <h1 className="onlineAstrologyHeroTitle">
+              Digital Vedic Astrology Consultation
+            </h1>
+            <p className="onlineAstrologyHeroDesc">
+              Consult with Shri MP Shastri from any location globally. Receive meticulous natal chart tracking, relationship transition audits, corporate scheduling plans, and Vastu advice through encrypted voice, text, or high-definition streaming channels.
+            </p>
 
-  <link
-    rel="canonical"
-    href="https://www.mpshastriastrology.com/online-astrologer"
-  />
-</Helmet>
-    <div className="onlineAstrologyPage">
+            <div className="onlineAstrologyButtons">
+              <a href="tel:+918073258799" className="onlineAstrologyCallBtn">
+                Call Office
+              </a>
+              <a
+                href="https://wa.me/918073258799"
+                target="_blank"
+                rel="noreferrer"
+                className="onlineAstrologyWhatsappBtn"
+              >
+                WhatsApp Session
+              </a>
+            </div>
+          </div>
+        </section>
 
-      {/* HERO */}
+        {/* UNIFORM INTERNAL ROUTE HUBS */}
+        <div className="service-links">
+          <Link to="/astrology">Vedic Astrology Solutions</Link>
+          <Link to="/vastu">Vastu Shastra Consultant</Link>
+          <Link to="/face-reading">Physiognomy &amp; Face Reading</Link>
+          <Link to="/tantra">Spiritual Healing &amp; Protection</Link>
+        </div>
 
-      <section className="onlineAstrologyHero">
-
-        <div className="onlineAstrologyHeroContent">
-
-          <p className="onlineAstrologyHeroTag">
-            ✦ ONLINE ASTROLOGY CONSULTATION
+        {/* CORE ABOUT INTRO */}
+        <section className="onlineAstrologySection">
+          <h2>Accessible Wisdom: Virtual Chart Interrogations</h2>
+          <p>
+            Shri MP Shastri offers comprehensive virtual astrology services tailored for modern profiles. By shifting configurations into structured digital session rooms, you receive comprehensive analytical reporting and practical, actionable counter-measures without requiring an in-person office visit.
           </p>
+        </section>
 
-          <h1 className="onlineAstrologyHeroTitle">
-            Online Astrology Consultation
-          </h1>
+        {/* CONSULTATION CAPABILITIES GRID */}
+        <section className="onlineAstrologySection">
+          <h2>Remote Assessment Frameworks</h2>
+          <div className="onlineAstrologyGrid">
+            <div className="onlineAstrologyCard">
+              <h3>Horoscope Auditing</h3>
+              <p>
+                Complete natal chart mathematical analysis tracking current planetary transits and dynamic house placements.
+              </p>
+            </div>
 
-          <p className="onlineAstrologyHeroDesc">
-            Connect with MP Shastri from anywhere in the world.
-            Get accurate astrology guidance, marriage solutions,
-            career predictions, business consultation, vastu advice
-            and spiritual remedies through phone, WhatsApp and
-            video consultation.
+            <div className="onlineAstrologyCard">
+              <h3>Marital Coordination</h3>
+              <p>
+                Compatibility metrics evaluation engineered to spot relational friction areas and define smooth marriage paths.
+              </p>
+            </div>
+
+            <div className="onlineAstrologyCard">
+              <h3>Corporate Guidance</h3>
+              <p>
+                Strategic commercial forecasting pointing out optimal timeline windows for career changes or resource expansions.
+              </p>
+            </div>
+
+            <div className="onlineAstrologyCard">
+              <h3>Virtual Vastu Audits</h3>
+              <p>
+                Remote blueprint and structural element evaluations for residential properties or offices without requiring demolition.
+              </p>
+            </div>
+
+            <div className="onlineAstrologyCard">
+              <h3>Physiognomy Profiling</h3>
+              <p>
+                Video-assisted facial landmark tracking to outline fundamental behavioral trends and intrinsic leadership styles.
+              </p>
+            </div>
+
+            <div className="onlineAstrologyCard">
+              <h3>Environmental Cleansing</h3>
+              <p>
+                Traditional, highly personalized balancing recommendations designed to clear stubborn mental blocks and stagnation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* VALUE PROPOSITION AREA */}
+        <section className="onlineAstrologySection">
+          <h2>Why Select Virtual Sessions?</h2>
+          <div className="onlineAstrologyGrid">
+            <div className="onlineAstrologyCard">
+              <h3>Global Connectivity</h3>
+              <p>Accessible scheduling setups regardless of your timezone or domestic territory boundaries.</p>
+            </div>
+
+            <div className="onlineAstrologyCard">
+              <h3>Strict Data Discretion</h3>
+              <p>All private birth criteria records and conversation points remain deeply encrypted and secure.</p>
+            </div>
+
+            <div className="onlineAstrologyCard">
+              <h3>Streamlined Scheduling</h3>
+              <p>Direct communication channels ensure rapid processing and minimized setup delays.</p>
+            </div>
+
+            <div className="onlineAstrologyCard">
+              <h3>Calculated Accuracy</h3>
+              <p>Remote sessions maintain the identical mathematical precision and depth as physical office visits.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* STEP-BY-STEP WORKFLOW EXPLAINER */}
+        <section className="onlineAstrologySection">
+          <h2>The Booking Process</h2>
+          <div className="onlineAstrologyGrid">
+            <div className="onlineAstrologyCard">
+              <h3>1. Secure a Window</h3>
+              <p>Contact our desk via phone or WhatsApp link to choose your preferred consultation method.</p>
+            </div>
+
+            <div className="onlineAstrologyCard">
+              <h3>2. Provide Criteria</h3>
+              <p>Submit your precise date, time, and city of origin alongside your core topics of focus.</p>
+            </div>
+
+            <div className="onlineAstrologyCard">
+              <h3>3. Live Analysis</h3>
+              <p>Join your private, secure audio or video session for a clear, diagnostic exploration of your chart.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* CALL TO ACTION ROW */}
+        <section className="onlineAstrologyCTA">
+          <h2>Initiate Your Virtual Session</h2>
+          <p>
+            Clear your path from any location. Connect directly with our helpdesk today to schedule your private call.
           </p>
-
-          <div className="onlineAstrologyButtons">
-
-            <a
-              href="tel:+918073258799"
-              className="onlineAstrologyCallBtn"
-            >
-              Call Now
-            </a>
-
-            <a
-              href="https://wa.me/918073258799"
-              target="_blank"
-              rel="noreferrer"
-              className="onlineAstrologyWhatsappBtn"
-            >
-              WhatsApp Consultation
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
-<div className="service-links">
-  <Link to="/astrologer-in-bangalore">
-    Best Astrologer in Bangalore
-  </Link>
-
-  <Link to="/vastu-expert">
-    Vastu Expert Services
-  </Link>
-
-  <Link to="/astrologer-in-india">
-    Astrology Services Across India
-  </Link>
-</div>
-      {/* ABOUT */}
-
-      <section className="onlineAstrologySection">
-
-        <h2>
-          Trusted Online Astrology Services
-        </h2>
-
-        <p>
-          MP Shastri provides professional online astrology
-          consultation for clients across India and worldwide.
-          Receive personalized guidance without visiting the office.
-        </p>
-
-      </section>
-
-      {/* SERVICES */}
-
-      <section className="onlineAstrologySection">
-
-        <h2>
-          Online Consultation Services
-        </h2>
-
-        <div className="onlineAstrologyGrid">
-
-          <div className="onlineAstrologyCard">
-            <h3>Horoscope Reading</h3>
-            <p>
-              Detailed birth chart analysis and future predictions.
-            </p>
-          </div>
-
-          <div className="onlineAstrologyCard">
-            <h3>Marriage Guidance</h3>
-            <p>
-              Solutions for marriage delays and relationship issues.
-            </p>
-          </div>
-
-          <div className="onlineAstrologyCard">
-            <h3>Career & Business</h3>
-            <p>
-              Guidance for jobs, promotions and business growth.
-            </p>
-          </div>
-
-          <div className="onlineAstrologyCard">
-            <h3>Vastu Consultation</h3>
-            <p>
-              Online Vastu guidance for homes and offices.
-            </p>
-          </div>
-
-          <div className="onlineAstrologyCard">
-            <h3>Face Reading</h3>
-            <p>
-              Personality analysis and future opportunities.
-            </p>
-          </div>
-
-          <div className="onlineAstrologyCard">
-            <h3>Spiritual Remedies</h3>
-            <p>
-              Personalized remedies for peace and prosperity.
-            </p>
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* BENEFITS */}
-
-      <section className="onlineAstrologySection">
-
-        <h2>
-          Why Choose Online Consultation?
-        </h2>
-
-        <div className="onlineAstrologyGrid">
-
-          <div className="onlineAstrologyCard">
-            <h3>Available Worldwide</h3>
-          </div>
-
-          <div className="onlineAstrologyCard">
-            <h3>100% Confidential</h3>
-          </div>
-
-          <div className="onlineAstrologyCard">
-            <h3>Quick Appointments</h3>
-          </div>
-
-          <div className="onlineAstrologyCard">
-            <h3>Expert Guidance</h3>
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* PROCESS */}
-
-      <section className="onlineAstrologySection">
-
-        <h2>
-          How It Works
-        </h2>
-
-        <div className="onlineAstrologyGrid">
-
-          <div className="onlineAstrologyCard">
-            <h3>Step 1</h3>
-            <p>Call or WhatsApp us to schedule a consultation.</p>
-          </div>
-
-          <div className="onlineAstrologyCard">
-            <h3>Step 2</h3>
-            <p>Share your birth details and questions.</p>
-          </div>
-
-          <div className="onlineAstrologyCard">
-            <h3>Step 3</h3>
-            <p>Receive personalized astrology guidance.</p>
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* CTA */}
-
-      <section className="onlineAstrologyCTA">
-
-        <h2>
-          Book Your Online Consultation Today
-        </h2>
-
-        <p>
-          Get accurate astrology guidance from MP Shastri
-          through phone, WhatsApp or video consultation.
-        </p>
-
-        <a
-          href="tel:+918073258799"
-          className="onlineAstrologyCtaBtn"
-        >
-          Call +91 80732 58799
-        </a>
-
-      </section>
-
-    </div>
+          <a href="tel:+918073258799" className="onlineAstrologyCtaBtn">
+            Call +91 80732 58799
+          </a>
+        </section>
+      </div>
     </>
   );
 }

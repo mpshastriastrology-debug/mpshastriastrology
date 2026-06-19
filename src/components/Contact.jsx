@@ -3,101 +3,91 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
 
 function Contact() {
-const [form, setForm] = useState({
-  name: "",
-  phone: "",
-  email: "",
-  service: "",
-  message: ""
-});
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+    message: ""
+  });
 
-const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (loading) return;
 
-  if (loading) return;
+    setLoading(true);
 
-  setLoading(true);
+    try {
+      console.log("API URL:", import.meta.env.VITE_API_URL);
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/contact`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }
+      );
 
-  try {
-
-    console.log("API URL:", import.meta.env.VITE_API_URL);
-    const res = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/contact`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Server Error");
       }
-    );
 
-    if (!res.ok) {
-  const errorData = await res.json();
-  throw new Error(errorData.error || "Server Error");
-}
+      const data = await res.json();
 
-const data = await res.json();
-
-    if (data.success) {
-      alert("Appointment booked successfully!");
-
-      setForm({
-        name: "",
-        phone: "",
-        email: "",
-        service: "",
-        message: "",
-      });
-    } else {
-      alert(data.error || "Something went wrong!");
+      if (data.success) {
+        alert("Appointment booked successfully!");
+        setForm({
+          name: "",
+          phone: "",
+          email: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        alert(data.error || "Something went wrong!");
+      }
+    } catch (error) {
+      console.error("Contact Form Error:", error);
+      alert(error.message || "Server error. Please try again later.");
+    } finally {
+      setLoading(false);
     }
-  } catch (error) {
-  console.error("Contact Form Error:", error);
-  alert(error.message || "Server error. Please try again later.");
-} finally {
-    setLoading(false);
-  }
-};
+  };
 
   return (
-    <section className="contactSection">
-
-      {/* APPOINTMENT SECTION */}
+    <section className="contactPage">
+      {/* APPOINTMENT FORM SECTION */}
       <section className="appointmentSection">
-
         <div className="appointmentLeft">
           <p>✦ BOOK YOUR APPOINTMENT</p>
-
-          <h2>
-            Start Your Spiritual Journey Today
-          </h2>
-
+          <h2>Start Your Spiritual Journey Today</h2>
           <span>
-            Connect with MP Shastri Astrology for accurate predictions, vastu consultation and spiritual healing solutions.
+            Connect with Shri MP Shastri for professional horoscope assessments, structural Vastu audits, and customized remedial solutions.
           </span>
 
           <div className="appointmentFeatures">
-            <div className="appointmentItem">✔ Personal Consultation</div>
-            <div className="appointmentItem">✔ 100% Confidential</div>
-            <div className="appointmentItem">✔ Online Video Call</div>
-            <div className="appointmentItem">✔ Instant WhatsApp Support</div>
+            <div className="appointmentItem">✔ Private In-Person Sessions</div>
+            <div className="appointmentItem">✔ 100% Confidential Data Storage</div>
+            <div className="appointmentItem">✔ High-Definition Remote Video Calls</div>
+            <div className="appointmentItem">✔ Direct Dashboard Support Channels</div>
           </div>
         </div>
 
         <div className="appointmentRight">
-
           <form className="appointmentForm" onSubmit={handleSubmit}>
-
             <input
               type="text"
               name="name"
+              aria-label="Your Name"
               placeholder="Your Name"
               value={form.name}
               onChange={handleChange}
@@ -107,6 +97,7 @@ const data = await res.json();
             <input
               type="tel"
               name="phone"
+              aria-label="Phone Number"
               placeholder="Phone Number"
               value={form.phone}
               onChange={handleChange}
@@ -116,6 +107,7 @@ const data = await res.json();
             <input
               type="email"
               name="email"
+              aria-label="Email Address"
               placeholder="Email Address"
               value={form.email}
               onChange={handleChange}
@@ -123,102 +115,100 @@ const data = await res.json();
 
             <select
               name="service"
+              aria-label="Select Consultation Service"
               value={form.service}
               onChange={handleChange}
               required
             >
-              <option value="">Select Service</option>
-              <option value="Astrology">Astrology</option>
-              <option value="Vastu">Vastu Consultation</option>
-              <option value="Face Reading">Face Reading</option>
-              <option value="Tantra">Tantra</option>
+              <option value="">Select Service Specialty</option>
+              <option value="Astrology">Vedic Astrology &amp; Horoscope Reading</option>
+              <option value="Vastu">Residential &amp; Commercial Vastu Shastra</option>
+              <option value="Face Reading">Physiognomy &amp; Face Reading Analysis</option>
+              <option value="Tantra">Spiritual Healing &amp; Aura Cleansing</option>
             </select>
 
             <textarea
               name="message"
-              placeholder="Describe Your Problem"
+              aria-label="Describe Your Current Problem"
+              placeholder="Briefly describe your current issue (e.g., career timing, home layout concerns, compatibility)..."
               value={form.message}
               onChange={handleChange}
               required
             />
 
-<button type="submit" disabled={loading}>
-  {loading ? "Submitting..." : "Book Consultation"}
-</button>
+            <button type="submit" disabled={loading}>
+              {loading ? "Processing Entry..." : "Confirm Booking Details"}
+            </button>
           </form>
-
         </div>
-
       </section>
 
-      {/* CONTACT INFO + MAP */}
+      {/* CORE CONTACT LOCATIONS & MAP AREA */}
       <section className="contactLocation">
-
         <div className="contactContainer">
-
-          {/* LEFT */}
+          {/* LEFT CONTENT ROW */}
           <div className="contactInfo">
-
-            <p className="contactTag">✦ CONTACT DETAILS</p>
-<h1>Best Astrologer in Bangalore</h1>
-            <h2>Visit Our Astrology Center</h2>
-
+            <p className="contactTag">✦ OFFICE HEADQUARTERS</p>
+            <h1>Vedic Consultation Center in Bangalore</h1>
+            <h2>Visit Shri MP Shastri</h2>
             <p className="contactText">
-              Get astrology, vastu, face reading and tantra guidance from experienced experts.
+              Get clear, calculative resolutions for life transitions directly from an expert advisor.
             </p>
 
             <div className="contactDetails">
-
               <div className="contactItem">
-                <FaMapMarkerAlt />
+                <FaMapMarkerAlt aria-hidden="true" />
                 <div>
-                  <h4>Office Address</h4>
-                  <p>607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmipuram Layout, Mahalakshmi Layout, Bengaluru, Karnataka 560086</p>
+                  <h3>Office Address</h3>
+                  <p>
+                    607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmipuram Layout, Mahalakshmi Layout, Bengaluru, Karnataka 560086
+                  </p>
                 </div>
               </div>
 
               <div className="contactItem">
-                <FaPhoneAlt />
+                <FaPhoneAlt aria-hidden="true" />
                 <div>
-                  <h4>Call Us</h4>
-                  <a href="tel:+918073258799">+91 80732 58799</a>
+                  <h3>Direct Phone Line</h3>
+                  <a href="tel:+918073258799" className="contactLink">+91 80732 58799</a>
                 </div>
               </div>
 
               <div className="contactItem">
-                <FaEnvelope />
+                <FaEnvelope aria-hidden="true" />
                 <div>
-                  <h4>Email</h4>
-                  <a href="mailto:mpshastriastrology@gmail.com">
+                  <h3>Secure Email Channels</h3>
+                  <a href="mailto:mpshastriastrology@gmail.com" className="contactLink">
                     mpshastriastrology@gmail.com
                   </a>
                 </div>
               </div>
-
             </div>
-
           </div>
 
-          {/* RIGHT MAP */}
+          {/* RIGHT GEO MAP ROW */}
           <div className="mapArea">
-<div className="map-container">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.37261676429!2d77.54216647484208!3d13.01192718730717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d638c735a1b%3A0x801d40c1a280a9a5!2sMP%20Shastri%20Astrology!5e0!3m2!1sen!2sin!4v1780487686385!5m2!1sen!2sin"
-    width="100%"
-    height="450"
-    style={{ border: 0 }}
-    allowFullScreen
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-    title="Google Map"
-  />
+{/* RIGHT MAP */}
+<div className="mapArea">
+{/* RIGHT MAP */}
+<div className="mapArea">
+  <div className="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.3732985874217!2d77.5447832!3d13.011883699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16aa14d0ea09c97%3A0xa9986dcd989e9ba4!2sMP%20Shastri%20Astrology!5e0!3m2!1sen!2sin!4v1781862611848!5m2!1sen!2sin" 
+      width="100%" 
+      height="450" 
+      style={{ border: 0 }} 
+      allowFullScreen="" 
+      loading="lazy" 
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Google Map Location of MP Shastri Astrology Office"
+    />
+  </div>
+</div>
 </div>
           </div>
-
         </div>
-
       </section>
-
     </section>
   );
 }
