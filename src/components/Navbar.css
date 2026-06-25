@@ -158,6 +158,12 @@ body {
   padding-left: 28px;
 }
 
+.consultationMenu {
+  min-width: 260px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
 /* ACTION CALL BUTTON CONFIGURATIONS */
 .headerCall {
   display: flex;

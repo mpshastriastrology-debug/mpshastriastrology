@@ -18,6 +18,9 @@ import AstrologerInIndia from './components/astrologer-in-india';
 import VastuExpert from './components/vastu-expert'; 
 import Astrologyservices from './components/Astrologyservices';
 import ChatAssistant from './components/ChatAssistant';
+import ConsultationPage from './components/ConsultationPage';
+import ConsultationHub from './pages/ConsultationHub';
+import { CONSULTATION_PATHS } from './consultation/servicesData';
 import { useScrollAnimations } from "./hooks/useScrollAnimations";
 
 function App() {
@@ -49,6 +52,10 @@ function App() {
         
         {/* Additional Custom Services */}
         <Route path="/astrologyservices" element={<Astrologyservices />} />
+        <Route path="/consultation" element={<ConsultationHub />} />
+        {CONSULTATION_PATHS.map((path) => (
+          <Route key={path} path={path} element={<ConsultationPage />} />
+        ))}
       </Routes>
 
       <Footer />

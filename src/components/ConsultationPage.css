@@ -1,0 +1,296 @@
+.consultationPage {
+  width: 100%;
+  overflow-x: hidden;
+  background: #fffdf8;
+}
+
+.consultationHero {
+  min-height: 72vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 8% 80px;
+}
+
+.consultationHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.55));
+}
+
+.consultationHeroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+.consultationHeroContent p {
+  color: #ffd369;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.consultationHeroContent h1 {
+  color: #fff;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.15;
+  margin-bottom: 22px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.consultationHeroContent span {
+  color: #e8e8e8;
+  font-size: 18px;
+  line-height: 1.85;
+  display: block;
+  margin-bottom: 32px;
+}
+
+.consultationHeroBtns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.consultationBtnPrimary,
+.consultationBtnSecondary {
+  display: inline-block;
+  padding: 15px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.consultationBtnPrimary {
+  background: linear-gradient(135deg, #ffd369, #b86b16);
+  color: #111;
+  box-shadow: 0 4px 15px rgba(184, 107, 22, 0.25);
+}
+
+.consultationBtnSecondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.consultationBtnPrimary:hover,
+.consultationBtnSecondary:hover {
+  transform: translateY(-3px);
+}
+
+.consultationIntro {
+  padding: 100px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.consultationIntroImage img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.consultationIntroText .smallTitle {
+  color: #b8860b;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.consultationIntroText h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.consultationIntroText p {
+  color: #555;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.consultationBlock {
+  padding: 80px 8%;
+}
+
+.consultationBlockAlt {
+  background: linear-gradient(135deg, #fffaf2, #f9edd6);
+}
+
+.consultationBlockHeading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.consultationBlockHeading p {
+  color: #b8860b;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.consultationBlockHeading h2 {
+  font-size: clamp(28px, 3vw, 38px);
+  font-family: "Cormorant Garamond", serif;
+  color: #1a1a1a;
+}
+
+.consultationListGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.consultationListItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 18px 20px;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(184, 134, 11, 0.15);
+  color: #444;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.consultationListItem::before {
+  content: "✔";
+  color: #b8860b;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.consultationRemedyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.consultationRemedyCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid rgba(184, 134, 11, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.consultationRemedyCard h3 {
+  color: #8f5a16;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.consultationRemedyCard p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.consultationBenefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.consultationBenefitTag {
+  background: linear-gradient(135deg, #ffd369, #d4a017);
+  color: #111;
+  padding: 12px 22px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.consultationCta {
+  padding: 90px 8%;
+  text-align: center;
+  background: linear-gradient(135deg, #6b3a12, #8f4d16);
+  color: #fff;
+}
+
+.consultationCta h2 {
+  font-size: clamp(28px, 3vw, 42px);
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 16px;
+}
+
+.consultationCta p {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  line-height: 1.8;
+  color: #f5e6cf;
+}
+
+.consultationRelated {
+  padding: 60px 8% 100px;
+}
+
+.consultationRelatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 1100px;
+  margin: 24px auto 0;
+}
+
+.consultationRelatedLink {
+  display: block;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  border-radius: 12px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.consultationRelatedLink:hover {
+  background: #fff8ea;
+  color: #8f5a16;
+}
+
+@media (max-width: 992px) {
+  .consultationIntro {
+    grid-template-columns: 1fr;
+    padding: 70px 6%;
+  }
+
+  .consultationListGrid,
+  .consultationRemedyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .consultationHero {
+    min-height: 60vh;
+    padding: 120px 6% 60px;
+  }
+
+  .consultationBlock {
+    padding: 60px 6%;
+  }
+}

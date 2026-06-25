@@ -22,6 +22,17 @@ export const ROUTE_LABELS = {
   "/astrologer-in-india": "Astrologer in India",
   "/vastu-expert": "Vastu Expert",
   "/astrologyservices": "Astrology Services",
+  "/consultation": "Consultations",
+  "/horoscope-reading": "Horoscope Reading",
+  "/career-astrology": "Career Astrology",
+  "/marriage-matching": "Marriage Matching",
+  "/financial-solutions": "Financial Solutions",
+  "/love-relationships": "Love & Relationships",
+  "/family-conflict-resolution": "Family Conflict Resolution",
+  "/business-astrology": "Business Astrology",
+  "/vastu-consultation": "Vastu Consultation",
+  "/foreign-settlement": "Foreign Settlement",
+  "/health-astrology": "Health Astrology",
 };
 
 const organizationSchema = {

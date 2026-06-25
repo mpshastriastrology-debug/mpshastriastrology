@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { CONSULTATION_SERVICES } from "../consultation/servicesData";
 
 function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -41,6 +42,22 @@ function Header() {
             <Link to="/vastu">Vastu</Link>
             <Link to="/face-reading">Face Reading</Link>
             <Link to="/tantra">Tantra</Link>
+          </div>
+        </div>
+
+        {/* CONSULTATION DROPDOWN */}
+        <div className="dropdown">
+          <div className="dropdownTitle">
+            Consultation
+            <ChevronDown size={16} />
+          </div>
+          <div className="dropdownMenu consultationMenu">
+            <Link to="/consultation">All Consultations</Link>
+            {CONSULTATION_SERVICES.map((service) => (
+              <Link key={service.path} to={service.path}>
+                {service.navLabel}
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -92,6 +109,21 @@ function Header() {
             <Link to="/vastu" onClick={closeMenu}>Vastu</Link>
             <Link to="/face-reading" onClick={closeMenu}>Face Reading</Link>
             <Link to="/tantra" onClick={closeMenu}>Tantra</Link>
+          </div>
+        </div>
+
+        <div className="dropdown">
+          <div className="dropdownTitle">
+            Consultation
+            <ChevronDown size={16} />
+          </div>
+          <div className="dropdownMenu consultationMenu">
+            <Link to="/consultation" onClick={closeMenu}>All Consultations</Link>
+            {CONSULTATION_SERVICES.map((service) => (
+              <Link key={service.path} to={service.path} onClick={closeMenu}>
+                {service.navLabel}
+              </Link>
+            ))}
           </div>
         </div>
 
