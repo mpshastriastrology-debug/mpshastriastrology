@@ -18,7 +18,7 @@ import AstrologerInBangalore from './components/astrologer-in-bangalore';
 import OnlineAstrologer from './components/online-astrologer'; 
 import AstrologerInIndia from './components/astrologer-in-india'; 
 import VastuExpert from './components/vastu-expert'; 
-import Astrologyservices from './components/astrologyservices';
+import Astrologyservices from './components/Astrologyservices';
 
 function App() {
   useEffect(() => {
