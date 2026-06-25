@@ -17,7 +17,7 @@ import AstrologerInBangalore from './components/astrologer-in-bangalore';
 import OnlineAstrologer from './components/online-astrologer'; 
 import AstrologerInIndia from './components/astrologer-in-india'; 
 import VastuExpert from './components/vastu-expert'; 
-import Astrologyservices from './components/Astrologyservices';
+import Astrologyservices from './components/astrologyservices';
 
 function App() {
   useEffect(() => {
@@ -52,7 +52,7 @@ function App() {
         <Route path="/vastu-expert" element={<VastuExpert />} />
         
         {/* Additional Custom Services */}
-        <Route path="/Astrologyservices" element={<Astrologyservices />} />
+        <Route path="/astrologyservices" element={<Astrologyservices />} />
       </Routes>
 
       <Footer />
