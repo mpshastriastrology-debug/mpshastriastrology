@@ -19,6 +19,7 @@ import OnlineAstrologer from './components/online-astrologer';
 import AstrologerInIndia from './components/astrologer-in-india'; 
 import VastuExpert from './components/vastu-expert'; 
 import Astrologyservices from './components/Astrologyservices';
+import ChatAssistant from './components/ChatAssistant';
 
 function App() {
   useEffect(() => {
@@ -58,6 +59,7 @@ function App() {
       </Routes>
 
       <Footer />
+      <ChatAssistant />
     </>
   );
 }
