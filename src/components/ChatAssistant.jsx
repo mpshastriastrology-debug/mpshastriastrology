@@ -122,15 +122,25 @@ function ChatAssistant() {
                         {message.action.label}
                       </Link>
                     )}
-                    {message.secondaryAction && (
-                      <Link
-                        to={message.secondaryAction.href}
-                        className="chatAssistantActionBtn chatAssistantActionBtn--secondary"
-                        onClick={() => setOpen(false)}
-                      >
-                        {message.secondaryAction.label}
-                      </Link>
-                    )}
+                    {message.secondaryAction &&
+                      (message.secondaryAction.external ? (
+                        <a
+                          href={message.secondaryAction.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="chatAssistantActionBtn chatAssistantActionBtn--secondary"
+                        >
+                          {message.secondaryAction.label}
+                        </a>
+                      ) : (
+                        <Link
+                          to={message.secondaryAction.href}
+                          className="chatAssistantActionBtn chatAssistantActionBtn--secondary"
+                          onClick={() => setOpen(false)}
+                        >
+                          {message.secondaryAction.label}
+                        </Link>
+                      ))}
                   </div>
                 )}
               </div>

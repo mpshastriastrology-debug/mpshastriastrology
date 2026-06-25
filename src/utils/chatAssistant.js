@@ -17,12 +17,171 @@ const CONTACT = {
   hours: "9:00 AM – 9:00 PM, all days",
 };
 
+const GURUJI_PHONE = "8073258799";
+const GURUJI_CONTACT = `\n\nFor a personalized analysis and remedial plan, please contact Guruji Shri MP Shastri:\n📞 ${GURUJI_PHONE}\n(Call or WhatsApp)`;
+
 export const QUICK_PROMPTS = [
+  "Marriage problem solution",
+  "Love relationship issue",
+  "Career guidance",
+  "Financial problem help",
+  "Health astrological remedies",
   "Book a consultation",
-  "Astrology services",
-  "Vastu consultation",
-  "Online session available?",
-  "Office location & timings",
+];
+
+const PROBLEM_REPLIES = [
+  {
+    keywords: [
+      "marriage problem",
+      "marriage delay",
+      "marriage issue",
+      "not getting married",
+      "late marriage",
+      "marry",
+      "marriage",
+      "husband wife",
+      "wife problem",
+      "husband problem",
+      "divorce",
+      "marital",
+      "kundali matching",
+      "guna milan",
+      "compatibility",
+      "wedding delay",
+    ],
+    answer: `Marriage-related concerns are often linked to planetary periods, 7th house influences, and Kundali compatibility.
+
+Helpful tips:
+• Check Kundali matching (Guna Milan) before finalizing a alliance
+• Identify favorable marriage timing through dasha and transit analysis
+• Simple Vedic remedies — mantras, fasting days, or charity on specific weekdays — can support harmony
+• Avoid major marriage decisions during heavily afflicted planetary periods without guidance
+
+Every chart is unique. General tips cannot replace a full horoscope reading.${GURUJI_CONTACT}`,
+    action: { label: "Call Guruji", href: CONTACT.phoneLink },
+    secondaryAction: { label: "WhatsApp Guruji", href: CONTACT.whatsapp, external: true },
+  },
+  {
+    keywords: [
+      "love problem",
+      "love issue",
+      "love life",
+      "relationship problem",
+      "breakup",
+      "break up",
+      "boyfriend",
+      "girlfriend",
+      "partner",
+      "romance",
+      "relationship",
+      "affair",
+      "separation",
+      "patch up",
+    ],
+    answer: `Love and relationship challenges are commonly studied through the 5th and 7th houses, Venus placement, and current dasha periods.
+
+Helpful tips:
+• Understand whether the difficulty is timing-related or compatibility-related
+• Venus and Moon balancing remedies can support emotional stability
+• Avoid impulsive decisions during Rahu-Ketu or afflicted Venus transits
+• Open communication combined with astrological timing often improves outcomes
+
+For relationship clarity based on both partners' charts, personal consultation is essential.${GURUJI_CONTACT}`,
+    action: { label: "Call Guruji", href: CONTACT.phoneLink },
+    secondaryAction: { label: "WhatsApp Guruji", href: CONTACT.whatsapp, external: true },
+  },
+  {
+    keywords: [
+      "financial problem",
+      "money problem",
+      "finance issue",
+      "debt",
+      "loan",
+      "wealth",
+      "financial",
+      "money",
+      "poverty",
+      "income",
+      "business loss",
+      "loss in business",
+      "property dispute",
+      "financial trouble",
+      "no savings",
+    ],
+    answer: `Financial difficulties in Vedic astrology are often connected to the 2nd, 11th, and 10th houses, Jupiter-Venus strength, and active dasha cycles.
+
+Helpful tips:
+• Review whether the current dasha supports investment or calls for caution
+• Strengthen wealth houses through recommended gemstones, mantras, or charity (only after chart analysis)
+• Check Vastu of cash locker, main entrance, and north/east zones at home or office
+• Avoid major financial commitments during unfavorable planetary periods
+
+Accurate timing for investments and debt relief requires your birth chart analysis.${GURUJI_CONTACT}`,
+    action: { label: "Call Guruji", href: CONTACT.phoneLink },
+    secondaryAction: { label: "WhatsApp Guruji", href: CONTACT.whatsapp, external: true },
+  },
+  {
+    keywords: [
+      "career problem",
+      "job problem",
+      "career issue",
+      "unemployed",
+      "unemployment",
+      "no job",
+      "promotion",
+      "career growth",
+      "career",
+      "job change",
+      "switch job",
+      "business problem",
+      "profession",
+      "work problem",
+      "office problem",
+      "interview",
+      "jobless",
+    ],
+    answer: `Career obstacles are typically analyzed through the 10th house, Saturn, Sun, Mercury, and the running dasha-antardasha period.
+
+Helpful tips:
+• Identify whether delay is due to Saturn, Rahu, or a weak 10th lord in your chart
+• Choose favorable periods for job changes, promotions, or new business ventures
+• Simple discipline-based remedies for Saturn often support steady career progress
+• Align your workspace Vastu — especially north and east zones — for clarity and growth
+
+A detailed career chart reading reveals the best path and timing for your situation.${GURUJI_CONTACT}`,
+    action: { label: "Call Guruji", href: CONTACT.phoneLink },
+    secondaryAction: { label: "WhatsApp Guruji", href: CONTACT.whatsapp, external: true },
+  },
+  {
+    keywords: [
+      "health problem",
+      "health issue",
+      "illness",
+      "disease",
+      "sick",
+      "medical",
+      "health",
+      "mental stress",
+      "stress",
+      "anxiety",
+      "depression",
+      "chronic",
+      "hospital",
+      "recovery",
+      "wellness",
+    ],
+    answer: `Health concerns in Vedic astrology are studied through the 6th, 8th, and 12th houses, ascendant strength, and planetary afflictions in the birth chart.
+
+Helpful tips:
+• Identify whether the issue is acute, chronic, or linked to a specific dasha period
+• Follow medical advice first — astrology supports timing and remedial balance alongside treatment
+• Moon and Sun strengthening practices can aid emotional and physical resilience
+• Check bedroom direction and kitchen placement in home Vastu for energy balance
+
+Health remedies must be personalized to your chart — never use generic stones or rituals without guidance.${GURUJI_CONTACT}`,
+    action: { label: "Call Guruji", href: CONTACT.phoneLink },
+    secondaryAction: { label: "WhatsApp Guruji", href: CONTACT.whatsapp, external: true },
+  },
 ];
 
 const TOPIC_REPLIES = [
@@ -65,7 +224,7 @@ const TOPIC_REPLIES = [
     action: { label: "Chat on WhatsApp", href: CONTACT.whatsapp, external: true },
   },
   {
-    keywords: ["astrology", "horoscope", "kundali", "birth chart", "marriage", "career", "guna", "dasha"],
+    keywords: ["astrology", "horoscope", "kundali", "birth chart", "guna", "dasha"],
     answer:
       "We offer Vedic astrology consultations including horoscope reading, Kundali matching, career timing, marriage compatibility, financial guidance, and personalized remedies. Online and in-person sessions are both available.",
     action: { label: "Astrology Services", href: "/astrology" },
@@ -128,6 +287,18 @@ function scoreFaqMatch(input, faq) {
 function findTopicReply(input) {
   const normalized = normalize(input);
 
+  const problemMatch = PROBLEM_REPLIES.find((topic) =>
+    topic.keywords.some(
+      (keyword) =>
+        normalized.includes(keyword) ||
+        keyword.split(" ").every((part) => normalized.includes(part))
+    )
+  );
+
+  if (problemMatch) {
+    return problemMatch;
+  }
+
   return TOPIC_REPLIES.find((topic) =>
     topic.keywords.some(
       (keyword) =>
@@ -178,9 +349,9 @@ export function getAutoReply(input) {
 
   return {
     text:
-      "Thank you for your question. For a detailed personal consultation, please speak directly with Shri MP Shastri. You can book via our contact form, call us, or start a WhatsApp chat.",
-    action: { label: "WhatsApp Shri MP Shastri", href: CONTACT.whatsapp, external: true },
-    secondaryAction: { label: "Contact Page", href: "/contact" },
+      `Thank you for your question. For detailed personal guidance, please contact Guruji Shri MP Shastri directly at ${GURUJI_PHONE} (call or WhatsApp).`,
+    action: { label: "Call Guruji", href: CONTACT.phoneLink },
+    secondaryAction: { label: "WhatsApp Guruji", href: CONTACT.whatsapp, external: true },
   };
 }
 
@@ -188,5 +359,5 @@ export const WELCOME_MESSAGE = {
   id: "welcome",
   sender: "assistant",
   text:
-    "Namaste! I am the MP Shastri Astrology assistant. Ask about astrology, Vastu, bookings, online sessions, or office timings — I will reply instantly.",
+    "Namaste! I am the MP Shastri Astrology assistant. Ask about marriage, love, career, finance, health, Vastu, or bookings — I will share helpful tips and connect you with Guruji Shri MP Shastri at 8073258799.",
 };
