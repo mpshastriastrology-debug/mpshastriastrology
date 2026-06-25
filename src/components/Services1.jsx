@@ -1,6 +1,6 @@
 import "./Services1.css";
-import { PhoneCall, MessageCircle } from "lucide-react";
-import { FaOm, FaHome, FaEye } from "react-icons/fa";
+import { PhoneCall } from "lucide-react";
+import { FaOm, FaHome, FaEye, FaWhatsapp } from "react-icons/fa";
 import { GiMeditation } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { HOME_FAQS } from "../seo/faqData";
@@ -154,7 +154,7 @@ function Services() {
             className="floatingWhatsapp"
             aria-label="Open Secure WhatsApp Consultation Chat Thread"
           >
-            <MessageCircle size={26} />
+            <FaWhatsapp size={28} />
           </a>
         </div>
 
