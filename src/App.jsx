@@ -1,25 +1,29 @@
-import { Routes, Route } from 'react-router-dom';
-import { useEffect } from "react";
-import Navbar from './components/Navbar';
-import Breadcrumbs from './components/Breadcrumbs';
-import Footer from './components/Footer';
-
-import Home from './pages/Home';
-import About from './components/About';
-import ServicesPage from './components/Services';
-import Contact from './components/Contact';
-import Astrology from './components/Astrology';
-import Vastu from './components/Vastu';
-import Face from './components/Face-reading'; 
-import Tantra from './components/Tantra'; 
-import AOS from "aos";
+import { lazy, Suspense, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Breadcrumbs from "./components/Breadcrumbs";
+import Footer from "./components/Footer";
+import ChatAssistant from "./components/ChatAssistant";
 import Scrol from "./Scrol";
-import AstrologerInBangalore from './components/astrologer-in-bangalore'; 
-import OnlineAstrologer from './components/online-astrologer'; 
-import AstrologerInIndia from './components/astrologer-in-india'; 
-import VastuExpert from './components/vastu-expert'; 
-import Astrologyservices from './components/Astrologyservices';
-import ChatAssistant from './components/ChatAssistant';
+import AOS from "aos";
+
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./components/About"));
+const ServicesPage = lazy(() => import("./components/Services"));
+const Contact = lazy(() => import("./components/Contact"));
+const Astrology = lazy(() => import("./components/Astrology"));
+const Vastu = lazy(() => import("./components/Vastu"));
+const Face = lazy(() => import("./components/Face-reading"));
+const Tantra = lazy(() => import("./components/Tantra"));
+const AstrologerInBangalore = lazy(() => import("./components/astrologer-in-bangalore"));
+const OnlineAstrologer = lazy(() => import("./components/online-astrologer"));
+const AstrologerInIndia = lazy(() => import("./components/astrologer-in-india"));
+const VastuExpert = lazy(() => import("./components/vastu-expert"));
+const Astrologyservices = lazy(() => import("./components/Astrologyservices"));
+
+function PageLoader() {
+  return <div className="min-h-[40vh] bg-cream" aria-hidden="true" />;
+}
 
 function App() {
   useEffect(() => {
@@ -36,27 +40,26 @@ function App() {
       <Navbar />
       <Breadcrumbs />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/contact" element={<Contact />} />
-                
-        {/* Core Pillar Modules */}
-        <Route path="/astrology" element={<Astrology />} />
-        <Route path="/vastu" element={<Vastu />} />
-        <Route path="/face-reading" element={<Face />} />
-        <Route path="/tantra" element={<Tantra />} />
-        
-        {/* Targeted SEO Landing Hubs */}
-        <Route path="/astrologer-in-bangalore" element={<AstrologerInBangalore />} />
-        <Route path="/online-astrologer" element={<OnlineAstrologer />} />
-        <Route path="/astrologer-in-india" element={<AstrologerInIndia />} />
-        <Route path="/vastu-expert" element={<VastuExpert />} />
-        
-        {/* Additional Custom Services */}
-        <Route path="/astrologyservices" element={<Astrologyservices />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<Contact />} />
+
+          <Route path="/astrology" element={<Astrology />} />
+          <Route path="/vastu" element={<Vastu />} />
+          <Route path="/face-reading" element={<Face />} />
+          <Route path="/tantra" element={<Tantra />} />
+
+          <Route path="/astrologer-in-bangalore" element={<AstrologerInBangalore />} />
+          <Route path="/online-astrologer" element={<OnlineAstrologer />} />
+          <Route path="/astrologer-in-india" element={<AstrologerInIndia />} />
+          <Route path="/vastu-expert" element={<VastuExpert />} />
+
+          <Route path="/astrologyservices" element={<Astrologyservices />} />
+        </Routes>
+      </Suspense>
 
       <Footer />
       <ChatAssistant />

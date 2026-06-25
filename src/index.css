@@ -1,21 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
-
-/* Tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@theme {
+  --color-gold: #d4af37;
+  --color-gold-dark: #b8860b;
+  --color-cream: #f8f4ee;
+  --color-cream-soft: #f8f5ef;
+  --color-ink: #111111;
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Poppins", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+    font-family: var(--font-body);
+    background: #090414;
+  }
 }
 
-body {
-  overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
-  background: #090414;
+@layer components {
+  .faq-item input[type="checkbox"] {
+    display: none;
+  }
+
+  .faq-item label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.75rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    user-select: none;
+  }
+
+  .faq-item label span {
+    font-size: 1.75rem;
+    color: var(--color-gold);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 1.75rem;
+    color: #666;
+    line-height: 1.9;
+  }
+
+  .faq-item input:checked ~ .faq-content {
+    max-height: 400px;
+    padding: 0 1.75rem 1.75rem;
+  }
+
+  .faq-item input:checked + label span {
+    transform: rotate(45deg);
+  }
+
+  .chat-typing span {
+    animation: chatTyping 1.2s infinite ease-in-out;
+  }
+
+  .chat-typing span:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .chat-typing span:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes chatTyping {
+  0%,
+  80%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
 }
