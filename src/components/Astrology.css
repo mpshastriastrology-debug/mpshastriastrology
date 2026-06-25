@@ -128,7 +128,7 @@ body {
 }
 
 .astroContent p {
-  color: #e8af76; /* Corrected serious invisible text error */
+  color: #d67616; /* Corrected serious invisible text error */
   line-height: 2;
   margin-bottom: 30px;
 }

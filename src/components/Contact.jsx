@@ -24,7 +24,6 @@ function Contact() {
     setLoading(true);
 
     try {
-      console.log("API URL:", import.meta.env.VITE_API_URL);
       const res = await fetch(
         `${import.meta.env.VITE_API_URL}/api/contact`,
         {
@@ -57,7 +56,11 @@ function Contact() {
       }
     } catch (error) {
       console.error("Contact Form Error:", error);
-      alert(error.message || "Server error. Please try again later.");
+      const message =
+        error.message === "Failed to fetch"
+          ? "Could not reach the server. Please check your connection and try again."
+          : error.message || "Server error. Please try again later.";
+      alert(message);
     } finally {
       setLoading(false);
     }

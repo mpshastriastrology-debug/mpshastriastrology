@@ -35,7 +35,7 @@ function Hero() {
 
         {/* Clean, high-authority header targeting your top local intent phrase */}
         <h1>
-                   Vedic Astrologer & Vastu Expert in Bangalore
+                   Best Astrologer in Bangalore
         </h1>
 
         {/* Persuasive copy that hits multiple keyword intents naturally while maintaining professional E-E-A-T */}
