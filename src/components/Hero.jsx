@@ -1,19 +1,20 @@
 import { Link } from 'react-router-dom'
 import './Hero.css'
+import Reveal from './Reveal'
 
 function Hero() {
   return (
     <section className="heroSection">
       {/* SPINNING CIRCLE */}
-      <div className="heroCircle">
+      <Reveal className="heroCircle" animation="fade-right" duration={1100}>
         <img
           src="/MPShastriAstrology.webp"
           alt="Shri MP Shastri - Vedic Astrologer and Vastu Expert" // Natural alt text over stuffed keyword string
         />
-      </div>
+      </Reveal>
 
       {/* LEFT CONTENT */}
-      <div className="heroContent">
+      <Reveal className="heroContent" animation="fade-up" delay={100}>
         <span className="heroTag">
           ✦ Vedic Astrology & Spiritual Guidance
         </span>
@@ -61,22 +62,18 @@ function Hero() {
 
         {/* STATS */}
         <div className="heroStats">
-          <div className="statCard">
-            <h3>17+</h3>
-            <p>Years Experience</p>
-          </div>
-
-          <div className="statCard">
-            <h3>25K+</h3>
-            <p>Consultations</p>
-          </div>
-
-          <div className="statCard">
-            <h3>98%</h3>
-            <p>Positive Feedback</p>
-          </div>
+          {[
+            ["17+", "Years Experience"],
+            ["25K+", "Consultations"],
+            ["98%", "Positive Feedback"],
+          ].map(([value, label], index) => (
+            <Reveal className="statCard" key={label} animation="fade-up" delay={200 + index * 100}>
+              <h3>{value}</h3>
+              <p>{label}</p>
+            </Reveal>
+          ))}
         </div>
-      </div>
+      </Reveal>
 
       {/* RIGHT IMAGE 
       <div className="heroImage">

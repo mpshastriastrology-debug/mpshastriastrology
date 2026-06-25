@@ -1,4 +1,5 @@
 import "./Footer.css";
+import Reveal from "./Reveal";
 import {
   FaFacebookF,
   FaInstagram,
@@ -16,7 +17,7 @@ function Footer() {
       {/* TOP CONFIGURATION ROW */}
       <div className="footerTop">
         {/* CONTACT DATA MODULE */}
-        <div className="footerBox">
+        <Reveal className="footerBox" animation="fade-up" delay={0}>
           <h3>CONTACT INFO</h3>
           <a href="tel:+918073258799" className="footerItem">
             <FaPhoneAlt aria-hidden="true" />
@@ -34,34 +35,34 @@ function Footer() {
               Mahalakshmi, Bangalore, Karnataka, India
             </span>
           </div>
-        </div>
+        </Reveal>
 
         {/* GENERAL PLATFORM LINKS */}
-        <div className="footerBox">
+        <Reveal className="footerBox" animation="fade-up" delay={80}>
           <h3>USEFUL LINKS</h3>
           <Link to="/">HOME</Link>
           <Link to="/about">ABOUT</Link>
           <Link to="/services">SERVICES</Link> {/* Updated from /astrology to point directly to your master hub page */}
           <Link to="/contact">CONTACT</Link>
-        </div>
+        </Reveal>
 
         {/* SPECIALTIES INNER CONTENT CATEGORIES */}
-        <div className="footerBox">
+        <Reveal className="footerBox" animation="fade-up" delay={160}>
           <h3>SPECIALITIES</h3>
           <Link to="/astrology">ASTROLOGY</Link>
           <Link to="/vastu">VASTU CONSULTATION</Link>
           <Link to="/face-reading">FACE READING</Link> {/* Fixed casing error from "/Face-reading" to lower case */}
           <Link to="/tantra">TANTRA</Link>
-        </div>
+        </Reveal>
 
         {/* TARGETED SEARCH ENGINES HIGHLIGHT HUBS */}
-        <div className="footerBox">
+        <Reveal className="footerBox" animation="fade-up" delay={240}>
           <h3>IMPORTANT</h3>
           <Link to="/astrologer-in-bangalore">BEST ASTROLOGER IN BANGALORE</Link>
           <Link to="/astrologer-in-india">BEST ASTROLOGER IN INDIA</Link>
           <Link to="/online-astrologer">ONLINE ASTROLOGY</Link>
           <Link to="/vastu-expert">VASTU EXPERT</Link>
-        </div>
+        </Reveal>
       </div>
 
       {/* BOTTOM LEGAL AND SOCIAL BAR */}

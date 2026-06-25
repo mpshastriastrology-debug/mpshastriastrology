@@ -2,6 +2,7 @@ import "./Astrology.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
 import Seo from './Seo';
+import Reveal from './Reveal';
 
 function Astrologyservices({ seo = true }) {
   // Centralized data array makes handling clean alt tags and structured URLs infinitely easier
@@ -95,14 +96,15 @@ const servicesData = [
         />
       )}
       <div className="astroServices">
-        <div className="sectionHeading">
+        <Reveal className="sectionHeading" animation="fade-up">
           <p>✦ OUR SPECIALITIES</p>
           <h2>Comprehensive Astrology &amp; Vastu Consultations</h2>
-        </div>
+        </Reveal>
 
         <div className="astroServiceGrid">
           {servicesData.map((service, index) => (
-            <Link to={service.path} key={index} className="astroCardLink">
+            <Reveal key={index} animation="fade-up" delay={(index % 4) * 80}>
+              <Link to={service.path} className="astroCardLink">
               <div className="astroCard">
                 <img src={service.img} alt={service.alt} loading="lazy" />
                 <div className="astroCardContent">
@@ -111,7 +113,8 @@ const servicesData = [
                   <span className="readMoreLabel">Learn More &rarr;</span>
                 </div>
               </div>
-            </Link>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </div>

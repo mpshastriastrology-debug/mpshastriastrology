@@ -2,6 +2,7 @@ import "./Contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
 import Seo from "./Seo";
+import Reveal from "./Reveal";
 
 function Contact() {
   const [form, setForm] = useState({
@@ -76,7 +77,7 @@ function Contact() {
       />
       {/* APPOINTMENT FORM SECTION */}
       <section className="appointmentSection">
-        <div className="appointmentLeft">
+        <Reveal className="appointmentLeft" animation="fade-right">
           <p>✦ BOOK YOUR APPOINTMENT</p>
           <h2>Start Your Spiritual Journey Today</h2>
           <span>
@@ -89,9 +90,9 @@ function Contact() {
             <div className="appointmentItem">✔ High-Definition Remote Video Calls</div>
             <div className="appointmentItem">✔ Direct Dashboard Support Channels</div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="appointmentRight">
+        <Reveal className="appointmentRight" animation="fade-left">
           <form className="appointmentForm" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -149,14 +150,14 @@ function Contact() {
               {loading ? "Processing Entry..." : "Confirm Booking Details"}
             </button>
           </form>
-        </div>
+        </Reveal>
       </section>
 
       {/* CORE CONTACT LOCATIONS & MAP AREA */}
       <section className="contactLocation">
         <div className="contactContainer">
           {/* LEFT CONTENT ROW */}
-          <div className="contactInfo">
+          <Reveal className="contactInfo" animation="fade-right">
             <p className="contactTag">✦ OFFICE HEADQUARTERS</p>
             <h1>Vedic Consultation Center in Bangalore</h1>
             <h2>Visit Shri MP Shastri</h2>
@@ -193,29 +194,23 @@ function Contact() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* RIGHT GEO MAP ROW */}
-          <div className="mapArea">
-{/* RIGHT MAP */}
-<div className="mapArea">
-{/* RIGHT MAP */}
-<div className="mapArea">
-  <div className="map-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.3732985874217!2d77.5447832!3d13.011883699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16aa14d0ea09c97%3A0xa9986dcd989e9ba4!2sMP%20Shastri%20Astrology!5e0!3m2!1sen!2sin!4v1781862611848!5m2!1sen!2sin" 
-      width="100%" 
-      height="450" 
-      style={{ border: 0 }} 
-      allowFullScreen="" 
-      loading="lazy" 
-      referrerPolicy="no-referrer-when-downgrade"
-      title="Google Map Location of MP Shastri Astrology Office"
-    />
-  </div>
-</div>
-</div>
-          </div>
+          <Reveal className="mapArea" animation="fade-left">
+            <div className="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.3732985874217!2d77.5447832!3d13.011883699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16aa14d0ea09c97%3A0xa9986dcd989e9ba4!2sMP%20Shastri%20Astrology!5e0!3m2!1sen!2sin!4v1781862611848!5m2!1sen!2sin"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Map Location of MP Shastri Astrology Office"
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
     </section>

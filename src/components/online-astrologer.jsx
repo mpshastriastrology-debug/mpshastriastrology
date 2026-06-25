@@ -1,6 +1,7 @@
 import Seo from "./Seo";
 import "./OnlineAstrology.css";
 import { Link } from "react-router-dom";
+import Reveal from "./Reveal";
 
 function OnlineAstrology() {
   return (
@@ -12,9 +13,8 @@ function OnlineAstrology() {
       />
 
       <div className="onlineAstrologyPage">
-        {/* HERO SECTION */}
         <section className="onlineAstrologyHero">
-          <div className="onlineAstrologyHeroContent">
+          <Reveal className="onlineAstrologyHeroContent" animation="fade-up">
             <p className="onlineAstrologyHeroTag">
               ✦ REMOTE METAPHYSICAL EVALUATIONS GLOBAL
             </p>
@@ -38,10 +38,9 @@ function OnlineAstrology() {
                 WhatsApp Session
               </a>
             </div>
-          </div>
+          </Reveal>
         </section>
 
-        {/* UNIFORM INTERNAL ROUTE HUBS */}
         <div className="service-links">
           <Link to="/astrology">Vedic Astrology Solutions</Link>
           <Link to="/vastu">Vastu Shastra Consultant</Link>
@@ -49,111 +48,66 @@ function OnlineAstrology() {
           <Link to="/tantra">Spiritual Healing &amp; Protection</Link>
         </div>
 
-        {/* CORE ABOUT INTRO */}
-        <section className="onlineAstrologySection">
+        <Reveal as="section" className="onlineAstrologySection" animation="fade-up">
           <h2>Accessible Wisdom: Virtual Chart Interrogations</h2>
           <p>
             Shri MP Shastri offers comprehensive virtual astrology services tailored for modern profiles. By shifting configurations into structured digital session rooms, you receive comprehensive analytical reporting and practical, actionable counter-measures without requiring an in-person office visit.
           </p>
-        </section>
+        </Reveal>
 
-        {/* CONSULTATION CAPABILITIES GRID */}
-        <section className="onlineAstrologySection">
+        <Reveal as="section" className="onlineAstrologySection" animation="fade-up">
           <h2>Remote Assessment Frameworks</h2>
           <div className="onlineAstrologyGrid">
-            <div className="onlineAstrologyCard">
-              <h3>Horoscope Auditing</h3>
-              <p>
-                Complete natal chart mathematical analysis tracking current planetary transits and dynamic house placements.
-              </p>
-            </div>
-
-            <div className="onlineAstrologyCard">
-              <h3>Marital Coordination</h3>
-              <p>
-                Compatibility metrics evaluation engineered to spot relational friction areas and define smooth marriage paths.
-              </p>
-            </div>
-
-            <div className="onlineAstrologyCard">
-              <h3>Corporate Guidance</h3>
-              <p>
-                Strategic commercial forecasting pointing out optimal timeline windows for career changes or resource expansions.
-              </p>
-            </div>
-
-            <div className="onlineAstrologyCard">
-              <h3>Virtual Vastu Audits</h3>
-              <p>
-                Remote blueprint and structural element evaluations for residential properties or offices without requiring demolition.
-              </p>
-            </div>
-
-            <div className="onlineAstrologyCard">
-              <h3>Physiognomy Profiling</h3>
-              <p>
-                Video-assisted facial landmark tracking to outline fundamental behavioral trends and intrinsic leadership styles.
-              </p>
-            </div>
-
-            <div className="onlineAstrologyCard">
-              <h3>Environmental Cleansing</h3>
-              <p>
-                Traditional, highly personalized balancing recommendations designed to clear stubborn mental blocks and stagnation.
-              </p>
-            </div>
+            {[
+              ["Horoscope Auditing", "Complete natal chart mathematical analysis tracking current planetary transits and dynamic house placements."],
+              ["Marital Coordination", "Compatibility metrics evaluation engineered to spot relational friction areas and define smooth marriage paths."],
+              ["Corporate Guidance", "Strategic commercial forecasting pointing out optimal timeline windows for career changes or resource expansions."],
+              ["Virtual Vastu Audits", "Remote blueprint and structural element evaluations for residential properties or offices without requiring demolition."],
+              ["Physiognomy Profiling", "Video-assisted facial landmark tracking to outline fundamental behavioral trends and intrinsic leadership styles."],
+              ["Environmental Cleansing", "Traditional, highly personalized balancing recommendations designed to clear stubborn mental blocks and stagnation."],
+            ].map(([title, text], index) => (
+              <Reveal className="onlineAstrologyCard" key={title} animation="fade-up" delay={index * 60}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </Reveal>
 
-        {/* VALUE PROPOSITION AREA */}
-        <section className="onlineAstrologySection">
+        <Reveal as="section" className="onlineAstrologySection" animation="fade-up">
           <h2>Why Select Virtual Sessions?</h2>
           <div className="onlineAstrologyGrid">
-            <div className="onlineAstrologyCard">
-              <h3>Global Connectivity</h3>
-              <p>Accessible scheduling setups regardless of your timezone or domestic territory boundaries.</p>
-            </div>
-
-            <div className="onlineAstrologyCard">
-              <h3>Strict Data Discretion</h3>
-              <p>All private birth criteria records and conversation points remain deeply encrypted and secure.</p>
-            </div>
-
-            <div className="onlineAstrologyCard">
-              <h3>Streamlined Scheduling</h3>
-              <p>Direct communication channels ensure rapid processing and minimized setup delays.</p>
-            </div>
-
-            <div className="onlineAstrologyCard">
-              <h3>Calculated Accuracy</h3>
-              <p>Remote sessions maintain the identical mathematical precision and depth as physical office visits.</p>
-            </div>
+            {[
+              ["Global Connectivity", "Accessible scheduling setups regardless of your timezone or domestic territory boundaries."],
+              ["Strict Data Discretion", "All private birth criteria records and conversation points remain deeply encrypted and secure."],
+              ["Streamlined Scheduling", "Direct communication channels ensure rapid processing and minimized setup delays."],
+              ["Calculated Accuracy", "Remote sessions maintain the identical mathematical precision and depth as physical office visits."],
+            ].map(([title, text], index) => (
+              <Reveal className="onlineAstrologyCard" key={title} animation="fade-up" delay={index * 80}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </Reveal>
 
-        {/* STEP-BY-STEP WORKFLOW EXPLAINER */}
-        <section className="onlineAstrologySection">
+        <Reveal as="section" className="onlineAstrologySection" animation="fade-up">
           <h2>The Booking Process</h2>
           <div className="onlineAstrologyGrid">
-            <div className="onlineAstrologyCard">
-              <h3>1. Secure a Window</h3>
-              <p>Contact our desk via phone or WhatsApp link to choose your preferred consultation method.</p>
-            </div>
-
-            <div className="onlineAstrologyCard">
-              <h3>2. Provide Criteria</h3>
-              <p>Submit your precise date, time, and city of origin alongside your core topics of focus.</p>
-            </div>
-
-            <div className="onlineAstrologyCard">
-              <h3>3. Live Analysis</h3>
-              <p>Join your private, secure audio or video session for a clear, diagnostic exploration of your chart.</p>
-            </div>
+            {[
+              ["1. Secure a Window", "Contact our desk via phone or WhatsApp link to choose your preferred consultation method."],
+              ["2. Provide Criteria", "Submit your precise date, time, and city of origin alongside your core topics of focus."],
+              ["3. Live Analysis", "Join your private, secure audio or video session for a clear, diagnostic exploration of your chart."],
+            ].map(([title, text], index) => (
+              <Reveal className="onlineAstrologyCard" key={title} animation="fade-up" delay={index * 100}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </Reveal>
 
-        {/* CALL TO ACTION ROW */}
-        <section className="onlineAstrologyCTA">
+        <Reveal as="section" className="onlineAstrologyCTA" animation="zoom-in">
           <h2>Initiate Your Virtual Session</h2>
           <p>
             Clear your path from any location. Connect directly with our helpdesk today to schedule your private call.
@@ -161,7 +115,7 @@ function OnlineAstrology() {
           <a href="tel:+918073258799" className="onlineAstrologyCtaBtn">
             Call +91 80732 58799
           </a>
-        </section>
+        </Reveal>
       </div>
     </>
   );

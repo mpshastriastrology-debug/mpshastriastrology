@@ -5,6 +5,7 @@ import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { ASTROLOGY_FAQS } from '../seo/faqData';
 import Astrologyservices from './astrologyservices';
+import Reveal from './Reveal';
 
 function Astrology() {
   return (
@@ -20,7 +21,7 @@ function Astrology() {
         {/* HERO SECTION */}
         <div className="astroHero">
           <div className="astroOverlay"></div>
-          <div className="astroHeroContent">
+          <Reveal className="astroHeroContent" animation="fade-up">
             <p>✦ ANCIENT VEDIC WISDOM</p>
             <h1>Professional Vedic Astrology Consultation</h1>
             <span>
@@ -35,19 +36,19 @@ function Astrology() {
             >
               Book Astrology Session
             </a>
-          </div>
+          </Reveal>
         </div>
 
         {/* CORE DETAILS SECTION */}
         <div className="astroAbout">
-          <div className="astroImage">
+          <Reveal className="astroImage" animation="fade-right">
             <img
               src="/Astrology.webp"
               alt="Vedic astrology chart parsing representing planetary house transitions"
             />
-          </div>
+          </Reveal>
 
-          <div className="astroContent">
+          <Reveal className="astroContent" animation="fade-left">
             <p className="smallTitle">✦ ANALYZING THE COSMIC MAP</p>
             <h2>Align with Your Strategic Destiny Paths</h2>
             <p>
@@ -60,7 +61,7 @@ function Astrology() {
               <div className="astroPoint">✔ Direct Marital Compatibility Analysis</div>
               <div className="astroPoint">✔ Authentic Remedial Lineage Corrections</div>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* REPAIRED INTERNAL ROUTE HUBS */}

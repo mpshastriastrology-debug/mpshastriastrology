@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import { useEffect } from "react";
 import Navbar from './components/Navbar';
 import Breadcrumbs from './components/Breadcrumbs';
 import Footer from './components/Footer';
@@ -12,7 +11,6 @@ import Astrology from './components/Astrology';
 import Vastu from './components/Vastu';
 import Face from './components/Face-reading'; 
 import Tantra from './components/Tantra'; 
-import AOS from "aos";
 import Scrol from "./Scrol";
 import AstrologerInBangalore from './components/astrologer-in-bangalore'; 
 import OnlineAstrologer from './components/online-astrologer'; 
@@ -20,15 +18,10 @@ import AstrologerInIndia from './components/astrologer-in-india';
 import VastuExpert from './components/vastu-expert'; 
 import Astrologyservices from './components/Astrologyservices';
 import ChatAssistant from './components/ChatAssistant';
+import { useScrollAnimations } from "./hooks/useScrollAnimations";
 
 function App() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      once: true,
-      offset: 100,
-    });
-  }, []);
+  useScrollAnimations();
 
   return (
     <>

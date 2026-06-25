@@ -19,3 +19,17 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #090414;
 }
+
+/* SEO-safe scroll animations: content stays in HTML for crawlers */
+html:not(.js-enabled) [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

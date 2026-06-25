@@ -1,6 +1,7 @@
 import Seo from "./Seo";
 import "./VastuExpert.css";
 import { Link } from "react-router-dom";
+import Reveal from "./Reveal";
 
 function VastuExpert() {
   return (
@@ -12,9 +13,8 @@ function VastuExpert() {
       />
 
       <div className="vastuPage">
-        {/* HERO SECTION */}
         <section className="vastuHero">
-          <div className="vastuHeroContent">
+          <Reveal className="vastuHeroContent" animation="fade-up">
             <span className="vastuBadge">
               ✦ SCIENTIFIC &amp; TRADITIONAL ELEMENTAL ALIGNMENT
             </span>
@@ -36,10 +36,9 @@ function VastuExpert() {
                 WhatsApp Session
               </a>
             </div>
-          </div>
+          </Reveal>
         </section>
 
-        {/* UNIFORM INTERNAL ROUTE HUBS */}
         <div className="service-links">
           <Link to="/astrology">Vedic Astrology Solutions</Link>
           <Link to="/vastu">Vastu Shastra Consultant</Link>
@@ -47,90 +46,50 @@ function VastuExpert() {
           <Link to="/tantra">Spiritual Healing &amp; Protection</Link>
         </div>
 
-        {/* CORE SECTION DESCRIPTIVE INTRO */}
-        <section className="vastuSection">
+        <Reveal as="section" className="vastuSection" animation="fade-up">
           <h2>Precision Balancing for Modern Architectural Realities</h2>
           <p>
             Vastu Shastra is the traditional science of balancing natural elemental frequencies—Earth, Water, Fire, Air, and Space—within a defined property. By strategically mapping energy lines and structural points, our evaluations target the root causes of financial stagnation, domestic friction, and persistent professional hurdles.
           </p>
-        </section>
+        </Reveal>
 
-        {/* SERVICES OFFERED CATEGORIES GRID */}
-        <section className="vastuSection">
+        <Reveal as="section" className="vastuSection" animation="fade-up">
           <h2>Core Architectural Assessment Layouts</h2>
           <div className="vastuGrid">
-            <div className="vastuCard">
-              <h3>Residential Alignment</h3>
-              <p>
-                Meticulous energy mapping for homes and apartments to optimize main entrance fields, bedroom zones, and kitchen placements.
-              </p>
-            </div>
-
-            <div className="vastuCard">
-              <h3>Corporate Workspaces</h3>
-              <p>
-                Strategic structural planning for executive suites and seating grids designed to boost operational focus and team synergy.
-              </p>
-            </div>
-
-            <div className="vastuCard">
-              <h3>Commercial Hubs</h3>
-              <p>
-                Directional balancing layouts for retail stores, showrooms, and business centers to improve customer footfall and transactional flow.
-              </p>
-            </div>
-
-            <div className="vastuCard">
-              <h3>Industrial Complexes</h3>
-              <p>
-                Heavy machinery positioning, raw material staging, and layout balancing to ensure smooth production pipelines and minimize operational friction.
-              </p>
-            </div>
-
-            <div className="vastuCard">
-              <h3>Geopathic Plot Audits</h3>
-              <p>
-                In-depth soil energy assessments and shape validations conducted prior to laying foundations or purchasing commercial land.
-              </p>
-            </div>
-
-            <div className="vastuCard">
-              <h3>Virtual Vastu Mapping</h3>
-              <p>
-                Comprehensive blueprint analyses and architectural configuration reviews available for clients across India and globally.
-              </p>
-            </div>
+            {[
+              ["Residential Alignment", "Meticulous energy mapping for homes and apartments to optimize main entrance fields, bedroom zones, and kitchen placements."],
+              ["Corporate Workspaces", "Strategic structural planning for executive suites and seating grids designed to boost operational focus and team synergy."],
+              ["Commercial Hubs", "Directional balancing layouts for retail stores, showrooms, and business centers to improve customer footfall and transactional flow."],
+              ["Industrial Complexes", "Heavy machinery positioning, raw material staging, and layout balancing to ensure smooth production pipelines and minimize operational friction."],
+              ["Geopathic Plot Audits", "In-depth soil energy assessments and shape validations conducted prior to laying foundations or purchasing commercial land."],
+              ["Virtual Vastu Mapping", "Comprehensive blueprint analyses and architectural configuration reviews available for clients across India and globally."],
+            ].map(([title, text], index) => (
+              <Reveal className="vastuCard" key={title} animation="fade-up" delay={index * 60}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </Reveal>
 
-        {/* COMPREHENSIVE VALUE BENCHMARKS */}
-        <section className="vastuSection">
+        <Reveal as="section" className="vastuSection" animation="fade-up">
           <h2>Expected Outcomes of Structural Synchronization</h2>
           <div className="vastuGrid">
-            <div className="vastuCard">
-              <h3>Balanced Energy Fields</h3>
-              <p>Neutralize persistent environmental stressors to build a calm, grounded interior baseline.</p>
-            </div>
-
-            <div className="vastuCard">
-              <h3>Financial Stability</h3>
-              <p>Clear structural blocks to stabilize resource retention and protect your commercial investments.</p>
-            </div>
-
-            <div className="vastuCard">
-              <h3>Domestic Harmony</h3>
-              <p>Resolve structural frictions to reduce communication stress and support lasting family peace.</p>
-            </div>
-
-            <div className="vastuCard">
-              <h3>Professional Trajectory</h3>
-              <p>Position workspace desks to leverage natural directional parameters that sharpen executive focus.</p>
-            </div>
+            {[
+              ["Balanced Energy Fields", "Neutralize persistent environmental stressors to build a calm, grounded interior baseline."],
+              ["Financial Stability", "Clear structural blocks to stabilize resource retention and protect your commercial investments."],
+              ["Domestic Harmony", "Resolve structural frictions to reduce communication stress and support lasting family peace."],
+              ["Professional Trajectory", "Position workspace desks to leverage natural directional parameters that sharpen executive focus."],
+            ].map(([title, text], index) => (
+              <Reveal className="vastuCard" key={title} animation="fade-up" delay={index * 80}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </Reveal>
 
-        {/* CALL TO ACTION LAYOUT */}
-        <section className="vastuCTA">
+        <Reveal as="section" className="vastuCTA" animation="zoom-in">
           <h2>Schedule Your Comprehensive Property Audit</h2>
           <p>
             Incorporate classic balancing principles into your existing space or upcoming building plan. Contact our central booking office to reserve your session.
@@ -138,7 +97,7 @@ function VastuExpert() {
           <a href="tel:+918073258799">
             Call +91 80732 58799
           </a>
-        </section>
+        </Reveal>
       </div>
     </>
   );

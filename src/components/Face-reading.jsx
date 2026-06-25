@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { FACE_READING_FAQS } from '../seo/faqData';
+import Reveal from './Reveal';
 
 function FaceReading() {
   return (
@@ -19,7 +20,7 @@ function FaceReading() {
         {/* HERO SECTION */}
         <div className="faceHero">
           <div className="faceOverlay"></div>
-          <div className="faceHeroContent">
+          <Reveal className="faceHeroContent" animation="fade-up">
             <p>✦ ANCIENT PHYSIOGNOMY ENGINE</p>
             <h1>Professional Face Reading Consultation</h1>
             <span>
@@ -33,19 +34,19 @@ function FaceReading() {
             >
               Book Face Analysis
             </a>
-          </div>
+          </Reveal>
         </div>
 
         {/* CORE INTRODUCTION BLOCK */}
         <div className="faceAbout">
-          <div className="faceImage">
+          <Reveal className="faceImage" animation="fade-right">
             <img
               src="/facereading.webp"
               alt="Physiognomy structural reference tracing facial grid coordinates"
             />
-          </div>
+          </Reveal>
 
-          <div className="faceContent">
+          <Reveal className="faceContent" animation="fade-left">
             <p className="smallTitle">✦ THE SCIENCE OF EXPRESSION</p>
             <h2>Decode Inner Character via Bone Structure</h2>
             <p>
@@ -58,7 +59,7 @@ function FaceReading() {
               <div className="facePoint">✔ Emotional Tendency &amp; Communication Analysis</div>
               <div className="facePoint">✔ Behavioral Timing Transition Windows</div>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* UNIFORM REPAIRED ROUTE HUB */}

@@ -1,6 +1,7 @@
 import Seo from "./Seo";
 import "./AstrologerInBangalore.css";
 import { Link } from "react-router-dom";
+import Reveal from "./Reveal";
 
 function AstrologerInBangalore() {
   return (
@@ -14,7 +15,7 @@ function AstrologerInBangalore() {
       <div className="bangalorePage">
         {/* HERO SECTION */}
         <section className="bangaloreHero">
-          <div className="bangaloreHeroContent">
+          <Reveal className="bangaloreHeroContent" animation="fade-up">
             <span className="bangaloreBadge">
               ✦ TRADITIONAL VEDIC CONSULTANT IN BENGALURU
             </span>
@@ -36,7 +37,7 @@ function AstrologerInBangalore() {
                 WhatsApp Session
               </a>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* UNIFORM INTERNAL ROUTE HUBS */}
@@ -47,90 +48,53 @@ function AstrologerInBangalore() {
           <Link to="/tantra">Spiritual Healing &amp; Protection</Link>
         </div>
 
-        {/* CORE ABOUT INTRO */}
-        <section className="bangaloreSection">
+        <Reveal as="section" className="bangaloreSection" animation="fade-up">
           <h2>Clear Practical Insights via Ancient Analytics</h2>
           <p>
             With years of dedicated practice, Shri MP Shastri has guided numerous individuals through complex life paths. By combining traditional mathematical calculation techniques with practical counsel, his sessions focus on clearing persistent professional barriers, reducing planetary configuration vulnerabilities, and restoring home tranquility.
           </p>
-        </section>
+        </Reveal>
 
         {/* SERVICE SPECIALIZATION GRID */}
-        <section className="bangaloreSection">
+        <Reveal as="section" className="bangaloreSection" animation="fade-up">
           <h2>Core Assessment Capabilities</h2>
           <div className="bangaloreGrid">
-            <div className="bangaloreCard">
-              <h3>Horoscope Auditing</h3>
-              <p>
-                Meticulous natal chart analysis focusing on active planetary transitions and structural house influences.
-              </p>
-            </div>
-
-            <div className="bangaloreCard">
-              <h3>Marital Coordination</h3>
-              <p>
-                Comprehensive compatibility evaluations designed to minimize interpersonal friction and clarify timing.
-              </p>
-            </div>
-
-            <div className="bangaloreCard">
-              <h3>Corporate Guidance</h3>
-              <p>
-                Strategic scheduling insights targeting business expansion windows and professional career pivots.
-              </p>
-            </div>
-
-            <div className="bangaloreCard">
-              <h3>Vastu Corrections</h3>
-              <p>
-                Structural elemental optimizations for commercial locations and private residences without demolition.
-              </p>
-            </div>
-
-            <div className="bangaloreCard">
-              <h3>Physiognomy Profiling</h3>
-              <p>
-                Detailed face assessments to understand personal behavioral patterns and underlying leadership styles.
-              </p>
-            </div>
-
-            <div className="bangaloreCard">
-              <h3>Environmental Cleansing</h3>
-              <p>
-                Traditional protective adjustments to eliminate stubborn energetic stagnation from your living spaces.
-              </p>
-            </div>
+            {[
+              ["Horoscope Auditing", "Meticulous natal chart analysis focusing on active planetary transitions and structural house influences."],
+              ["Marital Coordination", "Comprehensive compatibility evaluations designed to minimize interpersonal friction and clarify timing."],
+              ["Corporate Guidance", "Strategic scheduling insights targeting business expansion windows and professional career pivots."],
+              ["Vastu Corrections", "Structural elemental optimizations for commercial locations and private residences without demolition."],
+              ["Physiognomy Profiling", "Detailed face assessments to understand personal behavioral patterns and underlying leadership styles."],
+              ["Environmental Cleansing", "Traditional protective adjustments to eliminate stubborn energetic stagnation from your living spaces."],
+            ].map(([title, text], index) => (
+              <Reveal className="bangaloreCard" key={title} animation="fade-up" delay={index * 60}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* VALUE PROPOSITION AREA */}
-        <section className="bangaloreSection">
+        <Reveal as="section" className="bangaloreSection" animation="fade-up">
           <h2>Why Consult Shri MP Shastri?</h2>
           <div className="bangaloreGrid">
-            <div className="bangaloreCard">
-              <h3>Verified Lineage Experience</h3>
-              <p>Years of authentic, calculated astrological and architectural practice.</p>
-            </div>
-
-            <div className="bangaloreCard">
-              <h3>Comprehensive Case Studies</h3>
-              <p>A proven track record of guiding diverse retail and corporate clients.</p>
-            </div>
-
-            <div className="bangaloreCard">
-              <h3>Remote Tele-Consultations</h3>
-              <p>Secure, detailed phone and digital sessions for long-distance clients.</p>
-            </div>
-
-            <div className="bangaloreCard">
-              <h3>Absolute Privacy Standards</h3>
-              <p>Every chart detail, discussion point, and identity remains strictly confidential.</p>
-            </div>
+            {[
+              ["Verified Lineage Experience", "Years of authentic, calculated astrological and architectural practice."],
+              ["Comprehensive Case Studies", "A proven track record of guiding diverse retail and corporate clients."],
+              ["Remote Tele-Consultations", "Secure, detailed phone and digital sessions for long-distance clients."],
+              ["Absolute Privacy Standards", "Every chart detail, discussion point, and identity remains strictly confidential."],
+            ].map(([title, text], index) => (
+              <Reveal className="bangaloreCard" key={title} animation="fade-up" delay={index * 80}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* CALL TO ACTION ROW */}
-        <section className="bangaloreCTA">
+        <Reveal as="section" className="bangaloreCTA" animation="zoom-in">
           <h2>Schedule Your Personal Consultation</h2>
           <p>
             Connect directly with our Bangalore center to set up an in-person office meeting or a secure phone call.
@@ -138,7 +102,7 @@ function AstrologerInBangalore() {
           <a href="tel:+918073258799">
             Call +91 80732 58799
           </a>
-        </section>
+        </Reveal>
       </div>
     </>
   );

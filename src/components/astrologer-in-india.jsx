@@ -1,6 +1,7 @@
 import Seo from "./Seo";
 import "./AstrologerInIndia.css";
 import { Link } from "react-router-dom";
+import Reveal from "./Reveal";
 
 function AstrologerInIndia() {
   return (
@@ -12,9 +13,8 @@ function AstrologerInIndia() {
       />
 
       <div className="indiaPage">
-        {/* HERO SECTION */}
         <section className="indiaHero">
-          <div className="indiaHeroContent">
+          <Reveal className="indiaHeroContent" animation="fade-up">
             <span className="indiaBadge">
               ✦ TRADITIONAL VEDIC CONSULTATIONS NATIONWIDE
             </span>
@@ -36,10 +36,9 @@ function AstrologerInIndia() {
                 WhatsApp Session
               </a>
             </div>
-          </div>
+          </Reveal>
         </section>
 
-        {/* UNIFORM INTERNAL ROUTE HUBS */}
         <div className="service-links">
           <Link to="/astrology">Vedic Astrology Solutions</Link>
           <Link to="/vastu">Vastu Shastra Consultant</Link>
@@ -47,90 +46,50 @@ function AstrologerInIndia() {
           <Link to="/tantra">Spiritual Healing &amp; Protection</Link>
         </div>
 
-        {/* CORE ABOUT INTRO */}
-        <section className="indiaSection">
+        <Reveal as="section" className="indiaSection" animation="fade-up">
           <h2>Clear Practical Insights via Online Consultations</h2>
           <p>
             Distance is no longer a barrier to accessing authentic Vedic wisdom. Through comprehensive phone and digital sessions, Shri MP Shastri helps individuals across India decode complex planetary alignments, clear persistent career bottlenecks, and restore environmental balance in their homes and businesses.
           </p>
-        </section>
+        </Reveal>
 
-        {/* SERVICE SPECIALIZATION GRID */}
-        <section className="indiaSection">
+        <Reveal as="section" className="indiaSection" animation="fade-up">
           <h2>Core Assessment Capabilities</h2>
           <div className="indiaGrid">
-            <div className="indiaCard">
-              <h3>Horoscope Auditing</h3>
-              <p>
-                Meticulous birth chart calculations tracking active planetary periods and their real-world influences.
-              </p>
-            </div>
-
-            <div className="indiaCard">
-              <h3>Marital Coordination</h3>
-              <p>
-                Detailed relationship compatibility evaluations designed to minimize conflict and clarify timing.
-              </p>
-            </div>
-
-            <div className="indiaCard">
-              <h3>Corporate Guidance</h3>
-              <p>
-                Strategic timeline insights focusing on venture expansions, market investments, and professional changes.
-              </p>
-            </div>
-
-            <div className="indiaCard">
-              <h3>Vastu Corrections</h3>
-              <p>
-                Elemental layouts and spatial balancing rules for commercial buildings and residences without physical demolition.
-              </p>
-            </div>
-
-            <div className="indiaCard">
-              <h3>Physiognomy Profiling</h3>
-              <p>
-                Remote facial structure assessments to clarify personal behavioral patterns and core strengths.
-              </p>
-            </div>
-
-            <div className="indiaCard">
-              <h3>Environmental Cleansing</h3>
-              <p>
-                Traditional protective methods to dissolve stubborn spiritual or emotional stagnations from your environment.
-              </p>
-            </div>
+            {[
+              ["Horoscope Auditing", "Meticulous birth chart calculations tracking active planetary periods and their real-world influences."],
+              ["Marital Coordination", "Detailed relationship compatibility evaluations designed to minimize conflict and clarify timing."],
+              ["Corporate Guidance", "Strategic timeline insights focusing on venture expansions, market investments, and professional changes."],
+              ["Vastu Corrections", "Elemental layouts and spatial balancing rules for commercial buildings and residences without physical demolition."],
+              ["Physiognomy Profiling", "Remote facial structure assessments to clarify personal behavioral patterns and core strengths."],
+              ["Environmental Cleansing", "Traditional protective methods to dissolve stubborn spiritual or emotional stagnations from your environment."],
+            ].map(([title, text], index) => (
+              <Reveal className="indiaCard" key={title} animation="fade-up" delay={index * 60}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </Reveal>
 
-        {/* VALUE PROPOSITION AREA */}
-        <section className="indiaSection">
+        <Reveal as="section" className="indiaSection" animation="fade-up">
           <h2>Why Consult Shri MP Shastri?</h2>
           <div className="indiaGrid">
-            <div className="indiaCard">
-              <h3>Verified Lineage Experience</h3>
-              <p>Years of calculated astrological and architectural consulting practice.</p>
-            </div>
-
-            <div className="indiaCard">
-              <h3>Comprehensive Case Studies</h3>
-              <p>A proven history of guiding diverse individual, family, and enterprise clients.</p>
-            </div>
-
-            <div className="indiaCard">
-              <h3>Seamless Remote Sessions</h3>
-              <p>Highly accurate, dedicated telephone and video consultations for all states.</p>
-            </div>
-
-            <div className="indiaCard">
-              <h3>Absolute Privacy Standards</h3>
-              <p>Every chart, conversation detail, and personal profile is kept strictly confidential.</p>
-            </div>
+            {[
+              ["Verified Lineage Experience", "Years of calculated astrological and architectural consulting practice."],
+              ["Comprehensive Case Studies", "A proven history of guiding diverse individual, family, and enterprise clients."],
+              ["Seamless Remote Sessions", "Highly accurate, dedicated telephone and video consultations for all states."],
+              ["Absolute Privacy Standards", "Every chart, conversation detail, and personal profile is kept strictly confidential."],
+            ].map(([title, text], index) => (
+              <Reveal className="indiaCard" key={title} animation="fade-up" delay={index * 80}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            ))}
           </div>
-        </section>
+        </Reveal>
 
-        {/* CALL TO ACTION ROW */}
-        <section className="indiaCTA">
+        <Reveal as="section" className="indiaCTA" animation="zoom-in">
           <h2>Schedule Your Remote Consultation</h2>
           <p>
             Connect directly with our central desk to book a comprehensive digital video review or a secure telephone session from any location.
@@ -138,7 +97,7 @@ function AstrologerInIndia() {
           <a href="tel:+918073258799">
             Call +91 80732 58799
           </a>
-        </section>
+        </Reveal>
       </div>
     </>
   );

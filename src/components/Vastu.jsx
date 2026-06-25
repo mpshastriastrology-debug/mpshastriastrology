@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { VASTU_FAQS } from '../seo/faqData';
+import Reveal from './Reveal';
 
 function Vastu() {
   return (
@@ -19,7 +20,7 @@ function Vastu() {
         {/* HERO SECTION */}
         <div className="vastuHero">
           <div className="vastuOverlay"></div>
-          <div className="vastuHeroContent">
+          <Reveal className="vastuHeroContent" animation="fade-up">
             <p>✦ ANCIENT ENVIRONMENTAL SCIENCE</p>
             <h1>Professional Vastu Shastra Consultation</h1>
             <span>
@@ -33,19 +34,19 @@ function Vastu() {
             >
               Book Vastu Audit
             </a>
-          </div>
+          </Reveal>
         </div>
 
         {/* DETAILS INTRO SECTION */}
         <div className="vastuAbout">
-          <div className="vastuImage">
+          <Reveal className="vastuImage" animation="fade-right">
             <img
               src="/vasthu.webp"
               alt="Traditional Vastu Purusha alignment map balancing elemental directional fields"
             />
-          </div>
+          </Reveal>
 
-          <div className="vastuContent">
+          <Reveal className="vastuContent" animation="fade-left">
             <p className="smallTitle">✦ ALIGNING SPATIAL ENERGY</p>
             <h2>Harmonize Natural Forces within Your Property</h2>
             <p>
@@ -58,7 +59,7 @@ function Vastu() {
               <div className="vastuPoint">✔ Industrial Plant Layout Configurations</div>
               <div className="vastuPoint">✔ Non-Destructive Remedial Tools</div>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* UNIFORM INTERNAL ROUTE HUBS */}
@@ -72,14 +73,14 @@ function Vastu() {
 
         {/* SERVICE CARDS SECTION */}
         <div className="vastuServices">
-          <div className="sectionHeading">
+          <Reveal className="sectionHeading" animation="fade-up">
             <p>✦ OUR VASTU SERVICES</p>
             <h2>Complete Architectural Solutions</h2>
-          </div>
+          </Reveal>
 
           <div className="vastuServiceGrid">
             {/* CARD 1 */}
-            <div className="vastuCard">
+            <Reveal className="vastuCard" animation="fade-up" delay={0}>
               <img
                 src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop"
                 alt="Modern home interior layout configured for positive residential flow"
@@ -91,10 +92,10 @@ function Vastu() {
                   Enhance peace of mind, marital understanding, and children's focus through optimal bedroom, kitchen, and entrance balancing.
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* CARD 2 */}
-            <div className="vastuCard">
+            <Reveal className="vastuCard" animation="fade-up" delay={100}>
               <img
                 src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop"
                 alt="Corporate office layout optimized for corporate team productivity"
@@ -106,10 +107,10 @@ function Vastu() {
                   Optimize employee performance, clear administrative bottlenecks, and support revenue metrics by placing executives strategically.
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* CARD 3 */}
-            <div className="vastuCard">
+            <Reveal className="vastuCard" animation="fade-up" delay={200}>
               <img
                 src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop"
                 alt="Commercial inventory factory building structured for streamlined distribution"
@@ -121,7 +122,7 @@ function Vastu() {
                   Streamline manufacturing lines, avoid machinery breakdown delays, and scale commercial production with correct heavy machine placement.
                 </p>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
 

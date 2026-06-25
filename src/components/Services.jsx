@@ -1,6 +1,7 @@
 import "./Services.css";
 import Seo from "./Seo";
 import Navbar from "../components/Navbar";
+import Reveal from "./Reveal";
 
 
 export default function Services() {
@@ -42,19 +43,19 @@ export default function Services() {
 
       <div className="services-page">
 
-        <div className="services-header">
+        <Reveal className="services-header" animation="fade-up">
           <h1>Our Services</h1>
           <p>
             Professional Astrology & Vastu Consultation Services
           </p>
-        </div>
+        </Reveal>
 
         <div className="services-grid">
           {services.map((item, index) => (
-            <div className="service-card" key={index}>
+            <Reveal className="service-card" key={index} animation="fade-up" delay={index * 80}>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 

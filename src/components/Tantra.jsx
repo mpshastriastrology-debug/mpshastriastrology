@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { TANTRA_FAQS } from '../seo/faqData';
+import Reveal from './Reveal';
 
 function Tantra() {
   return (
@@ -19,7 +20,7 @@ function Tantra() {
         {/* HERO SECTION */}
         <div className="tantraHero">
           <div className="tantraOverlay"></div>
-          <div className="tantraHeroContent">
+          <Reveal className="tantraHeroContent" animation="fade-up">
             <p>✦ ANCIENT METAPHYSICAL LINEAGE</p>
             <h1>Authentic Esoteric Energy Alignment</h1>
             <span>
@@ -33,19 +34,19 @@ function Tantra() {
             >
               Book Energy Session
             </a>
-          </div>
+          </Reveal>
         </div>
 
         {/* CORE INTRODUCTION BLOCK */}
         <div className="tantraAbout">
-          <div className="tantraImage">
+          <Reveal className="tantraImage" animation="fade-right">
             <img
               src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1200&auto=format&fit=crop"
               alt="Peaceful meditation space arranged for inner awareness balancing"
             />
-          </div>
+          </Reveal>
 
-          <div className="tantraContent">
+          <Reveal className="tantraContent" animation="fade-left">
             <p className="smallTitle">✦ BALANCING INNER RADIANCES</p>
             <h2>Transform Complex Stagnations Into Raw Focus</h2>
             <p>
@@ -58,7 +59,7 @@ function Tantra() {
               <div className="tantraPoint">✔ Grounded Mindfulness &amp; Clarity Guidance</div>
               <div className="tantraPoint">✔ Vedic Elemental Balancing Audits</div>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* UNIFORM INTERNAL ROUTE HUBS */}

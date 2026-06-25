@@ -3,6 +3,7 @@ import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { ABOUT_FAQS } from '../seo/faqData';
 import './About.css';
+import Reveal from './Reveal';
 
 function AboutSection() {
   return (
@@ -16,16 +17,16 @@ function AboutSection() {
       {/* ABOUT INTRO SECTION */}
       <section className="aboutSection">
         {/* LEFT IMAGE */}
-        <div className="aboutImage">
+        <Reveal className="aboutImage" animation="fade-right">
           <div className="aboutGlow"></div>
           <img
             src="/mp-shastri-astrology.webp"
             alt="Shri MP Shastri providing spiritual counseling and horoscope analysis"
           />
-        </div>
+        </Reveal>
 
         {/* RIGHT CONTENT */}
-        <div className="aboutContent">
+        <Reveal className="aboutContent" animation="fade-left">
           <span className="aboutTag">
             <h1>About MP Shastri Astrology</h1>
           </span>
@@ -41,7 +42,7 @@ function AboutSection() {
           <p>
             Operating from Bangalore with accessible global outreach channels, our practice integrates authentic horoscope readings, root Vastu layout corrections, and behavioral numerology tracking designed to help you unlock personal clarity and generational peace.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* FLOATING INTERNAL CONTEXT LINK HUB */}
@@ -54,65 +55,32 @@ function AboutSection() {
         </div>
         <br/>
 
-        <div className="sectionHeading">
+        <Reveal className="sectionHeading" animation="fade-up">
           <p>✦ LATEST ARTICLES</p>
           <h2>Astrology &amp; Vastu Insights</h2>
-        </div>
+        </Reveal>
 
         <div className="blogGrid">
-          {/* BLOG 1 */}
-          <div className="blogCard">
-            <img
-              src="/Astrology.webp"
-              alt="Planetary transit configurations indicating career success"
-              loading="lazy"
-            />
-            <div className="blogContent">
-              <span>Astrology</span>
-              <h3>How Astrology Helps In Navigating Strategic Career Growth</h3>
-              <p>
-                Discover how planetary dasha cycles and specific houses influence individual corporate placement, entrepreneurial timing, and professional abundance patterns.
-              </p>
-            </div>
-          </div>
-
-          {/* BLOG 2 */}
-          <div className="blogCard">
-            <img
-              src="/vasthu.webp"
-              alt="Traditional home orientation layout aligned with Vastu rules"
-              loading="lazy"
-            />
-            <div className="blogContent">
-              <span>Vastu</span>
-              <h3>Essential Vastu Principles for Attracting Residential Harmony</h3>
-              <p>
-                Simple, non-destructive structural adjustments designed to rebalance environmental elemental forces, removing blocks to peace and health.
-              </p>
-            </div>
-          </div>
-
-          {/* BLOG 3 */}
-          <div className="blogCard">
-            <img
-              src="/facereading.webp"
-              alt="Detailed facial lines representing behavioral characteristics"
-              loading="lazy"
-            />
-            <div className="blogContent">
-              <span>Face Reading</span>
-              <h3>Understanding Subtle Personality Profiles Through Face Reading</h3>
-              <p>
-                Learn timeless analytical observation points to identify inherent mental strengths, emotional blockages, and behavioral tendencies.
-              </p>
-            </div>
-          </div>
+          {[
+            ["/Astrology.webp", "Planetary transit configurations indicating career success", "Astrology", "How Astrology Helps In Navigating Strategic Career Growth", "Discover how planetary dasha cycles and specific houses influence individual corporate placement, entrepreneurial timing, and professional abundance patterns."],
+            ["/vasthu.webp", "Traditional home orientation layout aligned with Vastu rules", "Vastu", "Essential Vastu Principles for Attracting Residential Harmony", "Simple, non-destructive structural adjustments designed to rebalance environmental elemental forces, removing blocks to peace and health."],
+            ["/facereading.webp", "Detailed facial lines representing behavioral characteristics", "Face Reading", "Understanding Subtle Personality Profiles Through Face Reading", "Learn timeless analytical observation points to identify inherent mental strengths, emotional blockages, and behavioral tendencies."],
+          ].map(([src, alt, tag, title, text], index) => (
+            <Reveal className="blogCard" key={title} animation="fade-up" delay={index * 100}>
+              <img src={src} alt={alt} loading="lazy" />
+              <div className="blogContent">
+                <span>{tag}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
       {/* WHY CHOOSE US SECTION */}
       <section className="whyChoose">
-        <div className="whyLeft">
+        <Reveal className="whyLeft" animation="fade-right">
           <p className="sectionTag">✦ TRUSTED SPIRITUAL REMEDIAL COUNSELING</p>
           <h2>Transform Your Core Environment Through Practical Guidance</h2>
           <p className="whyText">
@@ -133,20 +101,20 @@ function AboutSection() {
               <span>Private Consultation</span>
             </div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="whyRight">
+        <Reveal className="whyRight" animation="fade-left">
           <img
             src="./bestastrology.webp"
             alt="Shri MP Shastri analyzing natal chart details in private office layout"
             loading="lazy"
           />
-        </div>
+        </Reveal>
       </section>
 
       {/* EXPERIENCE TRACK RECORD SECTION */}
       <section className="experienceSection">
-        <div className="experienceLeft">
+        <Reveal className="experienceLeft" animation="fade-right">
           <p>✦ PROFESSIONAL SERVICES ENGINE</p>
           <h2>Methodical Analysis You Can Rely On</h2>
           <span>
@@ -159,19 +127,19 @@ function AboutSection() {
             <div className="experienceItem">✔ Comprehensive Compatibility Matching</div>
             <div className="experienceItem">✔ Corporate Vastu &amp; Investment Timing</div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="experienceRight">
+        <Reveal className="experienceRight" animation="fade-left">
           <img
             src="/topastrology.webp"
             alt="Astrology chart layout items representing professional reading structures"
             loading="lazy"
           />
-        </div>
+        </Reveal>
       </section>
 
       {/* EXPERT AUTHORITY EXPLANATION */}
-      <section className="about-section">
+      <Reveal as="section" className="about-section" animation="fade-up">
         <div className="about-content">
           <h2>Trusted Spiritual Consultation System</h2>
           <p>
@@ -188,7 +156,7 @@ function AboutSection() {
             Align your physical environments with natural flows. Our architectural consultations provide custom balance charts for your home or corporate workplace layout, helping foster consistent abundance and health.
           </p>
         </div>
-      </section>
+      </Reveal>
 
       <FaqSection
         title="Common Queries Clarified"
@@ -199,7 +167,7 @@ function AboutSection() {
       {/* PREMIUM CALL TO ACTION BLOCK */}
       <section className="premiumHero">
         <div className="premiumOverlay"></div>
-        <div className="premiumContent">
+        <Reveal className="premiumContent" animation="fade-up">
           <p className="heroTag">✦ INDIA'S INDEPENDENT VEDIC ADVISOR</p>
           <h2>Map Out Your Future with Absolute Precision</h2>
           <p className="heroDescription">
@@ -235,7 +203,7 @@ function AboutSection() {
               <span>Client Rating</span>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
     </section>
   );
