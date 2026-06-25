@@ -14,7 +14,7 @@ function OnlineAstrology() {
         />
         <link
           rel="canonical"
-          content="https://www.mpshastriastrology.com/online-astrologer"
+          href="https://www.mpshastriastrology.com/online-astrologer"
         />
         <meta property="og:title" content="Online Astrology Consultation | Shri MP Shastri Astrology" />
         <meta

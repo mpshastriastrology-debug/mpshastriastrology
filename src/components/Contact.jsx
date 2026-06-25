@@ -1,6 +1,7 @@
 import "./Contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 function Contact() {
   const [form, setForm] = useState({
@@ -68,6 +69,21 @@ function Contact() {
 
   return (
     <section className="contactPage">
+      <Helmet>
+        <title>Book Astrology &amp; Vastu Consultation | MP Shastri Bangalore</title>
+        <meta
+          name="description"
+          content="Book an in-person or online astrology and Vastu consultation with Shri MP Shastri in Bangalore. Call +91 80732 58799 or submit the appointment form."
+        />
+        <link rel="canonical" href="https://www.mpshastriastrology.com/contact" />
+        <meta property="og:title" content="Book Astrology &amp; Vastu Consultation | MP Shastri Bangalore" />
+        <meta
+          property="og:description"
+          content="Schedule your Vedic astrology, horoscope, or Vastu session with Shri MP Shastri in Bangalore."
+        />
+        <meta property="og:url" content="https://www.mpshastriastrology.com/contact" />
+        <meta property="og:image" content="https://www.mpshastriastrology.com/mp-shastri-astrology.webp" />
+      </Helmet>
       {/* APPOINTMENT FORM SECTION */}
       <section className="appointmentSection">
         <div className="appointmentLeft">

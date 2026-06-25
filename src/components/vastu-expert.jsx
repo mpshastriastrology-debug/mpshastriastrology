@@ -14,14 +14,14 @@ function VastuExpert() {
         />
         <link
           rel="canonical"
-          content="https://www.mpshastriastrology.com/vastu"
+          href="https://www.mpshastriastrology.com/vastu-expert"
         />
         <meta property="og:title" content="Professional Vastu Shastra Consultant | Shri MP Shastri" />
         <meta
           property="og:description"
           content="Achieve physical and elemental alignment for residential properties, corporate workspaces, and industrial complexes using traditional structural metrics."
         />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/vastu" />
+        <meta property="og:url" content="https://www.mpshastriastrology.com/vastu-expert" />
       </Helmet>
 
       <div className="vastuPage">

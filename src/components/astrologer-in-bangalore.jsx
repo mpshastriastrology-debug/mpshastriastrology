@@ -14,7 +14,7 @@ function AstrologerInBangalore() {
         />
         <link
           rel="canonical"
-          content="https://www.mpshastriastrology.com/astrologer-in-bangalore"
+          href="https://www.mpshastriastrology.com/astrologer-in-bangalore"
         />
         <meta property="og:title" content="Best Astrologer in Bangalore | Shri MP Shastri Astrology" />
         <meta

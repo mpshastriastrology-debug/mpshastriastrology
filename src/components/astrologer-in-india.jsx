@@ -14,7 +14,7 @@ function AstrologerInIndia() {
         />
         <link
           rel="canonical"
-          content="https://www.mpshastriastrology.com/astrologer-in-india"
+          href="https://www.mpshastriastrology.com/astrologer-in-india"
         />
         <meta property="og:title" content="Top Trusted Astrologer in India | Shri MP Shastri Astrology" />
         <meta

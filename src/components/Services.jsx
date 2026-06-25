@@ -1,4 +1,5 @@
 import "./Services.css";
+import { Helmet } from "react-helmet";
 import Navbar from "../components/Navbar";
 
 
@@ -32,6 +33,21 @@ export default function Services() {
 
   return (
     <>
+      <Helmet>
+        <title>Astrology &amp; Vastu Services | MP Shastri Astrology Bangalore</title>
+        <meta
+          name="description"
+          content="Explore astrology and Vastu services including horoscope reading, marriage consultation, career guidance, financial astrology, and personalized remedies in Bangalore."
+        />
+        <link rel="canonical" href="https://www.mpshastriastrology.com/services" />
+        <meta property="og:title" content="Astrology &amp; Vastu Services | MP Shastri Astrology Bangalore" />
+        <meta
+          property="og:description"
+          content="Professional Vedic astrology and Vastu consultation services for career, marriage, wealth, and spiritual remedies."
+        />
+        <meta property="og:url" content="https://www.mpshastriastrology.com/services" />
+        <meta property="og:image" content="https://www.mpshastriastrology.com/mp-shastri-astrology.webp" />
+      </Helmet>
       <Navbar />
 
       <div className="services-page">
