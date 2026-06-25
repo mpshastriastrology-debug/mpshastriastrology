@@ -18,6 +18,8 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (loading) return;
@@ -25,9 +27,7 @@ function Contact() {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/contact`,
-        {
+      const res = await fetch(`${apiUrl}/api/contact`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
