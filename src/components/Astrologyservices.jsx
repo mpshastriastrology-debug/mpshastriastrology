@@ -119,4 +119,4 @@ const servicesData = [
   );
 }
 
-export default Astrology;
+export default Astrologyservices;

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { buildHomeSchema, buildPageSchema } from "../seo/schema";
 
 const SITE_URL = "https://www.mpshastriastrology.com";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/mp-shastri-astrology.webp`;
@@ -9,9 +10,17 @@ export default function Seo({
   path,
   image = DEFAULT_OG_IMAGE,
   type = "website",
+  breadcrumbLabel,
+  schema = true,
   children,
 }) {
   const canonicalUrl = `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+  const schemaData =
+    schema && path === "/"
+      ? buildHomeSchema()
+      : schema
+        ? buildPageSchema(path, breadcrumbLabel)
+        : null;
 
   return (
     <Helmet>
@@ -30,6 +39,9 @@ export default function Seo({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
+      {schemaData && (
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
+      )}
       {children}
     </Helmet>
   );

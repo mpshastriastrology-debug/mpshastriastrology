@@ -91,24 +91,45 @@
     content="https://www.mpshastriastrology.com/mp-shastri-astrology.webp"
   />
 
-  <!-- Local Business Schema -->
+  <!-- Structured data fallback for crawlers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "MP Shastri Astrology",
-    "url": "https://www.mpshastriastrology.com",
-    "logo": "https://www.mpshastriastrology.com/logo.webp",
-    "image": "https://www.mpshastriastrology.com/mp-shastri-astrology.webp",
-    "telephone": "+918073258799",
-    "description": "Best astrologer in Bangalore offering astrology consultation, vastu consultation, numerology and spiritual guidance.",
-    "areaServed": "Bangalore",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bangalore",
-      "addressRegion": "Karnataka",
-      "addressCountry": "IN"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.mpshastriastrology.com/#organization",
+        "name": "MP Shastri Astrology",
+        "url": "https://www.mpshastriastrology.com",
+        "logo": "https://www.mpshastriastrology.com/MPShastriLogo.webp",
+        "telephone": "+918073258799",
+        "email": "mpshastriastrology@gmail.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.mpshastriastrology.com/#website",
+        "url": "https://www.mpshastriastrology.com",
+        "name": "MP Shastri Astrology",
+        "publisher": { "@id": "https://www.mpshastriastrology.com/#organization" }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.mpshastriastrology.com/#localbusiness",
+        "name": "MP Shastri Astrology",
+        "url": "https://www.mpshastriastrology.com/",
+        "telephone": "+918073258799",
+        "image": "https://www.mpshastriastrology.com/mp-shastri-astrology.webp",
+        "parentOrganization": { "@id": "https://www.mpshastriastrology.com/#organization" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout",
+          "addressLocality": "Bangalore",
+          "addressRegion": "Karnataka",
+          "postalCode": "560086",
+          "addressCountry": "IN"
+        }
+      }
+    ]
   }
   </script>
 
