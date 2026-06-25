@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from "react";
 import Navbar from './components/Navbar';
+import Breadcrumbs from './components/Breadcrumbs';
 import Footer from './components/Footer';
 
 import Home from './pages/Home';
@@ -32,6 +33,7 @@ function App() {
     <>
       <Scrol />
       <Navbar />
+      <Breadcrumbs />
 
       <Routes>
         <Route path="/" element={<Home />} />

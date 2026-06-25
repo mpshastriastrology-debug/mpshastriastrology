@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Seo from './Seo';
+import { ABOUT_FAQS } from '../seo/faqData';
 import './About.css';
 
 function AboutSection() {
@@ -9,6 +10,7 @@ function AboutSection() {
         title="About Shri MP Shastri | Vedic Astrologer in Bangalore"
         description="Learn about Shri MP Shastri, a trusted Vedic astrologer and Vastu consultant in Bangalore offering horoscope readings, Kundali matching, and spiritual guidance."
         path="/about"
+        faqs={ABOUT_FAQS}
       />
       {/* ABOUT INTRO SECTION */}
       <section className="aboutSection">
@@ -195,49 +197,16 @@ function AboutSection() {
         </div>
 
         <div className="faqContainer">
-          <div className="faqItem">
-            <input type="checkbox" id="faq1" />
-            <label htmlFor="faq1">
-              How does a primary consultation session function?
-              <span>+</span>
-            </label>
-            <div className="faqContent">
-              A primary session evaluates your time and place parameters against active dasha houses to pinpoint active timeline bottlenecks affecting your daily career and marriage pathways.
+          {ABOUT_FAQS.map((faq, index) => (
+            <div className="faqItem" key={faq.question}>
+              <input type="checkbox" id={`faq${index + 1}`} />
+              <label htmlFor={`faq${index + 1}`}>
+                {faq.question}
+                <span>+</span>
+              </label>
+              <div className="faqContent">{faq.answer}</div>
             </div>
-          </div>
-
-          <div className="faqItem">
-            <input type="checkbox" id="faq2" />
-            <label htmlFor="faq2">
-              Is the precision level maintained during digital sessions?
-              <span>+</span>
-            </label>
-            <div className="faqContent">
-              Yes, mathematical calculations require only precise birth time inputs. Because the tracking variables remain exactly the same, your remote video or phone sessions yield complete accuracy.
-            </div>
-          </div>
-
-          <div className="faqItem">
-            <input type="checkbox" id="faq3" />
-            <label htmlFor="faq3">
-              Do Vastu changes require complex physical remodeling?
-              <span>+</span>
-            </label>
-            <div className="faqContent">
-              Most structural adjustments utilize smart balancing tools, optimal elemental shifts, and room function relocations rather than costly or invasive construction alterations.
-            </div>
-          </div>
-
-          <div className="faqItem">
-            <input type="checkbox" id="faq4" />
-            <label htmlFor="faq4">
-              What is the procedure to lock in an active timeslot?
-              <span>+</span>
-            </label>
-            <div className="faqContent">
-              You can coordinate your time options instantly using our direct dashboard communication channels, instant WhatsApp connection links, or secure email options.
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 

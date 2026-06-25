@@ -1,8 +1,12 @@
+import { HOME_FAQS } from "./faqData";
+
 export const SITE_URL = "https://www.mpshastriastrology.com";
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const LOCAL_BUSINESS_ID = `${SITE_URL}/#localbusiness`;
-export const FAQ_ID = `${SITE_URL}/#faq`;
+
+export const GOOGLE_BUSINESS_URL =
+  "https://www.google.com/maps/place/MP+Shastri+Astrology/@13.0118837,77.5447832,17z/data=!3m1!4b1!4m6!3m5!1s0x16aa14d0ea09c97:0xa9986dcd989e9ba4!8m2!3d13.0118837!4d77.5447832";
 
 export const ROUTE_LABELS = {
   "/": "Home",
@@ -18,6 +22,7 @@ export const ROUTE_LABELS = {
   "/astrologer-in-india": "Astrologer in India",
   "/vastu-expert": "Vastu Expert",
   "/Astrologyservices": "Astrology Services",
+  "/astrologyservices": "Astrology Services",
 };
 
 const organizationSchema = {
@@ -30,6 +35,7 @@ const organizationSchema = {
   telephone: "+918073258799",
   email: "mpshastriastrology@gmail.com",
   sameAs: [
+    GOOGLE_BUSINESS_URL,
     "https://www.facebook.com/share/1Zr42k8BYn/?mibextid=wwXIfr",
   ],
   contactPoint: {
@@ -63,6 +69,7 @@ const localBusinessSchema = {
   email: "mpshastriastrology@gmail.com",
   priceRange: "$$",
   parentOrganization: { "@id": ORG_ID },
+  hasMap: GOOGLE_BUSINESS_URL,
   address: {
     "@type": "PostalAddress",
     streetAddress: "607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout",
@@ -103,36 +110,20 @@ const localBusinessSchema = {
   ],
 };
 
-const faqSchema = {
-  "@type": "FAQPage",
-  "@id": FAQ_ID,
-  mainEntity: [
-    {
+export function buildFaqSchema(faqs, path) {
+  return {
+    "@type": "FAQPage",
+    "@id": `${SITE_URL}${path}#faq`,
+    mainEntity: faqs.map(({ question, answer }) => ({
       "@type": "Question",
-      name: "How can Vedic astrology assist me in practical life planning?",
+      name: question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Vedic readings isolate the underlying systemic shifts in your lifecycle, revealing timeline periods of high opportunity for investments alongside windows requiring cautionary tracking.",
+        text: answer,
       },
-    },
-    {
-      "@type": "Question",
-      name: "Are your remote/online consultation readings as accurate as physical visits?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Because cosmic tracking functions on precise calculations of your birth date, location, and minute parameters, telephone and digital video calls yield identical accuracy.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What fields are evaluated during a routine Vastu consultation?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Consultations cover directional flow patterns, room assignments, entrance configurations, and structural elements for both residential layouts and commercial office spaces.",
-      },
-    },
-  ],
-};
+    })),
+  };
+}
 
 export function buildBreadcrumbSchema(breadcrumbs) {
   const lastPath = breadcrumbs[breadcrumbs.length - 1].path;
@@ -167,20 +158,26 @@ export function buildHomeSchema() {
       organizationSchema,
       websiteSchema,
       localBusinessSchema,
-      faqSchema,
+      buildFaqSchema(HOME_FAQS, "/"),
       buildBreadcrumbSchema([{ name: "Home", path: "/" }]),
     ],
   };
 }
 
-export function buildPageSchema(path, label) {
+export function buildPageSchema(path, label, { faqs } = {}) {
+  const graph = [
+    organizationSchema,
+    websiteSchema,
+    localBusinessSchema,
+    buildBreadcrumbSchema(buildBreadcrumbs(path, label)),
+  ];
+
+  if (faqs?.length) {
+    graph.push(buildFaqSchema(faqs, path));
+  }
+
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      organizationSchema,
-      websiteSchema,
-      localBusinessSchema,
-      buildBreadcrumbSchema(buildBreadcrumbs(path, label)),
-    ],
+    "@graph": graph,
   };
 }

@@ -11,6 +11,7 @@ export default function Seo({
   image = DEFAULT_OG_IMAGE,
   type = "website",
   breadcrumbLabel,
+  faqs,
   schema = true,
   children,
 }) {
@@ -19,7 +20,7 @@ export default function Seo({
     schema && path === "/"
       ? buildHomeSchema()
       : schema
-        ? buildPageSchema(path, breadcrumbLabel)
+        ? buildPageSchema(path, breadcrumbLabel, { faqs })
         : null;
 
   return (

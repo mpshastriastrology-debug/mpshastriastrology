@@ -3,6 +3,7 @@ import { PhoneCall, MessageCircle } from "lucide-react";
 import { FaOm, FaHome, FaEye } from "react-icons/fa";
 import { GiMeditation } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { HOME_FAQS } from "../seo/faqData";
 
 function Services() {
   return (
@@ -165,20 +166,12 @@ function Services() {
           </div>
 
           <div className="faqContainer">
-            <div className="faqItem">
-              <h3>How can Vedic astrology assist me in practical life planning?</h3>
-              <p>Vedic readings isolate the underlying systemic shifts in your lifecycle, revealing timeline periods of high opportunity for investments alongside windows requiring cautionary tracking.</p>
-            </div>
-
-            <div className="faqItem">
-              <h3>Are your remote/online consultation readings as accurate as physical visits?</h3>
-              <p>Yes. Because cosmic tracking functions on precise calculations of your birth date, location, and minute parameters, telephone and digital video calls yield identical accuracy.</p>
-            </div>
-
-            <div className="faqItem">
-              <h3>What fields are evaluated during a routine Vastu consultation?</h3>
-              <p>Consultations cover directional flow patterns, room assignments, entrance configurations, and structural elements for both residential layouts and commercial office spaces.</p>
-            </div>
+            {HOME_FAQS.map((faq) => (
+              <div className="faqItem" key={faq.question}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </section>
 
