@@ -2,6 +2,8 @@ import "./Astrology.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
 import Seo from './Seo';
+import FaqSection from './FaqSection';
+import { ASTROLOGY_FAQS } from '../seo/faqData';
 import Astrologyservices from './astrologyservices';
 
 function Astrology() {
@@ -11,6 +13,7 @@ function Astrology() {
         title="Vedic Astrology Consultation & Horoscope Reading | MP Shastri"
         description="Get authentic Vedic astrology chart analysis, accurate marriage compatibility profiling, and career breakthrough timing with Bangalore's trusted expert, Shri MP Shastri."
         path="/astrology"
+        faqs={ASTROLOGY_FAQS}
       />
 
       <section className="astrologyPage">
@@ -71,6 +74,12 @@ function Astrology() {
 
         {/* Sub-component injection */}
         <Astrologyservices seo={false} />
+
+        <FaqSection
+          title="Vedic Astrology Questions"
+          faqs={ASTROLOGY_FAQS}
+          idPrefix="astrology-faq"
+        />
       </section>
     </>
   );

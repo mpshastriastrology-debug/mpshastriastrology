@@ -1,0 +1,22 @@
+/* TEAM */
+
+Business: MP Shastri Astrology
+Practitioner: Shri MP Shastri
+Contact: mpshastriastrology@gmail.com
+Phone: +91 80732 58799
+Location: Bangalore, Karnataka, India
+
+/* SITE */
+
+Standards: HTML5, CSS3, JavaScript (ES modules)
+Components: React, Vite, React Router
+Languages: English
+Last update: 2026-06-25
+Domain: https://www.mpshastriastrology.com
+
+/* SERVICES */
+
+- Vedic Astrology & Horoscope Reading
+- Vastu Shastra Consultation
+- Face Reading (Physiognomy)
+- Spiritual Healing & Protection

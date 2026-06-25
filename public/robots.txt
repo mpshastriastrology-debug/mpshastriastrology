@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://www.mpshastriastrology.com/sitemap.xml
+
+# Optional site credits
+# See https://www.mpshastriastrology.com/humans.txt

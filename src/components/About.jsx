@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Seo from './Seo';
+import FaqSection from './FaqSection';
 import { ABOUT_FAQS } from '../seo/faqData';
 import './About.css';
 
@@ -189,26 +190,11 @@ function AboutSection() {
         </div>
       </section>
 
-      {/* FAQ INTERACTIVE COMPONENT SECTION */}
-      <section className="faqSection">
-        <div className="sectionHeading">
-          <p>✦ FREQUENTLY ASKED QUESTIONS</p>
-          <h2>Common Queries Clarified</h2>
-        </div>
-
-        <div className="faqContainer">
-          {ABOUT_FAQS.map((faq, index) => (
-            <div className="faqItem" key={faq.question}>
-              <input type="checkbox" id={`faq${index + 1}`} />
-              <label htmlFor={`faq${index + 1}`}>
-                {faq.question}
-                <span>+</span>
-              </label>
-              <div className="faqContent">{faq.answer}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <FaqSection
+        title="Common Queries Clarified"
+        faqs={ABOUT_FAQS}
+        idPrefix="about-faq"
+      />
 
       {/* PREMIUM CALL TO ACTION BLOCK */}
       <section className="premiumHero">

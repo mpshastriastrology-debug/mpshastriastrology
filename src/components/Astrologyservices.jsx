@@ -91,7 +91,7 @@ const servicesData = [
         <Seo
           title="Vedic Astrology Services in Bangalore | MP Shastri"
           description="Browse Vedic astrology services including horoscope reading, career astrology, marriage matching, financial solutions, and Vastu consultation with Shri MP Shastri."
-          path="/Astrologyservices"
+          path="/astrologyservices"
         />
       )}
       <div className="astroServices">

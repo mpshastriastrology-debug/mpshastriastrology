@@ -2,6 +2,8 @@ import "./Vastu.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
 import Seo from './Seo';
+import FaqSection from './FaqSection';
+import { VASTU_FAQS } from '../seo/faqData';
 
 function Vastu() {
   return (
@@ -10,6 +12,7 @@ function Vastu() {
         title="Residential & Commercial Vastu Shastra Expert | MP Shastri"
         description="Transform your space with ancient structural balancing rules. Get professional home, office, and factory Vastu audits from Bangalore's trusted consultant, Shri MP Shastri."
         path="/vastu"
+        faqs={VASTU_FAQS}
       />
 
       <section className="vastuPage">
@@ -244,6 +247,12 @@ function Vastu() {
             <span>Residential Vastu</span>
           </div>
         </section>
+
+        <FaqSection
+          title="Vastu Shastra Questions"
+          faqs={VASTU_FAQS}
+          idPrefix="vastu-faq"
+        />
       </section>
     </>
   );

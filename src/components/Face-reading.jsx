@@ -2,6 +2,8 @@ import "./FaceReading.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
 import Seo from './Seo';
+import FaqSection from './FaqSection';
+import { FACE_READING_FAQS } from '../seo/faqData';
 
 function FaceReading() {
   return (
@@ -10,6 +12,7 @@ function FaceReading() {
         title="Physiognomy & Face Reading Consultation | MP Shastri"
         description="Uncover deep personality patterns, psychological strengths, and ancestral timing parameters through specialized Vedic physiognomy and facial structure audits by Shri MP Shastri."
         path="/face-reading"
+        faqs={FACE_READING_FAQS}
       />
 
       <section className="facePage">
@@ -159,6 +162,12 @@ function FaceReading() {
             </div>
           </div>
         </div>
+
+        <FaqSection
+          title="Face Reading Questions"
+          faqs={FACE_READING_FAQS}
+          idPrefix="face-faq"
+        />
       </section>
     </>
   );

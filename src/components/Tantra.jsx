@@ -2,6 +2,8 @@ import "./Tantra.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
 import Seo from './Seo';
+import FaqSection from './FaqSection';
+import { TANTRA_FAQS } from '../seo/faqData';
 
 function Tantra() {
   return (
@@ -10,6 +12,7 @@ function Tantra() {
         title="Spiritual Healing & Esoteric Protection Services | MP Shastri"
         description="Restore dynamic energy equilibrium and resolve stubborn environmental or personal negativity. Discover classical esoteric balancing rituals guided by Shri MP Shastri."
         path="/tantra"
+        faqs={TANTRA_FAQS}
       />
 
       <section className="tantraPage">
@@ -181,6 +184,12 @@ function Tantra() {
             </div>
           </div>
         </div>
+
+        <FaqSection
+          title="Spiritual Healing Questions"
+          faqs={TANTRA_FAQS}
+          idPrefix="tantra-faq"
+        />
       </section>
     </>
   );

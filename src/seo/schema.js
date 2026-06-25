@@ -21,7 +21,6 @@ export const ROUTE_LABELS = {
   "/online-astrologer": "Online Astrologer",
   "/astrologer-in-india": "Astrologer in India",
   "/vastu-expert": "Vastu Expert",
-  "/Astrologyservices": "Astrology Services",
   "/astrologyservices": "Astrology Services",
 };
 
