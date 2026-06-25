@@ -1,17 +1,29 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import './Hero.css'
 import Reveal from './Reveal'
 
 function Hero() {
+  const [showHeroCircle, setShowHeroCircle] = useState(false)
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 993px)')
+    const update = () => setShowHeroCircle(media.matches)
+    update()
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+
   return (
     <section className="heroSection">
-      {/* SPINNING CIRCLE */}
-      <Reveal className="heroCircle" animation="fade-right" duration={1100}>
-        <img
-          src="/MPShastriAstrology.webp"
-          alt="Shri MP Shastri - Vedic Astrologer and Vastu Expert" // Natural alt text over stuffed keyword string
-        />
-      </Reveal>
+      {showHeroCircle && (
+        <Reveal className="heroCircle" animation="fade-right" duration={1100}>
+          <img
+            src="/MPShastriAstrology.webp"
+            alt="Shri MP Shastri - Vedic Astrologer and Vastu Expert"
+          />
+        </Reveal>
+      )}
 
       {/* LEFT CONTENT */}
       <Reveal className="heroContent" animation="fade-up" delay={100}>
