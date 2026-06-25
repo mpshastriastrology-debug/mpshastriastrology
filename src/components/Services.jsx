@@ -1,5 +1,5 @@
 import "./Services.css";
-import { Helmet } from "react-helmet-async";
+import Seo from "./Seo";
 import Navbar from "../components/Navbar";
 
 
@@ -33,21 +33,11 @@ export default function Services() {
 
   return (
     <>
-      <Helmet>
-        <title>Astrology &amp; Vastu Services | MP Shastri Astrology Bangalore</title>
-        <meta
-          name="description"
-          content="Explore astrology and Vastu services including horoscope reading, marriage consultation, career guidance, financial astrology, and personalized remedies in Bangalore."
-        />
-        <link rel="canonical" href="https://www.mpshastriastrology.com/services" />
-        <meta property="og:title" content="Astrology &amp; Vastu Services | MP Shastri Astrology Bangalore" />
-        <meta
-          property="og:description"
-          content="Professional Vedic astrology and Vastu consultation services for career, marriage, wealth, and spiritual remedies."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/services" />
-        <meta property="og:image" content="https://www.mpshastriastrology.com/mp-shastri-astrology.webp" />
-      </Helmet>
+      <Seo
+        title="Astrology & Vastu Services | MP Shastri Astrology Bangalore"
+        description="Explore astrology and Vastu services including horoscope reading, marriage consultation, career guidance, financial astrology, and personalized remedies in Bangalore."
+        path="/services"
+      />
       <Navbar />
 
       <div className="services-page">

@@ -1,28 +1,15 @@
-import { Helmet } from "react-helmet-async";
+import Seo from "./Seo";
 import "./AstrologerInBangalore.css";
 import { Link } from "react-router-dom";
 
 function AstrologerInBangalore() {
   return (
     <>
-      {/* Search Engine Optimization Meta Configuration */}
-      <Helmet>
-        <title>Best Astrologer in Bangalore | Shri MP Shastri Astrology</title>
-        <meta
-          name="description"
-          content="Consult Shri MP Shastri, the top trusted astrologer in Bangalore. Get accurate Vedic horoscope readings, career timelines, and non-destructive Vastu remedies."
-        />
-        <link
-          rel="canonical"
-          href="https://www.mpshastriastrology.com/astrologer-in-bangalore"
-        />
-        <meta property="og:title" content="Best Astrologer in Bangalore | Shri MP Shastri Astrology" />
-        <meta
-          property="og:description"
-          content="Get authentic solutions for career development, marital harmony, and architectural alignment from an expert practitioner."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/astrologer-in-bangalore" />
-      </Helmet>
+      <Seo
+        title="Best Astrologer in Bangalore | Shri MP Shastri Astrology"
+        description="Consult Shri MP Shastri, the top trusted astrologer in Bangalore. Get accurate Vedic horoscope readings, career timelines, and non-destructive Vastu remedies."
+        path="/astrologer-in-bangalore"
+      />
 
       <div className="bangalorePage">
         {/* HERO SECTION */}

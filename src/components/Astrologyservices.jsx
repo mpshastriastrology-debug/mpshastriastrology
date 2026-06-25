@@ -1,9 +1,9 @@
 import "./Astrology.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet-async";
+import Seo from './Seo';
 
-function Astrology() {
+function Astrologyservices({ seo = true }) {
   // Centralized data array makes handling clean alt tags and structured URLs infinitely easier
 const servicesData = [
   {
@@ -87,20 +87,13 @@ const servicesData = [
 
   return (
     <section>
-      <Helmet>
-        <title>Vedic Astrology Services in Bangalore | MP Shastri</title>
-        <meta
-          name="description"
-          content="Browse Vedic astrology services including horoscope reading, career astrology, marriage matching, financial solutions, and Vastu consultation with Shri MP Shastri."
+      {seo && (
+        <Seo
+          title="Vedic Astrology Services in Bangalore | MP Shastri"
+          description="Browse Vedic astrology services including horoscope reading, career astrology, marriage matching, financial solutions, and Vastu consultation with Shri MP Shastri."
+          path="/Astrologyservices"
         />
-        <link rel="canonical" href="https://www.mpshastriastrology.com/Astrologyservices" />
-        <meta property="og:title" content="Vedic Astrology Services in Bangalore | MP Shastri" />
-        <meta
-          property="og:description"
-          content="Horoscope reading, Kundali matching, career guidance, and Vastu services from a trusted Bangalore astrologer."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/Astrologyservices" />
-      </Helmet>
+      )}
       <div className="astroServices">
         <div className="sectionHeading">
           <p>✦ OUR SPECIALITIES</p>

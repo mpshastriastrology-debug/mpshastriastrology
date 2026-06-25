@@ -1,28 +1,15 @@
-import { Helmet } from "react-helmet-async";
+import Seo from "./Seo";
 import "./OnlineAstrology.css";
 import { Link } from "react-router-dom";
 
 function OnlineAstrology() {
   return (
     <>
-      {/* Search Engine Optimization Meta Configuration */}
-      <Helmet>
-        <title>Online Astrology Consultation | Shri MP Shastri Astrology</title>
-        <meta
-          name="description"
-          content="Connect with Shri MP Shastri for professional online astrology consultations via secure telephone or video sessions. Get accurate natal readings and ancestral guidance."
-        />
-        <link
-          rel="canonical"
-          href="https://www.mpshastriastrology.com/online-astrologer"
-        />
-        <meta property="og:title" content="Online Astrology Consultation | Shri MP Shastri Astrology" />
-        <meta
-          property="og:description"
-          content="Access clear insights for career transitions, relationship timelines, and home architectural configurations remotely from anywhere globally."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/online-astrologer" />
-      </Helmet>
+      <Seo
+        title="Online Astrology Consultation | Shri MP Shastri Astrology"
+        description="Connect with Shri MP Shastri for professional online astrology consultations via secure telephone or video sessions. Get accurate natal readings and ancestral guidance."
+        path="/online-astrologer"
+      />
 
       <div className="onlineAstrologyPage">
         {/* HERO SECTION */}

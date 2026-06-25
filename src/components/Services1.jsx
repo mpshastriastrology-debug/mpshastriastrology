@@ -3,27 +3,10 @@ import { PhoneCall, MessageCircle } from "lucide-react";
 import { FaOm, FaHome, FaEye } from "react-icons/fa";
 import { GiMeditation } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 
 function Services() {
   return (
     <>
-      {/* Universal Hub Search Engine Optimization Tuning */}
-      <Helmet>
-        <title>Vedic Astrology, Vastu Shastra &amp; Spiritual Healing | Shri MP Shastri</title>
-        <meta
-          name="description"
-          content="Explore comprehensive Vedic consultation pillars managed by Shri MP Shastri. Access deep birth chart analysis, expert Vastu audits, face reading, and protective energy adjustments."
-        />
-        <link rel="canonical" href="https://www.mpshastriastrology.com/services" />
-        <meta property="og:title" content="Vedic Astrology, Vastu Shastra &amp; Spiritual Healing | Shri MP Shastri" />
-        <meta
-          property="og:description"
-          content="Empower your decisions with timeless elemental and natal insights. Secure personalized virtual or in-office sessions today."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/services" />
-      </Helmet>
-
       <section className="servicesPage">
         {/* HERO CALL TO ACTION SEGMENT */}
         <section className="ctaSection">

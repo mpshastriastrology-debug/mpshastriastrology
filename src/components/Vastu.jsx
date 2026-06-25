@@ -1,26 +1,16 @@
 import "./Vastu.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet-async";
+import Seo from './Seo';
 
 function Vastu() {
   return (
     <>
-      {/* Dynamic Header Controls for the Vastu Sub-page */}
-      <Helmet>
-        <title>Residential &amp; Commercial Vastu Shastra Expert | MP Shastri</title>
-        <meta
-          name="description"
-          content="Transform your space with ancient structural balancing rules. Get professional home, office, and factory Vastu audits from Bangalore's trusted consultant, Shri MP Shastri."
-        />
-        <link rel="canonical" href="https://www.mpshastriastrology.com/vastu" />
-        <meta property="og:title" content="Residential &amp; Commercial Vastu Shastra Expert | MP Shastri" />
-        <meta
-          property="og:description"
-          content="Balance your spatial elemental flows to remove career bottlenecks and financial stress without structural demolition."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/vastu" />
-      </Helmet>
+      <Seo
+        title="Residential & Commercial Vastu Shastra Expert | MP Shastri"
+        description="Transform your space with ancient structural balancing rules. Get professional home, office, and factory Vastu audits from Bangalore's trusted consultant, Shri MP Shastri."
+        path="/vastu"
+      />
 
       <section className="vastuPage">
         {/* HERO SECTION */}

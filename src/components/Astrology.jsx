@@ -1,27 +1,17 @@
 import "./Astrology.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet-async";
-import Astrologyservices from './Astrologyservices';
+import Seo from './Seo';
+import Astrologyservices from './astrologyservices';
 
 function Astrology() {
   return (
     <>
-      {/* Dynamic Header Controls for the Astrology Sub-page */}
-      <Helmet>
-        <title>Vedic Astrology Consultation &amp; Horoscope Reading | MP Shastri</title>
-        <meta
-          name="description"
-          content="Get authentic Vedic astrology chart analysis, accurate marriage compatibility profiling, and career breakthrough timing with Bangalore's trusted expert, Shri MP Shastri."
-        />
-        <link rel="canonical" href="https://www.mpshastriastrology.com/astrology" />
-        <meta property="og:title" content="Vedic Astrology Consultation &amp; Horoscope Reading | MP Shastri" />
-        <meta
-          property="og:description"
-          content="Gain clarity on life paths, planetary dasha adjustments, and relationship forecasting via precise horoscope audits."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/astrology" />
-      </Helmet>
+      <Seo
+        title="Vedic Astrology Consultation & Horoscope Reading | MP Shastri"
+        description="Get authentic Vedic astrology chart analysis, accurate marriage compatibility profiling, and career breakthrough timing with Bangalore's trusted expert, Shri MP Shastri."
+        path="/astrology"
+      />
 
       <section className="astrologyPage">
         {/* HERO SECTION */}
@@ -80,7 +70,7 @@ function Astrology() {
         <br /><br />
 
         {/* Sub-component injection */}
-        <Astrologyservices />
+        <Astrologyservices seo={false} />
       </section>
     </>
   );

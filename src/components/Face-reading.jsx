@@ -1,26 +1,16 @@
 import "./FaceReading.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet-async";
+import Seo from './Seo';
 
 function FaceReading() {
   return (
     <>
-      {/* Dynamic Header Controls for the Face Reading Sub-page */}
-      <Helmet>
-        <title>Physiognomy &amp; Face Reading Consultation | MP Shastri</title>
-        <meta
-          name="description"
-          content="Uncover deep personality patterns, psychological strengths, and ancestral timing parameters through specialized Vedic physiognomy and facial structure audits by Shri MP Shastri."
-        />
-        <link rel="canonical" href="https://www.mpshastriastrology.com/face-reading" />
-        <meta property="og:title" content="Physiognomy &amp; Face Reading Consultation | MP Shastri" />
-        <meta
-          property="og:description"
-          content="Gain professional career guidance and character insight through authentic structural and micro-expression analysis."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/face-reading" />
-      </Helmet>
+      <Seo
+        title="Physiognomy & Face Reading Consultation | MP Shastri"
+        description="Uncover deep personality patterns, psychological strengths, and ancestral timing parameters through specialized Vedic physiognomy and facial structure audits by Shri MP Shastri."
+        path="/face-reading"
+      />
 
       <section className="facePage">
         {/* HERO SECTION */}

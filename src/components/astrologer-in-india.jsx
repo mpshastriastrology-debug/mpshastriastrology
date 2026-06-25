@@ -1,28 +1,15 @@
-import { Helmet } from "react-helmet-async";
+import Seo from "./Seo";
 import "./AstrologerInIndia.css";
 import { Link } from "react-router-dom";
 
 function AstrologerInIndia() {
   return (
     <>
-      {/* Search Engine Optimization Meta Configuration */}
-      <Helmet>
-        <title>Top Trusted Astrologer in India | Shri MP Shastri Astrology</title>
-        <meta
-          name="description"
-          content="Consult Shri MP Shastri, a highly trusted astrologer in India. Get accurate online Vedic horoscope readings, career timelines, and remote Vastu corrections."
-        />
-        <link
-          rel="canonical"
-          href="https://www.mpshastriastrology.com/astrologer-in-india"
-        />
-        <meta property="og:title" content="Top Trusted Astrologer in India | Shri MP Shastri Astrology" />
-        <meta
-          property="og:description"
-          content="Access clear insights for professional growth, marital compatibility, and ancestral energy balancing from anywhere in India."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/astrologer-in-india" />
-      </Helmet>
+      <Seo
+        title="Top Trusted Astrologer in India | Shri MP Shastri Astrology"
+        description="Consult Shri MP Shastri, a highly trusted astrologer in India. Get accurate online Vedic horoscope readings, career timelines, and remote Vastu corrections."
+        path="/astrologer-in-india"
+      />
 
       <div className="indiaPage">
         {/* HERO SECTION */}

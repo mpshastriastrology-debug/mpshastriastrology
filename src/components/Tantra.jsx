@@ -1,26 +1,16 @@
 import "./Tantra.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet-async";
+import Seo from './Seo';
 
 function Tantra() {
   return (
     <>
-      {/* Dynamic Header Controls for the Tantra Sub-page */}
-      <Helmet>
-        <title>Spiritual Healing &amp; Esoteric Protection Services | MP Shastri</title>
-        <meta
-          name="description"
-          content="Restore dynamic energy equilibrium and resolve stubborn environmental or personal negativity. Discover classical esoteric balancing rituals guided by Shri MP Shastri."
-        />
-        <link rel="canonical" href="https://www.mpshastriastrology.com/tantra" />
-        <meta property="og:title" content="Spiritual Healing &amp; Esoteric Protection Services | MP Shastri" />
-        <meta
-          property="og:description"
-          content="Cleanse deep-seated structural blocks and build foundational psychological clarity through authentic ancestral energy guidance."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/tantra" />
-      </Helmet>
+      <Seo
+        title="Spiritual Healing & Esoteric Protection Services | MP Shastri"
+        description="Restore dynamic energy equilibrium and resolve stubborn environmental or personal negativity. Discover classical esoteric balancing rituals guided by Shri MP Shastri."
+        path="/tantra"
+      />
 
       <section className="tantraPage">
         {/* HERO SECTION */}

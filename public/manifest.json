@@ -1,0 +1,22 @@
+{
+  "name": "MP Shastri Astrology",
+  "short_name": "MP Shastri",
+  "description": "Vedic astrology, Vastu Shastra, and spiritual consultation in Bangalore by Shri MP Shastri.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f4ee",
+  "theme_color": "#d4af37",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/bestastrology.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/bestastrology.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

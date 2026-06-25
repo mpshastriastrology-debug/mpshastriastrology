@@ -1,7 +1,7 @@
 import Hero from '../components/Hero';
-import { Helmet } from "react-helmet-async";
+import Seo from '../components/Seo';
 import Services1 from '../components/Services1';
-import Astrologyservices from '../components/Astrologyservices';
+import Astrologyservices from '../components/astrologyservices';
 
 function Home() {
   // Combined Structured Data Object for Clean Code
@@ -118,31 +118,16 @@ function Home() {
 
   return (
     <>
-      <Helmet>
-        <title>Vedic Astrologer &amp; Vastu Consultant in Bangalore | MP Shastri</title>
-        <meta
-          name="description"
-          content="Consult MP Shastri for authentic Vedic astrology, accurate Kundali matching, and Vastu solutions in Bangalore. Book your online or in-person session today."
-        />
-        <link rel="canonical" href="https://www.mpshastriastrology.com/" />
-
-        <meta property="og:title" content="Vedic Astrologer &amp; Vastu Consultant in Bangalore | MP Shastri" />
-        <meta
-          property="og:description"
-          content="Get accurate life predictions, marriage matching, and home Vastu corrections from expert Bangalore astrologer MP Shastri."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.mpshastriastrology.com/og-image.jpg" />
-
-        {/* This single script block injects all your SEO data perfectly */}
-        <script type="application/ld+json">
-          {JSON.stringify(combinedSchema)}
-        </script>
-      </Helmet>
+      <Seo
+        title="Vedic Astrologer & Vastu Consultant in Bangalore | MP Shastri"
+        description="Consult MP Shastri for authentic Vedic astrology, accurate Kundali matching, and Vastu solutions in Bangalore. Book your online or in-person session today."
+        path="/"
+      >
+        <script type="application/ld+json">{JSON.stringify(combinedSchema)}</script>
+      </Seo>
 
       <Hero />
-      <Astrologyservices />
+      <Astrologyservices seo={false} />
       <Services1 />
     </>
   );

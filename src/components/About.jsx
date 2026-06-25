@@ -1,25 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet-async";
+import Seo from './Seo';
 import './About.css';
 
 function AboutSection() {
   return (
     <section>
-      <Helmet>
-        <title>About Shri MP Shastri | Vedic Astrologer in Bangalore</title>
-        <meta
-          name="description"
-          content="Learn about Shri MP Shastri, a trusted Vedic astrologer and Vastu consultant in Bangalore offering horoscope readings, Kundali matching, and spiritual guidance."
-        />
-        <link rel="canonical" href="https://www.mpshastriastrology.com/about" />
-        <meta property="og:title" content="About Shri MP Shastri | Vedic Astrologer in Bangalore" />
-        <meta
-          property="og:description"
-          content="Discover the experience and approach behind MP Shastri Astrology — authentic Vedic wisdom for career, marriage, business, and home harmony."
-        />
-        <meta property="og:url" content="https://www.mpshastriastrology.com/about" />
-        <meta property="og:image" content="https://www.mpshastriastrology.com/mp-shastri-astrology.webp" />
-      </Helmet>
+      <Seo
+        title="About Shri MP Shastri | Vedic Astrologer in Bangalore"
+        description="Learn about Shri MP Shastri, a trusted Vedic astrologer and Vastu consultant in Bangalore offering horoscope readings, Kundali matching, and spiritual guidance."
+        path="/about"
+      />
       {/* ABOUT INTRO SECTION */}
       <section className="aboutSection">
         {/* LEFT IMAGE */}
