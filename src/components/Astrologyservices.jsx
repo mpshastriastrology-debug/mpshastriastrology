@@ -1,7 +1,7 @@
 import "./Astrology.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 function Astrology() {
   // Centralized data array makes handling clean alt tags and structured URLs infinitely easier

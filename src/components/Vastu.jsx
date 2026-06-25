@@ -1,7 +1,7 @@
 import "./Vastu.css";
 import "./Services1.css";
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 function Vastu() {
   return (

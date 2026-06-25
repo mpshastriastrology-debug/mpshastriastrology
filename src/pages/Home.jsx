@@ -1,5 +1,5 @@
 import Hero from '../components/Hero';
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import Services1 from '../components/Services1';
 import Astrologyservices from '../components/Astrologyservices';
 

@@ -3,7 +3,7 @@ import { PhoneCall, MessageCircle } from "lucide-react";
 import { FaOm, FaHome, FaEye } from "react-icons/fa";
 import { GiMeditation } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 function Services() {
   return (

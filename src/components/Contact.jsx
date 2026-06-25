@@ -1,7 +1,7 @@
 import "./Contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 function Contact() {
   const [form, setForm] = useState({
