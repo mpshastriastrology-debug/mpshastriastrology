@@ -1,15 +1,18 @@
 import Seo from "./Seo";
+import FaqSection from "./FaqSection";
 import "./AstrologerInBangalore.css";
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
+import { BANGALORE_ASTROLOGER_FAQS } from "../seo/faqData";
 
 function AstrologerInBangalore() {
   return (
     <>
       <Seo
         title="Best Astrologer in Bangalore | Shri MP Shastri Astrology"
-        description="Consult Shri MP Shastri, the top trusted astrologer in Bangalore. Get accurate Vedic horoscope readings, career timelines, and non-destructive Vastu remedies."
+        description="Consult Shri MP Shastri, a trusted astrologer in Bangalore for Vedic horoscope reading, Kundali matching, career guidance, and Vastu remedies. Book in-person or online."
         path="/astrologer-in-bangalore"
+        faqs={BANGALORE_ASTROLOGER_FAQS}
       />
 
       <div className="bangalorePage">
@@ -103,6 +106,12 @@ function AstrologerInBangalore() {
             Call +91 80732 58799
           </a>
         </Reveal>
+
+        <FaqSection
+          title="Astrologer in Bangalore — Common Questions"
+          faqs={BANGALORE_ASTROLOGER_FAQS}
+          idPrefix="bangalore-astrologer-faq"
+        />
       </div>
     </>
   );

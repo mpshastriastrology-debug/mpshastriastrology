@@ -1,15 +1,18 @@
 import Seo from "./Seo";
+import FaqSection from "./FaqSection";
 import "./VastuExpert.css";
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
+import { VASTU_EXPERT_FAQS } from "../seo/faqData";
 
 function VastuExpert() {
   return (
     <>
       <Seo
-        title="Professional Vastu Shastra Consultant | Shri MP Shastri"
-        description="Consult Shri MP Shastri for professional Vastu Shastra audits. Elevate harmony, operational flow, and prosperity across residential and commercial spaces without structural demolition."
+        title="Vastu Consultant in Bangalore | Expert Vastu Shastra | MP Shastri"
+        description="Consult Shri MP Shastri, a Vastu consultant in Bangalore for home, office, and factory audits. Practical Vastu remedies without demolition in Mahalakshmi Layout."
         path="/vastu-expert"
+        faqs={VASTU_EXPERT_FAQS}
       />
 
       <div className="vastuPage">
@@ -18,7 +21,7 @@ function VastuExpert() {
             <span className="vastuBadge">
               ✦ SCIENTIFIC &amp; TRADITIONAL ELEMENTAL ALIGNMENT
             </span>
-            <h1>Expert Vastu Shastra Consultant</h1>
+            <h1>Vastu Consultant in Bangalore</h1>
             <p>
               Shri MP Shastri offers calculation-driven Vastu assessments for private layouts, commercial offices, industrial plants, and raw plots. Restore directional symmetry and create environmental harmony using non-destructive architectural remedies.
             </p>
@@ -98,6 +101,12 @@ function VastuExpert() {
             Call +91 80732 58799
           </a>
         </Reveal>
+
+        <FaqSection
+          title="Vastu Consultant in Bangalore — FAQs"
+          faqs={VASTU_EXPERT_FAQS}
+          idPrefix="vastu-expert-faq"
+        />
       </div>
     </>
   );

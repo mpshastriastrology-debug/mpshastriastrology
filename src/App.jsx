@@ -1,4 +1,6 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import Navbar from './components/Navbar';
 import Breadcrumbs from './components/Breadcrumbs';
 import Footer from './components/Footer';
@@ -27,7 +29,15 @@ import AstrologyBgPattern from './components/AstrologyBgPattern';
 import { useScrollAnimations } from "./hooks/useScrollAnimations";
 
 function App() {
+  const location = useLocation();
   useScrollAnimations();
+
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: `${location.pathname}${location.search}`,
+    });
+  }, [location]);
 
   return (
     <div className="vedicSite">

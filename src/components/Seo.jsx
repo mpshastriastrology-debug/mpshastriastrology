@@ -3,6 +3,7 @@ import { buildHomeSchema, buildPageSchema } from "../seo/schema";
 
 const SITE_URL = "https://www.mpshastriastrology.com";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/mp-shastri-astrology.webp`;
+const SITE_NAME = "MP Shastri Astrology";
 
 export default function Seo({
   title,
@@ -28,12 +29,16 @@ export default function Seo({
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
+      <meta name="geo.region" content="IN-KA" />
+      <meta name="geo.placename" content="Bangalore" />
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={type} />
       <meta property="og:image" content={image} />
+      <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:locale" content="en_IN" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

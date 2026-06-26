@@ -2,7 +2,9 @@ import "./Contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
 import Seo from "./Seo";
+import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
+import { CONTACT_FAQS } from "../seo/faqData";
 
 function Contact() {
   const [form, setForm] = useState({
@@ -73,17 +75,18 @@ function Contact() {
   return (
     <section className="contactPage">
       <Seo
-        title="Book Astrology & Vastu Consultation | MP Shastri Bangalore"
+        title="Book Astrology & Vastu Consultation in Bangalore | MP Shastri"
         description="Book an in-person or online astrology and Vastu consultation with Shri MP Shastri in Bangalore. Call +91 80732 58799 or submit the appointment form."
         path="/contact"
+        faqs={CONTACT_FAQS}
       />
       {/* APPOINTMENT FORM SECTION */}
       <section className="appointmentSection">
         <Reveal className="appointmentLeft" animation="fade-right">
           <p>✦ BOOK YOUR APPOINTMENT</p>
-          <h2>Start Your Spiritual Journey Today</h2>
-          <span>
-            Connect with Shri MP Shastri for professional horoscope assessments, structural Vastu audits, and customized remedial solutions.
+          <h1>Book Astrology &amp; Vastu Consultation in Bangalore</h1>
+          <span className="appointmentSubtitle">
+            Start your spiritual journey today — connect with Shri MP Shastri for horoscope assessments, Vastu audits, and personalized remedies.
           </span>
 
           <div className="appointmentFeatures">
@@ -161,8 +164,8 @@ function Contact() {
           {/* LEFT CONTENT ROW */}
           <Reveal className="contactInfo" animation="fade-right">
             <p className="contactTag">✦ OFFICE HEADQUARTERS</p>
-            <h1>Vedic Consultation Center in Bangalore</h1>
-            <h2>Visit Shri MP Shastri</h2>
+            <h2>Vedic Consultation Center in Bangalore</h2>
+            <h3>Visit Shri MP Shastri</h3>
             <p className="contactText">
               Get clear, calculative resolutions for life transitions directly from an expert advisor.
             </p>
@@ -215,6 +218,12 @@ function Contact() {
           </Reveal>
         </div>
       </section>
+
+      <FaqSection
+        title="Booking & Office — Common Questions"
+        faqs={CONTACT_FAQS}
+        idPrefix="contact-faq"
+      />
     </section>
   );
 }

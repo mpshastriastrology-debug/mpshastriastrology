@@ -10,7 +10,6 @@ import 'aos/dist/aos.css'
 import ReactGA from "react-ga4";
 
 ReactGA.initialize("G-PV4PLVNGQG");
-ReactGA.send("pageview");
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>

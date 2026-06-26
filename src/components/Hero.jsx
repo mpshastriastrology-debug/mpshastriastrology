@@ -39,7 +39,7 @@ function Hero() {
           </video>
         </div>
 
-        <h1>Best Astrologer in Bangalore</h1>
+        <h1>Vedic Astrologer &amp; Vastu Consultant in Bangalore</h1>
 
         {/* Persuasive copy that hits multiple keyword intents naturally while maintaining professional E-E-A-T */}
         <p>

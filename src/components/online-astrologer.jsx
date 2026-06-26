@@ -1,15 +1,18 @@
 import Seo from "./Seo";
+import FaqSection from "./FaqSection";
 import "./OnlineAstrology.css";
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
+import { ONLINE_ASTROLOGER_FAQS } from "../seo/faqData";
 
 function OnlineAstrology() {
   return (
     <>
       <Seo
-        title="Online Astrology Consultation | Shri MP Shastri Astrology"
-        description="Connect with Shri MP Shastri for professional online astrology consultations via secure telephone or video sessions. Get accurate natal readings and ancestral guidance."
+        title="Online Astrology Consultation | Vedic Astrologer MP Shastri"
+        description="Book online astrology consultation with Shri MP Shastri. Accurate horoscope reading, Kundali matching, and remedies via phone or video from Bangalore."
         path="/online-astrologer"
+        faqs={ONLINE_ASTROLOGER_FAQS}
       />
 
       <div className="onlineAstrologyPage">
@@ -116,6 +119,12 @@ function OnlineAstrology() {
             Call +91 80732 58799
           </a>
         </Reveal>
+
+        <FaqSection
+          title="Online Astrology Consultation — FAQs"
+          faqs={ONLINE_ASTROLOGER_FAQS}
+          idPrefix="online-astrologer-faq"
+        />
       </div>
     </>
   );

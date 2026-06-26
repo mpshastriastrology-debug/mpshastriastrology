@@ -1,9 +1,11 @@
 import { HOME_FAQS } from "./faqData";
+import { CLIENT_REVIEWS } from "./reviewsData";
 
 export const SITE_URL = "https://www.mpshastriastrology.com";
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const LOCAL_BUSINESS_ID = `${SITE_URL}/#localbusiness`;
+export const PERSON_ID = `${SITE_URL}/#person`;
 
 export const GOOGLE_BUSINESS_URL =
   "https://www.google.com/maps/place/MP+Shastri+Astrology/@13.0118837,77.5447832,17z/data=!3m1!4b1!4m6!3m5!1s0x16aa14d0ea09c97:0xa9986dcd989e9ba4!8m2!3d13.0118837!4d77.5447832";
@@ -69,7 +71,7 @@ const websiteSchema = {
 };
 
 const localBusinessSchema = {
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": LOCAL_BUSINESS_ID,
   name: "MP Shastri Astrology",
   url: `${SITE_URL}/`,
@@ -79,6 +81,8 @@ const localBusinessSchema = {
   email: "mpshastriastrology@gmail.com",
   priceRange: "$$",
   parentOrganization: { "@id": ORG_ID },
+  founder: { "@id": PERSON_ID },
+  employee: { "@id": PERSON_ID },
   hasMap: GOOGLE_BUSINESS_URL,
   address: {
     "@type": "PostalAddress",
@@ -119,6 +123,48 @@ const localBusinessSchema = {
     "Spiritual Counseling",
   ],
 };
+
+const personSchema = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: "Shri MP Shastri",
+  jobTitle: "Vedic Astrologer & Vastu Consultant",
+  url: `${SITE_URL}/about`,
+  image: `${SITE_URL}/mp-shastri-astrology.webp`,
+  worksFor: { "@id": ORG_ID },
+  address: localBusinessSchema.address,
+  knowsAbout: localBusinessSchema.knowsAbout,
+  sameAs: [GOOGLE_BUSINESS_URL],
+};
+
+function buildReviewSchema(review, index) {
+  return {
+    "@type": "Review",
+    "@id": `${SITE_URL}/#review-${index + 1}`,
+    author: {
+      "@type": "Person",
+      name: review.author,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: review.ratingValue,
+      bestRating: 5,
+    },
+    reviewBody: review.reviewBody,
+    itemReviewed: { "@id": LOCAL_BUSINESS_ID },
+  };
+}
+
+function buildAggregateRatingSchema() {
+  return {
+    "@type": "AggregateRating",
+    "@id": `${SITE_URL}/#aggregateRating`,
+    ratingValue: "5",
+    reviewCount: String(CLIENT_REVIEWS.length),
+    bestRating: "5",
+    itemReviewed: { "@id": LOCAL_BUSINESS_ID },
+  };
+}
 
 export function buildFaqSchema(faqs, path) {
   return {
@@ -167,7 +213,13 @@ export function buildHomeSchema() {
     "@graph": [
       organizationSchema,
       websiteSchema,
-      localBusinessSchema,
+      personSchema,
+      {
+        ...localBusinessSchema,
+        aggregateRating: { "@id": `${SITE_URL}/#aggregateRating` },
+      },
+      buildAggregateRatingSchema(),
+      ...CLIENT_REVIEWS.map(buildReviewSchema),
       buildFaqSchema(HOME_FAQS, "/"),
       buildBreadcrumbSchema([{ name: "Home", path: "/" }]),
     ],
@@ -178,6 +230,7 @@ export function buildPageSchema(path, label, { faqs } = {}) {
   const graph = [
     organizationSchema,
     websiteSchema,
+    personSchema,
     localBusinessSchema,
     buildBreadcrumbSchema(buildBreadcrumbs(path, label)),
   ];

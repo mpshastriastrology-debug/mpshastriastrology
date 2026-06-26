@@ -1,18 +1,18 @@
 export const HOME_FAQS = [
   {
-    question: "How can Vedic astrology assist me in practical life planning?",
+    question: "Who is the best astrologer in Bangalore for Vedic astrology?",
     answer:
-      "Vedic readings isolate the underlying systemic shifts in your lifecycle, revealing timeline periods of high opportunity for investments alongside windows requiring cautionary tracking.",
+      "Shri MP Shastri offers authentic Vedic astrology consultations in Bangalore at Mahalakshmi Layout, with accurate birth chart analysis, Kundali matching, career guidance, and practical remedies for clients across Karnataka and India.",
   },
   {
-    question: "Are your remote/online consultation readings as accurate as physical visits?",
+    question: "Are online astrology consultations as accurate as in-person visits in Bangalore?",
     answer:
-      "Yes. Because cosmic tracking functions on precise calculations of your birth date, location, and minute parameters, telephone and digital video calls yield identical accuracy.",
+      "Yes. Vedic chart calculations depend on your exact birth date, time, and place—not physical presence. Phone and video sessions from MP Shastri Astrology deliver the same accuracy as office visits.",
   },
   {
-    question: "What fields are evaluated during a routine Vastu consultation?",
+    question: "Do you offer Vastu consultant services in Bangalore for homes and offices?",
     answer:
-      "Consultations cover directional flow patterns, room assignments, entrance configurations, and structural elements for both residential layouts and commercial office spaces.",
+      "Yes. MP Shastri provides Vastu Shastra audits for flats, villas, shops, and commercial offices in Bangalore, focusing on directional balance, room placement, and non-destructive remedies.",
   },
 ];
 
@@ -128,5 +128,87 @@ export const TANTRA_FAQS = [
     question: "How is a spiritual healing session structured?",
     answer:
       "Sessions begin with an assessment of your concerns and energy patterns, followed by personalized remedial guidance, protective practices, and practical steps for ongoing balance.",
+  },
+];
+
+export const BANGALORE_ASTROLOGER_FAQS = [
+  {
+    question: "Why choose MP Shastri as your astrologer in Bangalore?",
+    answer:
+      "Shri MP Shastri combines traditional Vedic calculation methods with practical guidance for career, marriage, finance, and health. The Bangalore office in Mahalakshmi Layout serves local and online clients with confidential consultations.",
+  },
+  {
+    question: "What astrology services are available in Bangalore?",
+    answer:
+      "Services include horoscope reading, Kundali matching, career astrology, business timing, financial remedies, love and relationship guidance, health astrology, and Vastu consultation for homes and offices.",
+  },
+  {
+    question: "How do I book an astrologer appointment in Bangalore?",
+    answer:
+      "Call +91 80732 58799, WhatsApp the same number, or submit the appointment form on the contact page. In-person sessions are available at the Bangalore office; online sessions are offered worldwide.",
+  },
+  {
+    question: "Is MP Shastri Astrology near me in Bangalore?",
+    answer:
+      "The consultation center is at 607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout, Bengaluru, Karnataka 560086—easily accessible for clients across Bangalore.",
+  },
+];
+
+export const VASTU_EXPERT_FAQS = [
+  {
+    question: "Who is a trusted Vastu consultant in Bangalore?",
+    answer:
+      "Shri MP Shastri is a Vastu Shastra consultant in Bangalore offering residential and commercial audits, plot analysis, and practical remedies without major demolition.",
+  },
+  {
+    question: "Can Vastu correction help my Bangalore apartment or office?",
+    answer:
+      "Yes. Vastu guidance applies to rented flats, owned homes, shops, factories, and office spaces using layout adjustments, zone corrections, and elemental balancing techniques.",
+  },
+  {
+    question: "What does a Vastu expert check during a site visit in Bangalore?",
+    answer:
+      "Audits review plot orientation, main entrance direction, kitchen and bedroom zones, water and fire element balance, and overall energy flow across the property.",
+  },
+  {
+    question: "Do I need structural changes for Vastu remedies?",
+    answer:
+      "In most cases, no. Recommendations focus on directional balancing, room usage, color corrections, and non-invasive remedies tailored to your Bangalore property.",
+  },
+];
+
+export const ONLINE_ASTROLOGER_FAQS = [
+  {
+    question: "How does online astrology consultation with MP Shastri work?",
+    answer:
+      "Share your birth date, time, and place, then join a private phone or video session. Shri MP Shastri analyzes your chart remotely with the same accuracy as an in-person Bangalore consultation.",
+  },
+  {
+    question: "Can I get Kundali matching and horoscope reading online?",
+    answer:
+      "Yes. Marriage compatibility, horoscope reading, career guidance, and remedial suggestions are all available through secure online sessions for clients in India and abroad.",
+  },
+  {
+    question: "What do I need before an online astrology session?",
+    answer:
+      "Prepare your exact birth time, birth place, and the questions you want addressed. A stable phone or video connection is sufficient for a full consultation.",
+  },
+];
+
+export const CONTACT_FAQS = [
+  {
+    question: "How do I book an astrology or Vastu consultation in Bangalore?",
+    answer:
+      "Use the appointment form on this page, call +91 80732 58799, or WhatsApp the same number. The team will confirm your preferred date for in-person or online sessions.",
+  },
+  {
+    question: "What are the consultation hours at MP Shastri Astrology?",
+    answer:
+      "Consultations are available daily from 9:00 AM to 9:00 PM IST. Call or message to check same-day availability at the Bangalore office.",
+  },
+  {
+    question: "Where is the MP Shastri Astrology office in Bangalore?",
+    answer:
+      "607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout, Bengaluru, Karnataka 560086. Directions and map are shown on this contact page.",
   },
 ];
