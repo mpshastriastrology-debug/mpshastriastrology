@@ -22,6 +22,7 @@ export function useScrollAnimations() {
             mirror: false,
             disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
           });
+          window.AOS = AOS;
         }
       );
     };
@@ -38,8 +39,12 @@ export function useScrollAnimations() {
   }, []);
 
   useEffect(() => {
+    if (!window.AOS) return;
+
     import("aos").then(({ default: AOS }) => {
-      window.setTimeout(() => AOS.refreshHard(), 100);
+      window.requestIdleCallback
+        ? window.requestIdleCallback(() => AOS.refreshHard())
+        : window.setTimeout(() => AOS.refreshHard(), 100);
     });
   }, [pathname]);
 }

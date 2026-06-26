@@ -34,12 +34,11 @@
   <link rel="apple-touch-icon" href="/bestastrology.png" />
   <link rel="manifest" href="/manifest.json" />
 
-  <!-- LCP image preload (mobile homepage hero) -->
+  <!-- LCP image preload (mobile homepage hero) — only preload hero, not fonts -->
   <link rel="preload" as="image" href="/images/opt/mp-shastri-astrology-480w.webp" fetchpriority="high" imagesrcset="/images/opt/mp-shastri-astrology-480w.webp 480w, /images/opt/mp-shastri-astrology-960w.webp 960w" imagesizes="100vw" />
 
-  <!-- Self-hosted fonts — same origin, no Google Fonts chain -->
+  <!-- Body font only; heading font loads async via @font-face (Georgia fallback in critical CSS) -->
   <link rel="preload" href="/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
 
   <!-- Critical above-the-fold styles (avoids FOUC while full CSS loads async) -->
   <style>
@@ -169,7 +168,7 @@
     width="640"
     height="360"
     fetchpriority="high"
-    decoding="async"
+    decoding="sync"
   />
 
   <div id="root"></div>
