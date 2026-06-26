@@ -5,6 +5,7 @@ import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { FACE_READING_FAQS } from '../seo/faqData';
 import Reveal from './Reveal';
+import OptimizedImage from './OptimizedImage';
 
 function FaceReading() {
   return (
@@ -40,9 +41,13 @@ function FaceReading() {
         {/* CORE INTRODUCTION BLOCK */}
         <div className="faceAbout">
           <Reveal className="faceImage" animation="fade-right">
-            <img
+            <OptimizedImage
               src="/facereading.webp"
               alt="Physiognomy structural reference tracing facial grid coordinates"
+              widths={[400, 800]}
+              sizes="(max-width: 768px) 100vw, 480px"
+              width={480}
+              height={320}
             />
           </Reveal>
 
@@ -81,10 +86,13 @@ function FaceReading() {
           <div className="faceServiceGrid">
             {/* CARD 1 */}
             <div className="faceCard">
-              <img
+              <OptimizedImage
                 src="/personality-reading.webp"
                 alt="Detailed portrait focusing on bone structure tracking landmarks"
-                loading="lazy"
+                widths={[400, 800]}
+                sizes="(max-width: 640px) 100vw, 360px"
+                width={360}
+                height={220}
               />
               <div className="faceCardContent">
                 <h3>Character Mapping</h3>
@@ -96,10 +104,13 @@ function FaceReading() {
 
             {/* CARD 2 */}
             <div className="faceCard">
-              <img
-                src="./career.webp"
+              <OptimizedImage
+                src="/career.webp"
                 alt="Business professional highlighting structural leadership markers"
-                loading="lazy"
+                widths={[400, 800]}
+                sizes="(max-width: 640px) 100vw, 360px"
+                width={360}
+                height={220}
               />
               <div className="faceCardContent">
                 <h3>Executive Alignment</h3>

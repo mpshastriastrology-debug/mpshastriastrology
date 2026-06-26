@@ -3,6 +3,7 @@ import "./Services1.css";
 import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import Reveal from './Reveal';
+import OptimizedImage from './OptimizedImage';
 import { CONSULTATION_SERVICES } from '../consultation/servicesData';
 
 const CONSULTATION_PATHS = Object.fromEntries(
@@ -110,7 +111,14 @@ const servicesData = [
             <Reveal key={index} animation="fade-up" delay={(index % 4) * 80}>
               <Link to={service.path} className="astroCardLink">
               <div className="astroCard">
-                <img src={service.img} alt={service.alt} loading="lazy" />
+                <OptimizedImage
+                  src={service.img}
+                  alt={service.alt}
+                  widths={[400, 800]}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                  width={400}
+                  height={240}
+                />
                 <div className="astroCardContent">
                   <h3>{service.title}</h3>
                   <p>{service.desc}</p>

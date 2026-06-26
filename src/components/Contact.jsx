@@ -1,10 +1,11 @@
 import "./Contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Seo from "./Seo";
 import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { CONTACT_FAQS } from "../seo/faqData";
+import { initGoogleAds } from "../utils/analytics";
 
 function Contact() {
   const [form, setForm] = useState({
@@ -16,6 +17,10 @@ function Contact() {
   });
 
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    initGoogleAds();
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

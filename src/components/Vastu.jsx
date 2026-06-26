@@ -5,6 +5,7 @@ import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { VASTU_FAQS } from '../seo/faqData';
 import Reveal from './Reveal';
+import OptimizedImage from './OptimizedImage';
 
 function Vastu() {
   return (
@@ -40,9 +41,13 @@ function Vastu() {
         {/* DETAILS INTRO SECTION */}
         <div className="vastuAbout">
           <Reveal className="vastuImage" animation="fade-right">
-            <img
+            <OptimizedImage
               src="/vasthu.webp"
               alt="Traditional Vastu Purusha alignment map balancing elemental directional fields"
+              widths={[400, 800]}
+              sizes="(max-width: 768px) 100vw, 480px"
+              width={480}
+              height={320}
             />
           </Reveal>
 

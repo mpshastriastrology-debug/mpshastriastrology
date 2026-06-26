@@ -4,6 +4,7 @@ import FaqSection from './FaqSection';
 import { ABOUT_FAQS } from '../seo/faqData';
 import './About.css';
 import Reveal from './Reveal';
+import OptimizedImage from './OptimizedImage';
 
 function AboutSection() {
   return (
@@ -19,9 +20,13 @@ function AboutSection() {
         {/* LEFT IMAGE */}
         <Reveal className="aboutImage" animation="fade-right">
           <div className="aboutGlow"></div>
-          <img
+          <OptimizedImage
             src="/mp-shastri-astrology.webp"
             alt="Shri MP Shastri providing spiritual counseling and horoscope analysis"
+            widths={[480, 960]}
+            sizes="(max-width: 768px) 100vw, 480px"
+            width={480}
+            height={320}
           />
         </Reveal>
 
@@ -67,7 +72,14 @@ function AboutSection() {
             ["/facereading.webp", "Detailed facial lines representing behavioral characteristics", "Face Reading", "Understanding Subtle Personality Profiles Through Face Reading", "Learn timeless analytical observation points to identify inherent mental strengths, emotional blockages, and behavioral tendencies."],
           ].map(([src, alt, tag, title, text], index) => (
             <Reveal className="blogCard" key={title} animation="fade-up" delay={index * 100}>
-              <img src={src} alt={alt} loading="lazy" />
+              <OptimizedImage
+                src={src}
+                alt={alt}
+                widths={[400, 800]}
+                sizes="(max-width: 640px) 100vw, 360px"
+                width={360}
+                height={220}
+              />
               <div className="blogContent">
                 <span>{tag}</span>
                 <h3>{title}</h3>
@@ -104,10 +116,13 @@ function AboutSection() {
         </Reveal>
 
         <Reveal className="whyRight" animation="fade-left">
-          <img
-            src="./bestastrology.webp"
+          <OptimizedImage
+            src="/bestastrology.webp"
             alt="Shri MP Shastri analyzing natal chart details in private office layout"
-            loading="lazy"
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 100vw, 480px"
+            width={480}
+            height={320}
           />
         </Reveal>
       </section>
@@ -130,10 +145,13 @@ function AboutSection() {
         </Reveal>
 
         <Reveal className="experienceRight" animation="fade-left">
-          <img
+          <OptimizedImage
             src="/topastrology.webp"
             alt="Astrology chart layout items representing professional reading structures"
-            loading="lazy"
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 100vw, 480px"
+            width={480}
+            height={320}
           />
         </Reveal>
       </section>

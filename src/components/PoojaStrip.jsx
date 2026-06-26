@@ -1,14 +1,19 @@
 import { FaOm } from "react-icons/fa";
 import { GiLotus, GiCandleFlame } from "react-icons/gi";
+import OptimizedImage from "./OptimizedImage";
 import "./PoojaStrip.css";
 
 export default function PoojaStrip() {
   return (
     <div className="poojaStrip" aria-hidden="true">
       <span className="poojaStripOm">ॐ</span>
-      <img
+      <OptimizedImage
         src="/MPShastriLogo.webp"
         alt=""
+        widths={[96]}
+        sizes="48px"
+        width={48}
+        height={48}
         className="poojaStripMandala"
         loading="lazy"
       />

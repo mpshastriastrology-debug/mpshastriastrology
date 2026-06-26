@@ -5,6 +5,7 @@ import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { TANTRA_FAQS } from '../seo/faqData';
 import Reveal from './Reveal';
+import OptimizedImage from './OptimizedImage';
 
 function Tantra() {
   return (
@@ -96,10 +97,13 @@ function Tantra() {
 
             {/* CARD 2 */}
             <div className="tantraCard">
-              <img
+              <OptimizedImage
                 src="/healing.webp"
                 alt="Reflective ambient lights representing the harmonization of subtle energy layers"
-                loading="lazy"
+                widths={[400, 800]}
+                sizes="(max-width: 640px) 100vw, 360px"
+                width={360}
+                height={220}
               />
               <div className="tantraCardContent">
                 <h3>Vibrational Cleansing</h3>

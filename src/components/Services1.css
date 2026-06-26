@@ -305,7 +305,7 @@ body {
 
 .ctaSection {
   padding: 120px 8%;
-  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('./bestastrology.webp');
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('/images/opt/bestastrology-800w.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1214,7 +1214,7 @@ body {
   justify-content: center;
   padding: 120px 8%;
   overflow: hidden;
-  background: url('./bestastrology.webp');
+  background: url('/images/opt/bestastrology-800w.webp');
   background-size: cover;
   background-position: center;
 }

@@ -2,7 +2,8 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { CONSULTATION_SERVICES } from "../consultation/servicesData";
+import { CONSULTATION_NAV } from "../consultation/consultationNav";
+import OptimizedImage from "./OptimizedImage";
 
 function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -15,9 +16,14 @@ function Header() {
       {/* LOGO */}
       <Link to="/" className="headerLogo" onClick={closeMenu}>
         <div className="logoCircle">
-          <img
+          <OptimizedImage
             src="/MPShastriLogo.webp"
             alt="MP Shastri Logo"
+            widths={[96, 192]}
+            sizes="96px"
+            width={84}
+            height={84}
+            loading="eager"
           />
         </div>
         <div className="logoText">
@@ -53,7 +59,7 @@ function Header() {
           </div>
           <div className="dropdownMenu consultationMenu">
             <Link to="/consultation">All Consultations</Link>
-            {CONSULTATION_SERVICES.map((service) => (
+            {CONSULTATION_NAV.map((service) => (
               <Link key={service.path} to={service.path}>
                 {service.navLabel}
               </Link>
@@ -119,7 +125,7 @@ function Header() {
           </div>
           <div className="dropdownMenu consultationMenu">
             <Link to="/consultation" onClick={closeMenu}>All Consultations</Link>
-            {CONSULTATION_SERVICES.map((service) => (
+            {CONSULTATION_NAV.map((service) => (
               <Link key={service.path} to={service.path} onClick={closeMenu}>
                 {service.navLabel}
               </Link>

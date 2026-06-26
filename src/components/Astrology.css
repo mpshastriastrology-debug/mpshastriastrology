@@ -21,7 +21,7 @@ body {
 
 .astroHero {
   height: 100vh;
-  background-image: url('/Astrology.webp');
+  background-image: url('/images/opt/Astrology-800w.webp');
   background-size: cover;
   background-position: center;
   position: relative;

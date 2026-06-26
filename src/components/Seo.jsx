@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { buildHomeSchema, buildPageSchema } from "../seo/schema";
 
 const SITE_URL = "https://www.mpshastriastrology.com";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/mp-shastri-astrology.webp`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/opt/mp-shastri-astrology-960w.webp`;
 const SITE_NAME = "MP Shastri Astrology";
 
 export default function Seo({

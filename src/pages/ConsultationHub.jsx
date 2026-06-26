@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import Reveal from "../components/Reveal";
 import { CONSULTATION_SERVICES } from "../consultation/servicesData";
+import { optimizedSrc } from "../components/OptimizedImage";
 import "../components/ConsultationPage.css";
 
 export default function ConsultationHub() {
@@ -16,7 +17,7 @@ export default function ConsultationHub() {
 
       <section
         className="consultationHero"
-        style={{ backgroundImage: "url(/Astrology.webp)" }}
+        style={{ backgroundImage: `url(${optimizedSrc("/Astrology.webp", 800)})` }}
       >
         <div className="consultationHeroOverlay" />
         <Reveal className="consultationHeroContent" animation="fade-up">

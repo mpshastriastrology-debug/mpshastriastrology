@@ -21,7 +21,7 @@ body {
 
 .faceHero {
   height: 100vh;
-  background-image: url('/face-read.webp');
+  background-image: url('/images/opt/face-read-800w.webp');
   background-size: cover;
   background-position: center;
   position: relative;

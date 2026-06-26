@@ -1,23 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Analytics deferred until after page load -->
-  <script>
-    window.addEventListener("load", function () {
-      var s = document.createElement("script");
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-PV4PLVNGQG";
-      s.async = true;
-      document.head.appendChild(s);
-      s.onload = function () {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        window.gtag = gtag;
-        gtag("js", new Date());
-        gtag("config", "G-PV4PLVNGQG");
-        gtag("config", "AW-18222440720");
-      };
-    });
-  </script>
   <meta charset="UTF-8" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,10 +35,19 @@
   <link rel="manifest" href="/manifest.json" />
 
   <!-- LCP image preload (mobile homepage hero) -->
-  <link rel="preload" as="image" href="/mp-shastri-astrology.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/opt/mp-shastri-astrology-480w.webp" fetchpriority="high" imagesrcset="/images/opt/mp-shastri-astrology-480w.webp 480w, /images/opt/mp-shastri-astrology-960w.webp 960w" imagesizes="100vw" />
+
+  <!-- Self-hosted fonts — same origin, no Google Fonts chain -->
+  <link rel="preload" href="/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
 
   <!-- Critical above-the-fold styles (avoids FOUC while full CSS loads async) -->
   <style>
+    @font-face{font-family:'Poppins';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/poppins-latin-400-normal.woff2') format('woff2')}
+    @font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/poppins-latin-600-normal.woff2') format('woff2')}
+    @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/cormorant-garamond-latin-400-normal.woff2') format('woff2')}
+    @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2')}
+    @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2')}
     :root{color-scheme:light}
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;overflow-x:hidden}
@@ -64,6 +56,15 @@
     .heroSection{min-height:100vh;background:linear-gradient(135deg,#5c0a0a 0%,#7a4518 45%,#4a0808 100%);color:#fff}
     .heroContent h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.6rem,5vw,2.5rem);line-height:1.15;margin:0 0 .75rem}
     .navbar,.navBar{position:relative;z-index:100}
+    .lcp-hero-static{display:none}
+    @media (max-width:992px){
+      .lcp-hero-static{
+        display:block;width:calc(100% - 10%);max-height:180px;object-fit:cover;
+        border-radius:12px;margin:88px auto 0;padding:0
+      }
+    }
+    body.app-ready .lcp-hero-static{display:none!important}
+    body:not(.app-ready) .mobileVideo{display:none}
   </style>
 
   <!-- Open Graph -->
@@ -79,7 +80,7 @@
 
   <meta
     property="og:image"
-    content="https://www.mpshastriastrology.com/mp-shastri-astrology.webp"
+    content="https://www.mpshastriastrology.com/images/opt/mp-shastri-astrology-960w.webp"
   />
 
   <meta
@@ -104,7 +105,7 @@
 
   <meta
     name="twitter:image"
-    content="https://www.mpshastriastrology.com/mp-shastri-astrology.webp"
+    content="https://www.mpshastriastrology.com/images/opt/mp-shastri-astrology-960w.webp"
   />
 
   <!-- Structured data fallback for crawlers -->
@@ -117,7 +118,7 @@
         "@id": "https://www.mpshastriastrology.com/#organization",
         "name": "MP Shastri Astrology",
         "url": "https://www.mpshastriastrology.com",
-        "logo": "https://www.mpshastriastrology.com/MPShastriLogo.webp",
+        "logo": "https://www.mpshastriastrology.com/images/opt/MPShastriLogo-192w.webp",
         "telephone": "+918073258799",
         "email": "mpshastriastrology@gmail.com",
         "sameAs": [
@@ -138,7 +139,7 @@
         "name": "MP Shastri Astrology",
         "url": "https://www.mpshastriastrology.com/",
         "telephone": "+918073258799",
-        "image": "https://www.mpshastriastrology.com/mp-shastri-astrology.webp",
+        "image": "https://www.mpshastriastrology.com/images/opt/mp-shastri-astrology-960w.webp",
         "hasMap": "https://www.google.com/maps/place/MP+Shastri+Astrology/@13.0118837,77.5447832,17z/data=!3m1!4b1!4m6!3m5!1s0x16aa14d0ea09c97:0xa9986dcd989e9ba4!8m2!3d13.0118837!4d77.5447832",
         "parentOrganization": { "@id": "https://www.mpshastriastrology.com/#organization" },
         "address": {
@@ -157,6 +158,20 @@
 </head>
 
 <body>
+  <!-- LCP hero image in HTML (discoverable before JS) — hidden once React mounts -->
+  <img
+    id="lcp-hero-static"
+    class="lcp-hero-static"
+    src="/images/opt/mp-shastri-astrology-480w.webp"
+    srcset="/images/opt/mp-shastri-astrology-480w.webp 480w, /images/opt/mp-shastri-astrology-960w.webp 960w"
+    sizes="100vw"
+    alt="Shri MP Shastri — Vedic astrologer and Vastu consultant in Bangalore"
+    width="640"
+    height="360"
+    fetchpriority="high"
+    decoding="async"
+  />
+
   <div id="root"></div>
 
   <script type="module" src="/src/main.jsx"></script>

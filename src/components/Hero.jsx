@@ -2,34 +2,26 @@ import { Link } from 'react-router-dom'
 import { lazy, Suspense, useEffect, useState } from 'react'
 import './Hero.css'
 import Reveal from './Reveal'
+import OptimizedImage from './OptimizedImage'
 
 const JyotishyaChakra = lazy(() => import('./JyotishyaChakra'))
 
 function Hero() {
   const [showHeroCircle, setShowHeroCircle] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    const desktopMedia = window.matchMedia('(min-width: 993px)')
-    const mobileMedia = window.matchMedia('(max-width: 992px)')
+    document.body.classList.add('app-ready')
 
-    const update = () => {
-      setShowHeroCircle(desktopMedia.matches)
-      setIsMobile(mobileMedia.matches)
-    }
-
+    const media = window.matchMedia('(min-width: 993px)')
+    const update = () => setShowHeroCircle(media.matches)
     update()
-    desktopMedia.addEventListener('change', update)
-    mobileMedia.addEventListener('change', update)
-    return () => {
-      desktopMedia.removeEventListener('change', update)
-      mobileMedia.removeEventListener('change', update)
-    }
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
   }, [])
 
   return (
     <section className="heroSection">
-      <Reveal className="heroContent" animation="fade-up" delay={100}>
+      <div className="heroContent">
         <a href="tel:+918073258799" className="astroCallBox heroCallMobile">
           <span>Call Now</span>
           <strong>+91 80732 58799</strong>
@@ -39,19 +31,20 @@ function Hero() {
           ✦ Vedic Astrology & Spiritual Guidance
         </span>
 
-        {isMobile && (
-          <div className="mobileVideo">
-            <img
-              src="/mp-shastri-astrology.webp"
-              alt="Shri MP Shastri — Vedic astrologer and Vastu consultant in Bangalore"
-              className="mobileHeroPoster"
-              width={640}
-              height={360}
-              fetchPriority="high"
-              decoding="async"
-            />
-          </div>
-        )}
+        <div className="mobileVideo">
+          <OptimizedImage
+            src="/mp-shastri-astrology.webp"
+            alt="Shri MP Shastri — Vedic astrologer and Vastu consultant in Bangalore"
+            className="mobileHeroPoster"
+            widths={[480, 960]}
+            sizes="100vw"
+            width={640}
+            height={360}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
 
         <h1>Vedic Astrologer &amp; Vastu Consultant in Bangalore</h1>
 
@@ -87,7 +80,7 @@ function Hero() {
             </Reveal>
           ))}
         </div>
-      </Reveal>
+      </div>
 
       {showHeroCircle && (
         <div className="heroChakraColumn" aria-hidden="true">

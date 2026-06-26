@@ -2,6 +2,7 @@ import { Link, Navigate, useLocation } from "react-router-dom";
 import Seo from "./Seo";
 import Reveal from "./Reveal";
 import FaqSection from "./FaqSection";
+import OptimizedImage, { optimizedSrc } from "./OptimizedImage";
 import {
   CONSULTATION_SERVICES,
   getConsultationByPath,
@@ -33,7 +34,7 @@ export default function ConsultationPage() {
 
       <section
         className="consultationHero"
-        style={{ backgroundImage: `url(${service.image})` }}
+        style={{ backgroundImage: `url(${optimizedSrc(service.image, 800)})` }}
       >
         <div className="consultationHeroOverlay" />
         <Reveal className="consultationHeroContent" animation="fade-up">
@@ -58,7 +59,14 @@ export default function ConsultationPage() {
 
       <div className="consultationIntro">
         <Reveal className="consultationIntroImage" animation="fade-right">
-          <img src={service.image} alt={service.imageAlt} loading="lazy" />
+          <OptimizedImage
+            src={service.image}
+            alt={service.imageAlt}
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 100vw, 480px"
+            width={480}
+            height={320}
+          />
         </Reveal>
         <Reveal className="consultationIntroText" animation="fade-left">
           <p className="smallTitle">✦ UNDERSTANDING YOUR NEED</p>

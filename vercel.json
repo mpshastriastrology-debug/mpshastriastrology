@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/hanumanastrology.mp4",
+      "destination": "/images/opt/mp-shastri-astrology-480w.webp",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
@@ -20,7 +27,16 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     }

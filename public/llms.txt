@@ -1,12 +1,45 @@
 # MP Shastri Astrology
 
-Website: https://www.mpshastriastrology.com
+> Vedic astrology and Vastu consultation practice in Bangalore, India, led by Shri MP Shastri. Offers horoscope reading, Kundali matching, career and marriage guidance, Vastu audits, and online sessions for clients across India and abroad.
 
-Services:
-- Astrology Consultation
-- Vastu Consultation
-- Numerology Consultation
-- Horoscope Reading
+- **Location:** Mahalakshmi Layout, Bangalore, Karnataka, India
+- **Phone:** +91 80732 58799
+- **Email:** mpshastriastrology@gmail.com
+- **Sitemap:** [sitemap.xml](https://www.mpshastriastrology.com/sitemap.xml)
 
-Location:
-Bangalore, Karnataka, India
+## Main Pages
+
+- [Home](https://www.mpshastriastrology.com/): Vedic astrologer and Vastu consultant in Bangalore; book online or in-person consultations.
+- [About Shri MP Shastri](https://www.mpshastriastrology.com/about): Background, experience, and approach to Vedic astrology and spiritual guidance.
+- [Services Overview](https://www.mpshastriastrology.com/services): Summary of astrology, Vastu, face reading, and related counseling services.
+- [Contact & Book Appointment](https://www.mpshastriastrology.com/contact): Office address, phone, WhatsApp, contact form, and Google Maps location.
+- [All Consultations](https://www.mpshastriastrology.com/consultation): Hub listing every specialized consultation service.
+
+## Core Services
+
+- [Vedic Astrology](https://www.mpshastriastrology.com/astrology): Birth chart analysis, dasha timing, career and marriage predictions, and remedies.
+- [Vastu Shastra](https://www.mpshastriastrology.com/vastu): Home, office, and commercial Vastu audits with practical corrections.
+- [Face Reading](https://www.mpshastriastrology.com/face-reading): Physiognomy and personality analysis through facial structure assessment.
+- [Spiritual Healing & Tantra](https://www.mpshastriastrology.com/tantra): Energy balancing, protection rituals, and spiritual counseling.
+- [Astrology Services Directory](https://www.mpshastriastrology.com/astrologyservices): Grid of all specialty astrology and Vastu consultation topics.
+
+## Consultation Services
+
+- [Horoscope Reading](https://www.mpshastriastrology.com/horoscope-reading): Vedic birth chart analysis with dasha timelines and personalized predictions.
+- [Career Astrology](https://www.mpshastriastrology.com/career-astrology): Job changes, promotions, business timing, and professional growth guidance.
+- [Marriage Matching](https://www.mpshastriastrology.com/marriage-matching): Kundali matching, Guna Milan, and compatibility analysis for marriage.
+- [Financial Solutions](https://www.mpshastriastrology.com/financial-solutions): Wealth, debt relief, property, and financial stability through chart analysis.
+- [Love & Relationships](https://www.mpshastriastrology.com/love-relationships): Relationship challenges, partnership timing, and emotional compatibility guidance.
+- [Family Conflict Resolution](https://www.mpshastriastrology.com/family-conflict-resolution): Domestic harmony, family disputes, and household peace remedies.
+- [Business Astrology](https://www.mpshastriastrology.com/business-astrology): Partnership timing, investments, launches, and commercial growth planning.
+- [Vastu Consultation](https://www.mpshastriastrology.com/vastu-consultation): Residential and commercial layout analysis for positive energy flow.
+- [Foreign Settlement](https://www.mpshastriastrology.com/foreign-settlement): Overseas education, visa, immigration, and travel timing assessment.
+- [Health Astrology](https://www.mpshastriastrology.com/health-astrology): Preventive health patterns and wellness timing from the birth chart.
+
+## Optional
+
+- [Astrologer in Bangalore](https://www.mpshastriastrology.com/astrologer-in-bangalore): Local Bangalore astrologer landing page for in-person consultations.
+- [Online Astrologer](https://www.mpshastriastrology.com/online-astrologer): Remote phone and video astrology sessions available worldwide.
+- [Astrologer in India](https://www.mpshastriastrology.com/astrologer-in-india): Pan-India Vedic astrology and Vastu services from Bangalore.
+- [Vastu Expert](https://www.mpshastriastrology.com/vastu-expert): Vastu consultant landing page for home and office corrections.
+- [Humans.txt](https://www.mpshastriastrology.com/humans.txt): Site credits and team information.

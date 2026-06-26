@@ -6,6 +6,7 @@ import FaqSection from './FaqSection';
 import { ASTROLOGY_FAQS } from '../seo/faqData';
 import Astrologyservices from './AstrologyServices.jsx';
 import Reveal from './Reveal';
+import OptimizedImage from './OptimizedImage';
 
 function Astrology() {
   return (
@@ -42,9 +43,13 @@ function Astrology() {
         {/* CORE DETAILS SECTION */}
         <div className="astroAbout">
           <Reveal className="astroImage" animation="fade-right">
-            <img
+            <OptimizedImage
               src="/Astrology.webp"
               alt="Vedic astrology chart parsing representing planetary house transitions"
+              widths={[400, 800]}
+              sizes="(max-width: 768px) 100vw, 480px"
+              width={480}
+              height={320}
             />
           </Reveal>
 

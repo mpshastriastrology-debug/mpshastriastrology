@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { lazy, Suspense, useEffect } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Breadcrumbs from './components/Breadcrumbs';
 import Footer from './components/Footer';
@@ -7,8 +7,9 @@ import VedicBackdrop from './components/VedicBackdrop';
 import PoojaStrip from './components/PoojaStrip';
 import AstrologyBgPattern from './components/AstrologyBgPattern';
 import Scrol from "./Scrol";
-import { CONSULTATION_PATHS } from './consultation/servicesData';
+import { CONSULTATION_PATHS } from './consultation/consultationPaths';
 import { useScrollAnimations } from "./hooks/useScrollAnimations";
+import { setupDeferredAnalytics, trackPageView } from "./utils/analytics";
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./components/About'));
@@ -29,18 +30,25 @@ const ConsultationHub = lazy(() => import('./pages/ConsultationHub'));
 
 function App() {
   const location = useLocation();
+  const [showChat, setShowChat] = useState(false);
   useScrollAnimations();
 
   useEffect(() => {
-    const path = `${location.pathname}${location.search}`;
-    const trackPage = () => {
-      if (typeof window.gtag === "function") {
-        window.gtag("config", "G-PV4PLVNGQG", { page_path: path });
-      }
-    };
+    setupDeferredAnalytics();
+  }, []);
 
-    trackPage();
-    window.addEventListener("load", trackPage, { once: true });
+  useEffect(() => {
+    if ("requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(() => setShowChat(true), { timeout: 6000 });
+      return () => window.cancelIdleCallback(id);
+    }
+
+    const timer = window.setTimeout(() => setShowChat(true), 6000);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    trackPageView(`${location.pathname}${location.search}`);
   }, [location]);
 
   return (
@@ -49,7 +57,7 @@ function App() {
       <Scrol />
       <Navbar />
       <PoojaStrip />
-      <div className="vedicMain">
+      <main className="vedicMain" id="main-content">
         <AstrologyBgPattern />
         <Breadcrumbs />
 
@@ -74,12 +82,14 @@ function App() {
             ))}
           </Routes>
         </Suspense>
+      </main>
 
-        <Footer />
-      </div>
-      <Suspense fallback={null}>
-        <ChatAssistant />
-      </Suspense>
+      <Footer />
+      {showChat && (
+        <Suspense fallback={null}>
+          <ChatAssistant />
+        </Suspense>
+      )}
     </div>
   );
 }
