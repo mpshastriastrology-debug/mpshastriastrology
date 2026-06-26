@@ -23,6 +23,7 @@ import ConsultationHub from './pages/ConsultationHub';
 import { CONSULTATION_PATHS } from './consultation/servicesData';
 import VedicBackdrop from './components/VedicBackdrop';
 import PoojaStrip from './components/PoojaStrip';
+import AstrologyBgPattern from './components/AstrologyBgPattern';
 import { useScrollAnimations } from "./hooks/useScrollAnimations";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
       <Navbar />
       <PoojaStrip />
       <div className="vedicMain">
+        <AstrologyBgPattern />
         <Breadcrumbs />
 
         <Routes>

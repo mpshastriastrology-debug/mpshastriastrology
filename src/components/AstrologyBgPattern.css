@@ -1,0 +1,121 @@
+.astroBgPattern {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.astroBgSymbol {
+  position: absolute;
+  color: rgba(139, 69, 19, 0.09);
+  font-family: "Cormorant Garamond", serif;
+  line-height: 1;
+  user-select: none;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+}
+
+.astroBgPatternRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(1100px, 95vw);
+  height: min(1100px, 95vw);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 175, 55, 0.12);
+  box-shadow:
+    inset 0 0 0 1px rgba(212, 175, 55, 0.06),
+    0 0 0 40px rgba(212, 175, 55, 0.03),
+    0 0 0 80px rgba(92, 10, 10, 0.04);
+}
+
+.astroBgPatternRing::before {
+  content: "";
+  position: absolute;
+  inset: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.astroBgPatternRing::after {
+  content: "☉";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(48px, 8vw, 90px);
+  color: rgba(212, 175, 55, 0.06);
+  font-family: "Cormorant Garamond", serif;
+}
+
+.astroBgPatternDots {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 8% 12%, rgba(184, 134, 11, 0.25), transparent),
+    radial-gradient(1px 1px at 22% 78%, rgba(184, 134, 11, 0.2), transparent),
+    radial-gradient(1.5px 1.5px at 45% 25%, rgba(184, 134, 11, 0.22), transparent),
+    radial-gradient(1px 1px at 68% 62%, rgba(184, 134, 11, 0.18), transparent),
+    radial-gradient(1px 1px at 82% 18%, rgba(184, 134, 11, 0.24), transparent),
+    radial-gradient(1px 1px at 91% 88%, rgba(184, 134, 11, 0.2), transparent),
+    radial-gradient(1px 1px at 55% 92%, rgba(184, 134, 11, 0.16), transparent);
+}
+
+.astroBgSymbolRow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2%;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.astroBgSymbolRow span {
+  color: rgba(107, 15, 15, 0.1);
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-family: "Cormorant Garamond", serif;
+}
+
+.astroBgSymbolRowTop {
+  top: 118px;
+}
+
+.astroBgSymbolRowBottom {
+  bottom: 12px;
+}
+
+@media (max-width: 992px) {
+  .astroBgSymbolRowTop {
+    top: 160px;
+  }
+
+  .astroBgSymbol {
+    opacity: 0.85;
+  }
+
+  .astroBgPatternRing {
+    width: 130vw;
+    height: 130vw;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .astroBgSymbolRow {
+    display: none;
+  }
+
+  .astroBgSymbol {
+    font-size: 28px !important;
+    opacity: 0.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .astroBgPatternRing {
+    animation: none;
+  }
+}

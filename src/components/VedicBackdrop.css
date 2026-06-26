@@ -77,6 +77,39 @@
     radial-gradient(1px 1px at 15% 90%, rgba(255, 211, 105, 0.3), transparent);
 }
 
+.vedicBackdropZodiacRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(1000px, 92vw);
+  height: min(1000px, 92vw);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.vedicBackdropZodiacItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: clamp(20px, 2.5vw, 32px);
+  color: rgba(212, 175, 55, 0.07);
+  font-family: "Cormorant Garamond", serif;
+  transform-origin: center center;
+}
+
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(1) { transform: rotate(0deg) translateY(-min(480px, 44vw)) rotate(0deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(2) { transform: rotate(30deg) translateY(-min(480px, 44vw)) rotate(-30deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(3) { transform: rotate(60deg) translateY(-min(480px, 44vw)) rotate(-60deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(4) { transform: rotate(90deg) translateY(-min(480px, 44vw)) rotate(-90deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(5) { transform: rotate(120deg) translateY(-min(480px, 44vw)) rotate(-120deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(6) { transform: rotate(150deg) translateY(-min(480px, 44vw)) rotate(-150deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(7) { transform: rotate(180deg) translateY(-min(480px, 44vw)) rotate(-180deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(8) { transform: rotate(210deg) translateY(-min(480px, 44vw)) rotate(-210deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(9) { transform: rotate(240deg) translateY(-min(480px, 44vw)) rotate(-240deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(10) { transform: rotate(270deg) translateY(-min(480px, 44vw)) rotate(-270deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(11) { transform: rotate(300deg) translateY(-min(480px, 44vw)) rotate(-300deg); }
+.vedicBackdropZodiacRing .vedicBackdropZodiacItem:nth-child(12) { transform: rotate(330deg) translateY(-min(480px, 44vw)) rotate(-330deg); }
+
 @keyframes vedicMandalaSpin {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }

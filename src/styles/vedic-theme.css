@@ -36,10 +36,15 @@ body {
   z-index: 1;
   background: linear-gradient(
     180deg,
-    var(--vedic-parchment) 0%,
-    var(--vedic-parchment-warm) 50%,
-    var(--vedic-cream) 100%
+    rgba(255, 248, 238, 0.97) 0%,
+    rgba(245, 230, 200, 0.96) 50%,
+    rgba(255, 253, 245, 0.97) 100%
   );
+}
+
+.vedicMain > :not(.astroBgPattern) {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── Section headings (site-wide) ── */
