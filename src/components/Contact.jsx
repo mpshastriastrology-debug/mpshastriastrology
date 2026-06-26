@@ -19,7 +19,9 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const apiUrl = import.meta.env.PROD
+    ? import.meta.env.VITE_API_URL || ""
+    : "";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
