@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { ASTROLOGY_FAQS } from '../seo/faqData';
-import Astrologyservices from './Astrologyservices';
+import Astrologyservices from './AstrologyServices.jsx';
 import Reveal from './Reveal';
 
 function Astrology() {

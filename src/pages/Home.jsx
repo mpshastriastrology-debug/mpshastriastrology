@@ -1,7 +1,7 @@
 import Hero from '../components/Hero';
 import Seo from '../components/Seo';
 import Services1 from '../components/Services1';
-import Astrologyservices from '../components/Astrologyservices';
+import Astrologyservices from '../components/AstrologyServices.jsx';
 
 function Home() {
   return (

@@ -16,7 +16,7 @@ import AstrologerInBangalore from './components/astrologer-in-bangalore';
 import OnlineAstrologer from './components/online-astrologer'; 
 import AstrologerInIndia from './components/astrologer-in-india'; 
 import VastuExpert from './components/vastu-expert'; 
-import Astrologyservices from './components/Astrologyservices';
+import Astrologyservices from './components/AstrologyServices.jsx';
 import ChatAssistant from './components/ChatAssistant';
 import ConsultationPage from './components/ConsultationPage';
 import ConsultationHub from './pages/ConsultationHub';
