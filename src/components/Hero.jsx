@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import './Hero.css'
 import Reveal from './Reveal'
+import JyotishyaChakra from './JyotishyaChakra'
 
 function Hero() {
   const [showHeroCircle, setShowHeroCircle] = useState(false)
@@ -16,16 +17,7 @@ function Hero() {
 
   return (
     <section className="heroSection">
-      {showHeroCircle && (
-        <Reveal className="heroCircle" animation="fade-right" duration={1100}>
-          <img
-            src="/MPShastriAstrology.webp"
-            alt="Shri MP Shastri - Vedic Astrologer and Vastu Expert"
-          />
-        </Reveal>
-      )}
-
-      {/* LEFT CONTENT */}
+      {/* Hero text — left side */}
       <Reveal className="heroContent" animation="fade-up" delay={100}>
         <a href="tel:+918073258799" className="astroCallBox heroCallMobile">
           <span>Call Now</span>
@@ -85,14 +77,12 @@ function Hero() {
         </div>
       </Reveal>
 
-      {/* RIGHT IMAGE 
-      <div className="heroImage">
-        <div className="imageGlow"></div>
-        <img
-          src="/logo1.png"
-          alt="MP Shastri"
-        />
-      </div>*/}
+      {/* Chakra — right side (desktop) */}
+      {showHeroCircle && (
+        <div className="heroChakraColumn" aria-hidden="true">
+          <JyotishyaChakra className="heroChakraWheel" />
+        </div>
+      )}
     </section>
   )
 }

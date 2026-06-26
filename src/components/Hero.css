@@ -5,58 +5,78 @@
   min-height: 100vh;
   background-color: #4a0808;
   background-image:
-    radial-gradient(ellipse at 70% 30%, rgba(255, 153, 51, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 82% 40%, rgba(255, 153, 51, 0.2) 0%, transparent 52%),
     linear-gradient(to top, rgba(0, 0, 0, 0.25) 0%, transparent 42%),
     linear-gradient(135deg, #5c0a0a 0%, #7a4518 45%, #4a0808 100%);
   position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: minmax(380px, 48%) minmax(420px, 52%);
   align-items: center;
-  padding: 120px 8%;
+  justify-content: space-between;
+  padding: 110px 2% 110px 5%;
+  gap: 24px 48px;
 }
 
 .heroSection::before {
   content: "ॐ";
   position: absolute;
-  top: 15%;
-  right: 8%;
-  font-size: clamp(80px, 12vw, 160px);
-  color: rgba(255, 211, 105, 0.06);
+  top: 18%;
+  right: 10%;
+  left: auto;
+  font-size: clamp(80px, 10vw, 140px);
+  color: rgba(255, 211, 105, 0.05);
   font-family: "Cormorant Garamond", serif;
   pointer-events: none;
+  z-index: 0;
+}
+
+/* Jyotishya chakra — right side, larger */
+.heroChakraColumn {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
   z-index: 1;
-}
-
-/* BACKGROUND SPINNING MANDALA/LOGO — desktop only (hidden on mobile) */
-.heroCircle {
-  position: absolute;
-  right: -10%;
-  top: 58%;
-  transform: translateY(-50%);
-  width: 900px;
-  height: 900px;
-  border-radius: 50%;
-  opacity: 0.07;
-  animation: rotateCircle 40s linear infinite;
-  pointer-events: none;
-}
-
-.heroCircle img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  max-width: 680px;
+  justify-self: end;
+  align-self: center;
+  padding-right: 0;
+  margin-right: 0;
 }
 
-@keyframes rotateCircle {
-  from { transform: translateY(-50%) rotate(0deg); }
-  to { transform: translateY(-50%) rotate(360deg); }
+.heroChakraWheel {
+  width: 100%;
+  height: auto;
+  max-width: 660px;
+  min-width: 320px;
+  opacity: 0.75;
+  animation: rotateChakra 55s linear infinite;
+  filter: drop-shadow(0 0 35px rgba(255, 211, 105, 0.3));
 }
 
-/* TEXT CONTENT COLUMN */
+@keyframes rotateChakra {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hero text — left side */
 .heroContent {
+  grid-column: 1;
+  grid-row: 1;
   position: relative;
   z-index: 2;
+  text-align: left;
+  justify-self: start;
+  align-self: center;
+  width: 100%;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .heroTag {
@@ -229,6 +249,47 @@
   .heroContent h1 {
     font-size: 62px;
   }
+
+  .heroSection {
+    grid-template-columns: minmax(320px, 50%) minmax(360px, 50%);
+    padding: 100px 1.5% 100px 4%;
+    gap: 20px 32px;
+  }
+
+  .heroChakraColumn {
+    max-width: 520px;
+  }
+
+  .heroChakraWheel {
+    max-width: 540px;
+    opacity: 0.7;
+  }
+
+  .heroContent {
+    max-width: 520px;
+    justify-self: start;
+  }
+}
+
+@media (min-width: 1400px) {
+  .heroChakraWheel {
+    max-width: 720px;
+  }
+
+  .heroChakraColumn {
+    max-width: 740px;
+  }
+
+  .heroContent {
+    max-width: 640px;
+    padding-left: 2%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroChakraWheel {
+    animation: none;
+  }
 }
 
 @media (max-width: 992px) {
@@ -245,10 +306,14 @@
     justify-content: center;
   }
 
-  /* No spinning mandala on mobile/tablet hero */
-  .heroCircle {
+  .heroContent {
+    grid-column: 1;
+    text-align: center;
+  }
+
+  /* Chakra hidden on mobile/tablet hero */
+  .heroChakraColumn {
     display: none !important;
-    animation: none;
   }
 
   .heroContent h1 {
