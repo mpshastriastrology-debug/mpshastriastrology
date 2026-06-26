@@ -21,18 +21,23 @@ import ChatAssistant from './components/ChatAssistant';
 import ConsultationPage from './components/ConsultationPage';
 import ConsultationHub from './pages/ConsultationHub';
 import { CONSULTATION_PATHS } from './consultation/servicesData';
+import VedicBackdrop from './components/VedicBackdrop';
+import PoojaStrip from './components/PoojaStrip';
 import { useScrollAnimations } from "./hooks/useScrollAnimations";
 
 function App() {
   useScrollAnimations();
 
   return (
-    <>
+    <div className="vedicSite">
+      <VedicBackdrop />
       <Scrol />
       <Navbar />
-      <Breadcrumbs />
+      <PoojaStrip />
+      <div className="vedicMain">
+        <Breadcrumbs />
 
-      <Routes>
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<ServicesPage />} />
@@ -56,11 +61,12 @@ function App() {
         {CONSULTATION_PATHS.map((path) => (
           <Route key={path} path={path} element={<ConsultationPage />} />
         ))}
-      </Routes>
+        </Routes>
 
-      <Footer />
+        <Footer />
+      </div>
       <ChatAssistant />
-    </>
+    </div>
   );
 }
 

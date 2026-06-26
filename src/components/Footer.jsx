@@ -14,6 +14,11 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="footer">
+      <p className="footerBlessing">
+        <span>ॐ</span>
+        || शान्तिः शान्तिः शान्तिः ||
+        <span>ॐ</span>
+      </p>
       {/* TOP CONFIGURATION ROW */}
       <div className="footerTop">
         {/* CONTACT DATA MODULE */}
@@ -70,6 +75,7 @@ function Footer() {
         {/* LOGO SUBSECTION */}
         <div className="footerLogo">
           <h2>MP Shastri Astrology</h2>
+          <p>Vedic Astrology · Vastu · Spiritual Healing</p>
         </div>
 
         {/* AUTOMATED TIME ZONE STAMP */}

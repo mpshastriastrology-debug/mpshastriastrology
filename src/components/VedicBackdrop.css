@@ -1,0 +1,102 @@
+.vedicBackdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.vedicBackdropCosmos {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 153, 51, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 10% 90%, rgba(92, 10, 10, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 35% at 95% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 45%),
+    linear-gradient(180deg, #1a0303 0%, #2d0808 35%, #1a0505 100%);
+}
+
+.vedicBackdropMandala {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(900px, 90vw);
+  height: min(900px, 90vw);
+  transform: translate(-50%, -50%);
+  background: url("/MPShastriAstrology.webp") center / contain no-repeat;
+  opacity: 0.045;
+  animation: vedicMandalaSpin 90s linear infinite;
+}
+
+.vedicBackdropOm {
+  position: absolute;
+  font-size: clamp(120px, 18vw, 280px);
+  color: rgba(212, 175, 55, 0.04);
+  font-family: "Cormorant Garamond", serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.vedicBackdropDeityLeft,
+.vedicBackdropDeityRight {
+  position: absolute;
+  top: 50%;
+  width: min(220px, 22vw);
+  height: min(320px, 40vh);
+  transform: translateY(-50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.06;
+  filter: sepia(0.3) saturate(1.2);
+}
+
+.vedicBackdropDeityLeft {
+  left: 0;
+  background-image: url("/Astrology.webp");
+  background-position: left center;
+}
+
+.vedicBackdropDeityRight {
+  right: 0;
+  background-image: url("/mp-shastri-astrology.webp");
+  background-position: right center;
+}
+
+.vedicBackdropStars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255, 211, 105, 0.5), transparent),
+    radial-gradient(1px 1px at 30% 65%, rgba(255, 211, 105, 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 70% 15%, rgba(255, 211, 105, 0.6), transparent),
+    radial-gradient(1px 1px at 85% 55%, rgba(255, 211, 105, 0.35), transparent),
+    radial-gradient(1px 1px at 50% 85%, rgba(255, 211, 105, 0.45), transparent),
+    radial-gradient(1px 1px at 15% 90%, rgba(255, 211, 105, 0.3), transparent);
+}
+
+@keyframes vedicMandalaSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (max-width: 992px) {
+  .vedicBackdropDeityLeft,
+  .vedicBackdropDeityRight {
+    display: none;
+  }
+
+  .vedicBackdropMandala {
+    opacity: 0.03;
+    width: 70vw;
+    height: 70vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vedicBackdropMandala {
+    animation: none;
+  }
+}

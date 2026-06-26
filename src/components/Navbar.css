@@ -23,10 +23,11 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 18px 7%;
-  background: rgba(126, 70, 20, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Safari support validation */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, #3d0505 0%, #6b0f0f 45%, #4a0808 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 3px solid #d4af37;
+  box-shadow: 0 4px 30px rgba(212, 175, 55, 0.15), 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
 /* LOGO IMAGE & IDENTITY GRID */
@@ -41,13 +42,14 @@ body {
   width: 62px;
   height: 62px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ffd369, #b86b16);
+  background: linear-gradient(135deg, #ffd369, #8b4513);
+  border: 2px solid rgba(212, 175, 55, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  animation: spinLogo 18s linear infinite;
-  box-shadow: 0 0 25px rgba(255, 211, 105, 0.4);
+  animation: spinLogo 24s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 211, 105, 0.35), inset 0 0 15px rgba(92, 10, 10, 0.3);
 }
 
 .logoCircle img {
@@ -127,15 +129,15 @@ body {
   top: 50px;
   left: 0;
   min-width: 230px;
-  background: rgba(20, 20, 20, 0.98);
+  background: linear-gradient(180deg, #2d0808 0%, #1a0303 100%);
   border-radius: 16px;
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transform: translateY(15px);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown:hover .dropdownMenu {

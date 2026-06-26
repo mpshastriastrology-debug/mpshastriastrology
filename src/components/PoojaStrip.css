@@ -1,0 +1,94 @@
+.poojaStrip {
+  position: relative;
+  z-index: 998;
+  margin-top: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  padding: 10px 5%;
+  background: linear-gradient(
+    90deg,
+    #3d0505 0%,
+    #6b0f0f 25%,
+    #8b1a1a 50%,
+    #6b0f0f 75%,
+    #3d0505 100%
+  );
+  border-bottom: 2px solid var(--vedic-gold, #d4af37);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.poojaStripOm {
+  font-size: 22px;
+  color: var(--vedic-gold-light, #ffd369);
+  font-family: "Cormorant Garamond", serif;
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(255, 211, 105, 0.5);
+}
+
+.poojaStripMantra {
+  color: #f5e6c8;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+}
+
+.poojaStripIcons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--vedic-gold-light, #ffd369);
+  font-size: 18px;
+}
+
+.poojaStripIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.poojaStripBlessing {
+  color: rgba(245, 230, 200, 0.85);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.poojaStripMandala {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 6px rgba(255, 211, 105, 0.4));
+}
+
+@media (max-width: 992px) {
+  .poojaStrip {
+    margin-top: 85px;
+    padding: 8px 4%;
+    gap: 8px 16px;
+  }
+
+  .poojaStripBlessing {
+    display: none;
+  }
+
+  .poojaStripMantra {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .poojaStripIcons {
+    display: none;
+  }
+}

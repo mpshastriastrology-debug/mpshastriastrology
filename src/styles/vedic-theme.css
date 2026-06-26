@@ -1,0 +1,185 @@
+/* ═══════════════════════════════════════════
+   MP SHASTRI — VEDIC ASTROLOGY GLOBAL THEME
+   ═══════════════════════════════════════════ */
+
+:root {
+  --vedic-maroon: #5c0a0a;
+  --vedic-maroon-deep: #2d0505;
+  --vedic-maroon-rich: #6b0f0f;
+  --vedic-saffron: #ff9933;
+  --vedic-gold: #d4af37;
+  --vedic-gold-light: #ffd369;
+  --vedic-parchment: #fff8ee;
+  --vedic-parchment-warm: #f5e6c8;
+  --vedic-cream: #fffdf5;
+  --vedic-purple: #1a0a2e;
+  --vedic-text: #2a1810;
+  --vedic-text-muted: #5c4a3a;
+  --vedic-border: rgba(212, 175, 55, 0.35);
+  --vedic-shadow: rgba(92, 10, 10, 0.12);
+  --vedic-glow: rgba(255, 153, 51, 0.15);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--vedic-text);
+  background: var(--vedic-maroon-deep);
+}
+
+.vedicSite {
+  position: relative;
+  min-height: 100vh;
+}
+
+.vedicMain {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    var(--vedic-parchment) 0%,
+    var(--vedic-parchment-warm) 50%,
+    var(--vedic-cream) 100%
+  );
+}
+
+/* ── Section headings (site-wide) ── */
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.sectionHeading p {
+  color: var(--vedic-maroon-rich) !important;
+  letter-spacing: 3px !important;
+  font-size: 13px !important;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  margin-bottom: 12px !important;
+}
+
+.sectionHeading p::before,
+.sectionHeading p::after {
+  content: "ॐ";
+  color: var(--vedic-gold);
+  font-size: 16px;
+  opacity: 0.85;
+  margin: 0 8px;
+}
+
+.sectionHeading h2 {
+  font-family: "Cormorant Garamond", serif !important;
+  color: var(--vedic-maroon) !important;
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 0;
+}
+
+.sectionHeading h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, transparent, var(--vedic-gold), transparent);
+  border-radius: 2px;
+}
+
+/* ── Page wrappers ── */
+.servicesPage,
+.astrologyPage,
+.vastuPage,
+.facePage,
+.tantraPage,
+.consultationPage,
+.contactPage,
+.bangalorePage,
+.indiaPage,
+.onlineAstrologyPage,
+.services-page {
+  background: transparent !important;
+}
+
+/* ── Spiritual cards ── */
+.benefitCard,
+.serviceCard,
+.processCard,
+.statsCard,
+.astroCard,
+.vastuCard,
+.faceCard,
+.tantraCard,
+.blogCard,
+.googleReviewCard,
+.consultationRemedyCard,
+.consultationListItem,
+.faqItem,
+.service-card,
+.bangaloreCard,
+.indiaCard,
+.onlineAstrologyCard,
+.vastuCard {
+  border-color: var(--vedic-border) !important;
+}
+
+.benefitCard,
+.serviceCard,
+.astroCard,
+.vastuCard,
+.blogCard,
+.consultationRemedyCard {
+  box-shadow: 0 10px 35px var(--vedic-shadow) !important;
+}
+
+/* ── Gold CTA buttons site-wide ── */
+.primaryHeroBtn,
+.astroBtn,
+.vastuBtn,
+.faceBtn,
+.tantraBtn,
+.consultationBtnPrimary,
+.callNowBtn,
+.bangaloreCallBtn,
+.indiaCallBtn {
+  background: linear-gradient(135deg, var(--vedic-gold-light), #b8860b) !important;
+  border: 1px solid rgba(212, 175, 55, 0.5) !important;
+}
+
+/* ── Service link hubs ── */
+.service-links {
+  border-top: 1px solid var(--vedic-border);
+  border-bottom: 1px solid var(--vedic-border);
+  background: linear-gradient(90deg, rgba(92, 10, 10, 0.04), rgba(212, 175, 55, 0.08), rgba(92, 10, 10, 0.04));
+}
+
+.service-links a {
+  color: var(--vedic-maroon) !important;
+}
+
+.service-links a:hover {
+  color: var(--vedic-gold) !important;
+}
+
+/* ── FAQ accordion ── */
+.faqSection {
+  background: linear-gradient(180deg, var(--vedic-parchment-warm), var(--vedic-parchment)) !important;
+}
+
+/* ── Scrollbar (subtle spiritual gold) ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vedic-maroon-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--vedic-gold), var(--vedic-maroon-rich));
+  border-radius: 4px;
+}

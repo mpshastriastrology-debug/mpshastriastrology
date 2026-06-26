@@ -27,10 +27,15 @@ function Hero() {
 
       {/* LEFT CONTENT */}
       <Reveal className="heroContent" animation="fade-up" delay={100}>
+        <a href="tel:+918073258799" className="astroCallBox heroCallMobile">
+          <span>Call Now</span>
+          <strong>+91 80732 58799</strong>
+        </a>
+
         <span className="heroTag">
           ✦ Vedic Astrology & Spiritual Guidance
         </span>
-        
+
         <div className="mobileVideo">
           <video
             autoPlay
@@ -40,16 +45,9 @@ function Hero() {
           >
             <source src="/hanumanastrology.mp4" type="video/mp4" />
           </video>
-<a href="tel:+918073258799" className="astroCallBox">
-  <span> Call Now</span>
-  <strong>+91 80732 58799</strong>
-</a>        </div>
-        <br/><br/>
+        </div>
 
-        {/* Clean, high-authority header targeting your top local intent phrase */}
-        <h1>
-                   Best Astrologer in Bangalore
-        </h1>
+        <h1>Best Astrologer in Bangalore</h1>
 
         {/* Persuasive copy that hits multiple keyword intents naturally while maintaining professional E-E-A-T */}
         <p>

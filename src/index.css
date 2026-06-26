@@ -3,6 +3,8 @@
 /* Tailwind */
 @import "tailwindcss";
 
+@import "./styles/vedic-theme.css";
+
 /* Reset */
 * {
   margin: 0;
@@ -17,7 +19,6 @@ html {
 body {
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
-  background: #090414;
 }
 
 /* SEO-safe scroll animations: content stays in HTML for crawlers */

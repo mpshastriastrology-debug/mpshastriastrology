@@ -1,10 +1,38 @@
-/* Note: Move the @import font link to your public/index.html head to reduce render-blocking time */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
 .footer {
-  background: #f8f5ef;
-  padding: 70px 8%;
-  border-top: 1px solid #d6b07b;
+  background: linear-gradient(180deg, #2d0808 0%, #1a0303 100%);
+  padding: 70px 8% 0;
+  border-top: 3px solid #d4af37;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "ॐ";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 48px;
+  color: rgba(212, 175, 55, 0.08);
+  font-family: "Cormorant Garamond", serif;
+  pointer-events: none;
+}
+
+.footerBlessing {
+  text-align: center;
+  padding: 0 8% 40px;
+  color: #d4af37;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.footerBlessing span {
+  color: #ffd369;
+  margin: 0 8px;
 }
 
 /* TOP GRID LAYOUT */
@@ -13,31 +41,37 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;
   padding-bottom: 50px;
-  border-bottom: 1px solid #d6b07b;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 /* SECTION TITLES */
 .footerBox h3 {
-  color: #b27b31;
+  color: #ffd369;
   font-size: 28px;
   margin-bottom: 30px;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
 }
 
+.footerBox h3::before {
+  content: "✦ ";
+  color: #d4af37;
+  font-size: 14px;
+}
+
 /* NAVIGATION ANCHORS */
 .footerBox a {
   display: block;
   text-decoration: none;
-  color: #111;
+  color: #f5e6c8;
   margin-bottom: 18px;
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
-  transition: color 0.3s ease, padding 0.3s ease; /* Optimized transition performance profile */
+  transition: color 0.3s ease, padding 0.3s ease;
 }
 
 .footerBox a:hover {
-  color: #c38b3c;
+  color: #ffd369;
   padding-left: 5px;
 }
 
@@ -45,12 +79,17 @@
 .footerItem {
   display: flex !important;
   gap: 15px;
-  align-items: center; /* Adjusted from flex-start to prevent vertical text misalignment */
+  align-items: center;
+  color: #f5e6c8 !important;
 }
 
 .footerItem svg {
-  color: #ff3b5f;
+  color: #ffd369;
   font-size: 18px;
+}
+
+.footerItem span {
+  color: #f5e6c8;
 }
 
 /* BOTTOM SUMMARY CONTAINER */
@@ -58,7 +97,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 35px;
+  padding: 35px 0;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -66,13 +105,19 @@
 /* LOGO SIGNATURE */
 .footerLogo h2 {
   font-size: 40px;
-  color: #111;
+  color: #ffd369;
   font-family: 'Cormorant Garamond', serif;
 }
 
+.footerLogo p {
+  color: rgba(245, 230, 200, 0.6);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
 /* COPYRIGHT NOTICE */
-.footerBottom p {
-  color: #111;
+.footerBottom > p {
+  color: rgba(245, 230, 200, 0.75);
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
 }
@@ -84,46 +129,37 @@
 }
 
 .socialIcons a {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: #ff2e63;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #ffd369;
   font-size: 18px;
-  transition: transform 0.4s ease, background-color 0.4s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .socialIcons a:hover {
-  transform: translateY(-5px) scale(1.08);
-  background: #111;
+  background: rgba(212, 175, 55, 0.25);
+  transform: translateY(-3px);
 }
 
-/* MOBILE MEDIA QUERY BREAKPOINTS */
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .footerTop {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .footer {
-    padding: 60px 25px;
-  }
-
   .footerTop {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
 
   .footerBottom {
     flex-direction: column;
     text-align: center;
-  }
-
-  .footerLogo h2 {
-    font-size: 34px;
   }
 }
