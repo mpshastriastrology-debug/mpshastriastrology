@@ -54,26 +54,17 @@
   <!-- LCP image preload (mobile homepage hero) -->
   <link rel="preload" as="image" href="/mp-shastri-astrology.webp" fetchpriority="high" />
 
-  <!-- Google Fonts — single non-blocking load -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    rel="preload"
-    as="style"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap"
-  />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap"
-    media="print"
-    onload="this.media='all'"
-  />
-  <noscript>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap"
-    />
-  </noscript>
+  <!-- Critical above-the-fold styles (avoids FOUC while full CSS loads async) -->
+  <style>
+    :root{color-scheme:light}
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;overflow-x:hidden}
+    body{font-family:"Poppins",system-ui,-apple-system,sans-serif;background:#fff8ee}
+    #root{min-height:100vh}
+    .heroSection{min-height:100vh;background:linear-gradient(135deg,#5c0a0a 0%,#7a4518 45%,#4a0808 100%);color:#fff}
+    .heroContent h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.6rem,5vw,2.5rem);line-height:1.15;margin:0 0 .75rem}
+    .navbar,.navBar{position:relative;z-index:100}
+  </style>
 
   <!-- Open Graph -->
   <meta

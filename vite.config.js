@@ -2,10 +2,28 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
+function asyncCssPlugin() {
+  return {
+    name: "async-css",
+    transformIndexHtml: {
+      order: "post",
+      handler(html) {
+        return html.replace(
+          /<link rel="stylesheet"([^>]*?)href="(\/assets\/index-[^"]+\.css)"([^>]*?)>/g,
+          (_match, before, href, after) =>
+            `<link rel="preload"${before}href="${href}"${after} as="style" onload="this.onload=null;this.rel='stylesheet'">` +
+            `<noscript><link rel="stylesheet"${before}href="${href}"${after}></noscript>`
+        );
+      },
+    },
+  };
+}
+
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    asyncCssPlugin(),
   ],
   build: {
     rollupOptions: {
