@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Local API — not deployed with frontend
+backend/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
