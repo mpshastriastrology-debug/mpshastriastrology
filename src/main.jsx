@@ -6,10 +6,7 @@ import { HelmetProvider } from 'react-helmet-async'
 
 import App from './App'
 import './index.css'
-import 'aos/dist/aos.css'
-import ReactGA from "react-ga4";
 
-ReactGA.initialize("G-PV4PLVNGQG");
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>

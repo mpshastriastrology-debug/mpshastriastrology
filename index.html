@@ -1,20 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PV4PLVNGQG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Google Analytics
-  gtag('config', 'G-PV4PLVNGQG');
-
-  // Google Ads
-  gtag('config', 'AW-18222440720');
-</script>
+  <!-- Analytics deferred until after page load -->
+  <script>
+    window.addEventListener("load", function () {
+      var s = document.createElement("script");
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-PV4PLVNGQG";
+      s.async = true;
+      document.head.appendChild(s);
+      s.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag("js", new Date());
+        gtag("config", "G-PV4PLVNGQG");
+        gtag("config", "AW-18222440720");
+      };
+    });
+  </script>
   <meta charset="UTF-8" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,13 +51,29 @@
   <link rel="apple-touch-icon" href="/bestastrology.png" />
   <link rel="manifest" href="/manifest.json" />
 
-  <!-- Google Fonts -->
+  <!-- LCP image preload (mobile homepage hero) -->
+  <link rel="preload" as="image" href="/mp-shastri-astrology.webp" fetchpriority="high" />
+
+  <!-- Google Fonts — single non-blocking load -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap"
   />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap"
+    />
+  </noscript>
 
   <!-- Open Graph -->
   <meta

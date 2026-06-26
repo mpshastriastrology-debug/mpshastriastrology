@@ -7,6 +7,26 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules/react-dom") || id.includes("node_modules/react/")) {
+            return "vendor";
+          }
+          if (id.includes("node_modules/react-router")) {
+            return "router";
+          }
+          if (id.includes("node_modules/react-helmet-async")) {
+            return "helmet";
+          }
+          if (id.includes("node_modules/aos")) {
+            return "aos";
+          }
+        },
+      },
+    },
+  },
   server: {
     proxy: {
       "/api": {
