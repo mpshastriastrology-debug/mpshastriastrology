@@ -1,11 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/hanumanastrology.mp4",
-      "destination": "/images/opt/mp-shastri-astrology-480w.webp",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/(.*)",
@@ -32,7 +25,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(webp|avif|png|jpg|jpeg|svg|ico|woff2|mp4))",
+      "source": "/(.*\\.(webp|avif|png|jpg|jpeg|svg|ico|woff2|mp4|webm))",
       "headers": [
         {
           "key": "Cache-Control",

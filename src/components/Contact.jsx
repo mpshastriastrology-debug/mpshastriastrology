@@ -1,11 +1,13 @@
 import "./Contact.css";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import "./Services1.css";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import Seo from "./Seo";
 import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { CONTACT_FAQS } from "../seo/faqData";
 import { initGoogleAds } from "../utils/analytics";
+import { buildBookingWhatsAppUrl } from "../utils/whatsapp";
 
 function Contact() {
   const [form, setForm] = useState({
@@ -13,10 +15,8 @@ function Contact() {
     phone: "",
     email: "",
     service: "",
-    message: ""
+    message: "",
   });
-
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     initGoogleAds();
@@ -26,66 +26,29 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const apiUrl = import.meta.env.PROD
-    ? import.meta.env.VITE_API_URL || ""
-    : "";
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (loading) return;
 
-    setLoading(true);
+    const whatsappUrl = buildBookingWhatsAppUrl(form);
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
-    try {
-      const res = await fetch(`${apiUrl}/api/contact`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form),
-        }
-      );
-
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.error || "Server Error");
-      }
-
-      const data = await res.json();
-
-      if (data.success) {
-        alert("Appointment booked successfully!");
-        setForm({
-          name: "",
-          phone: "",
-          email: "",
-          service: "",
-          message: "",
-        });
-      } else {
-        alert(data.error || "Something went wrong!");
-      }
-    } catch (error) {
-      console.error("Contact Form Error:", error);
-      const message =
-        error.message === "Failed to fetch"
-          ? "Could not reach the server. Please check your connection and try again."
-          : error.message || "Server error. Please try again later.";
-      alert(message);
-    } finally {
-      setLoading(false);
-    }
+    setForm({
+      name: "",
+      phone: "",
+      email: "",
+      service: "",
+      message: "",
+    });
   };
 
   return (
     <section className="contactPage">
       <Seo
         title="Book Astrology & Vastu Consultation in Bangalore | MP Shastri"
-        description="Book an in-person or online astrology and Vastu consultation with Shri MP Shastri in Bangalore. Call +91 80732 58799 or submit the appointment form."
+        description="Book an in-person or online astrology and Vastu consultation with Shri MP Shastri in Bangalore. Call +91 80732 58799 or send your request on WhatsApp."
         path="/contact"
         faqs={CONTACT_FAQS}
       />
-      {/* APPOINTMENT FORM SECTION */}
       <section className="appointmentSection">
         <Reveal className="appointmentLeft" animation="fade-right">
           <p>✦ BOOK YOUR APPOINTMENT</p>
@@ -96,9 +59,9 @@ function Contact() {
 
           <div className="appointmentFeatures">
             <div className="appointmentItem">✔ Private In-Person Sessions</div>
-            <div className="appointmentItem">✔ 100% Confidential Data Storage</div>
+            <div className="appointmentItem">✔ 100% Confidential Consultations</div>
             <div className="appointmentItem">✔ High-Definition Remote Video Calls</div>
-            <div className="appointmentItem">✔ Direct Dashboard Support Channels</div>
+            <div className="appointmentItem">✔ Instant WhatsApp Booking Requests</div>
           </div>
         </Reveal>
 
@@ -128,7 +91,7 @@ function Contact() {
               type="email"
               name="email"
               aria-label="Email Address"
-              placeholder="Email Address"
+              placeholder="Email Address (optional)"
               value={form.email}
               onChange={handleChange}
             />
@@ -156,17 +119,16 @@ function Contact() {
               required
             />
 
-            <button type="submit" disabled={loading}>
-              {loading ? "Processing Entry..." : "Confirm Booking Details"}
+            <button type="submit" className="whatsappSubmitBtn">
+              <FaWhatsapp aria-hidden="true" />
+              Send Booking Request on WhatsApp
             </button>
           </form>
         </Reveal>
       </section>
 
-      {/* CORE CONTACT LOCATIONS & MAP AREA */}
       <section className="contactLocation">
         <div className="contactContainer">
-          {/* LEFT CONTENT ROW */}
           <Reveal className="contactInfo" animation="fade-right">
             <p className="contactTag">✦ OFFICE HEADQUARTERS</p>
             <h2>Vedic Consultation Center in Bangalore</h2>
@@ -197,7 +159,11 @@ function Contact() {
               <div className="contactItem">
                 <FaEnvelope aria-hidden="true" />
                 <div>
-                  <h3>Secure Email Channels</h3>
+                  <h3>WhatsApp &amp; Email</h3>
+                  <a href="https://wa.me/918073258799" className="contactLink" target="_blank" rel="noreferrer">
+                    WhatsApp +91 80732 58799
+                  </a>
+                  <br />
                   <a href="mailto:mpshastriastrology@gmail.com" className="contactLink">
                     mpshastriastrology@gmail.com
                   </a>
@@ -206,7 +172,6 @@ function Contact() {
             </div>
           </Reveal>
 
-          {/* RIGHT GEO MAP ROW */}
           <Reveal className="mapArea" animation="fade-left">
             <div className="map-container">
               <iframe

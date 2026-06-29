@@ -288,3 +288,28 @@
     height: 380px;
   }
 }
+
+.appointmentForm button,
+.whatsappSubmitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  padding: 18px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.appointmentForm button:hover,
+.whatsappSubmitBtn:hover {
+  background: #1da851;
+  transform: scale(1.02);
+}

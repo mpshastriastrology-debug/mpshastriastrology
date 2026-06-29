@@ -5,9 +5,13 @@ import Reveal from './Reveal'
 import OptimizedImage from './OptimizedImage'
 
 const JyotishyaChakra = lazy(() => import('./JyotishyaChakra'))
+const HERO_VIDEO = '/videos/hanuman-hero.mp4'
+const HERO_POSTER = '/images/opt/mp-shastri-astrology-480w.webp'
 
 function Hero() {
   const [showHeroCircle, setShowHeroCircle] = useState(false)
+  const [showHeroVideo, setShowHeroVideo] = useState(false)
+  const [videoReady, setVideoReady] = useState(false)
 
   useEffect(() => {
     document.body.classList.add('app-ready')
@@ -17,6 +21,27 @@ function Hero() {
     update()
     media.addEventListener('change', update)
     return () => media.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return undefined
+    }
+
+    const mobile = window.matchMedia('(max-width: 768px)')
+    const startVideo = () => {
+      if (mobile.matches) {
+        setShowHeroVideo(true)
+      }
+    }
+
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(startVideo, { timeout: 3500 })
+      return () => window.cancelIdleCallback(id)
+    }
+
+    const timer = window.setTimeout(startVideo, 3500)
+    return () => window.clearTimeout(timer)
   }, [])
 
   return (
@@ -32,18 +57,35 @@ function Hero() {
         </span>
 
         <div className="mobileVideo">
-          <OptimizedImage
-            src="/mp-shastri-astrology.webp"
-            alt="Shri MP Shastri — Vedic astrologer and Vastu consultant in Bangalore"
-            className="mobileHeroPoster"
-            widths={[480, 960]}
-            sizes="100vw"
-            width={640}
-            height={360}
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-          />
+          {showHeroVideo ? (
+            <video
+              className={`mobileHeroVideo${videoReady ? ' is-playing' : ''}`}
+              src={HERO_VIDEO}
+              poster={HERO_POSTER}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              aria-label="Vedic astrology guidance video"
+              onCanPlay={() => setVideoReady(true)}
+              onError={() => setShowHeroVideo(false)}
+            />
+          ) : null}
+          {!videoReady && (
+            <OptimizedImage
+              src="/mp-shastri-astrology.webp"
+              alt="Shri MP Shastri — Vedic astrologer and Vastu consultant in Bangalore"
+              className="mobileHeroPoster"
+              widths={[480, 960]}
+              sizes="100vw"
+              width={640}
+              height={360}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+            />
+          )}
         </div>
 
         <h1>Vedic Astrologer &amp; Vastu Consultant in Bangalore</h1>
