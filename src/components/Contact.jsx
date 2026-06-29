@@ -5,6 +5,7 @@ import Seo from "./Seo";
 import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { CONTACT_FAQS } from "../seo/faqData";
+import { LOCALITY_SEO_PARAGRAPH } from "../seo/localAreas";
 import { initGoogleAds } from "../utils/analytics";
 
 function Contact() {
@@ -31,6 +32,7 @@ function Contact() {
             <p className="contactText">
               In-person astrology and Vastu consultations at our Bangalore office, or book a phone or video session from anywhere in India.
             </p>
+            <p className="contactText contactLocality">{LOCALITY_SEO_PARAGRAPH}</p>
 
             <div className="contactDetails">
               <div className="contactItem">

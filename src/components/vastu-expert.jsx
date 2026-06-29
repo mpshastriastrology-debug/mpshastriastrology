@@ -4,6 +4,7 @@ import "./VastuExpert.css";
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import { VASTU_EXPERT_FAQS } from "../seo/faqData";
+import { BENGALURU_SERVICE_AREAS } from "../seo/localAreas";
 
 function VastuExpert() {
   return (
@@ -24,6 +25,9 @@ function VastuExpert() {
             <h1>Vastu Expert in Bangalore — Mahalakshmi Layout</h1>
             <p>
               Shri MP Shastri is a Vastu Shastra expert based in Mahalakshmi Layout, Bengaluru, offering calculation-driven assessments for homes, commercial offices, industrial plants, and raw plots across Bangalore and Karnataka.
+            </p>
+            <p>
+              On-site Vastu visits are available across {BENGALURU_SERVICE_AREAS.slice(0, 5).join(", ")}, and surrounding Bengaluru neighborhoods.
             </p>
 
             <div className="vastuButtons">

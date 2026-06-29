@@ -1,4 +1,5 @@
 import { HOME_FAQS } from "./faqData";
+import { CONSULTATION_PATHS } from "../consultation/consultationPaths.js";
 
 export const SITE_URL = "https://www.mpshastriastrology.com";
 export const ORG_ID = `${SITE_URL}/#organization`;
@@ -49,6 +50,8 @@ export const ROUTE_LABELS = {
   "/health-astrology": "Health Astrology",
 };
 
+const SERVICE_PATHS = new Set(CONSULTATION_PATHS);
+
 const organizationSchema = {
   "@type": "Organization",
   "@id": ORG_ID,
@@ -80,6 +83,15 @@ const websiteSchema = {
     "Vedic astrology, Vastu Shastra, and spiritual consultation in Bangalore by Shri MP Shastri.",
   publisher: { "@id": ORG_ID },
   inLanguage: "en-IN",
+  potentialAction: {
+    "@type": "CommunicateAction",
+    name: "Book Vedic Astrology or Vastu Consultation",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/contact`,
+      inLanguage: "en-IN",
+    },
+  },
 };
 
 const localBusinessSchema = {
@@ -97,6 +109,8 @@ const localBusinessSchema = {
   telephone: "+918073258799",
   email: "mpshastriastrology@gmail.com",
   priceRange: "$$",
+  paymentAccepted: ["Cash", "Credit Card", "UPI"],
+  currenciesAccepted: "INR",
   parentOrganization: { "@id": ORG_ID },
   founder: { "@id": PERSON_ID },
   employee: { "@id": PERSON_ID },
@@ -133,6 +147,8 @@ const localBusinessSchema = {
   },
   areaServed: [
     { "@type": "Neighborhood", name: "Mahalakshmi Layout", containedInPlace: { "@type": "City", name: "Bengaluru" } },
+    { "@type": "Neighborhood", name: "Rajajinagar", containedInPlace: { "@type": "City", name: "Bengaluru" } },
+    { "@type": "Neighborhood", name: "Malleshwaram", containedInPlace: { "@type": "City", name: "Bengaluru" } },
     { "@type": "City", name: "Bengaluru", alternateName: "Bangalore" },
     { "@type": "AdministrativeArea", name: "Karnataka" },
     { "@type": "Country", name: "India" },
@@ -142,8 +158,32 @@ const localBusinessSchema = {
     "Vastu Shastra Consultation",
     "Face Reading",
     "Kundali Matching",
+    "Numerology",
     "Spiritual Counseling",
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Vedic Astrology & Vastu Consultations",
+    itemListElement: [
+      "/horoscope-reading",
+      "/marriage-matching",
+      "/career-astrology",
+      "/vastu-consultation",
+      "/numerology-consultation",
+      "/astrologer-in-bangalore",
+    ].map((servicePath, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: ROUTE_LABELS[servicePath],
+          url: `${SITE_URL}${servicePath}`,
+        },
+      },
+    })),
+  },
 };
 
 const personSchema = {
@@ -226,6 +266,24 @@ export function buildContactPageSchema(title, description) {
   };
 }
 
+export function buildServiceSchema(path, title, description) {
+  return {
+    "@type": "Service",
+    "@id": `${SITE_URL}${path}#service`,
+    name: title,
+    description,
+    url: `${SITE_URL}${path}`,
+    provider: { "@id": LOCAL_BUSINESS_ID },
+    areaServed: localBusinessSchema.areaServed,
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: `${SITE_URL}${path}`,
+      servicePhone: "+918073258799",
+      serviceLocation: { "@id": LOCAL_BUSINESS_ID },
+    },
+  };
+}
+
 export function buildHomeSchema() {
   return {
     "@context": "https://schema.org",
@@ -272,6 +330,10 @@ export function buildPageSchema(path, label, { faqs, title, description } = {}) 
         localGeo: LOCAL_GEO_PATHS.has(path),
       })
     );
+  }
+
+  if (SERVICE_PATHS.has(path) && title && description) {
+    graph.push(buildServiceSchema(path, title, description));
   }
 
   if (faqs?.length) {

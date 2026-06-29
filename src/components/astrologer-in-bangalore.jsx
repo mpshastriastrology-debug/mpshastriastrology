@@ -4,6 +4,7 @@ import "./AstrologerInBangalore.css";
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import { BANGALORE_ASTROLOGER_FAQS } from "../seo/faqData";
+import { BENGALURU_SERVICE_AREAS } from "../seo/localAreas";
 
 function AstrologerInBangalore() {
   return (
@@ -25,6 +26,9 @@ function AstrologerInBangalore() {
             <h1>Expert Vedic Astrologer in Bangalore</h1>
             <p>
               Shri MP Shastri provides meticulous birth chart investigations, definitive relationship timelines, career trajectory forecasts, and structural energy analyses for corporate professionals and families across Karnataka.
+            </p>
+            <p className="bangaloreLocality">
+              Serving clients from {BENGALURU_SERVICE_AREAS.slice(0, 6).join(", ")}, and all of Bengaluru (Bangalore) with in-person sessions at Mahalakshmi Layout or secure online consultations.
             </p>
 
             <div className="bangaloreButtons">
