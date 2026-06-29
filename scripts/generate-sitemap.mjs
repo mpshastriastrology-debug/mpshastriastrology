@@ -28,7 +28,7 @@ const urls = [
 ];
 
 const site = "https://www.mpshastriastrology.com";
-const lastmod = "2026-06-26";
+const lastmod = new Date().toISOString().slice(0, 10);
 
 const body = urls
   .map(
@@ -48,3 +48,4 @@ ${body}
 `;
 
 fs.writeFileSync("public/sitemap.xml", xml);
+console.log(`Generated sitemap.xml with ${urls.length} URLs (lastmod: ${lastmod})`);

@@ -195,6 +195,75 @@ export const ONLINE_ASTROLOGER_FAQS = [
   },
 ];
 
+export const SERVICES_FAQS = [
+  {
+    question: "What astrology and Vastu services does MP Shastri offer in Bangalore?",
+    answer:
+      "Services include Vedic horoscope reading, marriage and Kundali matching, career and business astrology, financial remedies, love and relationship guidance, Vastu audits for homes and offices, face reading, spiritual healing, and personalized pooja remedies.",
+  },
+  {
+    question: "How do I choose the right consultation service for my problem?",
+    answer:
+      "Start with horoscope reading for general life direction, marriage matching for relationship decisions, career astrology for job or business timing, Vastu consultation for home or office energy issues, or browse the full consultation menu for specialized topics like foreign settlement or health astrology.",
+  },
+  {
+    question: "Are all services available online as well as in person?",
+    answer:
+      "Yes. Most astrology and Vastu consultations are available through secure phone or video sessions across India and abroad, with in-person appointments at the Bangalore office in Mahalakshmi Layout.",
+  },
+  {
+    question: "How do I book a service appointment with MP Shastri?",
+    answer:
+      "Call or WhatsApp +91 80732 58799, use the contact form on the website, or visit the consultation pages for the service you need and click Book Consultation.",
+  },
+];
+
+export const CONSULTATION_HUB_FAQS = [
+  {
+    question: "Which consultation should I book first?",
+    answer:
+      "If you are unsure, start with horoscope reading for a full birth chart overview. For marriage plans choose marriage matching, for job or business decisions choose career astrology, and for home or office issues choose Vastu consultation.",
+  },
+  {
+    question: "What is included in every MP Shastri consultation session?",
+    answer:
+      "Each session includes accurate chart or property analysis based on your details, clear explanation of active planetary periods or Vastu factors, practical answers to your questions, and actionable remedial guidance where applicable.",
+  },
+  {
+    question: "Can I combine multiple consultation types in one visit?",
+    answer:
+      "Yes. Many clients address related concerns—such as career timing and financial planning, or marriage matching and relationship guidance—in a single extended session. Mention your priorities when booking.",
+  },
+  {
+    question: "How long does a typical consultation take?",
+    answer:
+      "Most sessions run 45 to 60 minutes depending on chart complexity and the number of questions. Marriage matching and Vastu site reviews may require longer appointments.",
+  },
+];
+
+export const INDIA_ASTROLOGER_FAQS = [
+  {
+    question: "Can I consult MP Shastri from anywhere in India?",
+    answer:
+      "Yes. Shri MP Shastri offers phone and video astrology and Vastu consultations to clients in every state. Only your exact birth date, time, and place are needed for accurate Vedic chart calculations.",
+  },
+  {
+    question: "Is an online astrologer in India as accurate as a local visit?",
+    answer:
+      "Yes. Vedic astrology is based on mathematical planetary positions at birth, not physical presence. Remote sessions from the Bangalore center deliver the same chart accuracy and remedial guidance as in-office consultations.",
+  },
+  {
+    question: "What problems can an astrologer in India help with?",
+    answer:
+      "Common topics include career and business timing, marriage compatibility, financial stability, relationship challenges, health patterns, foreign travel and settlement, family disputes, and Vastu corrections for homes and commercial properties.",
+  },
+  {
+    question: "How do I book an astrologer consultation from outside Bangalore?",
+    answer:
+      "Call or WhatsApp +91 80732 58799 or submit the contact form on the website. The team will schedule a phone or video session at a time convenient for your timezone within India.",
+  },
+];
+
 export const CONTACT_FAQS = [
   {
     question: "How do I book an astrology or Vastu consultation in Bangalore?",

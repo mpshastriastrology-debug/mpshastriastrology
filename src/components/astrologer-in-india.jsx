@@ -1,7 +1,9 @@
 import Seo from "./Seo";
+import FaqSection from "./FaqSection";
 import "./AstrologerInIndia.css";
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
+import { INDIA_ASTROLOGER_FAQS } from "../seo/faqData";
 
 function AstrologerInIndia() {
   return (
@@ -10,6 +12,7 @@ function AstrologerInIndia() {
         title="Top Trusted Astrologer in India | Shri MP Shastri Astrology"
         description="Consult Shri MP Shastri, a highly trusted astrologer in India. Get accurate online Vedic horoscope readings, career timelines, and remote Vastu corrections."
         path="/astrologer-in-india"
+        faqs={INDIA_ASTROLOGER_FAQS}
       />
 
       <div className="indiaPage">
@@ -98,6 +101,12 @@ function AstrologerInIndia() {
             Call +91 80732 58799
           </a>
         </Reveal>
+
+        <FaqSection
+          title="Astrologer in India — Common Questions"
+          faqs={INDIA_ASTROLOGER_FAQS}
+          idPrefix="india-astrologer"
+        />
       </div>
     </>
   );

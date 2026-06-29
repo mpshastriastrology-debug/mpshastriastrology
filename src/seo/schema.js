@@ -1,5 +1,4 @@
 import { HOME_FAQS } from "./faqData";
-import { CLIENT_REVIEWS } from "./reviewsData";
 
 export const SITE_URL = "https://www.mpshastriastrology.com";
 export const ORG_ID = `${SITE_URL}/#organization`;
@@ -137,35 +136,6 @@ const personSchema = {
   sameAs: [GOOGLE_BUSINESS_URL],
 };
 
-function buildReviewSchema(review, index) {
-  return {
-    "@type": "Review",
-    "@id": `${SITE_URL}/#review-${index + 1}`,
-    author: {
-      "@type": "Person",
-      name: review.author,
-    },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: review.ratingValue,
-      bestRating: 5,
-    },
-    reviewBody: review.reviewBody,
-    itemReviewed: { "@id": LOCAL_BUSINESS_ID },
-  };
-}
-
-function buildAggregateRatingSchema() {
-  return {
-    "@type": "AggregateRating",
-    "@id": `${SITE_URL}/#aggregateRating`,
-    ratingValue: "5",
-    reviewCount: String(CLIENT_REVIEWS.length),
-    bestRating: "5",
-    itemReviewed: { "@id": LOCAL_BUSINESS_ID },
-  };
-}
-
 export function buildFaqSchema(faqs, path) {
   return {
     "@type": "FAQPage",
@@ -214,12 +184,7 @@ export function buildHomeSchema() {
       organizationSchema,
       websiteSchema,
       personSchema,
-      {
-        ...localBusinessSchema,
-        aggregateRating: { "@id": `${SITE_URL}/#aggregateRating` },
-      },
-      buildAggregateRatingSchema(),
-      ...CLIENT_REVIEWS.map(buildReviewSchema),
+      localBusinessSchema,
       buildFaqSchema(HOME_FAQS, "/"),
       buildBreadcrumbSchema([{ name: "Home", path: "/" }]),
     ],

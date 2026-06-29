@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import Reveal from "../components/Reveal";
+import FaqSection from "../components/FaqSection";
 import { CONSULTATION_SERVICES } from "../consultation/servicesData";
+import { CONSULTATION_HUB_FAQS } from "../seo/faqData";
 import { optimizedSrc } from "../components/OptimizedImage";
 import "../components/ConsultationPage.css";
 
@@ -13,6 +15,7 @@ export default function ConsultationHub() {
         description="Browse all consultation services: horoscope reading, career astrology, marriage matching, financial solutions, Vastu, foreign settlement, health astrology, and more."
         path="/consultation"
         breadcrumbLabel="Consultations"
+        faqs={CONSULTATION_HUB_FAQS}
       />
 
       <section
@@ -56,6 +59,12 @@ export default function ConsultationHub() {
           ))}
         </div>
       </section>
+
+      <FaqSection
+        title="Consultation Services — Common Questions"
+        faqs={CONSULTATION_HUB_FAQS}
+        idPrefix="consultation-hub"
+      />
     </div>
   );
 }
