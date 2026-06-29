@@ -55,14 +55,7 @@
     .heroSection{min-height:100vh;background:linear-gradient(135deg,#5c0a0a 0%,#7a4518 45%,#4a0808 100%);color:#fff}
     .heroContent h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.6rem,5vw,2.5rem);line-height:1.15;margin:0 0 .75rem}
     .navbar,.navBar{position:relative;z-index:100}
-    .lcp-hero-static{display:none}
-    @media (max-width:992px){
-      .lcp-hero-static{
-        display:block;width:calc(100% - 10%);max-height:180px;object-fit:cover;
-        border-radius:12px;margin:88px auto 0;padding:0
-      }
-    }
-    body.app-ready .lcp-hero-static{display:none!important}
+    .lcp-hero-static{display:none!important}
     body:not(.app-ready) .mobileVideo{display:none}
   </style>
 
@@ -157,20 +150,6 @@
 </head>
 
 <body>
-  <!-- LCP hero image in HTML (discoverable before JS) — hidden once React mounts -->
-  <img
-    id="lcp-hero-static"
-    class="lcp-hero-static"
-    src="/images/opt/mp-shastri-astrology-480w.webp"
-    srcset="/images/opt/mp-shastri-astrology-480w.webp 480w, /images/opt/mp-shastri-astrology-960w.webp 960w"
-    sizes="100vw"
-    alt="Shri MP Shastri — Vedic astrologer and Vastu consultant in Bangalore"
-    width="640"
-    height="360"
-    fetchpriority="high"
-    decoding="sync"
-  />
-
   <div id="root"></div>
 
   <script type="module" src="/src/main.jsx"></script>
