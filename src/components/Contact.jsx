@@ -158,6 +158,45 @@ function Contact() {
         faqs={CONTACT_FAQS}
       />
 
+      <section className="appointmentSection">
+        <Reveal className="appointmentLeft" animation="fade-right">
+          <p>✦ BOOK YOUR APPOINTMENT</p>
+          <h1>Book Astrology &amp; Vastu Consultation in Bangalore</h1>
+          <span className="appointmentSubtitle">
+            Start your spiritual journey today — connect with Shri MP Shastri for horoscope assessments, Vastu audits, and personalized remedies.
+          </span>
+
+          <div className="appointmentFeatures">
+            <div className="appointmentItem">✔ Private In-Person Sessions</div>
+            <div className="appointmentItem">✔ 100% Confidential Consultations</div>
+            <div className="appointmentItem">✔ High-Definition Remote Video Calls</div>
+            <div className="appointmentItem">
+              {showContactForm
+                ? "✔ Direct Dashboard Support Channels"
+                : "✔ Instant WhatsApp Booking Requests"}
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal className="appointmentRight" animation="fade-left">
+          {showContactForm ? (
+            <form className="appointmentForm" onSubmit={handleFormSubmit}>
+              {formFields}
+              <button type="submit" disabled={loading}>
+                {loading ? "Processing Entry..." : "Confirm Booking Details"}
+              </button>
+            </form>
+          ) : (
+            <form className="appointmentForm whatsappBookingForm" onSubmit={handleWhatsAppSubmit}>
+              {formFields}
+              <button type="submit" className="whatsappSubmitBtn">
+                <FaWhatsapp aria-hidden="true" />
+                Send Booking Request on WhatsApp
+              </button>
+            </form>
+          )}
+        </Reveal>
+      </section>
 
       <section className="contactLocation">
         <div className="contactContainer">
