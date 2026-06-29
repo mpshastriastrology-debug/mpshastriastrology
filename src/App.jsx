@@ -24,7 +24,6 @@ const OnlineAstrologer = lazy(() => import('./components/online-astrologer'));
 const AstrologerInIndia = lazy(() => import('./components/astrologer-in-india'));
 const VastuExpert = lazy(() => import('./components/vastu-expert'));
 const Astrologyservices = lazy(() => import('./components/AstrologyServices.jsx'));
-const ChatAssistant = lazy(() => import('./components/ChatAssistant'));
 const ConsultationPage = lazy(() => import('./components/ConsultationPage'));
 const ConsultationHub = lazy(() => import('./pages/ConsultationHub'));
 
@@ -87,7 +86,6 @@ function App() {
       <Footer />
       {showChat && (
         <Suspense fallback={null}>
-          <ChatAssistant />
         </Suspense>
       )}
     </div>
