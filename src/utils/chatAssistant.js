@@ -188,7 +188,7 @@ const TOPIC_REPLIES = [
   {
     keywords: ["book", "appointment", "schedule", "slot", "timeslot", "booking", "consult"],
     answer:
-      "You can book an in-person or online consultation by calling us, using WhatsApp, or submitting the appointment form on our Contact page. Share your preferred date, service type, and birth details (for astrology) so we can confirm your slot quickly.",
+      "You can book an in-person or online consultation by calling us or using WhatsApp. Share your preferred date, service type, and birth details (for astrology) so we can confirm your slot quickly.",
     action: { label: "Book on Contact Page", href: "/contact" },
   },
   {

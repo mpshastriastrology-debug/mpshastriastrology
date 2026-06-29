@@ -6,6 +6,18 @@ export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const LOCAL_BUSINESS_ID = `${SITE_URL}/#localbusiness`;
 export const PERSON_ID = `${SITE_URL}/#person`;
 
+export const GEO_LAT = 13.0118837;
+export const GEO_LNG = 77.5447832;
+
+export const OFFICE_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout",
+  addressLocality: "Bengaluru",
+  addressRegion: "Karnataka",
+  postalCode: "560086",
+  addressCountry: "IN",
+};
+
 export const GOOGLE_BUSINESS_URL =
   "https://www.google.com/maps/place/MP+Shastri+Astrology/@13.0118837,77.5447832,17z/data=!3m1!4b1!4m6!3m5!1s0x16aa14d0ea09c97:0xa9986dcd989e9ba4!8m2!3d13.0118837!4d77.5447832";
 
@@ -73,6 +85,11 @@ const localBusinessSchema = {
   "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": LOCAL_BUSINESS_ID,
   name: "MP Shastri Astrology",
+  alternateName: [
+    "Shri MP Shastri Astrology",
+    "MP Shastri Astrology Bengaluru",
+    "MP Shastri Astrology Bangalore",
+  ],
   url: `${SITE_URL}/`,
   image: `${SITE_URL}/images/opt/mp-shastri-astrology-960w.webp`,
   logo: `${SITE_URL}/images/opt/MPShastriLogo-192w.webp`,
@@ -83,18 +100,21 @@ const localBusinessSchema = {
   founder: { "@id": PERSON_ID },
   employee: { "@id": PERSON_ID },
   hasMap: GOOGLE_BUSINESS_URL,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout",
-    addressLocality: "Bangalore",
-    addressRegion: "Karnataka",
-    postalCode: "560086",
-    addressCountry: "IN",
-  },
+  address: OFFICE_ADDRESS,
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 13.0118,
-    longitude: 77.5458,
+    latitude: GEO_LAT,
+    longitude: GEO_LNG,
+  },
+  containedInPlace: {
+    "@type": "City",
+    name: "Bengaluru",
+    alternateName: "Bangalore",
+    containedInPlace: {
+      "@type": "State",
+      name: "Karnataka",
+      containedInPlace: { "@type": "Country", name: "India" },
+    },
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
@@ -111,7 +131,9 @@ const localBusinessSchema = {
     closes: "21:00",
   },
   areaServed: [
-    { "@type": "AdministrativeArea", name: "Bangalore" },
+    { "@type": "Neighborhood", name: "Mahalakshmi Layout", containedInPlace: { "@type": "City", name: "Bengaluru" } },
+    { "@type": "City", name: "Bengaluru", alternateName: "Bangalore" },
+    { "@type": "AdministrativeArea", name: "Karnataka" },
     { "@type": "Country", name: "India" },
   ],
   knowsAbout: [
@@ -177,6 +199,32 @@ export function buildBreadcrumbs(path, label) {
   ];
 }
 
+export function buildWebPageSchema(path, title, description) {
+  return {
+    "@type": "WebPage",
+    "@id": `${SITE_URL}${path}#webpage`,
+    url: `${SITE_URL}${path}`,
+    name: title,
+    description,
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": LOCAL_BUSINESS_ID },
+    inLanguage: "en-IN",
+  };
+}
+
+export function buildContactPageSchema(title, description) {
+  return {
+    "@type": "ContactPage",
+    "@id": `${SITE_URL}/contact#contactpage`,
+    url: `${SITE_URL}/contact`,
+    name: title,
+    description,
+    isPartOf: { "@id": WEBSITE_ID },
+    mainEntity: { "@id": LOCAL_BUSINESS_ID },
+    inLanguage: "en-IN",
+  };
+}
+
 export function buildHomeSchema() {
   return {
     "@context": "https://schema.org",
@@ -191,7 +239,7 @@ export function buildHomeSchema() {
   };
 }
 
-export function buildPageSchema(path, label, { faqs } = {}) {
+export function buildPageSchema(path, label, { faqs, title, description } = {}) {
   const graph = [
     organizationSchema,
     websiteSchema,
@@ -199,6 +247,12 @@ export function buildPageSchema(path, label, { faqs } = {}) {
     localBusinessSchema,
     buildBreadcrumbSchema(buildBreadcrumbs(path, label)),
   ];
+
+  if (path === "/contact" && title && description) {
+    graph.push(buildContactPageSchema(title, description));
+  } else if (title && description) {
+    graph.push(buildWebPageSchema(path, title, description));
+  }
 
   if (faqs?.length) {
     graph.push(buildFaqSchema(faqs, path));

@@ -21,9 +21,9 @@ function VastuExpert() {
             <span className="vastuBadge">
               ✦ SCIENTIFIC &amp; TRADITIONAL ELEMENTAL ALIGNMENT
             </span>
-            <h1>Vastu Consultant in Bangalore</h1>
+            <h1>Vastu Expert in Bangalore — Mahalakshmi Layout</h1>
             <p>
-              Shri MP Shastri offers calculation-driven Vastu assessments for private layouts, commercial offices, industrial plants, and raw plots. Restore directional symmetry and create environmental harmony using non-destructive architectural remedies.
+              Shri MP Shastri is a Vastu Shastra expert based in Mahalakshmi Layout, Bengaluru, offering calculation-driven assessments for homes, commercial offices, industrial plants, and raw plots across Bangalore and Karnataka.
             </p>
 
             <div className="vastuButtons">

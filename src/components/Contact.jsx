@@ -2,6 +2,7 @@ import "./Contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useEffect } from "react";
 import Seo from "./Seo";
+import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { CONTACT_FAQS } from "../seo/faqData";
 import { initGoogleAds } from "../utils/analytics";
@@ -14,9 +15,10 @@ function Contact() {
   return (
     <section className="contactPage">
       <Seo
-        title="Contact MP Shastri — Astrology & Vastu Office in Bangalore"
-        description="Visit or call Shri MP Shastri at the Vedic consultation center in Mahalakshmi Layout, Bangalore. Phone +91 80732 58799, WhatsApp, email, and office map."
+        title="Contact MP Shastri — Astrology & Vastu Office in Bengaluru"
+        description="Visit Shri MP Shastri at the Vedic consultation center in Mahalakshmi Layout, Bengaluru (Bangalore). Call +91 80732 58799, WhatsApp, email, and Google Maps directions."
         path="/contact"
+        breadcrumbLabel="Contact"
         faqs={CONTACT_FAQS}
       />
 
@@ -24,10 +26,10 @@ function Contact() {
         <div className="contactContainer">
           <Reveal className="contactInfo" animation="fade-right">
             <p className="contactTag">✦ OFFICE HEADQUARTERS</p>
-            <h1>Vedic Consultation Center in Bangalore</h1>
-            <h2>Visit Shri MP Shastri</h2>
+            <h1>Vedic Consultation Center in Bengaluru</h1>
+            <h2>Visit Shri MP Shastri — Mahalakshmi Layout, Bangalore</h2>
             <p className="contactText">
-              Get clear, calculative resolutions for life transitions directly from an expert advisor.
+              In-person astrology and Vastu consultations at our Bangalore office, or book a phone or video session from anywhere in India.
             </p>
 
             <div className="contactDetails">
@@ -75,12 +77,18 @@ function Contact() {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Google Map Location of MP Shastri Astrology Office"
+                title="Google Map Location of MP Shastri Astrology Office in Bengaluru"
               />
             </div>
           </Reveal>
         </div>
       </section>
+
+      <FaqSection
+        title="Office Location & Booking — Common Questions"
+        faqs={CONTACT_FAQS}
+        idPrefix="contact-faq"
+      />
     </section>
   );
 }

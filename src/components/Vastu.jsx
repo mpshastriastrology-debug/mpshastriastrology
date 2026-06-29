@@ -11,8 +11,8 @@ function Vastu() {
   return (
     <>
       <Seo
-        title="Vastu Consultant in Bangalore | Home & Office Vastu Shastra | MP Shastri"
-        description="Book a trusted Vastu consultant in Bangalore for home, office, and factory audits. Shri MP Shastri offers practical Vastu remedies without major demolition."
+        title="Vastu Shastra Services in Bangalore | Home & Office | MP Shastri"
+        description="Explore Vedic Vastu Shastra services in Bangalore for homes, offices, and factories. Shri MP Shastri offers practical layout audits and remedies without major demolition."
         path="/vastu"
         faqs={VASTU_FAQS}
       />
@@ -23,7 +23,7 @@ function Vastu() {
           <div className="vastuOverlay"></div>
           <Reveal className="vastuHeroContent" animation="fade-up">
             <p>✦ ANCIENT ENVIRONMENTAL SCIENCE</p>
-            <h1>Vastu Consultant in Bangalore</h1>
+            <h1>Vastu Shastra Services in Bangalore</h1>
             <span>
               Establish precise spatial elemental balance, consistent financial growth, and domestic harmony inside your property using time-tested architectural principles.
             </span>

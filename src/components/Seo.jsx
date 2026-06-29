@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { buildHomeSchema, buildPageSchema } from "../seo/schema";
+import { buildHomeSchema, buildPageSchema, GEO_LAT, GEO_LNG } from "../seo/schema";
 
 const SITE_URL = "https://www.mpshastriastrology.com";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/opt/mp-shastri-astrology-960w.webp`;
@@ -21,7 +21,7 @@ export default function Seo({
     schema && path === "/"
       ? buildHomeSchema()
       : schema
-        ? buildPageSchema(path, breadcrumbLabel, { faqs })
+        ? buildPageSchema(path, breadcrumbLabel, { faqs, title, description })
         : null;
 
   return (
@@ -30,7 +30,9 @@ export default function Seo({
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
       <meta name="geo.region" content="IN-KA" />
-      <meta name="geo.placename" content="Bangalore" />
+      <meta name="geo.placename" content="Bengaluru, Karnataka, India" />
+      <meta name="geo.position" content={`${GEO_LAT};${GEO_LNG}`} />
+      <meta name="ICBM" content={`${GEO_LAT}, ${GEO_LNG}`} />
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

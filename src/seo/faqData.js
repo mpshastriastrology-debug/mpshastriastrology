@@ -145,7 +145,7 @@ export const BANGALORE_ASTROLOGER_FAQS = [
   {
     question: "How do I book an astrologer appointment in Bangalore?",
     answer:
-      "Call +91 80732 58799, WhatsApp the same number, or submit the appointment form on the contact page. In-person sessions are available at the Bangalore office; online sessions are offered worldwide.",
+      "Call +91 80732 58799 or WhatsApp the same number to book an in-person session at the Bengaluru office or an online consultation. The team will confirm your preferred date and service.",
   },
   {
     question: "Is MP Shastri Astrology near me in Bangalore?",
@@ -214,7 +214,7 @@ export const SERVICES_FAQS = [
   {
     question: "How do I book a service appointment with MP Shastri?",
     answer:
-      "Call or WhatsApp +91 80732 58799, use the contact form on the website, or visit the consultation pages for the service you need and click Book Consultation.",
+      "Call or WhatsApp +91 80732 58799, visit the contact page for directions and map, or use Book Consultation links across the site for the service you need.",
   },
 ];
 
@@ -260,7 +260,7 @@ export const INDIA_ASTROLOGER_FAQS = [
   {
     question: "How do I book an astrologer consultation from outside Bangalore?",
     answer:
-      "Call or WhatsApp +91 80732 58799 or submit the contact form on the website. The team will schedule a phone or video session at a time convenient for your timezone within India.",
+      "Call or WhatsApp +91 80732 58799 to schedule a phone or video session at a time convenient for your timezone within India.",
   },
 ];
 
@@ -268,16 +268,16 @@ export const CONTACT_FAQS = [
   {
     question: "How do I book an astrology or Vastu consultation in Bangalore?",
     answer:
-      "Use the appointment form on this page, call +91 80732 58799, or WhatsApp the same number. The team will confirm your preferred date for in-person or online sessions.",
+      "Call +91 80732 58799 or WhatsApp the same number. The team will confirm your preferred date for an in-person visit at the Mahalakshmi Layout office or an online session.",
   },
   {
     question: "What are the consultation hours at MP Shastri Astrology?",
     answer:
-      "Consultations are available daily from 9:00 AM to 9:00 PM IST. Call or message to check same-day availability at the Bangalore office.",
+      "Consultations are available daily from 9:00 AM to 9:00 PM IST. Call or message to check same-day availability at the Bengaluru office.",
   },
   {
     question: "Where is the MP Shastri Astrology office in Bangalore?",
     answer:
-      "607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout, Bengaluru, Karnataka 560086. Directions and map are shown on this contact page.",
+      "607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout, Bengaluru, Karnataka 560086. Directions and the Google Map are shown on this contact page.",
   },
 ];
