@@ -289,7 +289,6 @@
   }
 }
 
-.appointmentForm button,
 .whatsappSubmitBtn {
   display: inline-flex;
   align-items: center;
@@ -308,7 +307,6 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.appointmentForm button:hover,
 .whatsappSubmitBtn:hover {
   background: #1da851;
   transform: scale(1.02);

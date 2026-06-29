@@ -9,6 +9,8 @@ import { CONTACT_FAQS } from "../seo/faqData";
 import { initGoogleAds } from "../utils/analytics";
 import { buildBookingWhatsAppUrl } from "../utils/whatsapp";
 
+const showContactForm = !import.meta.env.PROD;
+
 function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -17,6 +19,7 @@ function Contact() {
     service: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     initGoogleAds();
@@ -26,12 +29,7 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const whatsappUrl = buildBookingWhatsAppUrl(form);
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-
+  const resetForm = () => {
     setForm({
       name: "",
       phone: "",
@@ -41,11 +39,121 @@ function Contact() {
     });
   };
 
+  const apiUrl = import.meta.env.PROD
+    ? import.meta.env.VITE_API_URL || ""
+    : "";
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    if (loading) return;
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(`${apiUrl}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Server Error");
+      }
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Appointment booked successfully!");
+        resetForm();
+      } else {
+        alert(data.error || "Something went wrong!");
+      }
+    } catch (error) {
+      console.error("Contact Form Error:", error);
+      const message =
+        error.message === "Failed to fetch"
+          ? "Could not reach the server. Please check your connection and try again."
+          : error.message || "Server error. Please try again later.";
+      alert(message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleWhatsAppSubmit = (e) => {
+    e.preventDefault();
+    window.open(buildBookingWhatsAppUrl(form), "_blank", "noopener,noreferrer");
+    resetForm();
+  };
+
+  const formFields = (
+    <>
+      <input
+        type="text"
+        name="name"
+        aria-label="Your Name"
+        placeholder="Your Name"
+        value={form.name}
+        onChange={handleChange}
+        required
+      />
+
+      <input
+        type="tel"
+        name="phone"
+        aria-label="Phone Number"
+        placeholder="Phone Number"
+        value={form.phone}
+        onChange={handleChange}
+        required
+      />
+
+      <input
+        type="email"
+        name="email"
+        aria-label="Email Address"
+        placeholder={showContactForm ? "Email Address" : "Email Address (optional)"}
+        value={form.email}
+        onChange={handleChange}
+      />
+
+      <select
+        name="service"
+        aria-label="Select Consultation Service"
+        value={form.service}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Select Service Specialty</option>
+        <option value="Astrology">Vedic Astrology &amp; Horoscope Reading</option>
+        <option value="Vastu">Residential &amp; Commercial Vastu Shastra</option>
+        <option value="Face Reading">Physiognomy &amp; Face Reading Analysis</option>
+        <option value="Tantra">Spiritual Healing &amp; Aura Cleansing</option>
+      </select>
+
+      <textarea
+        name="message"
+        aria-label="Describe Your Current Problem"
+        placeholder="Briefly describe your current issue (e.g., career timing, home layout concerns, compatibility)..."
+        value={form.message}
+        onChange={handleChange}
+        required
+      />
+    </>
+  );
+
   return (
     <section className="contactPage">
       <Seo
         title="Book Astrology & Vastu Consultation in Bangalore | MP Shastri"
-        description="Book an in-person or online astrology and Vastu consultation with Shri MP Shastri in Bangalore. Call +91 80732 58799 or send your request on WhatsApp."
+        description={
+          showContactForm
+            ? "Book an in-person or online astrology and Vastu consultation with Shri MP Shastri in Bangalore. Call +91 80732 58799 or submit the appointment form."
+            : "Book an in-person or online astrology and Vastu consultation with Shri MP Shastri in Bangalore. Call +91 80732 58799 or send your request on WhatsApp."
+        }
         path="/contact"
         faqs={CONTACT_FAQS}
       />
@@ -61,69 +169,31 @@ function Contact() {
             <div className="appointmentItem">✔ Private In-Person Sessions</div>
             <div className="appointmentItem">✔ 100% Confidential Consultations</div>
             <div className="appointmentItem">✔ High-Definition Remote Video Calls</div>
-            <div className="appointmentItem">✔ Instant WhatsApp Booking Requests</div>
+            <div className="appointmentItem">
+              {showContactForm
+                ? "✔ Direct Dashboard Support Channels"
+                : "✔ Instant WhatsApp Booking Requests"}
+            </div>
           </div>
         </Reveal>
 
         <Reveal className="appointmentRight" animation="fade-left">
-          <form className="appointmentForm" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              aria-label="Your Name"
-              placeholder="Your Name"
-              value={form.name}
-              onChange={handleChange}
-              required
-            />
-
-            <input
-              type="tel"
-              name="phone"
-              aria-label="Phone Number"
-              placeholder="Phone Number"
-              value={form.phone}
-              onChange={handleChange}
-              required
-            />
-
-            <input
-              type="email"
-              name="email"
-              aria-label="Email Address"
-              placeholder="Email Address (optional)"
-              value={form.email}
-              onChange={handleChange}
-            />
-
-            <select
-              name="service"
-              aria-label="Select Consultation Service"
-              value={form.service}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select Service Specialty</option>
-              <option value="Astrology">Vedic Astrology &amp; Horoscope Reading</option>
-              <option value="Vastu">Residential &amp; Commercial Vastu Shastra</option>
-              <option value="Face Reading">Physiognomy &amp; Face Reading Analysis</option>
-              <option value="Tantra">Spiritual Healing &amp; Aura Cleansing</option>
-            </select>
-
-            <textarea
-              name="message"
-              aria-label="Describe Your Current Problem"
-              placeholder="Briefly describe your current issue (e.g., career timing, home layout concerns, compatibility)..."
-              value={form.message}
-              onChange={handleChange}
-              required
-            />
-
-            <button type="submit" className="whatsappSubmitBtn">
-              <FaWhatsapp aria-hidden="true" />
-              Send Booking Request on WhatsApp
-            </button>
-          </form>
+          {showContactForm ? (
+            <form className="appointmentForm" onSubmit={handleFormSubmit}>
+              {formFields}
+              <button type="submit" disabled={loading}>
+                {loading ? "Processing Entry..." : "Confirm Booking Details"}
+              </button>
+            </form>
+          ) : (
+            <form className="appointmentForm whatsappBookingForm" onSubmit={handleWhatsAppSubmit}>
+              {formFields}
+              <button type="submit" className="whatsappSubmitBtn">
+                <FaWhatsapp aria-hidden="true" />
+                Send Booking Request on WhatsApp
+              </button>
+            </form>
+          )}
         </Reveal>
       </section>
 
