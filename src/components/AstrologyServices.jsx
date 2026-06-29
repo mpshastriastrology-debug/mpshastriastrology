@@ -73,7 +73,7 @@ const servicesData = [
       desc: "Align your identity through deep validation of life paths, name balancing, and signature adjustments.",
       img: "/numerology.webp",
       alt: "Name and birth-date numerology analysis",
-      path: "/astrology"
+      path: CONSULTATION_PATHS["Numerology Analysis"]
     },
     {
       title: "Foreign Settlement",

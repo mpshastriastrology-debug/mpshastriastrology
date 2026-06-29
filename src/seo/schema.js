@@ -44,6 +44,7 @@ export const ROUTE_LABELS = {
   "/family-conflict-resolution": "Family Conflict Resolution",
   "/business-astrology": "Business Astrology",
   "/vastu-consultation": "Vastu Consultation",
+  "/numerology-consultation": "Numerology Consultation",
   "/foreign-settlement": "Foreign Settlement",
   "/health-astrology": "Health Astrology",
 };
@@ -199,7 +200,7 @@ export function buildBreadcrumbs(path, label) {
   ];
 }
 
-export function buildWebPageSchema(path, title, description) {
+export function buildWebPageSchema(path, title, description, { localGeo = false } = {}) {
   return {
     "@type": "WebPage",
     "@id": `${SITE_URL}${path}#webpage`,
@@ -207,7 +208,7 @@ export function buildWebPageSchema(path, title, description) {
     name: title,
     description,
     isPartOf: { "@id": WEBSITE_ID },
-    about: { "@id": LOCAL_BUSINESS_ID },
+    about: { "@id": localGeo ? LOCAL_BUSINESS_ID : ORG_ID },
     inLanguage: "en-IN",
   };
 }
@@ -239,19 +240,38 @@ export function buildHomeSchema() {
   };
 }
 
+const LOCAL_GEO_PATHS = new Set([
+  "/",
+  "/contact",
+  "/astrology",
+  "/vastu",
+  "/vastu-expert",
+  "/vastu-consultation",
+  "/astrologer-in-bangalore",
+  "/astrologer-in-india",
+  "/online-astrologer",
+  "/numerology-consultation",
+]);
+
 export function buildPageSchema(path, label, { faqs, title, description } = {}) {
   const graph = [
     organizationSchema,
     websiteSchema,
-    personSchema,
-    localBusinessSchema,
     buildBreadcrumbSchema(buildBreadcrumbs(path, label)),
   ];
+
+  if (LOCAL_GEO_PATHS.has(path)) {
+    graph.push(personSchema, localBusinessSchema);
+  }
 
   if (path === "/contact" && title && description) {
     graph.push(buildContactPageSchema(title, description));
   } else if (title && description) {
-    graph.push(buildWebPageSchema(path, title, description));
+    graph.push(
+      buildWebPageSchema(path, title, description, {
+        localGeo: LOCAL_GEO_PATHS.has(path),
+      })
+    );
   }
 
   if (faqs?.length) {

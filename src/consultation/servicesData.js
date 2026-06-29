@@ -576,6 +576,70 @@ export const CONSULTATION_SERVICES = [
     ],
   },
   {
+    path: "/numerology-consultation",
+    title: "Numerology Analysis",
+    navLabel: "Numerology",
+    seoTitle: "Numerology Consultation in Bangalore | Name & Life Path | MP Shastri",
+    seoDescription:
+      "Vedic numerology consultation in Bengaluru for life path numbers, name correction, business name selection, and birth date analysis with Shri MP Shastri.",
+    heroBadge: "✦ NAME & LIFE PATH NUMEROLOGY",
+    heroTitle: "Numerology Analysis Consultation",
+    heroSubtitle:
+      "Decode your life path, destiny, and name vibrations through Chaldean and Vedic numerology for career, marriage, and business clarity.",
+    image: "/numerology.webp",
+    imageAlt: "Name and birth-date numerology analysis consultation",
+    intro:
+      "Numerology reveals repeating patterns in your birth date and name that influence decisions, relationships, and success cycles. Shri MP Shastri combines classical number mapping with practical guidance for name spelling adjustments, business branding, and favourable dates—especially for clients in Bangalore and across India seeking quick, actionable insight alongside chart-based astrology.",
+    problems: [
+      "Repeated failures after name or business rebranding",
+      "Confusion choosing auspicious dates or name spellings",
+      "Mismatch between birth date energy and career path",
+      "Partnership or marriage compatibility doubts from name numbers",
+    ],
+    solutions: [
+      "Life path, destiny, and soul urge number calculation",
+      "Name correction and signature alignment review",
+      "Business name and brand number compatibility check",
+      "Personal year/month forecasts for timing important steps",
+    ],
+    remedies: [
+      {
+        title: "Name Spelling Adjustments",
+        desc: "Subtle spelling changes to improve name number vibration without losing identity or legal documents.",
+      },
+      {
+        title: "Lucky Dates & Colours",
+        desc: "Personal day and colour associations for interviews, launches, and travel.",
+      },
+      {
+        title: "Number-Based Mantras",
+        desc: "Simple japa aligned to your ruling planet and missing numbers in the chart of birth.",
+      },
+      {
+        title: "Combined Astro-Numerology",
+        desc: "Cross-check numerology findings with Vedic chart dasha periods for stronger decisions.",
+      },
+    ],
+    benefits: [
+      "Clearer timing for name, business, or marriage decisions",
+      "Better alignment between public name and personal goals",
+      "Quick complementary insight alongside full horoscope reading",
+      "Practical steps without expensive rebranding mistakes",
+    ],
+    faqs: [
+      {
+        question: "What is the difference between numerology and horoscope reading?",
+        answer:
+          "Numerology focuses on numbers from your birth date and name. Horoscope reading uses full planetary positions. Many clients combine both for clearer guidance.",
+      },
+      {
+        question: "Can numerology help choose a business or baby name?",
+        answer:
+          "Yes. Name number compatibility is reviewed for business brands, newborn names, and professional signatures to support favourable vibrations.",
+      },
+    ],
+  },
+  {
     path: "/health-astrology",
     title: "Health Astrology",
     navLabel: "Health Astrology",

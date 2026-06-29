@@ -8,6 +8,7 @@ export const CONSULTATION_NAV = [
   { path: "/family-conflict-resolution", navLabel: "Family Conflict" },
   { path: "/business-astrology", navLabel: "Business Astrology" },
   { path: "/vastu-consultation", navLabel: "Vastu Consultation" },
+  { path: "/numerology-consultation", navLabel: "Numerology" },
   { path: "/foreign-settlement", navLabel: "Foreign Settlement" },
   { path: "/health-astrology", navLabel: "Health Astrology" },
 ];

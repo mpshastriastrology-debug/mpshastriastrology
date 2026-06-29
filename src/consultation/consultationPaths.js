@@ -8,6 +8,7 @@ export const CONSULTATION_PATHS = [
   "/family-conflict-resolution",
   "/business-astrology",
   "/vastu-consultation",
+  "/numerology-consultation",
   "/foreign-settlement",
   "/health-astrology",
 ];

@@ -23,6 +23,7 @@ const urls = [
   ["/family-conflict-resolution", "monthly", "0.85"],
   ["/business-astrology", "monthly", "0.85"],
   ["/vastu-consultation", "monthly", "0.85"],
+  ["/numerology-consultation", "monthly", "0.85"],
   ["/foreign-settlement", "monthly", "0.85"],
   ["/health-astrology", "monthly", "0.85"],
 ];
