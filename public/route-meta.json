@@ -49,7 +49,9 @@
   },
   "/astrologyservices": {
     "title": "Vedic Astrology Services in Bangalore | MP Shastri",
-    "description": "Browse Vedic astrology services including horoscope reading, career astrology, marriage matching, financial solutions, and Vastu consultation with Shri MP Shastri."
+    "description": "Browse Vedic astrology services including horoscope reading, career astrology, marriage matching, financial solutions, and Vastu consultation with Shri MP Shastri.",
+    "h1": "Comprehensive Vedic Astrology & Vastu Consultations in Bangalore",
+    "intro": "Shri MP Shastri offers specialized Vedic astrology and Vastu consultations from Mahalakshmi Layout, Bengaluru. Each service below links to a dedicated page with detailed guidance on horoscope reading, career timing, Kundali matching, financial remedies, relationship support, family harmony, business planning, residential and commercial Vastu, numerology, foreign settlement, and health patterns. Sessions are available in person at the Bengaluru office or online via phone and video for clients across Karnataka, India, and abroad."
   },
   "/consultation": {
     "title": "Vedic Astrology Consultations in Bangalore | MP Shastri",
@@ -57,46 +59,68 @@
   },
   "/horoscope-reading": {
     "title": "Vedic Horoscope Reading & Birth Chart Analysis | MP Shastri Bangalore",
-    "description": "Get accurate Vedic horoscope reading and birth chart analysis with Shri MP Shastri in Bangalore. Personalized predictions, dasha timelines, and practical remedies."
+    "description": "Get accurate Vedic horoscope reading and birth chart analysis with Shri MP Shastri in Bangalore. Personalized predictions, dasha timelines, and practical remedies.",
+    "h1": "Professional Horoscope Reading Consultation",
+    "intro": "A Vedic horoscope reading maps the exact planetary positions at your time of birth. Shri MP Shastri interprets your Lagna, Moon sign, house placements, and running dasha cycles to give clear answers about career timing, relationships, health patterns, and spiritual growth—without vague predictions."
   },
   "/career-astrology": {
     "title": "Career Astrology & Job Timing Consultation | MP Shastri",
-    "description": "Career astrology consultation for job change timing, promotions, government exams, and business direction. Expert Vedic guidance from Shri MP Shastri in Bangalore."
+    "description": "Career astrology consultation for job change timing, promotions, government exams, and business direction. Expert Vedic guidance from Shri MP Shastri in Bangalore.",
+    "h1": "Career Astrology Consultation",
+    "intro": "Career astrology examines the 10th house, Saturn, Sun, Mercury, and current dasha periods to reveal when effort converts into results. Whether you face job instability, delayed promotions, or confusion between multiple career paths, a structured chart review helps you act at the right time."
   },
   "/marriage-matching": {
     "title": "Kundali Matching & Marriage Compatibility | MP Shastri Astrology",
-    "description": "Comprehensive Kundali matching, Guna Milan, and marriage timing consultation with Shri MP Shastri. Trusted horoscope compatibility analysis in Bangalore."
+    "description": "Comprehensive Kundali matching, Guna Milan, and marriage timing consultation with Shri MP Shastri. Trusted horoscope compatibility analysis in Bangalore.",
+    "h1": "Marriage Matching Consultation",
+    "intro": "Marriage matching goes beyond a simple Guna score. Shri MP Shastri reviews both charts for dosha cancellation, 7th house strength, Venus-Jupiter influence, and dasha compatibility to guide families toward harmonious, lasting unions."
   },
   "/financial-solutions": {
     "title": "Financial Astrology & Wealth Remedies | MP Shastri Bangalore",
-    "description": "Astrological guidance for debt relief, wealth growth, property disputes, and financial stability. Consult Shri MP Shastri for practical money-related remedies."
+    "description": "Astrological guidance for debt relief, wealth growth, property disputes, and financial stability. Consult Shri MP Shastri for practical money-related remedies.",
+    "h1": "Financial Solutions Through Vedic Astrology",
+    "intro": "Financial astrology studies the 2nd house (savings), 11th house (gains), Jupiter, Venus, and running dasha periods affecting cash flow. Shri MP Shastri helps clients facing debt, business losses, property disputes, or inconsistent income find root causes and corrective measures."
   },
   "/love-relationships": {
     "title": "Love Problem & Relationship Astrology | MP Shastri",
-    "description": "Relationship astrology for love problems, breakups, compatibility, and reconciliation guidance. Compassionate consultation with Shri MP Shastri in Bangalore."
+    "description": "Relationship astrology for love problems, breakups, compatibility, and reconciliation guidance. Compassionate consultation with Shri MP Shastri in Bangalore.",
+    "h1": "Love & Relationship Astrology",
+    "intro": "Relationship issues often reflect Venus, Moon, 5th and 7th house conditions, and Rahu-Ketu influence. Shri MP Shastri offers confidential sessions to understand compatibility, separation timing, reconciliation possibility, and emotional healing through Vedic wisdom."
   },
   "/family-conflict-resolution": {
     "title": "Family Problem & Domestic Harmony Astrology | MP Shastri",
-    "description": "Resolve family disputes, in-law conflicts, and domestic tension through Vedic astrology and Vastu guidance with Shri MP Shastri in Bangalore."
+    "description": "Resolve family disputes, in-law conflicts, and domestic tension through Vedic astrology and Vastu guidance with Shri MP Shastri in Bangalore.",
+    "h1": "Family Conflict Resolution Consultation",
+    "intro": "Family conflicts often involve the 4th house (home peace), Moon (mind), Mars (anger), and Saturn (elders). Combined astrology and Vastu review helps identify why disputes repeat and what practical steps restore respect and calm in the household."
   },
   "/business-astrology": {
     "title": "Business Astrology & Venture Timing | MP Shastri Bangalore",
-    "description": "Business astrology for shop opening muhurta, partnership compatibility, investment timing, and commercial growth. Expert consultation with Shri MP Shastri."
+    "description": "Business astrology for shop opening muhurta, partnership compatibility, investment timing, and commercial growth. Expert consultation with Shri MP Shastri.",
+    "h1": "Business Astrology Consultation",
+    "intro": "Business astrology uses the lagna chart, Dasamsa, Mercury for trade, Jupiter for expansion, and Rahu for unconventional ventures. Shri MP Shastri guides entrepreneurs on when to start, partner, invest, or pause—reducing costly timing mistakes."
   },
   "/vastu-consultation": {
     "title": "Home & Office Vastu Consultation | MP Shastri Bangalore",
-    "description": "Residential and commercial Vastu consultation without demolition. Structural energy balancing for homes, flats, shops, and offices with Shri MP Shastri."
+    "description": "Residential and commercial Vastu consultation without demolition. Structural energy balancing for homes, flats, shops, and offices with Shri MP Shastri.",
+    "h1": "Vastu Consultation Services",
+    "intro": "Vastu Shastra aligns built spaces with directional energy flows. Shri MP Shastri audits floor plans, room usage, entrance direction, kitchen and bedroom placement, and elemental imbalances—offering practical remedies without breaking walls whenever possible."
   },
   "/foreign-settlement": {
     "title": "Foreign Settlement & Visa Astrology | MP Shastri",
-    "description": "Astrology for foreign travel, overseas education, PR, and immigration timing. Plan your abroad settlement with Shri MP Shastri's Vedic chart analysis."
+    "description": "Astrology for foreign travel, overseas education, PR, and immigration timing. Plan your abroad settlement with Shri MP Shastri's Vedic chart analysis.",
+    "h1": "Foreign Settlement Astrology",
+    "intro": "Foreign settlement indicators appear in the 12th house (abroad), 9th house (fortune), Rahu (foreign lands), and specific yogas like Pravasa yoga. Shri MP Shastri helps students, professionals, and families understand favourable periods for visas, relocation, and success overseas."
   },
   "/numerology-consultation": {
     "title": "Numerology Consultation in Bangalore | Name & Life Path | MP Shastri",
-    "description": "Vedic numerology consultation in Bengaluru for life path numbers, name correction, business name selection, and birth date analysis with Shri MP Shastri."
+    "description": "Vedic numerology consultation in Bengaluru for life path numbers, name correction, business name selection, and birth date analysis with Shri MP Shastri.",
+    "h1": "Numerology Analysis Consultation",
+    "intro": "Numerology reveals repeating patterns in your birth date and name that influence decisions, relationships, and success cycles. Shri MP Shastri combines classical number mapping with practical guidance for name spelling adjustments, business branding, and favourable dates—especially for clients in Bangalore and across India seeking quick, actionable insight alongside chart-based astrology."
   },
   "/health-astrology": {
     "title": "Health Astrology & Wellness Guidance | MP Shastri Bangalore",
-    "description": "Health astrology for preventive wellness, chronic issue patterns, and planetary health indicators. Supportive consultation with Shri MP Shastri—not a medical substitute."
+    "description": "Health astrology for preventive wellness, chronic issue patterns, and planetary health indicators. Supportive consultation with Shri MP Shastri—not a medical substitute.",
+    "h1": "Health Astrology Consultation",
+    "intro": "Health astrology examines the 6th house (disease), 8th house (chronic patterns), Ascendant lord, Sun (vitality), and Moon (mind-body). Shri MP Shastri offers preventive guidance and remedial support—always alongside proper medical care, never as a replacement for doctors."
   }
 }
