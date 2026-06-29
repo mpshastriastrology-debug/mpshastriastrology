@@ -103,8 +103,31 @@ const servicesData = [
       <div className="astroServices">
         <Reveal className="sectionHeading" animation="fade-up">
           <p>✦ OUR SPECIALITIES</p>
-          <h2>Comprehensive Astrology &amp; Vastu Consultations</h2>
+          {seo ? (
+            <h1>Comprehensive Vedic Astrology &amp; Vastu Consultations in Bangalore</h1>
+          ) : (
+            <h2>Comprehensive Astrology &amp; Vastu Consultations</h2>
+          )}
         </Reveal>
+
+        {seo && (
+          <Reveal className="astroServicesIntro" animation="fade-up">
+            <p>
+              Shri MP Shastri offers specialized Vedic astrology and Vastu consultations from
+              Mahalakshmi Layout, Bengaluru. Explore horoscope reading, career timing, Kundali
+              matching, financial remedies, relationship guidance, family harmony, business
+              planning, residential and commercial Vastu, numerology, foreign settlement, and
+              health patterns. Each card below links to a detailed consultation page. Sessions are
+              available in person at the Bengaluru office or online via phone and video for clients
+              across Karnataka, India, and abroad.
+            </p>
+            <p>
+              Prefer a full menu view? See{" "}
+              <Link to="/consultation">all consultations</Link> or{" "}
+              <Link to="/contact">contact the office</Link> to book your session.
+            </p>
+          </Reveal>
+        )}
 
         <div className="astroServiceGrid">
           {servicesData.map((service, index) => (

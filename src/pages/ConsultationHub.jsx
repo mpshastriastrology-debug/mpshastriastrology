@@ -45,6 +45,11 @@ export default function ConsultationHub() {
         <Reveal className="consultationBlockHeading" animation="fade-up">
           <p>✦ OUR CONSULTATION MENU</p>
           <h2>Select Your Consultation Type</h2>
+          <p style={{ maxWidth: "640px", margin: "0.75rem auto 0", lineHeight: 1.65 }}>
+            You can also browse the{" "}
+            <Link to="/astrologyservices">astrology services directory</Link> for the same
+            specialties in a visual grid layout.
+          </p>
         </Reveal>
         <div className="consultationRelatedGrid" style={{ maxWidth: "1100px", margin: "0 auto" }}>
           {CONSULTATION_SERVICES.map((service, index) => (

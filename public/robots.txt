@@ -3,5 +3,8 @@ Allow: /
 
 Sitemap: https://www.mpshastriastrology.com/sitemap.xml
 
-# Optional site credits
-# See https://www.mpshastriastrology.com/humans.txt
+# LLM / AI site summary
+# https://www.mpshastriastrology.com/llms.txt
+
+# Site credits
+# https://www.mpshastriastrology.com/humans.txt

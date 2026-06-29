@@ -1,4 +1,5 @@
 import "./Services.css";
+import { Link } from "react-router-dom";
 import Seo from "./Seo";
 import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
@@ -45,6 +46,11 @@ export default function Services() {
         <Reveal className="services-header" animation="fade-up">
           <h1>Our Services</h1>
           <p>Professional Astrology &amp; Vastu Consultation Services</p>
+          <p className="services-headerLinks">
+            Browse the full{" "}
+            <Link to="/astrologyservices">astrology services directory</Link> or the{" "}
+            <Link to="/consultation">consultation menu</Link> for detailed specialty pages.
+          </p>
         </Reveal>
 
         <div className="services-grid">

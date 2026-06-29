@@ -1,4 +1,27 @@
 {
+  "redirects": [
+    {
+      "source": "/:path((?!sitemap\\.xml|robots\\.txt|llms\\.txt|humans\\.txt|manifest\\.json|favicon\\.svg|bestastrology\\.png|images|assets|fonts|videos).*)",
+      "has": [{ "type": "host", "value": "mpshastriastrology.com" }],
+      "destination": "https://www.mpshastriastrology.com/:path",
+      "permanent": true
+    },
+    {
+      "source": "/AstrologyServices",
+      "destination": "/astrologyservices",
+      "permanent": true
+    },
+    {
+      "source": "/astrology-services",
+      "destination": "/astrologyservices",
+      "permanent": true
+    },
+    {
+      "source": "/Face-reading",
+      "destination": "/face-reading",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!.*\\.).*)",

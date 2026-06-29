@@ -68,6 +68,9 @@ const STATIC_ROUTE_META = {
     title: "Vedic Astrology Services in Bangalore | MP Shastri",
     description:
       "Browse Vedic astrology services including horoscope reading, career astrology, marriage matching, financial solutions, and Vastu consultation with Shri MP Shastri.",
+    h1: "Comprehensive Vedic Astrology & Vastu Consultations in Bangalore",
+    intro:
+      "Shri MP Shastri offers specialized Vedic astrology and Vastu consultations from Mahalakshmi Layout, Bengaluru. Each service below links to a dedicated page with detailed guidance on horoscope reading, career timing, Kundali matching, financial remedies, relationship support, family harmony, business planning, residential and commercial Vastu, numerology, foreign settlement, and health patterns. Sessions are available in person at the Bengaluru office or online via phone and video for clients across Karnataka, India, and abroad.",
   },
   "/consultation": {
     title: "Vedic Astrology Consultations in Bangalore | MP Shastri",
@@ -82,6 +85,8 @@ for (const service of CONSULTATION_SERVICES) {
   routeMeta[service.path] = {
     title: service.seoTitle,
     description: service.seoDescription,
+    h1: service.heroTitle,
+    intro: service.intro,
   };
 }
 

@@ -47,7 +47,9 @@ function Footer() {
           <h3>USEFUL LINKS</h3>
           <Link to="/">HOME</Link>
           <Link to="/about">ABOUT</Link>
-          <Link to="/services">SERVICES</Link> {/* Updated from /astrology to point directly to your master hub page */}
+          <Link to="/services">SERVICES</Link>
+          <Link to="/consultation">CONSULTATIONS</Link>
+          <Link to="/astrologyservices">ASTROLOGY SERVICES</Link>
           <Link to="/contact">CONTACT</Link>
         </Reveal>
 

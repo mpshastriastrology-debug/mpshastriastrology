@@ -12,11 +12,23 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
-function applyRouteMeta(html, routePath, { title, description }) {
+function defaultH1(title) {
+  return title.split("|")[0].trim();
+}
+
+function buildPrerenderBody(meta) {
+  const h1 = escapeHtml(meta.h1 || defaultH1(meta.title));
+  const intro = escapeHtml(meta.intro || meta.description);
+
+  return `<main id="seo-prerender" class="seo-prerender"><h1>${h1}</h1><p>${intro}</p></main>`;
+}
+
+function applyRouteMeta(html, routePath, meta) {
   const canonical =
     routePath === "/" ? `${SITE_URL}/` : `${SITE_URL}${routePath}`;
-  const safeTitle = escapeHtml(title);
-  const safeDescription = escapeHtml(description);
+  const safeTitle = escapeHtml(meta.title);
+  const safeDescription = escapeHtml(meta.description);
+  const prerenderBody = buildPrerenderBody(meta);
 
   return html
     .replace(/<title>[^<]*<\/title>/, `<title>${safeTitle}</title>`)
@@ -47,6 +59,10 @@ function applyRouteMeta(html, routePath, { title, description }) {
     .replace(
       /rel="canonical"\s+href="[^"]*"/,
       `rel="canonical" href="${canonical}"`
+    )
+    .replace(
+      '<div id="root"></div>',
+      `<div id="root">${prerenderBody}</div>`
     );
 }
 
