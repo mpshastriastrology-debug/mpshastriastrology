@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Breadcrumbs from './components/Breadcrumbs';
 import Footer from './components/Footer';
@@ -88,6 +89,7 @@ function App() {
         <Suspense fallback={null}>
         </Suspense>
       )}
+      <Analytics />
     </div>
   );
 }
