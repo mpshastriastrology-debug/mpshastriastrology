@@ -1,18 +1,32 @@
+.homePage {
+  --home-section-max: 1400px;
+  --home-section-gutter: clamp(0.75rem, 1.5vw, 1rem);
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .homeContent {
+  width: 100%;
   background: #fffdf8;
 }
 
 .homeContentBlock {
-  padding: 80px 8%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  box-sizing: border-box;
 }
 
 .homeContentBlockAlt {
   background: #f8f5ef;
-  max-width: none;
-  padding-left: calc(8% + max(0px, (100vw - 1200px) / 2));
-  padding-right: calc(8% + max(0px, (100vw - 1200px) / 2));
+}
+
+.homeContentInner,
+.homePage .astroServicesInner {
+  width: 100%;
+  max-width: var(--home-section-max);
+  margin: 0 auto;
+  padding: 0 var(--home-section-gutter);
+  box-sizing: border-box;
 }
 
 .homeContentEyebrow {
@@ -24,7 +38,7 @@
 
 .homeContentBlock h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
+  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
   color: #5c3b00;
   margin-bottom: 24px;
   line-height: 1.2;
@@ -32,7 +46,7 @@
 
 .homeContentBlock h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
+  font-size: clamp(1.2rem, 2.2vw, 1.625rem);
   color: #111;
   margin-bottom: 12px;
 }
@@ -41,30 +55,31 @@
   color: #555;
   line-height: 1.85;
   margin-bottom: 18px;
-  font-size: 17px;
+  font-size: clamp(0.95rem, 1.5vw, 1.0625rem);
 }
 
 .homeContentGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
   margin: 32px 0 20px;
 }
 
 .homeContentGridTwo {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .homeContentCard {
   background: white;
   border-radius: 18px;
-  padding: 28px 26px;
+  padding: clamp(1.25rem, 2vw, 1.75rem);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  height: 100%;
 }
 
 .homeContentCard p {
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
 }
 
 .homeContentLinks {
@@ -93,7 +108,7 @@
   align-items: flex-start;
   background: #f8f5ef;
   border-radius: 16px;
-  padding: 24px;
+  padding: clamp(1.25rem, 2vw, 1.5rem);
 }
 
 .homeContentBlockAlt .homeContentSteps li {
@@ -102,7 +117,7 @@
 
 .homeContentStepNum {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
+  font-size: clamp(1.75rem, 3vw, 2rem);
   font-weight: 700;
   color: #d4af37;
   line-height: 1;
@@ -110,7 +125,7 @@
 }
 
 .homeContentSteps h3 {
-  font-size: 22px;
+  font-size: clamp(1.05rem, 2vw, 1.375rem);
   margin-bottom: 8px;
 }
 
@@ -150,22 +165,68 @@
   transform: translateY(-2px);
 }
 
+/* Homepage: widen CTA, benefits, FAQ, and review sections below welcome content */
+.homePage .ctaSection,
+.homePage .benefitsSection,
+.homePage .statsSection,
+.homePage .processSection,
+.homePage .faqSection,
+.homePage .googleReviewSection {
+  padding-left: var(--home-section-gutter) !important;
+  padding-right: var(--home-section-gutter) !important;
+}
+
+.homePage .ctaOverlay,
+.homePage .faqContainer,
+.homePage .benefitsGrid,
+.homePage .processGrid,
+.homePage .googleReviewGrid,
+.homePage .statsSection,
+.homePage .benefitsSection .sectionHeading,
+.homePage .processSection .sectionHeading,
+.homePage .faqSection .sectionHeading,
+.homePage .googleReviewSection .sectionHeading {
+  max-width: var(--home-section-max);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.homePage .faqContainer {
+  max-width: var(--home-section-max) !important;
+}
+
+.homePage .ctaOverlay {
+  max-width: var(--home-section-max) !important;
+}
+
 @media (max-width: 768px) {
+  .homePage {
+    --home-section-gutter: 0.875rem;
+  }
+
   .homeContentBlock {
-    padding: 56px 24px;
-  }
-
-  .homeContentBlockAlt {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .homeContentBlock h2 {
-    font-size: 32px;
+    padding: 2.75rem 0;
   }
 
   .homeContentGrid,
   .homeContentGridTwo {
     grid-template-columns: 1fr;
+  }
+
+  .homeContentSteps li {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .homeContentCta {
+    flex-direction: column;
+  }
+
+  .homeContentPrimaryBtn,
+  .homeContentSecondaryBtn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
   }
 }

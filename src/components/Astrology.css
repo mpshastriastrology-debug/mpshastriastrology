@@ -156,6 +156,39 @@ body {
   background: #f8f5ef;
 }
 
+.astroServicesHome {
+  width: 100%;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  box-sizing: border-box;
+}
+
+.astroServicesInner {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.astroServicesHome .sectionHeading {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.astroServicesHome .sectionHeading h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
+}
+
+.astroServicesHome .astroServicesIntro {
+  max-width: none;
+  width: 100%;
+  margin: 0 0 2.5rem;
+  text-align: left;
+}
+
+.astroServicesHome .astroServiceGrid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin-top: 0;
+}
+
 .sectionHeading {
   text-align: center;
   margin-bottom: 70px;
@@ -275,8 +308,16 @@ body {
   }
 
   .astroAbout,
-  .astroServices {
+  .astroServices:not(.astroServicesHome) {
     padding: 80px 25px; /* Cleaned up unified view spacing bounds */
+  }
+
+  .astroServicesHome {
+    padding: 2.75rem 0;
+  }
+
+  .astroServicesHome .sectionHeading h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
   }
 
   .astroContent h2,
