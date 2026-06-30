@@ -8,6 +8,8 @@ export const NOINDEX_ROUTES = [
 ];
 
 export const COMPANY_LOGO_SRC = "/images/opt/MPShastriLogo-192w.webp";
+export const COMPANY_FAVICON_SRC = "/images/opt/MPShastriLogo-192w.webp";
+export const COMPANY_FAVICON_SMALL_SRC = "/images/opt/MPShastriLogo-96w.webp";
 export const COMPANY_NAME = "MP Shastri Astrology";
 
 export const WHATSAPP_BOOKING_URL = "https://wa.me/918073258799";

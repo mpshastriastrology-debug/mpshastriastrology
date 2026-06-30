@@ -2,6 +2,7 @@ import fs from "fs";
 import { CONSULTATION_SERVICES } from "../src/consultation/servicesData.js";
 import { CONTACT_PAGE_PUBLIC } from "../src/config/site.js";
 import { CONTACT_PRERENDER_INTRO } from "../src/seo/contactSeo.js";
+import { HOME_PRERENDER_INTRO } from "../src/seo/homeSeo.js";
 
 const NOINDEX_PATHS = new Set([
   ...(CONTACT_PAGE_PUBLIC ? [] : ["/contact"]),
@@ -14,6 +15,7 @@ const STATIC_ROUTE_META = {
     description:
       "Consult MP Shastri for authentic Vedic astrology, accurate Kundali matching, and Vastu solutions in Bangalore. Book your online or in-person session today.",
     h1: "Vedic Astrologer & Vastu Consultant in Bangalore",
+    intro: HOME_PRERENDER_INTRO,
   },
   "/about": {
     title: "About Shri MP Shastri | Vedic Astrologer in Bangalore",

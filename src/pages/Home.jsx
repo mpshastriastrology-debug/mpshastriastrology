@@ -1,4 +1,5 @@
 import Hero from '../components/Hero';
+import HomeContent from '../components/HomeContent';
 import Seo from '../components/Seo';
 import Services1 from '../components/Services1';
 import Astrologyservices from '../components/AstrologyServices.jsx';
@@ -13,7 +14,8 @@ function Home() {
       />
 
       <Hero />
-      <Astrologyservices seo={false} />
+      <Astrologyservices seo={false} showIntro />
+      <HomeContent />
       <Services1 />
     </>
   );

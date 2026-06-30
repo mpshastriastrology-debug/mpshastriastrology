@@ -14,6 +14,26 @@ export const HOME_FAQS = [
     answer:
       "Yes. MP Shastri provides Vastu Shastra audits for flats, villas, shops, and commercial offices in Bangalore, focusing on directional balance, room placement, and non-destructive remedies.",
   },
+  {
+    question: "What information should I bring for a horoscope or Kundali matching session?",
+    answer:
+      "Please share your date of birth, exact time of birth (from hospital records or family notes if possible), and place of birth. For marriage matching, both partners' details are used for Guna Milan and compatibility review before families finalize decisions.",
+  },
+  {
+    question: "Does MP Shastri offer career and business astrology in Bangalore?",
+    answer:
+      "Yes. Career astrology sessions cover job changes, promotions, government exams, and business launch timing. Business owners consult for partnership compatibility, investment windows, and remedies during challenging planetary periods.",
+  },
+  {
+    question: "Where is the MP Shastri astrology office located in Bengaluru?",
+    answer:
+      "The consultation center is at Mahalakshmi Layout, Bengaluru (Bangalore), near Rajajinagar and Malleshwaram. Clients from North Bangalore often visit in person; others across Karnataka and India book secure online sessions.",
+  },
+  {
+    question: "How do I book an appointment with Shri MP Shastri?",
+    answer:
+      "Call +91 80732 58799, message on WhatsApp, or use the contact page to request a slot. In-person and online consultations are available daily; share your preferred date and whether you need astrology, Vastu, or both.",
+  },
 ];
 
 export const ABOUT_FAQS = [

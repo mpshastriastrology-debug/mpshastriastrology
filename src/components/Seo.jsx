@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { buildHomeSchema, buildPageSchema, GEO_LAT, GEO_LNG } from "../seo/schema";
+import { COMPANY_FAVICON_SMALL_SRC, COMPANY_FAVICON_SRC } from "../config/site";
 
 const SITE_URL = "https://www.mpshastriastrology.com";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/opt/mp-shastri-astrology-960w.webp`;
@@ -29,6 +30,9 @@ export default function Seo({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <link rel="icon" href={COMPANY_FAVICON_SRC} type="image/webp" sizes="192x192" />
+      <link rel="icon" href={COMPANY_FAVICON_SMALL_SRC} type="image/webp" sizes="96x96" />
+      <link rel="apple-touch-icon" href={COMPANY_FAVICON_SRC} />
       {noindex && <meta name="robots" content="noindex, follow" />}
       <link rel="canonical" href={canonicalUrl} />
       <meta name="geo.region" content="IN-KA" />

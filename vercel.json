@@ -20,6 +20,11 @@
       "source": "/Face-reading",
       "destination": "/face-reading",
       "permanent": true
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/images/opt/MPShastriLogo-192w.webp",
+      "permanent": true
     }
   ],
   "rewrites": [

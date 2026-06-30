@@ -12,7 +12,7 @@ const CONSULTATION_PATHS = Object.fromEntries(
   CONSULTATION_SERVICES.map((s) => [s.title, s.path])
 );
 
-function Astrologyservices({ seo = true }) {
+function Astrologyservices({ seo = true, showIntro = false }) {
 const servicesData = [
   {
     title: "Horoscope Reading",
@@ -114,7 +114,7 @@ const servicesData = [
           )}
         </Reveal>
 
-        {seo && (
+        {(seo || showIntro) && (
           <Reveal className="astroServicesIntro" animation="fade-up">
             <p>
               Shri MP Shastri offers specialized Vedic astrology and Vastu consultations from
@@ -125,11 +125,13 @@ const servicesData = [
               available in person at the Bengaluru office or online via phone and video for clients
               across Karnataka, India, and abroad.
             </p>
-            <p>
-              Prefer a full menu view? See{" "}
-              <Link to="/consultation">all consultations</Link> or{" "}
-              <Link to="/contact">contact the office</Link> to book your session.
-            </p>
+            {seo && (
+              <p>
+                Prefer a full menu view? See{" "}
+                <Link to="/consultation">all consultations</Link> or{" "}
+                <Link to="/contact">contact the office</Link> to book your session.
+              </p>
+            )}
           </Reveal>
         )}
 
