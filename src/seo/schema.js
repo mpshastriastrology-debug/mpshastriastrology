@@ -1,4 +1,4 @@
-import { HOME_FAQS } from "./faqData";
+import { HOME_FAQS } from "./faqData.js";
 import { CONSULTATION_PATHS } from "../consultation/consultationPaths.js";
 
 export const SITE_URL = "https://www.mpshastriastrology.com";

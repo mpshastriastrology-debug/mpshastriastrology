@@ -10,6 +10,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { CONTACT_PAGE_PUBLIC } from "../config/site";
 
 function Footer() {
   return (
@@ -50,7 +51,7 @@ function Footer() {
           <Link to="/services">SERVICES</Link>
           <Link to="/consultation">CONSULTATIONS</Link>
           <Link to="/astrologyservices">ASTROLOGY SERVICES</Link>
-          <Link to="/contact">CONTACT</Link>
+          {CONTACT_PAGE_PUBLIC && <Link to="/contact">CONTACT</Link>}
         </Reveal>
 
         {/* SPECIALTIES INNER CONTENT CATEGORIES */}

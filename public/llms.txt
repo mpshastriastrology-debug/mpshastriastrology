@@ -12,7 +12,6 @@
 - [Home](https://www.mpshastriastrology.com/): Vedic astrologer and Vastu consultant in Bangalore; book online or in-person consultations.
 - [About Shri MP Shastri](https://www.mpshastriastrology.com/about): Background, experience, and approach to Vedic astrology and spiritual guidance.
 - [Services Overview](https://www.mpshastriastrology.com/services): Summary of astrology, Vastu, face reading, and related counseling services.
-- [Contact & Office Location](https://www.mpshastriastrology.com/contact): Office address in Mahalakshmi Layout, Bengaluru, phone, WhatsApp, email, and Google Maps.
 - [All Consultations](https://www.mpshastriastrology.com/consultation): Hub listing every specialized consultation service.
 
 ## Core Services
@@ -39,7 +38,7 @@
 
 ## Optional
 
-- [Quora Consultation Landing](https://www.mpshastriastrology.com/quora-consultation): Conversion page for Quora ads — book Vedic astrology consultation via WhatsApp or phone.
+- [Quora Consultation Landing](https://www.mpshastriastrology.com/quora-consultation): Ad conversion page (noindex) — book via WhatsApp or phone.
 - [Astrologer in Bangalore](https://www.mpshastriastrology.com/astrologer-in-bangalore): Local Bangalore astrologer landing page for in-person consultations.
 - [Online Astrologer](https://www.mpshastriastrology.com/online-astrologer): Remote phone and video astrology sessions available worldwide.
 - [Astrologer in India](https://www.mpshastriastrology.com/astrologer-in-india): Pan-India Vedic astrology and Vastu services from Bangalore.

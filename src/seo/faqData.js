@@ -218,6 +218,29 @@ export const SERVICES_FAQS = [
   },
 ];
 
+export const ASTROLOGY_SERVICES_FAQS = [
+  {
+    question: "What astrology services does MP Shastri offer in Bangalore?",
+    answer:
+      "Services include horoscope reading, career astrology, marriage matching, financial solutions, love and relationship guidance, family conflict resolution, business astrology, Vastu consultation, numerology, foreign settlement, and health astrology—each with a dedicated consultation page.",
+  },
+  {
+    question: "How do I choose the right astrology service for my problem?",
+    answer:
+      "Match the service to your main concern: marriage matching for compatibility, career astrology for jobs and business, financial solutions for wealth issues, Vastu consultation for home or office energy, and horoscope reading for a full life overview.",
+  },
+  {
+    question: "Are these astrology services available online outside Bangalore?",
+    answer:
+      "Yes. Every service listed on this page is available via phone or video across Karnataka, India, and abroad. In-person sessions are also offered at the Mahalakshmi Layout office in Bengaluru.",
+  },
+  {
+    question: "How do I book a specific astrology service with MP Shastri?",
+    answer:
+      "Open the service card for detailed information, then call or WhatsApp +91 80732 58799 to confirm your slot. You can also browse all consultations on the consultation hub page.",
+  },
+];
+
 export const CONSULTATION_HUB_FAQS = [
   {
     question: "Which consultation should I book first?",

@@ -143,6 +143,7 @@ function QuoraConsultation() {
         path="/quora-consultation"
         faqs={QUORA_CONSULTATION_FAQS}
         breadcrumbLabel="Quora Consultation"
+        noindex
       />
 
       <div className="quoraPage">

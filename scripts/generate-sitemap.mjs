@@ -1,4 +1,10 @@
 import fs from "fs";
+import { CONTACT_PAGE_PUBLIC } from "../src/config/site.js";
+
+const EXCLUDE = new Set(["/quora-consultation"]);
+if (!CONTACT_PAGE_PUBLIC) {
+  EXCLUDE.add("/contact");
+}
 
 const urls = [
   ["/", "weekly", "1.0"],
@@ -27,7 +33,7 @@ const urls = [
   ["/foreign-settlement", "monthly", "0.85"],
   ["/health-astrology", "monthly", "0.85"],
   ["/quora-consultation", "monthly", "0.75"],
-];
+].filter(([path]) => !EXCLUDE.has(path));
 
 const site = "https://www.mpshastriastrology.com";
 const lastmod = new Date().toISOString().slice(0, 10);

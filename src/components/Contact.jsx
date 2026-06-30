@@ -5,6 +5,7 @@ import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { CONTACT_FAQS } from "../seo/faqData";
 import { LOCALITY_SEO_PARAGRAPH } from "../seo/localAreas";
+import { CONTACT_PAGE_PUBLIC } from "../config/site";
 import { quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 
 function Contact() {
@@ -16,6 +17,7 @@ function Contact() {
         path="/contact"
         breadcrumbLabel="Contact"
         faqs={CONTACT_FAQS}
+        noindex={!CONTACT_PAGE_PUBLIC}
       />
 
       <section className="contactLocation">

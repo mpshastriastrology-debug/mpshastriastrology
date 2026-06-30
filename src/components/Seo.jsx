@@ -14,6 +14,7 @@ export default function Seo({
   breadcrumbLabel,
   faqs,
   schema = true,
+  noindex = false,
   children,
 }) {
   const canonicalUrl = `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
@@ -28,6 +29,7 @@ export default function Seo({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex, follow" />}
       <link rel="canonical" href={canonicalUrl} />
       <meta name="geo.region" content="IN-KA" />
       <meta name="geo.placename" content="Bengaluru, Karnataka, India" />

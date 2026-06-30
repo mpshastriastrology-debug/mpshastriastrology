@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { CONSULTATION_NAV } from "../consultation/consultationNav";
-import { COMPANY_LOGO_SRC, COMPANY_NAME, PHONE_HREF } from "../config/site";
+import { COMPANY_LOGO_SRC, COMPANY_NAME, CONTACT_PAGE_PUBLIC, PHONE_HREF } from "../config/site";
 import { mergeQuoraGenerateLeadClick, quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 import HeaderSearch from "./HeaderSearch";
 
@@ -119,7 +119,7 @@ function Header() {
           </div>
         </div>
 
-        <Link to="/contact">Contact</Link>
+        {CONTACT_PAGE_PUBLIC && <Link to="/contact">Contact</Link>}
       </nav>
 
       <div className="headerActions">
@@ -183,7 +183,9 @@ function Header() {
           </div>
         ))}
 
-        <Link to="/contact" onClick={closeMenu}>Contact</Link>
+        {CONTACT_PAGE_PUBLIC && (
+          <Link to="/contact" onClick={closeMenu}>Contact</Link>
+        )}
 
         <a
           href={PHONE_HREF}

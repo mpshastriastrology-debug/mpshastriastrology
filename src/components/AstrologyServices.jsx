@@ -3,7 +3,9 @@ import "./Services1.css";
 import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import Reveal from './Reveal';
+import FaqSection from './FaqSection';
 import OptimizedImage from './OptimizedImage';
+import { ASTROLOGY_SERVICES_FAQS } from '../seo/faqData';
 import { CONSULTATION_SERVICES } from '../consultation/servicesData';
 
 const CONSULTATION_PATHS = Object.fromEntries(
@@ -98,6 +100,8 @@ const servicesData = [
           title="Vedic Astrology Services in Bangalore | MP Shastri"
           description="Browse Vedic astrology services including horoscope reading, career astrology, marriage matching, financial solutions, and Vastu consultation with Shri MP Shastri."
           path="/astrologyservices"
+          breadcrumbLabel="Astrology Services"
+          faqs={ASTROLOGY_SERVICES_FAQS}
         />
       )}
       <div className="astroServices">
@@ -153,6 +157,14 @@ const servicesData = [
           ))}
         </div>
       </div>
+
+      {seo && (
+        <FaqSection
+          title="Astrology Services — Common Questions"
+          faqs={ASTROLOGY_SERVICES_FAQS}
+          idPrefix="astrologyservices-faq"
+        />
+      )}
     </section>
   );
 }
