@@ -12,7 +12,7 @@ function FaceReading() {
     <>
       <Seo
         title="Physiognomy & Face Reading Consultation | MP Shastri"
-        description="Uncover deep personality patterns, psychological strengths, and ancestral timing parameters through specialized Vedic physiognomy and facial structure audits by Shri MP Shastri."
+        description="Professional face reading and physiognomy consultation with Shri MP Shastri in Bangalore for personality insights, timing markers, and life direction."
         path="/face-reading"
         faqs={FACE_READING_FAQS}
       />

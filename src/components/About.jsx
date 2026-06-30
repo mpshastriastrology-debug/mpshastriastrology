@@ -11,7 +11,7 @@ function AboutSection() {
     <section>
       <Seo
         title="About Shri MP Shastri | Vedic Astrologer in Bangalore"
-        description="Learn about Shri MP Shastri, a trusted Vedic astrologer and Vastu consultant in Bangalore offering horoscope readings, Kundali matching, and spiritual guidance."
+        description="Learn about Shri MP Shastri — experienced Vedic astrologer and Vastu consultant in Bengaluru offering horoscope reading, remedies, and spiritual guidance."
         path="/about"
         faqs={ABOUT_FAQS}
       />

@@ -12,7 +12,7 @@ function Tantra() {
     <>
       <Seo
         title="Spiritual Healing & Esoteric Protection Services | MP Shastri"
-        description="Restore dynamic energy equilibrium and resolve stubborn environmental or personal negativity. Discover classical esoteric balancing rituals guided by Shri MP Shastri."
+        description="Ethical spiritual healing, aura cleansing, and protective Vedic guidance with Shri MP Shastri in Bangalore for energy balance and long-term peace."
         path="/tantra"
         faqs={TANTRA_FAQS}
       />

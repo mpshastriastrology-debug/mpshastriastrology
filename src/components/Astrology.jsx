@@ -13,7 +13,7 @@ function Astrology() {
     <>
       <Seo
         title="Vedic Astrology Consultation & Horoscope Reading | MP Shastri"
-        description="Get authentic Vedic astrology chart analysis, accurate marriage compatibility profiling, and career breakthrough timing with Bangalore's trusted expert, Shri MP Shastri."
+        description="Book Vedic astrology consultation with Shri MP Shastri in Bangalore for birth chart analysis, dasha timing, marriage guidance, and personalized remedies."
         path="/astrology"
         faqs={ASTROLOGY_FAQS}
       />
