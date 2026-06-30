@@ -1,5 +1,8 @@
 import { initQuoraPixel, setupQuoraClickTracking } from "./quoraPixel.js";
 
+const GA4_ID = "G-PV4PLVNGQG";
+const GOOGLE_ADS_ID = "AW-18222440720";
+
 let analyticsLoaded = false;
 let analyticsQueue = [];
 
@@ -9,6 +12,7 @@ function flushQueue() {
   analyticsQueue = [];
 }
 
+/** Google tag (gtag.js) — GA4 + Google Ads conversion tracking */
 export function initAnalytics() {
   if (analyticsLoaded) return;
   analyticsLoaded = true;
@@ -20,18 +24,19 @@ export function initAnalytics() {
   window.gtag = gtag;
 
   const script = document.createElement("script");
-  script.src = "https://www.googletagmanager.com/gtag/js?id=G-PV4PLVNGQG";
   script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`;
   script.onload = () => {
     gtag("js", new Date());
-    gtag("config", "G-PV4PLVNGQG");
+    gtag("config", GOOGLE_ADS_ID);
+    gtag("config", GA4_ID);
     flushQueue();
   };
   document.head.appendChild(script);
 }
 
 export function trackPageView(path) {
-  const args = ["config", "G-PV4PLVNGQG", { page_path: path }];
+  const args = ["config", GA4_ID, { page_path: path }];
   if (typeof window.gtag === "function") {
     window.gtag(...args);
   } else {
@@ -39,8 +44,9 @@ export function trackPageView(path) {
   }
 }
 
+/** Google Ads — gtag('config', 'AW-18222440720') */
 export function initGoogleAds() {
-  const args = ["config", "AW-18222440720"];
+  const args = ["config", GOOGLE_ADS_ID];
   if (typeof window.gtag === "function") {
     window.gtag(...args);
   } else {

@@ -1,19 +1,13 @@
 import "./Contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import { useEffect } from "react";
 import Seo from "./Seo";
 import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { CONTACT_FAQS } from "../seo/faqData";
 import { LOCALITY_SEO_PARAGRAPH } from "../seo/localAreas";
-import { initGoogleAds } from "../utils/analytics";
 import { quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 
 function Contact() {
-  useEffect(() => {
-    initGoogleAds();
-  }, []);
-
   return (
     <section className="contactPage">
       <Seo
