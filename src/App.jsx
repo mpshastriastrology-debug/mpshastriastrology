@@ -10,6 +10,7 @@ import Scrol from "./Scrol";
 import { CONSULTATION_PATHS } from './consultation/consultationPaths';
 import { useScrollAnimations } from "./hooks/useScrollAnimations";
 import { setupDeferredAnalytics, trackPageView } from "./utils/analytics";
+import { trackQuoraPageView } from "./utils/quoraPixel";
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./components/About'));
@@ -48,7 +49,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    trackPageView(`${location.pathname}${location.search}`);
+    const path = `${location.pathname}${location.search}`;
+    trackPageView(path);
+    trackQuoraPageView(path);
   }, [location]);
 
   return (

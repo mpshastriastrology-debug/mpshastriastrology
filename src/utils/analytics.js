@@ -1,3 +1,5 @@
+import { initQuoraPixel, setupQuoraClickTracking } from "./quoraPixel.js";
+
 let analyticsLoaded = false;
 let analyticsQueue = [];
 
@@ -49,7 +51,11 @@ export function initGoogleAds() {
 export function setupDeferredAnalytics() {
   if (analyticsLoaded) return;
 
-  const load = () => initAnalytics();
+  const load = () => {
+    initAnalytics();
+    initQuoraPixel();
+    setupQuoraClickTracking();
+  };
   const events = ["pointerdown", "keydown", "scroll", "touchstart"];
   const onInteraction = () => {
     load();
