@@ -114,6 +114,19 @@ export function onQuoraGenerateLeadClick() {
   trackGenerateLead();
 }
 
+/** Spread on lead CTAs: onClick fires qp('track', 'GenerateLead') per Quora Events Manager */
+export const quoraGenerateLeadClickProps = {
+  "data-quora-lead": true,
+  onClick: onQuoraGenerateLeadClick,
+};
+
+export function mergeQuoraGenerateLeadClick(onClick) {
+  return (event) => {
+    onQuoraGenerateLeadClick();
+    onClick?.(event);
+  };
+}
+
 /** CTA / button click */
 export function trackQuoraButtonClick(label = "", details = {}) {
   if (!isEnabled()) return;

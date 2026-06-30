@@ -24,6 +24,7 @@ import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { QUORA_CONSULTATION_FAQS } from "../seo/faqData";
 import { PHONE_HREF, QUORA_WHATSAPP_URL } from "../config/site";
+import { quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 import "./QuoraConsultation.css";
 
 const PROBLEM_TOPICS = [
@@ -166,11 +167,12 @@ function QuoraConsultation() {
                 target="_blank"
                 rel="noreferrer"
                 className="quoraBtnPrimary"
+                {...quoraGenerateLeadClickProps}
               >
                 <FaWhatsapp size={20} aria-hidden="true" />
                 WhatsApp to Book
               </a>
-              <a href={PHONE_HREF} className="quoraBtnSecondary">
+              <a href={PHONE_HREF} className="quoraBtnSecondary" {...quoraGenerateLeadClickProps}>
                 <Phone size={18} strokeWidth={2} aria-hidden="true" />
                 Call +91 80732 58799
               </a>
@@ -305,11 +307,12 @@ function QuoraConsultation() {
                 target="_blank"
                 rel="noreferrer"
                 className="quoraBtnPrimary"
+                {...quoraGenerateLeadClickProps}
               >
                 <FaWhatsapp size={20} aria-hidden="true" />
                 WhatsApp Now
               </a>
-              <a href={PHONE_HREF} className="quoraBtnSecondary">
+              <a href={PHONE_HREF} className="quoraBtnSecondary" {...quoraGenerateLeadClickProps}>
                 <Phone size={18} strokeWidth={2} aria-hidden="true" />
                 Call +91 80732 58799
               </a>
@@ -325,7 +328,7 @@ function QuoraConsultation() {
       </div>
 
       <div className="quoraStickyBar" aria-label="Quick booking">
-        <a href={PHONE_HREF} className="quoraStickyCall">
+        <a href={PHONE_HREF} className="quoraStickyCall" {...quoraGenerateLeadClickProps}>
           <Phone size={18} strokeWidth={2} aria-hidden="true" />
           Call Now
         </a>
@@ -334,6 +337,7 @@ function QuoraConsultation() {
           target="_blank"
           rel="noreferrer"
           className="quoraStickyWhatsapp"
+          {...quoraGenerateLeadClickProps}
         >
           <FaWhatsapp size={18} aria-hidden="true" />
           WhatsApp Book

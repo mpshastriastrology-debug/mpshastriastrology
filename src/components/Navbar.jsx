@@ -4,6 +4,7 @@ import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { CONSULTATION_NAV } from "../consultation/consultationNav";
 import { COMPANY_LOGO_SRC, COMPANY_NAME, PHONE_HREF } from "../config/site";
+import { mergeQuoraGenerateLeadClick, quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 import HeaderSearch from "./HeaderSearch";
 
 const MOBILE_SECTIONS = [
@@ -123,7 +124,7 @@ function Header() {
 
       <div className="headerActions">
         <HeaderSearch />
-        <a href={PHONE_HREF} className="headerCall">
+        <a href={PHONE_HREF} className="headerCall" {...quoraGenerateLeadClickProps}>
           <Phone size={18} strokeWidth={2} aria-hidden="true" />
           <span className="headerCallText">+91 80732 58799</span>
         </a>
@@ -131,7 +132,12 @@ function Header() {
 
       <div className="headerMobileTools">
         <HeaderSearch className="headerSearchCompact" />
-        <a href={PHONE_HREF} className="headerMobileCall" aria-label="Call +91 80732 58799">
+        <a
+          href={PHONE_HREF}
+          className="headerMobileCall"
+          aria-label="Call +91 80732 58799"
+          {...quoraGenerateLeadClickProps}
+        >
           <Phone size={20} strokeWidth={2} aria-hidden="true" />
         </a>
         <button
@@ -179,7 +185,12 @@ function Header() {
 
         <Link to="/contact" onClick={closeMenu}>Contact</Link>
 
-        <a href={PHONE_HREF} className="mobileMenuCall" onClick={closeMenu}>
+        <a
+          href={PHONE_HREF}
+          className="mobileMenuCall"
+          data-quora-lead
+          onClick={mergeQuoraGenerateLeadClick(closeMenu)}
+        >
           <Phone size={18} strokeWidth={2} aria-hidden="true" />
           Call +91 80732 58799
         </a>
