@@ -31,10 +31,11 @@ function qpCall(...args) {
 function installQuoraStub() {
   if (window.qp) return;
 
-  window.qp = function (...args) {
-    window.qp.qp ? window.qp.qp(...args) : window.qp.queue.push(args);
+  const qp = function (...args) {
+    qp.qp ? qp.qp.apply(qp, args) : qp.queue.push(args);
   };
-  window.qp.queue = [];
+  qp.queue = [];
+  window.qp = qp;
 }
 
 function extractEmailFromForm(form) {
@@ -67,23 +68,17 @@ export function initQuoraPixel() {
   script.onload = () => {
     qpCall("init", QUORA_PIXEL_ID);
     qpCall("track", "ViewContent");
+    lastTrackedPath = `${window.location.pathname}${window.location.search}`;
     flushQueue();
   };
   document.head.appendChild(script);
 }
 
-/** SPA page view — Quora ViewContent (skips duplicate first hit after init) */
+/** SPA page view — Quora ViewContent */
 export function trackQuoraPageView(path) {
   if (!isEnabled()) return;
   if (path === lastTrackedPath) return;
   lastTrackedPath = path;
-
-  if (!quoraLoaded) {
-    qpCall("track", "ViewContent", {
-      custom_properties: { page_path: path },
-    });
-    return;
-  }
 
   qpCall("track", "ViewContent", {
     custom_properties: { page_path: path },
