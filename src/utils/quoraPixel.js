@@ -2,6 +2,8 @@
  * Quora Ads Pixel — official helper from Quora Events Manager.
  * Override with VITE_QUORA_PIXEL_ID in .env if needed.
  */
+import { QUORA_LEAD_VALUE } from "../config/site.js";
+
 export const QUORA_PIXEL_ID =
   import.meta.env.VITE_QUORA_PIXEL_ID || "8abc6a1e8c53473880236b30426f9798";
 
@@ -85,27 +87,26 @@ export function trackQuoraPageView(path) {
   });
 }
 
-/** Lead / contact form submission */
-export function trackQuoraLead(details = {}, email = "") {
+/** Official Quora lead event — qp('track', 'GenerateLead', { value: 4.95 }) */
+export function trackGenerateLead(email = "") {
   if (!isEnabled()) return;
   if (email) identifyQuoraEmail(email);
-  qpCall("track", "GenerateLead", {
-    custom_properties: {
-      event_type: "FormSubmit",
-      ...details,
-    },
-  });
+
+  if (QUORA_LEAD_VALUE > 0) {
+    qpCall("track", "GenerateLead", { value: QUORA_LEAD_VALUE });
+  } else {
+    qpCall("track", "GenerateLead");
+  }
 }
 
-/** WhatsApp link click */
-export function trackQuoraWhatsAppClick(href = "") {
-  if (!isEnabled()) return;
-  qpCall("track", "Generic", {
-    custom_properties: {
-      event_type: "WhatsAppClick",
-      href,
-    },
-  });
+/** Lead / contact form submission */
+export function trackQuoraLead(_details = {}, email = "") {
+  trackGenerateLead(email);
+}
+
+/** WhatsApp link click — counts as GenerateLead for Quora ad optimization */
+export function trackQuoraWhatsAppClick(_href = "") {
+  trackGenerateLead();
 }
 
 /** CTA / button click */
@@ -120,23 +121,26 @@ export function trackQuoraButtonClick(label = "", details = {}) {
   });
 }
 
-const CTA_SELECTOR = [
+const LEAD_CTA_SELECTOR = [
   "a.headerCall",
   "a.quoraBtnPrimary",
   "a.quoraBtnSecondary",
-  "a.quoraBtnOutline",
   "a.quoraStickyCall",
   "a.quoraStickyWhatsapp",
   "a.callNowBtn",
   "a.whatsappNowBtn",
   "a.consultationBtnPrimary",
-  "a.consultationBtnSecondary",
   "a.astroBtn",
   "a.heroPrimaryBtn",
   "a.onlineAstrologyCallBtn",
   "a.onlineAstrologyWhatsappBtn",
   "a.bangaloreCallBtn",
   "a.bangaloreWhatsappBtn",
+].join(", ");
+
+const BUTTON_CTA_SELECTOR = [
+  "a.quoraBtnOutline",
+  "a.consultationBtnSecondary",
 ].join(", ");
 
 function getClickLabel(element) {
@@ -173,14 +177,24 @@ export function setupQuoraClickTracking() {
 
       const phoneLink = target.closest('a[href^="tel:"]');
       if (phoneLink instanceof HTMLAnchorElement) {
-        trackQuoraButtonClick(getClickLabel(phoneLink), {
-          action: "phone_click",
-          href: phoneLink.href,
-        });
+        if (phoneLink.closest(LEAD_CTA_SELECTOR) || phoneLink.classList.contains("contactLink")) {
+          trackGenerateLead();
+        } else {
+          trackQuoraButtonClick(getClickLabel(phoneLink), {
+            action: "phone_click",
+            href: phoneLink.href,
+          });
+        }
         return;
       }
 
-      const cta = target.closest(CTA_SELECTOR);
+      const leadCta = target.closest(LEAD_CTA_SELECTOR);
+      if (leadCta) {
+        trackGenerateLead();
+        return;
+      }
+
+      const cta = target.closest(BUTTON_CTA_SELECTOR);
       if (cta) {
         trackQuoraButtonClick(getClickLabel(cta), {
           tag: cta.tagName.toLowerCase(),
