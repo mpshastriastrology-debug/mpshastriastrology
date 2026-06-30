@@ -1,17 +1,10 @@
 import "./Contact.css";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp, FaClock } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { Phone } from "lucide-react";
 import Seo from "./Seo";
 import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { CONTACT_FAQS } from "../seo/faqData";
-import {
-  CONTACT_LEAD_PARAGRAPH,
-  CONTACT_OPENING_HOURS,
-  CONTACT_SEO_DESCRIPTION,
-  CONTACT_SEO_TITLE,
-  OFFICE_ADDRESS_LINE,
-} from "../seo/contactSeo";
 import { LOCALITY_SEO_PARAGRAPH } from "../seo/localAreas";
 import { CONTACT_PAGE_PUBLIC, PHONE_HREF, WHATSAPP_BOOKING_URL } from "../config/site";
 import { quoraGenerateLeadClickProps } from "../utils/quoraPixel";
@@ -20,8 +13,8 @@ function Contact() {
   return (
     <section className="contactPage">
       <Seo
-        title={CONTACT_SEO_TITLE}
-        description={CONTACT_SEO_DESCRIPTION}
+        title="Contact MP Shastri — Astrology & Vastu Office in Bengaluru"
+        description="Visit Shri MP Shastri at the Vedic consultation center in Mahalakshmi Layout, Bengaluru (Bangalore). Call +91 80732 58799, WhatsApp, email, and Google Maps directions."
         path="/contact"
         breadcrumbLabel="Contact"
         faqs={CONTACT_FAQS}
@@ -34,22 +27,18 @@ function Contact() {
             <p className="contactTag">✦ OFFICE HEADQUARTERS</p>
             <h1>Vedic Consultation Center in Bengaluru</h1>
             <h2>Visit Shri MP Shastri — Mahalakshmi Layout, Bangalore</h2>
-            <p className="contactText">{CONTACT_LEAD_PARAGRAPH}</p>
+            <p className="contactText">
+              In-person astrology and Vastu consultations at our Bangalore office, or book a phone or video session from anywhere in India.
+            </p>
 
             <div className="contactDetails">
               <div className="contactItem">
                 <FaMapMarkerAlt aria-hidden="true" />
                 <div>
                   <h3>Office Address</h3>
-                  <p>{OFFICE_ADDRESS_LINE}</p>
-                </div>
-              </div>
-
-              <div className="contactItem">
-                <FaClock aria-hidden="true" />
-                <div>
-                  <h3>Consultation Hours</h3>
-                  <p>{CONTACT_OPENING_HOURS}</p>
+                  <p>
+                    607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmipuram Layout, Mahalakshmi Layout, Bengaluru, Karnataka 560086
+                  </p>
                 </div>
               </div>
 

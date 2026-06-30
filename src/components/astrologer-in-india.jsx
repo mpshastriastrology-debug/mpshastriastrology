@@ -10,7 +10,7 @@ function AstrologerInIndia() {
     <>
       <Seo
         title="Top Trusted Astrologer in India | Shri MP Shastri Astrology"
-        description="Pan-India Vedic astrology and Vastu consultations from Bangalore by Shri MP Shastri. Horoscope reading, marriage matching, and remote sessions available."
+        description="Consult Shri MP Shastri, a highly trusted astrologer in India. Get accurate online Vedic horoscope readings, career timelines, and remote Vastu corrections."
         path="/astrologer-in-india"
         faqs={INDIA_ASTROLOGER_FAQS}
       />

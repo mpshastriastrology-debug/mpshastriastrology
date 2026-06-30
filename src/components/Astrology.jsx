@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { ASTROLOGY_FAQS } from '../seo/faqData';
+import { ASTROLOGY_PAGE_ALTS } from '../seo/imageAlt';
 import Astrologyservices from './AstrologyServices.jsx';
 import Reveal from './Reveal';
 import OptimizedImage from './OptimizedImage';
@@ -45,7 +46,7 @@ function Astrology() {
           <Reveal className="astroImage" animation="fade-right">
             <OptimizedImage
               src="/Astrology.webp"
-              alt="Vedic astrology chart parsing representing planetary house transitions"
+              alt={ASTROLOGY_PAGE_ALTS.intro}
               widths={[400, 800]}
               sizes="(max-width: 768px) 100vw, 480px"
               width={480}

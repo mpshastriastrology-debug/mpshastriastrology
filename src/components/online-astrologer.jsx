@@ -10,7 +10,7 @@ function OnlineAstrology() {
     <>
       <Seo
         title="Online Astrology Consultation | Vedic Astrologer MP Shastri"
-        description="Book online Vedic astrology consultations with Shri MP Shastri via phone or video. Kundali matching, career guidance, and remedies available across India and abroad."
+        description="Book online astrology consultation with Shri MP Shastri. Accurate horoscope reading, Kundali matching, and remedies via phone or video from Bangalore."
         path="/online-astrologer"
         faqs={ONLINE_ASTROLOGER_FAQS}
       />

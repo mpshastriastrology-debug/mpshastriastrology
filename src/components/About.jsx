@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { ABOUT_FAQS } from '../seo/faqData';
+import { ABOUT_ALTS } from '../seo/imageAlt';
 import './About.css';
 import Reveal from './Reveal';
 import OptimizedImage from './OptimizedImage';
@@ -22,7 +23,7 @@ function AboutSection() {
           <div className="aboutGlow"></div>
           <OptimizedImage
             src="/mp-shastri-astrology.webp"
-            alt="Shri MP Shastri providing spiritual counseling and horoscope analysis"
+            alt={ABOUT_ALTS.portrait}
             widths={[480, 960]}
             sizes="(max-width: 768px) 100vw, 480px"
             width={480}
@@ -67,9 +68,9 @@ function AboutSection() {
 
         <div className="blogGrid">
           {[
-            ["/Astrology.webp", "Planetary transit configurations indicating career success", "Astrology", "How Astrology Helps In Navigating Strategic Career Growth", "Discover how planetary dasha cycles and specific houses influence individual corporate placement, entrepreneurial timing, and professional abundance patterns."],
-            ["/vasthu.webp", "Traditional home orientation layout aligned with Vastu rules", "Vastu", "Essential Vastu Principles for Attracting Residential Harmony", "Simple, non-destructive structural adjustments designed to rebalance environmental elemental forces, removing blocks to peace and health."],
-            ["/facereading.webp", "Detailed facial lines representing behavioral characteristics", "Face Reading", "Understanding Subtle Personality Profiles Through Face Reading", "Learn timeless analytical observation points to identify inherent mental strengths, emotional blockages, and behavioral tendencies."],
+            ["/Astrology.webp", ABOUT_ALTS.blogAstrology, "Astrology", "How Astrology Helps In Navigating Strategic Career Growth", "Discover how planetary dasha cycles and specific houses influence individual corporate placement, entrepreneurial timing, and professional abundance patterns."],
+            ["/vasthu.webp", ABOUT_ALTS.blogVastu, "Vastu", "Essential Vastu Principles for Attracting Residential Harmony", "Simple, non-destructive structural adjustments designed to rebalance environmental elemental forces, removing blocks to peace and health."],
+            ["/facereading.webp", ABOUT_ALTS.blogFaceReading, "Face Reading", "Understanding Subtle Personality Profiles Through Face Reading", "Learn timeless analytical observation points to identify inherent mental strengths, emotional blockages, and behavioral tendencies."],
           ].map(([src, alt, tag, title, text], index) => (
             <Reveal className="blogCard" key={title} animation="fade-up" delay={index * 100}>
               <OptimizedImage
@@ -118,7 +119,7 @@ function AboutSection() {
         <Reveal className="whyRight" animation="fade-left">
           <OptimizedImage
             src="/bestastrology.webp"
-            alt="Shri MP Shastri analyzing natal chart details in private office layout"
+            alt={ABOUT_ALTS.whyChoose}
             widths={[400, 800]}
             sizes="(max-width: 768px) 100vw, 480px"
             width={480}
@@ -147,7 +148,7 @@ function AboutSection() {
         <Reveal className="experienceRight" animation="fade-left">
           <OptimizedImage
             src="/topastrology.webp"
-            alt="Astrology chart layout items representing professional reading structures"
+            alt={ABOUT_ALTS.experience}
             widths={[400, 800]}
             sizes="(max-width: 768px) 100vw, 480px"
             width={480}
