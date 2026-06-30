@@ -1,11 +1,13 @@
 /**
- * Quora Ads Pixel — https://www.quora.com/business/troubleshooting/pixel
- * Set VITE_QUORA_PIXEL_ID in .env (from Quora Events Manager).
+ * Quora Ads Pixel — official helper from Quora Events Manager.
+ * Override with VITE_QUORA_PIXEL_ID in .env if needed.
  */
-const QUORA_PIXEL_ID = import.meta.env.VITE_QUORA_PIXEL_ID || "";
+export const QUORA_PIXEL_ID =
+  import.meta.env.VITE_QUORA_PIXEL_ID || "8abc6a1e8c53473880236b30426f9798";
 
 let quoraLoaded = false;
 let quoraQueue = [];
+let lastTrackedPath = null;
 
 function isEnabled() {
   return Boolean(QUORA_PIXEL_ID);
@@ -25,39 +27,73 @@ function qpCall(...args) {
   }
 }
 
+/** Quora official loader stub (DO NOT MODIFY structure) */
+function installQuoraStub() {
+  if (window.qp) return;
+
+  window.qp = function (...args) {
+    window.qp.qp ? window.qp.qp(...args) : window.qp.queue.push(args);
+  };
+  window.qp.queue = [];
+}
+
+function extractEmailFromForm(form) {
+  const input = form.querySelector(
+    'input[type="email"], input[name="email"], input[name*="email" i]'
+  );
+  return input instanceof HTMLInputElement ? input.value.trim() : "";
+}
+
+function extractEmailFromMailto(href) {
+  if (!href.startsWith("mailto:")) return "";
+  return href.replace(/^mailto:/i, "").split("?")[0].trim();
+}
+
+/** Re-init with hashed email when Quora advanced matching is available */
+export function identifyQuoraEmail(email) {
+  if (!isEnabled() || !email) return;
+  qpCall("init", QUORA_PIXEL_ID, { email });
+}
+
 export function initQuoraPixel() {
   if (!isEnabled() || quoraLoaded) return;
   quoraLoaded = true;
 
-  window.qp =
-    window.qp ||
-    function (...args) {
-      (window.qp.q = window.qp.q || []).push(args);
-    };
+  installQuoraStub();
 
   const script = document.createElement("script");
-  script.src = "https://a.quora.com/qevents.js";
   script.async = true;
+  script.src = "https://a.quora.com/qevents.js";
   script.onload = () => {
     qpCall("init", QUORA_PIXEL_ID);
+    qpCall("track", "ViewContent");
     flushQueue();
   };
   document.head.appendChild(script);
 }
 
-/** SPA page view — Quora standard ViewContent event */
+/** SPA page view — Quora ViewContent (skips duplicate first hit after init) */
 export function trackQuoraPageView(path) {
   if (!isEnabled()) return;
+  if (path === lastTrackedPath) return;
+  lastTrackedPath = path;
+
+  if (!quoraLoaded) {
+    qpCall("track", "ViewContent", {
+      custom_properties: { page_path: path },
+    });
+    return;
+  }
+
   qpCall("track", "ViewContent", {
-    custom_properties: {
-      page_path: path,
-    },
+    custom_properties: { page_path: path },
   });
 }
 
 /** Lead / contact form submission */
-export function trackQuoraLead(details = {}) {
+export function trackQuoraLead(details = {}, email = "") {
   if (!isEnabled()) return;
+  if (email) identifyQuoraEmail(email);
   qpCall("track", "GenerateLead", {
     custom_properties: {
       event_type: "FormSubmit",
@@ -106,7 +142,6 @@ const CTA_SELECTOR = [
   "a.onlineAstrologyWhatsappBtn",
   "a.bangaloreCallBtn",
   "a.bangaloreWhatsappBtn",
-  "button[type='submit']:not(.headerSearchPanel button)",
 ].join(", ");
 
 function getClickLabel(element) {
@@ -136,7 +171,8 @@ export function setupQuoraClickTracking() {
 
       const mailLink = target.closest('a[href^="mailto:"]');
       if (mailLink instanceof HTMLAnchorElement) {
-        trackQuoraLead({ source: "email_click", href: mailLink.href });
+        const email = extractEmailFromMailto(mailLink.href);
+        trackQuoraLead({ source: "email_click", href: mailLink.href }, email);
         return;
       }
 
@@ -167,10 +203,14 @@ export function setupQuoraClickTracking() {
       if (!(form instanceof HTMLFormElement)) return;
       if (form.classList.contains("headerSearchPanel")) return;
 
-      trackQuoraLead({
-        source: "form_submit",
-        form_id: form.id || form.getAttribute("name") || "contact",
-      });
+      const email = extractEmailFromForm(form);
+      trackQuoraLead(
+        {
+          source: "form_submit",
+          form_id: form.id || form.getAttribute("name") || "contact",
+        },
+        email
+      );
     },
     { capture: true }
   );
