@@ -1,12 +1,16 @@
 import "./Contact.css";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { Phone } from "lucide-react";
 import { useEffect } from "react";
 import Seo from "./Seo";
 import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
+import KannadaTranslator from "./KannadaTranslator";
 import { CONTACT_FAQS } from "../seo/faqData";
 import { LOCALITY_SEO_PARAGRAPH } from "../seo/localAreas";
 import { initGoogleAds } from "../utils/analytics";
+import { onQuoraGenerateLeadClick } from "../utils/quoraPixel";
+import { PHONE_HREF, WHATSAPP_BOOKING_URL } from "../config/site";
 
 function Contact() {
   useEffect(() => {
@@ -36,36 +40,84 @@ function Contact() {
 
             <div className="contactDetails">
               <div className="contactItem">
-                <FaMapMarkerAlt aria-hidden="true" />
+                <span className="contactItemIcon" aria-hidden="true">
+                  <FaMapMarkerAlt />
+                </span>
                 <div>
                   <h3>Office Address</h3>
                   <p>
-                    607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmipuram Layout, Mahalakshmi Layout, Bengaluru, Karnataka 560086
+                    607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout, Bengaluru, Karnataka 560086
                   </p>
                 </div>
               </div>
 
               <div className="contactItem">
-                <FaPhoneAlt aria-hidden="true" />
+                <span className="contactItemIcon" aria-hidden="true">
+                  <FaPhoneAlt />
+                </span>
                 <div>
                   <h3>Direct Phone Line</h3>
-                  <a href="tel:+918073258799" className="contactLink">+91 80732 58799</a>
+                  <a
+                    href={PHONE_HREF}
+                    className="contactLink"
+                    data-quora-lead
+                    onClick={onQuoraGenerateLeadClick}
+                  >
+                    +91 80732 58799
+                  </a>
                 </div>
               </div>
 
               <div className="contactItem">
-                <FaEnvelope aria-hidden="true" />
+                <span className="contactItemIcon" aria-hidden="true">
+                  <FaEnvelope />
+                </span>
                 <div>
                   <h3>WhatsApp &amp; Email</h3>
-                  <a href="https://wa.me/918073258799" className="contactLink" target="_blank" rel="noreferrer">
+                  <a
+                    href={WHATSAPP_BOOKING_URL}
+                    className="contactLink"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-quora-lead
+                    onClick={onQuoraGenerateLeadClick}
+                  >
                     WhatsApp +91 80732 58799
                   </a>
                   <br />
-                  <a href="mailto:mpshastriastrology@gmail.com" className="contactLink">
+                  <a
+                    href="mailto:mpshastriastrology@gmail.com"
+                    className="contactLink"
+                    data-quora-lead
+                    onClick={onQuoraGenerateLeadClick}
+                  >
                     mpshastriastrology@gmail.com
                   </a>
                 </div>
               </div>
+            </div>
+
+            <div className="contactQuickActions">
+              <a
+                href={WHATSAPP_BOOKING_URL}
+                className="contactWhatsappBtn"
+                target="_blank"
+                rel="noreferrer"
+                data-quora-lead
+                onClick={onQuoraGenerateLeadClick}
+              >
+                <FaWhatsapp aria-hidden="true" />
+                WhatsApp Book Consultation
+              </a>
+              <a
+                href={PHONE_HREF}
+                className="contactCallBtn"
+                data-quora-lead
+                onClick={onQuoraGenerateLeadClick}
+              >
+                <Phone size={20} strokeWidth={2} aria-hidden="true" />
+                Call +91 80732 58799
+              </a>
             </div>
           </Reveal>
 
@@ -84,6 +136,38 @@ function Contact() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal className="contactBelowSection" animation="fade-up">
+          <div className="contactBelowGrid">
+            <div className="contactBelowActions">
+              <h3>Book Your Consultation</h3>
+              <p>Call or WhatsApp to confirm your in-person or online astrology &amp; Vastu session.</p>
+              <div className="contactQuickActions contactQuickActionsWide">
+                <a
+                  href={WHATSAPP_BOOKING_URL}
+                  className="contactWhatsappBtn"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-quora-lead
+                  onClick={onQuoraGenerateLeadClick}
+                >
+                  <FaWhatsapp aria-hidden="true" />
+                  WhatsApp Now
+                </a>
+                <a
+                  href={PHONE_HREF}
+                  className="contactCallBtn"
+                  data-quora-lead
+                  onClick={onQuoraGenerateLeadClick}
+                >
+                  <Phone size={20} strokeWidth={2} aria-hidden="true" />
+                  Call Now
+                </a>
+              </div>
+            </div>
+            <KannadaTranslator />
+          </div>
+        </Reveal>
       </section>
 
       <FaqSection

@@ -3,12 +3,54 @@ import { Link } from "react-router-dom";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { CONSULTATION_NAV } from "../consultation/consultationNav";
-import { COMPANY_LOGO_SRC, COMPANY_NAME } from "../config/site";
+import { COMPANY_LOGO_SRC, COMPANY_NAME, PHONE_HREF } from "../config/site";
 import HeaderSearch from "./HeaderSearch";
+
+const MOBILE_SECTIONS = [
+  {
+    id: "services",
+    label: "Services",
+    links: [
+      { to: "/astrology", label: "Astrology" },
+      { to: "/vastu", label: "Vastu" },
+      { to: "/face-reading", label: "Face Reading" },
+      { to: "/tantra", label: "Tantra" },
+    ],
+  },
+  {
+    id: "consultation",
+    label: "Consultation",
+    links: [
+      { to: "/consultation", label: "All Consultations" },
+      { to: "/astrologyservices", label: "Astrology Services Directory" },
+      { to: "/quora-consultation", label: "Quora Consultation" },
+      ...CONSULTATION_NAV.map((item) => ({ to: item.path, label: item.navLabel })),
+    ],
+  },
+  {
+    id: "top",
+    label: "Top Services",
+    links: [
+      { to: "/astrologer-in-bangalore", label: "Astrologer in Bangalore" },
+      { to: "/astrologer-in-india", label: "Astrologer in India" },
+      { to: "/online-astrologer", label: "Online Astrologer" },
+      { to: "/vastu-expert", label: "Vastu Expert" },
+    ],
+  },
+];
 
 function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const closeMenu = () => setMobileMenu(false);
+  const [openMobileSection, setOpenMobileSection] = useState(null);
+
+  const closeMenu = () => {
+    setMobileMenu(false);
+    setOpenMobileSection(null);
+  };
+
+  const toggleMobileSection = (id) => {
+    setOpenMobileSection((current) => (current === id ? null : id));
+  };
 
   return (
     <header className="header">
@@ -17,8 +59,8 @@ function Header() {
           <img
             src={COMPANY_LOGO_SRC}
             alt={`${COMPANY_NAME} logo`}
-            width={84}
-            height={84}
+            width={62}
+            height={62}
             loading="eager"
             decoding="async"
           />
@@ -29,14 +71,14 @@ function Header() {
         </div>
       </Link>
 
-      <nav className="headerMenu">
+      <nav className="headerMenu" aria-label="Main navigation">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
 
         <div className="dropdown">
           <div className="dropdownTitle">
             Services
-            <ChevronDown size={16} strokeWidth={2} />
+            <ChevronDown size={16} strokeWidth={2} aria-hidden="true" />
           </div>
           <div className="dropdownMenu">
             <Link to="/astrology">Astrology</Link>
@@ -49,7 +91,7 @@ function Header() {
         <div className="dropdown">
           <div className="dropdownTitle">
             Consultation
-            <ChevronDown size={16} strokeWidth={2} />
+            <ChevronDown size={16} strokeWidth={2} aria-hidden="true" />
           </div>
           <div className="dropdownMenu consultationMenu">
             <Link to="/consultation">All Consultations</Link>
@@ -66,7 +108,7 @@ function Header() {
         <div className="dropdown">
           <div className="dropdownTitle">
             Top Services
-            <ChevronDown size={16} strokeWidth={2} />
+            <ChevronDown size={16} strokeWidth={2} aria-hidden="true" />
           </div>
           <div className="dropdownMenu">
             <Link to="/astrologer-in-bangalore">Astrologer in Bangalore</Link>
@@ -81,69 +123,66 @@ function Header() {
 
       <div className="headerActions">
         <HeaderSearch />
-        <a href="tel:+918073258799" className="headerCall">
-          <Phone size={18} strokeWidth={2} />
-          +91 80732 58799
+        <a href={PHONE_HREF} className="headerCall">
+          <Phone size={18} strokeWidth={2} aria-hidden="true" />
+          <span className="headerCallText">+91 80732 58799</span>
         </a>
       </div>
 
-      <button
-        className="mobileMenuBtn"
-        onClick={() => setMobileMenu(!mobileMenu)}
-        aria-label="Toggle navigation menu"
-      >
-        {mobileMenu ? <X size={26} strokeWidth={2} /> : <Menu size={26} strokeWidth={2} />}
-      </button>
+      <div className="headerMobileTools">
+        <HeaderSearch className="headerSearchCompact" />
+        <a href={PHONE_HREF} className="headerMobileCall" aria-label="Call +91 80732 58799">
+          <Phone size={20} strokeWidth={2} aria-hidden="true" />
+        </a>
+        <button
+          type="button"
+          className="mobileMenuBtn"
+          onClick={() => setMobileMenu(!mobileMenu)}
+          aria-label={mobileMenu ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenu}
+        >
+          {mobileMenu ? <X size={26} strokeWidth={2} /> : <Menu size={26} strokeWidth={2} />}
+        </button>
+      </div>
 
       <div className={mobileMenu ? "mobileMenu showMenu" : "mobileMenu"}>
-        <HeaderSearch className="headerSearchMobile" onNavigate={closeMenu} />
+        <div className="mobileMenuSearch">
+          <HeaderSearch className="headerSearchMobile" onNavigate={closeMenu} />
+        </div>
+
         <Link to="/" onClick={closeMenu}>Home</Link>
         <Link to="/about" onClick={closeMenu}>About</Link>
 
-        <div className="dropdown">
-          <div className="dropdownTitle">
-            Services
-            <ChevronDown size={16} strokeWidth={2} />
+        {MOBILE_SECTIONS.map((section) => (
+          <div
+            key={section.id}
+            className={`mobileDropdown ${openMobileSection === section.id ? "mobileDropdownOpen" : ""}`}
+          >
+            <button
+              type="button"
+              className="mobileDropdownTitle"
+              onClick={() => toggleMobileSection(section.id)}
+              aria-expanded={openMobileSection === section.id}
+            >
+              {section.label}
+              <ChevronDown size={18} strokeWidth={2} aria-hidden="true" />
+            </button>
+            <div className="mobileDropdownMenu">
+              {section.links.map((link) => (
+                <Link key={link.to} to={link.to} onClick={closeMenu}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
-          <div className="dropdownMenu">
-            <Link to="/astrology" onClick={closeMenu}>Astrology</Link>
-            <Link to="/vastu" onClick={closeMenu}>Vastu</Link>
-            <Link to="/face-reading" onClick={closeMenu}>Face Reading</Link>
-            <Link to="/tantra" onClick={closeMenu}>Tantra</Link>
-          </div>
-        </div>
-
-        <div className="dropdown">
-          <div className="dropdownTitle">
-            Consultation
-            <ChevronDown size={16} strokeWidth={2} />
-          </div>
-          <div className="dropdownMenu consultationMenu">
-            <Link to="/consultation" onClick={closeMenu}>All Consultations</Link>
-            <Link to="/astrologyservices" onClick={closeMenu}>Astrology Services Directory</Link>
-            <Link to="/quora-consultation" onClick={closeMenu}>Quora Consultation</Link>
-            {CONSULTATION_NAV.map((service) => (
-              <Link key={service.path} to={service.path} onClick={closeMenu}>
-                {service.navLabel}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="dropdown">
-          <div className="dropdownTitle">
-            Top Services
-            <ChevronDown size={16} strokeWidth={2} />
-          </div>
-          <div className="dropdownMenu">
-            <Link to="/astrologer-in-bangalore" onClick={closeMenu}>Astrologer in Bangalore</Link>
-            <Link to="/astrologer-in-india" onClick={closeMenu}>Astrologer in India</Link>
-            <Link to="/online-astrologer" onClick={closeMenu}>Online Astrologer</Link>
-            <Link to="/vastu-expert" onClick={closeMenu}>Vastu Expert</Link>
-          </div>
-        </div>
+        ))}
 
         <Link to="/contact" onClick={closeMenu}>Contact</Link>
+
+        <a href={PHONE_HREF} className="mobileMenuCall" onClick={closeMenu}>
+          <Phone size={18} strokeWidth={2} aria-hidden="true" />
+          Call +91 80732 58799
+        </a>
       </div>
     </header>
   );

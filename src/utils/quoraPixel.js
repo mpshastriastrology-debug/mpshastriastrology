@@ -109,6 +109,11 @@ export function trackQuoraWhatsAppClick(_href = "") {
   trackGenerateLead();
 }
 
+/** Quora Events Manager — qp('track', 'GenerateLead') on inline button/link click */
+export function onQuoraGenerateLeadClick() {
+  trackGenerateLead();
+}
+
 /** CTA / button click */
 export function trackQuoraButtonClick(label = "", details = {}) {
   if (!isEnabled()) return;
@@ -136,6 +141,8 @@ const LEAD_CTA_SELECTOR = [
   "a.onlineAstrologyWhatsappBtn",
   "a.bangaloreCallBtn",
   "a.bangaloreWhatsappBtn",
+  "a.contactWhatsappBtn",
+  "a.contactCallBtn",
 ].join(", ");
 
 const BUTTON_CTA_SELECTOR = [
@@ -161,6 +168,8 @@ export function setupQuoraClickTracking() {
     (event) => {
       const target = event.target;
       if (!(target instanceof Element)) return;
+
+      if (target.closest("[data-quora-lead]")) return;
 
       const whatsappLink = target.closest('a[href*="wa.me"]');
       if (whatsappLink instanceof HTMLAnchorElement) {
