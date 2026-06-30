@@ -3,27 +3,24 @@ import { Link } from "react-router-dom";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { CONSULTATION_NAV } from "../consultation/consultationNav";
-import OptimizedImage from "./OptimizedImage";
+import { COMPANY_LOGO_SRC, COMPANY_NAME } from "../config/site";
+import HeaderSearch from "./HeaderSearch";
 
 function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
-
-  // Helper function to auto-collapse the drawer when a link is clicked
   const closeMenu = () => setMobileMenu(false);
 
   return (
     <header className="header">
-      {/* LOGO */}
       <Link to="/" className="headerLogo" onClick={closeMenu}>
         <div className="logoCircle">
-          <OptimizedImage
-            src="/MPShastriLogo.webp"
-            alt="MP Shastri Logo"
-            widths={[96, 192]}
-            sizes="96px"
+          <img
+            src={COMPANY_LOGO_SRC}
+            alt={`${COMPANY_NAME} logo`}
             width={84}
             height={84}
             loading="eager"
+            decoding="async"
           />
         </div>
         <div className="logoText">
@@ -32,16 +29,14 @@ function Header() {
         </div>
       </Link>
 
-      {/* DESKTOP MENU */}
       <nav className="headerMenu">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
 
-        {/* CORE SERVICES DROPDOWN */}
         <div className="dropdown">
           <div className="dropdownTitle">
             Services
-            <ChevronDown size={16} />
+            <ChevronDown size={16} strokeWidth={2} />
           </div>
           <div className="dropdownMenu">
             <Link to="/astrology">Astrology</Link>
@@ -51,11 +46,10 @@ function Header() {
           </div>
         </div>
 
-        {/* CONSULTATION DROPDOWN */}
         <div className="dropdown">
           <div className="dropdownTitle">
             Consultation
-            <ChevronDown size={16} />
+            <ChevronDown size={16} strokeWidth={2} />
           </div>
           <div className="dropdownMenu consultationMenu">
             <Link to="/consultation">All Consultations</Link>
@@ -69,11 +63,10 @@ function Header() {
           </div>
         </div>
 
-        {/* SEO TOP TARGETED SERVICES DROPDOWN */}
         <div className="dropdown">
           <div className="dropdownTitle">
             Top Services
-            <ChevronDown size={16} />
+            <ChevronDown size={16} strokeWidth={2} />
           </div>
           <div className="dropdownMenu">
             <Link to="/astrologer-in-bangalore">Astrologer in Bangalore</Link>
@@ -86,31 +79,31 @@ function Header() {
         <Link to="/contact">Contact</Link>
       </nav>
 
-      {/* CALL BUTTON */}
-      <a href="tel:+918073258799" className="headerCall">
-        <Phone size={18} />
-        +91 80732 58799
-      </a>
+      <div className="headerActions">
+        <HeaderSearch />
+        <a href="tel:+918073258799" className="headerCall">
+          <Phone size={18} strokeWidth={2} />
+          +91 80732 58799
+        </a>
+      </div>
 
-      {/* MOBILE HAMBURGER BUTTON */}
       <button
         className="mobileMenuBtn"
         onClick={() => setMobileMenu(!mobileMenu)}
         aria-label="Toggle navigation menu"
       >
-        {mobileMenu ? <X /> : <Menu />}
+        {mobileMenu ? <X size={26} strokeWidth={2} /> : <Menu size={26} strokeWidth={2} />}
       </button>
 
-      {/* MOBILE DRAWER OVERLAY */}
       <div className={mobileMenu ? "mobileMenu showMenu" : "mobileMenu"}>
+        <HeaderSearch className="headerSearchMobile" onNavigate={closeMenu} />
         <Link to="/" onClick={closeMenu}>Home</Link>
         <Link to="/about" onClick={closeMenu}>About</Link>
 
-        {/* MOBILE SERVICES STACK */}
         <div className="dropdown">
           <div className="dropdownTitle">
             Services
-            <ChevronDown size={16} />
+            <ChevronDown size={16} strokeWidth={2} />
           </div>
           <div className="dropdownMenu">
             <Link to="/astrology" onClick={closeMenu}>Astrology</Link>
@@ -123,7 +116,7 @@ function Header() {
         <div className="dropdown">
           <div className="dropdownTitle">
             Consultation
-            <ChevronDown size={16} />
+            <ChevronDown size={16} strokeWidth={2} />
           </div>
           <div className="dropdownMenu consultationMenu">
             <Link to="/consultation" onClick={closeMenu}>All Consultations</Link>
@@ -137,11 +130,10 @@ function Header() {
           </div>
         </div>
 
-        {/* MOBILE SEO TARGETS STACK */}
         <div className="dropdown">
           <div className="dropdownTitle">
             Top Services
-            <ChevronDown size={16} />
+            <ChevronDown size={16} strokeWidth={2} />
           </div>
           <div className="dropdownMenu">
             <Link to="/astrologer-in-bangalore" onClick={closeMenu}>Astrologer in Bangalore</Link>
@@ -152,7 +144,7 @@ function Header() {
         </div>
 
         <Link to="/contact" onClick={closeMenu}>Contact</Link>
-      </div> {/* <-- Fixed to matching closing div tag here */}
+      </div>
     </header>
   );
 }

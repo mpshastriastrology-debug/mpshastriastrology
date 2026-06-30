@@ -1,6 +1,9 @@
 /** Route stays available; set false to hide from nav, sitemap, and search engines. */
 export const CONTACT_PAGE_PUBLIC = false;
 
+export const COMPANY_LOGO_SRC = "/images/opt/MPShastriLogo-192w.webp";
+export const COMPANY_NAME = "MP Shastri Astrology";
+
 export const WHATSAPP_BOOKING_URL = "https://wa.me/918073258799";
 export const PHONE_HREF = "tel:+918073258799";
 export const QUORA_WHATSAPP_URL =

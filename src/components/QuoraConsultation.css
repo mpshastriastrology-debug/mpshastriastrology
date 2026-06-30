@@ -17,7 +17,9 @@
 }
 
 .quoraBadge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: rgba(184, 134, 11, 0.12);
   color: #8b5e00;
   padding: 10px 22px;
@@ -70,6 +72,10 @@
   font-size: 17px;
   font-weight: 600;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .quoraBtnPrimary {
@@ -114,7 +120,44 @@
 .quoraTrustStrip span {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
+}
+
+.quoraCardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff8e7, #f1e0b5);
+  color: #8b5e00;
+  margin-bottom: 14px;
+}
+
+.quoraCardIconCheck {
+  background: linear-gradient(135deg, #f0fff4, #d4edda);
+  color: #2d6a4f;
+}
+
+.quoraCardLink {
+  display: inline-flex;
+  align-items: center;
   gap: 6px;
+  margin-top: 14px;
+  color: #8f5a16;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.quoraCardLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.quoraQuoteStar {
+  color: #d4a017;
+  margin-bottom: 8px;
 }
 
 .quoraSection {
@@ -187,8 +230,8 @@
 
 .quoraStepNum {
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: #d4a017;
   color: #fff;
@@ -304,6 +347,10 @@
 
 .quoraStickyBar a {
   flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   text-align: center;
   text-decoration: none;
   padding: 14px 10px;

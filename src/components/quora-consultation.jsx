@@ -1,12 +1,29 @@
 import { Link } from "react-router-dom";
+import {
+  Activity,
+  ArrowRight,
+  BadgeCheck,
+  Briefcase,
+  CalendarClock,
+  CheckCircle2,
+  Globe,
+  Heart,
+  Home,
+  MapPin,
+  MessageCircle,
+  Phone,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Video,
+  Wallet,
+} from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import Seo from "./Seo";
 import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { QUORA_CONSULTATION_FAQS } from "../seo/faqData";
-import {
-  PHONE_HREF,
-  QUORA_WHATSAPP_URL,
-} from "../config/site";
+import { PHONE_HREF, QUORA_WHATSAPP_URL } from "../config/site";
 import "./QuoraConsultation.css";
 
 const PROBLEM_TOPICS = [
@@ -14,31 +31,37 @@ const PROBLEM_TOPICS = [
     title: "Marriage & Kundali Matching",
     text: "Delayed marriage, compatibility doubts, or family pressure about the right partner and timing.",
     path: "/marriage-matching",
+    Icon: Heart,
   },
   {
     title: "Career & Job Change",
     text: "Stuck in the wrong role, failed interviews, promotion delays, or confusion about business vs job.",
     path: "/career-astrology",
+    Icon: Briefcase,
   },
   {
     title: "Love & Relationship Issues",
     text: "Breakups, misunderstandings, commitment fears, or uncertainty about a partner's intentions.",
     path: "/love-relationships",
+    Icon: Sparkles,
   },
   {
     title: "Financial Stress",
     text: "Debt, income instability, property disputes, or repeated losses despite hard work.",
     path: "/financial-solutions",
+    Icon: Wallet,
   },
   {
     title: "Vastu at Home or Office",
     text: "Restlessness at home, business slowdown, sleep issues, or energy imbalance in your space.",
     path: "/vastu-consultation",
+    Icon: Home,
   },
   {
     title: "Health & Mental Peace",
     text: "Recurring health worries, anxiety patterns, or feeling blocked despite medical care.",
     path: "/health-astrology",
+    Icon: Activity,
   },
 ];
 
@@ -104,6 +127,12 @@ const QUICK_SERVICES = [
   ["/contact", "Office & Map"],
 ];
 
+const BOOKING_STEPS = [
+  [MessageCircle, "Message or call us", "WhatsApp or call +91 80732 58799. Mention you saw us on Quora and the topic you need help with."],
+  [CalendarClock, "Share birth details", "Date, time, and place of birth (and partner details for matching). We confirm your session slot."],
+  [Video, "Join your session", "Phone, video, or visit the Bengaluru office. Receive analysis, answers, and remedial guidance."],
+];
+
 function QuoraConsultation() {
   return (
     <>
@@ -118,7 +147,10 @@ function QuoraConsultation() {
       <div className="quoraPage">
         <section className="quoraHero">
           <Reveal className="quoraHeroContent" animation="fade-up">
-            <span className="quoraBadge">✦ Trusted Vedic Astrologer · Bangalore</span>
+            <span className="quoraBadge">
+              <Star size={14} strokeWidth={2} aria-hidden="true" />
+              Trusted Vedic Astrologer · Bangalore
+            </span>
             <h1>Get Clear Answers to Your Life Questions</h1>
             <p className="quoraHeroLead">
               Marriage stuck? Career confused? Relationship pain? Home feels wrong? Speak directly
@@ -135,12 +167,15 @@ function QuoraConsultation() {
                 rel="noreferrer"
                 className="quoraBtnPrimary"
               >
+                <FaWhatsapp size={20} aria-hidden="true" />
                 WhatsApp to Book
               </a>
               <a href={PHONE_HREF} className="quoraBtnSecondary">
+                <Phone size={18} strokeWidth={2} aria-hidden="true" />
                 Call +91 80732 58799
               </a>
               <Link to="/contact" className="quoraBtnOutline">
+                <MapPin size={18} strokeWidth={2} aria-hidden="true" />
                 Visit Office
               </Link>
             </div>
@@ -148,10 +183,10 @@ function QuoraConsultation() {
         </section>
 
         <div className="quoraTrustStrip" aria-label="Trust highlights">
-          <span>📍 Mahalakshmi Layout, Bengaluru</span>
-          <span>📞 +91 80732 58799</span>
-          <span>🌐 Online &amp; in-person sessions</span>
-          <span>🔒 Private &amp; confidential</span>
+          <span><MapPin size={16} strokeWidth={2} aria-hidden="true" /> Mahalakshmi Layout, Bengaluru</span>
+          <span><Phone size={16} strokeWidth={2} aria-hidden="true" /> +91 80732 58799</span>
+          <span><Globe size={16} strokeWidth={2} aria-hidden="true" /> Online &amp; in-person sessions</span>
+          <span><ShieldCheck size={16} strokeWidth={2} aria-hidden="true" /> Private &amp; confidential</span>
         </div>
 
         <Reveal as="section" className="quoraSection" animation="fade-up">
@@ -163,11 +198,15 @@ function QuoraConsultation() {
           <div className="quoraGrid">
             {PROBLEM_TOPICS.map((topic, index) => (
               <Reveal className="quoraCard" key={topic.title} animation="fade-up" delay={index * 50}>
+                <span className="quoraCardIcon" aria-hidden="true">
+                  <topic.Icon size={22} strokeWidth={1.75} />
+                </span>
                 <h3>{topic.title}</h3>
                 <p>{topic.text}</p>
-                <p style={{ marginTop: "12px" }}>
-                  <Link to={topic.path}>Learn about this consultation →</Link>
-                </p>
+                <Link to={topic.path} className="quoraCardLink">
+                  Learn about this consultation
+                  <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -182,6 +221,9 @@ function QuoraConsultation() {
           <div className="quoraGrid">
             {SESSION_INCLUDES.map(([title, text], index) => (
               <Reveal className="quoraCard" key={title} animation="fade-up" delay={index * 60}>
+                <span className="quoraCardIcon quoraCardIconCheck" aria-hidden="true">
+                  <CheckCircle2 size={22} strokeWidth={1.75} />
+                </span>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </Reveal>
@@ -194,6 +236,9 @@ function QuoraConsultation() {
           <div className="quoraGrid">
             {WHY_TRUST.map(([title, text], index) => (
               <Reveal className="quoraCard" key={title} animation="fade-up" delay={index * 60}>
+                <span className="quoraCardIcon quoraCardIconCheck" aria-hidden="true">
+                  <BadgeCheck size={22} strokeWidth={1.75} />
+                </span>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </Reveal>
@@ -206,6 +251,7 @@ function QuoraConsultation() {
           <div className="quoraQuoteGrid">
             {CLIENT_VOICES.map(([quote, name], index) => (
               <Reveal className="quoraQuote" key={name} animation="fade-up" delay={index * 80}>
+                <Star className="quoraQuoteStar" size={18} strokeWidth={2} aria-hidden="true" />
                 <p>&ldquo;{quote}&rdquo;</p>
                 <cite>— {name}</cite>
               </Reveal>
@@ -216,22 +262,11 @@ function QuoraConsultation() {
         <Reveal as="section" className="quoraSection" animation="fade-up">
           <h2>Book in 3 Simple Steps</h2>
           <div className="quoraSteps">
-            {[
-              [
-                "Message or call us",
-                "WhatsApp or call +91 80732 58799. Mention you saw us on Quora and the topic you need help with.",
-              ],
-              [
-                "Share birth details",
-                "Date, time, and place of birth (and partner details for matching). We confirm your session slot.",
-              ],
-              [
-                "Join your session",
-                "Phone, video, or visit the Bengaluru office. Receive analysis, answers, and remedial guidance.",
-              ],
-            ].map(([title, text], index) => (
+            {BOOKING_STEPS.map(([Icon, title, text], index) => (
               <Reveal className="quoraStep" key={title} animation="fade-up" delay={index * 80}>
-                <span className="quoraStepNum">{index + 1}</span>
+                <span className="quoraStepNum">
+                  <Icon size={20} strokeWidth={1.75} aria-hidden="true" />
+                </span>
                 <div>
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -271,9 +306,11 @@ function QuoraConsultation() {
                 rel="noreferrer"
                 className="quoraBtnPrimary"
               >
+                <FaWhatsapp size={20} aria-hidden="true" />
                 WhatsApp Now
               </a>
               <a href={PHONE_HREF} className="quoraBtnSecondary">
+                <Phone size={18} strokeWidth={2} aria-hidden="true" />
                 Call +91 80732 58799
               </a>
             </div>
@@ -289,6 +326,7 @@ function QuoraConsultation() {
 
       <div className="quoraStickyBar" aria-label="Quick booking">
         <a href={PHONE_HREF} className="quoraStickyCall">
+          <Phone size={18} strokeWidth={2} aria-hidden="true" />
           Call Now
         </a>
         <a
@@ -297,6 +335,7 @@ function QuoraConsultation() {
           rel="noreferrer"
           className="quoraStickyWhatsapp"
         >
+          <FaWhatsapp size={18} aria-hidden="true" />
           WhatsApp Book
         </a>
       </div>
