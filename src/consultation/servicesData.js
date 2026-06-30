@@ -1,3 +1,9 @@
+import {
+  CONSULTATION_CARD_ALTS,
+  CONSULTATION_CARD_DESCRIPTIONS,
+  CONSULTATION_HERO_ALTS,
+} from "../seo/imageAlt.js";
+
 export const CONSULTATION_SERVICES = [
   {
     path: "/horoscope-reading",
@@ -11,7 +17,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Understand your natal chart, active planetary periods, and life direction through precise Vedic calculations tailored to your birth details.",
     image: "/topastronuts.avif",
-    imageAlt: "Vedic birth chart horoscope reading consultation",
     intro:
       "A Vedic horoscope reading maps the exact planetary positions at your time of birth. Shri MP Shastri interprets your Lagna, Moon sign, house placements, and running dasha cycles to give clear answers about career timing, relationships, health patterns, and spiritual growth—without vague predictions.",
     problems: [
@@ -75,7 +80,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Align your profession with favourable planetary windows for promotions, job switches, exams, and long-term vocational success.",
     image: "/careerproblem.webp",
-    imageAlt: "Career astrology and professional growth consultation",
     intro:
       "Career astrology examines the 10th house, Saturn, Sun, Mercury, and current dasha periods to reveal when effort converts into results. Whether you face job instability, delayed promotions, or confusion between multiple career paths, a structured chart review helps you act at the right time.",
     problems: [
@@ -139,7 +143,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Evaluate long-term compatibility, Mangal Dosha, Nadi, and marriage timing through traditional Vedic matching methods.",
     image: "/marriage-astrology.webp",
-    imageAlt: "Vedic Kundali matching for marriage compatibility",
     intro:
       "Marriage matching goes beyond a simple Guna score. Shri MP Shastri reviews both charts for dosha cancellation, 7th house strength, Venus-Jupiter influence, and dasha compatibility to guide families toward harmonious, lasting unions.",
     problems: [
@@ -203,7 +206,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Identify planetary blocks to savings, income flow, and investments—and apply structured remedies for lasting financial stability.",
     image: "/financialproblem.webp",
-    imageAlt: "Financial astrology and wealth management guidance",
     intro:
       "Financial astrology studies the 2nd house (savings), 11th house (gains), Jupiter, Venus, and running dasha periods affecting cash flow. Shri MP Shastri helps clients facing debt, business losses, property disputes, or inconsistent income find root causes and corrective measures.",
     problems: [
@@ -267,7 +269,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Navigate love, breakups, inter-caste marriage, and emotional blocks with sensitive chart-based guidance and proven remedial paths.",
     image: "/loveproblem.webp",
-    imageAlt: "Love and relationship astrology counseling",
     intro:
       "Relationship issues often reflect Venus, Moon, 5th and 7th house conditions, and Rahu-Ketu influence. Shri MP Shastri offers confidential sessions to understand compatibility, separation timing, reconciliation possibility, and emotional healing through Vedic wisdom.",
     problems: [
@@ -331,7 +332,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Address recurring arguments, property splits, in-law friction, and generational stress through chart analysis and home energy balancing.",
     image: "/familyconflict.webp",
-    imageAlt: "Family conflict resolution and household harmony",
     intro:
       "Family conflicts often involve the 4th house (home peace), Moon (mind), Mars (anger), and Saturn (elders). Combined astrology and Vastu review helps identify why disputes repeat and what practical steps restore respect and calm in the household.",
     problems: [
@@ -395,7 +395,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Time your launches, partnerships, and expansions using Vedic charts, muhurta selection, and commercial Vastu alignment.",
     image: "/businessproblem.webp",
-    imageAlt: "Business astrology and commercial growth planning",
     intro:
       "Business astrology uses the lagna chart, Dasamsa, Mercury for trade, Jupiter for expansion, and Rahu for unconventional ventures. Shri MP Shastri guides entrepreneurs on when to start, partner, invest, or pause—reducing costly timing mistakes.",
     problems: [
@@ -459,7 +458,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Harmonize your home or workplace layout with Vastu Purusha principles for peace, prosperity, and stable family or business growth.",
     image: "/vastuproblem.webp",
-    imageAlt: "Vastu Shastra home and office consultation",
     intro:
       "Vastu Shastra aligns built spaces with directional energy flows. Shri MP Shastri audits floor plans, room usage, entrance direction, kitchen and bedroom placement, and elemental imbalances—offering practical remedies without breaking walls whenever possible.",
     problems: [
@@ -523,7 +521,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Assess 12th house, 9th house, Rahu, and dasha periods for study abroad, work visas, PR, and long-term international residence.",
     image: "/foreign.webp",
-    imageAlt: "Foreign settlement and immigration astrology",
     intro:
       "Foreign settlement indicators appear in the 12th house (abroad), 9th house (fortune), Rahu (foreign lands), and specific yogas like Pravasa yoga. Shri MP Shastri helps students, professionals, and families understand favourable periods for visas, relocation, and success overseas.",
     problems: [
@@ -587,7 +584,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Decode your life path, destiny, and name vibrations through Chaldean and Vedic numerology for career, marriage, and business clarity.",
     image: "/numerology.webp",
-    imageAlt: "Name and birth-date numerology analysis consultation",
     intro:
       "Numerology reveals repeating patterns in your birth date and name that influence decisions, relationships, and success cycles. Shri MP Shastri combines classical number mapping with practical guidance for name spelling adjustments, business branding, and favourable dates—especially for clients in Bangalore and across India seeking quick, actionable insight alongside chart-based astrology.",
     problems: [
@@ -651,7 +647,6 @@ export const CONSULTATION_SERVICES = [
     heroSubtitle:
       "Understand health-sensitive periods in your chart, strengthen vitality through Vedic remedies, and align lifestyle with planetary rhythms.",
     image: "/healthproblem.webp",
-    imageAlt: "Health astrology and wellness consultation",
     intro:
       "Health astrology examines the 6th house (disease), 8th house (chronic patterns), Ascendant lord, Sun (vitality), and Moon (mind-body). Shri MP Shastri offers preventive guidance and remedial support—always alongside proper medical care, never as a replacement for doctors.",
     problems: [
@@ -704,6 +699,12 @@ export const CONSULTATION_SERVICES = [
     ],
   },
 ];
+
+for (const service of CONSULTATION_SERVICES) {
+  service.imageAlt = CONSULTATION_HERO_ALTS[service.title];
+  service.cardAlt = CONSULTATION_CARD_ALTS[service.title];
+  service.cardDesc = CONSULTATION_CARD_DESCRIPTIONS[service.title];
+}
 
 export const CONSULTATION_PATHS = CONSULTATION_SERVICES.map((s) => s.path);
 

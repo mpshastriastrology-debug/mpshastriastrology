@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { TANTRA_FAQS } from '../seo/faqData';
+import { TANTRA_PAGE_ALTS } from '../seo/imageAlt';
 import Reveal from './Reveal';
 import OptimizedImage from './OptimizedImage';
 
@@ -12,7 +13,7 @@ function Tantra() {
     <>
       <Seo
         title="Spiritual Healing & Esoteric Protection Services | MP Shastri"
-        description="Ethical spiritual healing, aura cleansing, and protective Vedic guidance with Shri MP Shastri in Bangalore for energy balance and long-term peace."
+        description="Restore dynamic energy equilibrium and resolve stubborn environmental or personal negativity. Discover classical esoteric balancing rituals guided by Shri MP Shastri."
         path="/tantra"
         faqs={TANTRA_FAQS}
       />
@@ -41,9 +42,13 @@ function Tantra() {
         {/* CORE INTRODUCTION BLOCK */}
         <div className="tantraAbout">
           <Reveal className="tantraImage" animation="fade-right">
-            <img
-              src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1200&auto=format&fit=crop"
-              alt="Peaceful meditation space arranged for inner awareness balancing"
+            <OptimizedImage
+              src="/healing.webp"
+              alt={TANTRA_PAGE_ALTS.intro}
+              widths={[400, 800]}
+              sizes="(max-width: 768px) 100vw, 480px"
+              width={480}
+              height={320}
             />
           </Reveal>
 
@@ -82,10 +87,13 @@ function Tantra() {
           <div className="tantraServiceGrid">
             {/* CARD 1 */}
             <div className="tantraCard">
-              <img
-                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop"
-                alt="Individual sitting in calm reflection focusing on mental stabilization"
-                loading="lazy"
+              <OptimizedImage
+                src="/personality-reading.webp"
+                alt={TANTRA_PAGE_ALTS.mentalStabilization}
+                widths={[400, 800]}
+                sizes="(max-width: 640px) 100vw, 360px"
+                width={360}
+                height={220}
               />
               <div className="tantraCardContent">
                 <h3>Mental Stabilization</h3>
@@ -99,7 +107,7 @@ function Tantra() {
             <div className="tantraCard">
               <OptimizedImage
                 src="/healing.webp"
-                alt="Reflective ambient lights representing the harmonization of subtle energy layers"
+                alt={TANTRA_PAGE_ALTS.vibrationalCleansing}
                 widths={[400, 800]}
                 sizes="(max-width: 640px) 100vw, 360px"
                 width={360}
@@ -115,10 +123,13 @@ function Tantra() {
 
             {/* CARD 3 */}
             <div className="tantraCard">
-              <img
-                src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Traditional setups focused on creating protective personal limits"
-                loading="lazy"
+              <OptimizedImage
+                src="/familyconflict.webp"
+                alt={TANTRA_PAGE_ALTS.protectiveAlignment}
+                widths={[400, 800]}
+                sizes="(max-width: 640px) 100vw, 360px"
+                width={360}
+                height={220}
               />
               <div className="tantraCardContent">
                 <h3>Protective Alignment</h3>
@@ -144,10 +155,13 @@ function Tantra() {
           </div>
 
           <div className="tantraExtraRight">
-            <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
-              alt="Clear natural sunrise horizons reflecting balanced internal awareness"
-              loading="lazy"
+            <OptimizedImage
+              src="/mp-shastri-astrology.webp"
+              alt={TANTRA_PAGE_ALTS.emotionalResilience}
+              widths={[400, 800]}
+              sizes="(max-width: 768px) 100vw, 480px"
+              width={480}
+              height={320}
             />
           </div>
         </div>

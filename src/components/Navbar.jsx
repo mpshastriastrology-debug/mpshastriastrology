@@ -4,6 +4,7 @@ import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { CONSULTATION_NAV } from "../consultation/consultationNav";
 import { COMPANY_LOGO_SRC, COMPANY_NAME, CONTACT_PAGE_PUBLIC, PHONE_HREF } from "../config/site";
+import { NAV_ALTS } from "../seo/imageAlt";
 import { mergeQuoraGenerateLeadClick, quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 import HeaderSearch from "./HeaderSearch";
 import KannadaTranslator from "./KannadaTranslator";
@@ -60,7 +61,7 @@ function Header() {
         <div className="logoCircle">
           <img
             src={COMPANY_LOGO_SRC}
-            alt={`${COMPANY_NAME} logo`}
+            alt={NAV_ALTS.logo(COMPANY_NAME)}
             width={62}
             height={62}
             loading="eager"

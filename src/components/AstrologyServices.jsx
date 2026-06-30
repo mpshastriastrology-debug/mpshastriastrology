@@ -8,90 +8,14 @@ import OptimizedImage from './OptimizedImage';
 import { ASTROLOGY_SERVICES_FAQS } from '../seo/faqData';
 import { CONSULTATION_SERVICES } from '../consultation/servicesData';
 
-const CONSULTATION_PATHS = Object.fromEntries(
-  CONSULTATION_SERVICES.map((s) => [s.title, s.path])
-);
-
 function Astrologyservices({ seo = true, showIntro = false }) {
-const servicesData = [
-  {
-    title: "Horoscope Reading",
-    desc: "Accurate Vedic birth chart analysis with personalized future predictions and practical remedies.",
-    img: "/topastronuts.avif",
-    alt: "Vedic birth chart and horoscope reading consultation",
-    path: CONSULTATION_PATHS["Horoscope Reading"]
-  },
-  {
-    title: "Career Astrology",
-    desc: "Strategic guidance for employment choices, promotion timing, corporate growth, and business expansion.",
-    img: "/careerproblem.webp",
-    alt: "Professional career growth and business astrology consultation",
-    path: CONSULTATION_PATHS["Career Astrology"]
-  },
-    {
-      title: "Marriage Matching",
-      desc: "Comprehensive Kundali matching and Guna Milan compatibility analysis for a blissful marital life.",
-      img: "/marriage-astrology.webp",
-      alt: "Vedic Kundali matching for marriage compatibility",
-      path: CONSULTATION_PATHS["Marriage Matching"]
-    },
-    {
-      title: "Financial Solutions",
-      desc: "Astrological path corrections for debt relief, wealth preservation, and ancestral property stability.",
-      img: "/financialproblem.webp",
-      alt: "Astrological guidance for wealth management and financial stability",
-      path: CONSULTATION_PATHS["Financial Solutions"]
-    },
-    {
-      title: "Love & Relationships",
-      desc: "Empathetic guidance to navigate personal relationships, emotional blocks, and partnership issues.",
-      img: "/loveproblem.webp",
-      alt: "Relationship counseling and planetary alignment solutions",
-      path: CONSULTATION_PATHS["Love & Relationships"]
-    },
-    {
-      title: "Family Conflict Resolution",
-      desc: "Resolve underlying domestic friction and restore long-term peace and harmony within your household.",
-      img: "/familyconflict.webp",
-      alt: "Spiritual healing solutions for family peace and harmony",
-      path: CONSULTATION_PATHS["Family Conflict Resolution"]
-    },
-    {
-      title: "Business Astrology",
-      desc: "Analyze business charts to determine optimal times for partnerships, investments, and market launches.",
-      img: "/businessproblem.webp",
-      alt: "Commercial growth predictions and corporate business astrology",
-      path: CONSULTATION_PATHS["Business Astrology"]
-    },
-    {
-      title: "Vastu Consultation",
-      desc: "Residential and commercial structural layout analysis to channel positive energy, peace, and abundance.",
-      img: "/vastuproblem.webp",
-      alt: "Traditional Indian Vastu Shastra consultation for homes and offices",
-      path: CONSULTATION_PATHS["Vastu Consultation"]
-    },
-    {
-      title: "Numerology Analysis",
-      desc: "Align your identity through deep validation of life paths, name balancing, and signature adjustments.",
-      img: "/numerology.webp",
-      alt: "Name and birth-date numerology analysis",
-      path: CONSULTATION_PATHS["Numerology Analysis"]
-    },
-    {
-      title: "Foreign Settlement",
-      desc: "Planetary combination assessment for overseas education, visa pathways, and international migration.",
-      img: "/foreign.webp",
-      alt: "Astrology tracking for immigration and international travel success",
-      path: CONSULTATION_PATHS["Foreign Settlement"]
-    },
-    {
-      title: "Health Astrology",
-      desc: "Proactive, preventative tracking of physical energy pathways aligned with traditional planetary transits.",
-      img: "/healthproblem.webp",
-      alt: "Astrological analysis for health and physical well-being",
-      path: CONSULTATION_PATHS["Health Astrology"]
-    }
-  ];
+  const servicesData = CONSULTATION_SERVICES.map((service) => ({
+    title: service.title,
+    desc: service.cardDesc,
+    img: service.image,
+    alt: service.cardAlt,
+    path: service.path,
+  }));
 
   const servicesContent = (
     <>

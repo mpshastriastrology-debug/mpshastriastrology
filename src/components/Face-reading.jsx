@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { FACE_READING_FAQS } from '../seo/faqData';
+import { FACE_READING_PAGE_ALTS } from '../seo/imageAlt';
 import Reveal from './Reveal';
 import OptimizedImage from './OptimizedImage';
 
@@ -12,7 +13,7 @@ function FaceReading() {
     <>
       <Seo
         title="Physiognomy & Face Reading Consultation | MP Shastri"
-        description="Professional face reading and physiognomy consultation with Shri MP Shastri in Bangalore for personality insights, timing markers, and life direction."
+        description="Uncover deep personality patterns, psychological strengths, and ancestral timing parameters through specialized Vedic physiognomy and facial structure audits by Shri MP Shastri."
         path="/face-reading"
         faqs={FACE_READING_FAQS}
       />
@@ -122,10 +123,13 @@ function FaceReading() {
 
             {/* CARD 3 */}
             <div className="faceCard">
-              <img
-                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop"
-                alt="Cohesive interactive expression displaying emotional understanding"
-                loading="lazy"
+              <OptimizedImage
+                src="/loveproblem.webp"
+                alt={FACE_READING_PAGE_ALTS.relationalTracking}
+                widths={[400, 800]}
+                sizes="(max-width: 640px) 100vw, 360px"
+                width={360}
+                height={220}
               />
               <div className="faceCardContent">
                 <h3>Relational Tracking</h3>

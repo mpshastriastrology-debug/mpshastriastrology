@@ -43,12 +43,12 @@ export default function OptimizedImage({
       src={fallback}
       srcSet={srcSet}
       sizes={sizes}
-      alt={alt}
+      alt={alt ?? ""}
       width={width}
       height={height}
       loading={imgLoading}
       decoding={decoding}
-      fetchPriority={fetchPriority}
+      {...(fetchPriority ? { fetchpriority: fetchPriority } : {})}
       className={className}
     />
   );

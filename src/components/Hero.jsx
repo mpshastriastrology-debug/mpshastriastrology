@@ -47,7 +47,7 @@ function Hero() {
           </video>
         </div>
 
-        <h1>Vedic Astrologer &amp; Vastu Consultant in Bangalore</h1>
+        <h1>Best Astrologer in Bangalore.</h1>
 
         <p>
           Find clarity and alignment in your life. Shri MP Shastri provides trusted,

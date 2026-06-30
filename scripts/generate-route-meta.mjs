@@ -14,7 +14,7 @@ const STATIC_ROUTE_META = {
     title: "Vedic Astrologer & Vastu Consultant in Bangalore | MP Shastri",
     description:
       "Consult MP Shastri for authentic Vedic astrology, accurate Kundali matching, and Vastu solutions in Bangalore. Book your online or in-person session today.",
-    h1: "Vedic Astrologer & Vastu Consultant in Bangalore",
+    h1: "Best Astrologer in Bangalore.",
     intro: HOME_PRERENDER_INTRO,
   },
   "/about": {
