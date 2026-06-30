@@ -60,6 +60,7 @@ function Header() {
           <div className="dropdownMenu consultationMenu">
             <Link to="/consultation">All Consultations</Link>
             <Link to="/astrologyservices">Astrology Services Directory</Link>
+            <Link to="/quora-consultation">Quora Consultation</Link>
             {CONSULTATION_NAV.map((service) => (
               <Link key={service.path} to={service.path}>
                 {service.navLabel}
@@ -127,6 +128,7 @@ function Header() {
           <div className="dropdownMenu consultationMenu">
             <Link to="/consultation" onClick={closeMenu}>All Consultations</Link>
             <Link to="/astrologyservices" onClick={closeMenu}>Astrology Services Directory</Link>
+            <Link to="/quora-consultation" onClick={closeMenu}>Quora Consultation</Link>
             {CONSULTATION_NAV.map((service) => (
               <Link key={service.path} to={service.path} onClick={closeMenu}>
                 {service.navLabel}

@@ -48,6 +48,7 @@ export const ROUTE_LABELS = {
   "/numerology-consultation": "Numerology Consultation",
   "/foreign-settlement": "Foreign Settlement",
   "/health-astrology": "Health Astrology",
+  "/quora-consultation": "Quora Consultation",
 };
 
 const SERVICE_PATHS = new Set(CONSULTATION_PATHS);
@@ -308,6 +309,7 @@ const LOCAL_GEO_PATHS = new Set([
   "/astrologer-in-bangalore",
   "/astrologer-in-india",
   "/online-astrologer",
+  "/quora-consultation",
   "/numerology-consultation",
 ]);
 

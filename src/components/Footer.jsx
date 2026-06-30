@@ -68,6 +68,7 @@ function Footer() {
           <Link to="/astrologer-in-bangalore">BEST ASTROLOGER IN BANGALORE</Link>
           <Link to="/astrologer-in-india">BEST ASTROLOGER IN INDIA</Link>
           <Link to="/online-astrologer">ONLINE ASTROLOGY</Link>
+          <Link to="/quora-consultation">QUORA CONSULTATION</Link>
           <Link to="/vastu-expert">VASTU EXPERT</Link>
         </Reveal>
       </div>

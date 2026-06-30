@@ -39,6 +39,7 @@
 
 ## Optional
 
+- [Quora Consultation Landing](https://www.mpshastriastrology.com/quora-consultation): Conversion page for Quora ads — book Vedic astrology consultation via WhatsApp or phone.
 - [Astrologer in Bangalore](https://www.mpshastriastrology.com/astrologer-in-bangalore): Local Bangalore astrologer landing page for in-person consultations.
 - [Online Astrologer](https://www.mpshastriastrology.com/online-astrologer): Remote phone and video astrology sessions available worldwide.
 - [Astrologer in India](https://www.mpshastriastrology.com/astrologer-in-india): Pan-India Vedic astrology and Vastu services from Bangalore.

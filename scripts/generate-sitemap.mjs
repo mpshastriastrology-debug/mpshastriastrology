@@ -26,6 +26,7 @@ const urls = [
   ["/numerology-consultation", "monthly", "0.85"],
   ["/foreign-settlement", "monthly", "0.85"],
   ["/health-astrology", "monthly", "0.85"],
+  ["/quora-consultation", "monthly", "0.75"],
 ];
 
 const site = "https://www.mpshastriastrology.com";

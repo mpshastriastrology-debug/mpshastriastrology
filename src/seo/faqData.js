@@ -264,6 +264,39 @@ export const INDIA_ASTROLOGER_FAQS = [
   },
 ];
 
+export const QUORA_CONSULTATION_FAQS = [
+  {
+    question: "How do I book a Vedic astrology consultation after seeing your Quora ad?",
+    answer:
+      "WhatsApp +91 80732 58799 with your birth date, time, place, and the problem you want help with—or call the same number. Mention Quora so we can prioritise your booking request.",
+  },
+  {
+    question: "Is online consultation as accurate as visiting the Bangalore office?",
+    answer:
+      "Yes. Vedic chart calculation uses your birth data, not your physical location. Phone and video sessions with Shri MP Shastri are as accurate as in-person consultations at Mahalakshmi Layout.",
+  },
+  {
+    question: "What problems can I ask about in one session?",
+    answer:
+      "Marriage and Kundali matching, career and job timing, love and relationship issues, financial stress, business decisions, family conflicts, Vastu for home or office, health patterns, foreign settlement, and general horoscope reading.",
+  },
+  {
+    question: "What birth details do I need before the session?",
+    answer:
+      "Your date of birth, exact time of birth (as accurate as possible), and city of birth. For marriage matching, your partner's birth details are also needed.",
+  },
+  {
+    question: "How much does a consultation cost?",
+    answer:
+      "Fees depend on the type and length of consultation. WhatsApp or call +91 80732 58799 for current session rates and to confirm your preferred service before booking.",
+  },
+  {
+    question: "Where is the MP Shastri office in Bangalore?",
+    answer:
+      "607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout, Bengaluru, Karnataka 560086. In-person and online appointments are available daily from 9 AM to 9 PM IST.",
+  },
+];
+
 export const CONTACT_FAQS = [
   {
     question: "How do I book an astrology or Vastu consultation in Bangalore?",

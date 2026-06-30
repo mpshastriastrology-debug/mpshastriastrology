@@ -77,6 +77,14 @@ const STATIC_ROUTE_META = {
     description:
       "Browse all specialized astrology and Vastu consultations with Shri MP Shastri in Bangalore — horoscope, career, marriage, Vastu, numerology, and more.",
   },
+  "/quora-consultation": {
+    title: "Book Vedic Astrology Consultation | MP Shastri — Quora Offer",
+    description:
+      "Personal Vedic astrology consultation with Shri MP Shastri in Bangalore. Marriage, career, love, finance, Vastu and remedies. Call or WhatsApp +91 80732 58799.",
+    h1: "Get Clear Answers to Your Life Questions",
+    intro:
+      "Marriage stuck? Career confused? Relationship pain? Speak with Shri MP Shastri, an experienced Vedic astrologer and Vastu consultant in Mahalakshmi Layout, Bengaluru. Book online or in-person via WhatsApp or phone at +91 80732 58799.",
+  },
 };
 
 const routeMeta = { ...STATIC_ROUTE_META };

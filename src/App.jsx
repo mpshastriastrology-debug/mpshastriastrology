@@ -24,6 +24,7 @@ const OnlineAstrologer = lazy(() => import('./components/online-astrologer'));
 const AstrologerInIndia = lazy(() => import('./components/astrologer-in-india'));
 const VastuExpert = lazy(() => import('./components/vastu-expert'));
 const Astrologyservices = lazy(() => import('./components/AstrologyServices.jsx'));
+const QuoraConsultation = lazy(() => import('./components/quora-consultation'));
 const ConsultationPage = lazy(() => import('./components/ConsultationPage'));
 const ConsultationHub = lazy(() => import('./pages/ConsultationHub'));
 
@@ -74,6 +75,7 @@ function App() {
             <Route path="/online-astrologer" element={<OnlineAstrologer />} />
             <Route path="/astrologer-in-india" element={<AstrologerInIndia />} />
             <Route path="/vastu-expert" element={<VastuExpert />} />
+            <Route path="/quora-consultation" element={<QuoraConsultation />} />
             <Route path="/astrologyservices" element={<Astrologyservices />} />
             <Route path="/consultation" element={<ConsultationHub />} />
             {CONSULTATION_PATHS.map((path) => (
