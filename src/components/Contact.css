@@ -247,6 +247,51 @@
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
+.contactCtaSection {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 8% 48px;
+}
+
+.contactQuickActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.contactWhatsappBtn,
+.contactCallBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 24px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contactWhatsappBtn {
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+}
+
+.contactCallBtn {
+  background: linear-gradient(135deg, #ffd369, #c98019);
+  color: #111;
+  box-shadow: 0 8px 20px rgba(212, 160, 23, 0.25);
+}
+
+.contactWhatsappBtn:hover,
+.contactCallBtn:hover {
+  transform: translateY(-2px);
+}
+
 /* ==========================================
    RESPONSIVE DESIGN BREAKPOINTS 
    ========================================== */
@@ -286,6 +331,19 @@
 
   .mapArea {
     height: 380px;
+  }
+
+  .contactCtaSection {
+    padding: 0 20px 40px;
+  }
+
+  .contactQuickActions {
+    flex-direction: column;
+  }
+
+  .contactWhatsappBtn,
+  .contactCallBtn {
+    width: 100%;
   }
 }
 

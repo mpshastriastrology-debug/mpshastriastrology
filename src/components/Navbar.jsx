@@ -6,6 +6,7 @@ import { CONSULTATION_NAV } from "../consultation/consultationNav";
 import { COMPANY_LOGO_SRC, COMPANY_NAME, CONTACT_PAGE_PUBLIC, PHONE_HREF } from "../config/site";
 import { mergeQuoraGenerateLeadClick, quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 import HeaderSearch from "./HeaderSearch";
+import KannadaTranslator from "./KannadaTranslator";
 
 const MOBILE_SECTIONS = [
   {
@@ -122,33 +123,37 @@ function Header() {
         {CONTACT_PAGE_PUBLIC && <Link to="/contact">Contact</Link>}
       </nav>
 
-      <div className="headerActions">
-        <HeaderSearch />
-        <a href={PHONE_HREF} className="headerCall" {...quoraGenerateLeadClickProps}>
-          <Phone size={18} strokeWidth={2} aria-hidden="true" />
-          <span className="headerCallText">+91 80732 58799</span>
-        </a>
-      </div>
+      <div className="headerToolbar">
+        <div className="headerActions">
+          <HeaderSearch />
+          <a href={PHONE_HREF} className="headerCall" {...quoraGenerateLeadClickProps}>
+            <Phone size={18} strokeWidth={2} aria-hidden="true" />
+            <span className="headerCallText">+91 80732 58799</span>
+          </a>
+        </div>
 
-      <div className="headerMobileTools">
-        <HeaderSearch className="headerSearchCompact" />
-        <a
-          href={PHONE_HREF}
-          className="headerMobileCall"
-          aria-label="Call +91 80732 58799"
-          {...quoraGenerateLeadClickProps}
-        >
-          <Phone size={20} strokeWidth={2} aria-hidden="true" />
-        </a>
-        <button
-          type="button"
-          className="mobileMenuBtn"
-          onClick={() => setMobileMenu(!mobileMenu)}
-          aria-label={mobileMenu ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={mobileMenu}
-        >
-          {mobileMenu ? <X size={26} strokeWidth={2} /> : <Menu size={26} strokeWidth={2} />}
-        </button>
+        <KannadaTranslator variant="header" />
+
+        <div className="headerMobileTools">
+          <HeaderSearch className="headerSearchCompact" />
+          <a
+            href={PHONE_HREF}
+            className="headerMobileCall"
+            aria-label="Call +91 80732 58799"
+            {...quoraGenerateLeadClickProps}
+          >
+            <Phone size={20} strokeWidth={2} aria-hidden="true" />
+          </a>
+          <button
+            type="button"
+            className="mobileMenuBtn"
+            onClick={() => setMobileMenu(!mobileMenu)}
+            aria-label={mobileMenu ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileMenu}
+          >
+            {mobileMenu ? <X size={26} strokeWidth={2} /> : <Menu size={26} strokeWidth={2} />}
+          </button>
+        </div>
       </div>
 
       <div className={mobileMenu ? "mobileMenu showMenu" : "mobileMenu"}>

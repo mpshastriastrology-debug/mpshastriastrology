@@ -1,11 +1,12 @@
 import "./Contact.css";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { Phone } from "lucide-react";
 import Seo from "./Seo";
 import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { CONTACT_FAQS } from "../seo/faqData";
 import { LOCALITY_SEO_PARAGRAPH } from "../seo/localAreas";
-import { CONTACT_PAGE_PUBLIC } from "../config/site";
+import { CONTACT_PAGE_PUBLIC, PHONE_HREF, WHATSAPP_BOOKING_URL } from "../config/site";
 import { quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 
 function Contact() {
@@ -46,7 +47,7 @@ function Contact() {
                 <FaPhoneAlt aria-hidden="true" />
                 <div>
                   <h3>Direct Phone Line</h3>
-                  <a href="tel:+918073258799" className="contactLink" {...quoraGenerateLeadClickProps}>
+                  <a href={PHONE_HREF} className="contactLink" {...quoraGenerateLeadClickProps}>
                     +91 80732 58799
                   </a>
                 </div>
@@ -57,7 +58,7 @@ function Contact() {
                 <div>
                   <h3>WhatsApp &amp; Email</h3>
                   <a
-                    href="https://wa.me/918073258799"
+                    href={WHATSAPP_BOOKING_URL}
                     className="contactLink"
                     target="_blank"
                     rel="noreferrer"
@@ -94,6 +95,25 @@ function Contact() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal className="contactCtaSection" animation="fade-up">
+        <div className="contactQuickActions">
+          <a
+            href={WHATSAPP_BOOKING_URL}
+            className="contactWhatsappBtn"
+            target="_blank"
+            rel="noreferrer"
+            {...quoraGenerateLeadClickProps}
+          >
+            <FaWhatsapp aria-hidden="true" />
+            WhatsApp Book Consultation
+          </a>
+          <a href={PHONE_HREF} className="contactCallBtn" {...quoraGenerateLeadClickProps}>
+            <Phone size={20} strokeWidth={2} aria-hidden="true" />
+            Call +91 80732 58799
+          </a>
+        </div>
+      </Reveal>
 
       <FaqSection
         title="Office Location & Booking — Common Questions"

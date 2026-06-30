@@ -20,26 +20,73 @@
   font-size: 0.95rem;
 }
 
-.kannadaTranslatorWidget {
-  min-height: 44px;
+.kannadaTranslatorToggle {
+  display: inline-flex;
+  gap: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.45);
 }
 
-/* Google Translate dropdown styling */
-.kannadaTranslatorWidget .goog-te-gadget {
-  font-family: "Poppins", sans-serif !important;
-  font-size: 14px !important;
-  color: #444 !important;
+.kannadaTranslatorBtn {
+  border: none;
+  background: #fff8e7;
+  color: #5c0a0a;
+  padding: 10px 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.kannadaTranslatorWidget .goog-te-gadget-simple {
-  background: #fff8e7 !important;
-  border: 1px solid rgba(212, 175, 55, 0.45) !important;
-  border-radius: 12px !important;
-  padding: 10px 14px !important;
+.kannadaTranslatorBtn.active {
+  background: #5c0a0a;
+  color: #fff5df;
 }
 
-.kannadaTranslatorWidget .goog-te-menu-value span {
-  color: #5c0a0a !important;
+.headerLanguage {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 211, 105, 0.35);
+  flex-shrink: 0;
+}
+
+.headerLanguageBtn {
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff5df;
+  padding: 0 11px;
+  height: 42px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.headerLanguageBtn + .headerLanguageBtn {
+  border-left: 1px solid rgba(255, 211, 105, 0.25);
+}
+
+.headerLanguageBtn.active {
+  background: linear-gradient(135deg, #ffd369, #c98019);
+  color: #111;
+}
+
+.headerLanguageBtn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.headerLanguageWidget {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Hide Google top banner when page translates */
@@ -50,4 +97,11 @@ body .skiptranslate iframe,
 
 body {
   top: 0 !important;
+}
+
+@media (max-width: 420px) {
+  .headerLanguageBtn {
+    padding: 0 8px;
+    font-size: 11px;
+  }
 }

@@ -165,6 +165,13 @@
 }
 
 /* DESKTOP ACTIONS */
+.headerToolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 .headerActions {
   display: flex;
   align-items: center;
