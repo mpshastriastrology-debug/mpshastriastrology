@@ -12,7 +12,7 @@ export default function ConsultationHub() {
     <div className="consultationPage">
       <Seo
         title="Vedic Astrology Consultations in Bangalore | MP Shastri"
-        description="Browse all consultation services: horoscope reading, career astrology, marriage matching, financial solutions, Vastu, foreign settlement, health astrology, and more."
+        description="Browse all specialized astrology and Vastu consultations with Shri MP Shastri in Bangalore — horoscope, career, marriage, Vastu, numerology, and more."
         path="/consultation"
         breadcrumbLabel="Consultations"
         faqs={CONSULTATION_HUB_FAQS}

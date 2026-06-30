@@ -1,6 +1,7 @@
 import fs from "fs";
 import { CONSULTATION_SERVICES } from "../src/consultation/servicesData.js";
 import { CONTACT_PAGE_PUBLIC } from "../src/config/site.js";
+import { CONTACT_PRERENDER_INTRO } from "../src/seo/contactSeo.js";
 
 const NOINDEX_PATHS = new Set([
   ...(CONTACT_PAGE_PUBLIC ? [] : ["/contact"]),
@@ -31,6 +32,7 @@ const STATIC_ROUTE_META = {
     description:
       "Visit Shri MP Shastri at the Vedic consultation center in Mahalakshmi Layout, Bengaluru (Bangalore). Call +91 80732 58799, WhatsApp, email, and Google Maps directions.",
     h1: "Vedic Consultation Center in Bengaluru",
+    intro: CONTACT_PRERENDER_INTRO,
   },
   "/astrology": {
     title: "Vedic Astrology Consultation & Horoscope Reading | MP Shastri",

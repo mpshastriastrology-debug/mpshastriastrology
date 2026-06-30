@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.mpshastriastrology.com/sitemap.xml
+LLMs-Txt: https://www.mpshastriastrology.com/llms.txt
 
 # LLM / AI site summary
 # https://www.mpshastriastrology.com/llms.txt

@@ -334,6 +334,16 @@ export const CONTACT_FAQS = [
   {
     question: "Where is the MP Shastri Astrology office in Bangalore?",
     answer:
-      "607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout, Bengaluru, Karnataka 560086. Directions and the Google Map are shown on this contact page.",
+      "607, 2nd Cross Rd, opp. Swimming Pool, Mahalakshmi Layout, Bengaluru, Karnataka 560086. Landmark: opposite the swimming pool in Mahalakshmi Layout. Directions and the Google Map are on this contact page.",
+  },
+  {
+    question: "Can I book an online astrology consultation from outside Bangalore?",
+    answer:
+      "Yes. Phone and video consultations are available for clients anywhere in Karnataka, India, and abroad. Share your birth date, time, and place of birth when booking—the chart accuracy is the same as an in-person visit.",
+  },
+  {
+    question: "How do I reach the office from Rajajinagar, Malleshwaram, or North Bangalore?",
+    answer:
+      "The consultation center is in Mahalakshmi Layout, Bengaluru—convenient from Rajajinagar, Malleshwaram, Vijayanagar, Yeshwanthpur, and surrounding North Bangalore areas. Use the Google Map on this page or call +91 80732 58799 for directions.",
   },
 ];
