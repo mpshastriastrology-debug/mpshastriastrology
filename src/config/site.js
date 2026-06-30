@@ -1,5 +1,5 @@
-/** Route stays available; set false to hide from nav, sitemap, and search engines. */
-export const CONTACT_PAGE_PUBLIC = false;
+/** When false, contact stays reachable but is hidden from nav/sitemap and uses noindex. */
+export const CONTACT_PAGE_PUBLIC = true;
 
 /** Paths that should not be indexed (still reachable for users/ads). */
 export const NOINDEX_ROUTES = [

@@ -30,7 +30,6 @@ function Contact() {
             <p className="contactText">
               In-person astrology and Vastu consultations at our Bangalore office, or book a phone or video session from anywhere in India.
             </p>
-            <p className="contactText contactLocality">{LOCALITY_SEO_PARAGRAPH}</p>
 
             <div className="contactDetails">
               <div className="contactItem">
@@ -94,26 +93,30 @@ function Contact() {
             </div>
           </Reveal>
         </div>
-      </section>
 
-      <Reveal className="contactCtaSection" animation="fade-up">
-        <div className="contactQuickActions">
-          <a
-            href={WHATSAPP_BOOKING_URL}
-            className="contactWhatsappBtn"
-            target="_blank"
-            rel="noreferrer"
-            {...quoraGenerateLeadClickProps}
-          >
-            <FaWhatsapp aria-hidden="true" />
-            WhatsApp Book Consultation
-          </a>
-          <a href={PHONE_HREF} className="contactCallBtn" {...quoraGenerateLeadClickProps}>
-            <Phone size={20} strokeWidth={2} aria-hidden="true" />
-            Call +91 80732 58799
-          </a>
-        </div>
-      </Reveal>
+        <Reveal className="contactLocalityBlock" animation="fade-up">
+          <p className="contactText contactLocality">{LOCALITY_SEO_PARAGRAPH}</p>
+        </Reveal>
+
+        <Reveal className="contactCtaSection" animation="fade-up">
+          <div className="contactQuickActions">
+            <a
+              href={WHATSAPP_BOOKING_URL}
+              className="contactWhatsappBtn"
+              target="_blank"
+              rel="noreferrer"
+              {...quoraGenerateLeadClickProps}
+            >
+              <FaWhatsapp aria-hidden="true" />
+              WhatsApp Book Consultation
+            </a>
+            <a href={PHONE_HREF} className="contactCallBtn" {...quoraGenerateLeadClickProps}>
+              <Phone size={20} strokeWidth={2} aria-hidden="true" />
+              Call +91 80732 58799
+            </a>
+          </div>
+        </Reveal>
+      </section>
 
       <FaqSection
         title="Office Location & Booking — Common Questions"
