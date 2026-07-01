@@ -9,7 +9,7 @@ const SITE = "https://www.mpshastriastrology.com";
 
 const JOBS = [
   { file: "MPShastriLogo.webp", widths: [96, 192], quality: 82 },
-  { file: "topastronuts.avif", widths: [400, 800], quality: 75, format: "webp" },
+  { file: "topastronuts.webp", fallbacks: ["topastronuts.avif"], widths: [400, 800], quality: 75 },
   { file: "marriage-astrology.webp", widths: [400, 800], quality: 78 },
   { file: "loveproblem.webp", widths: [400, 800], quality: 78 },
   { file: "financialproblem.webp", widths: [400, 800], quality: 78 },
@@ -33,35 +33,42 @@ const JOBS = [
   { file: "career.webp", widths: [400, 800], quality: 78 },
 ];
 
-async function ensureSource(file) {
-  const cachePath = path.join(CACHE_DIR, file);
-  if (fs.existsSync(cachePath)) {
-    return cachePath;
+async function ensureSource(file, fallbacks = []) {
+  for (const name of [file, ...fallbacks]) {
+    const cachePath = path.join(CACHE_DIR, name);
+    if (fs.existsSync(cachePath)) {
+      return cachePath;
+    }
+
+    const legacyPublicPath = path.join(PUBLIC_DIR, name);
+    if (fs.existsSync(legacyPublicPath)) {
+      fs.mkdirSync(CACHE_DIR, { recursive: true });
+      fs.copyFileSync(legacyPublicPath, cachePath);
+      return cachePath;
+    }
   }
 
-  const legacyPublicPath = path.join(PUBLIC_DIR, file);
-  if (fs.existsSync(legacyPublicPath)) {
-    fs.mkdirSync(CACHE_DIR, { recursive: true });
-    fs.copyFileSync(legacyPublicPath, cachePath);
-    return cachePath;
+  for (const name of [file, ...fallbacks]) {
+    const url = `${SITE}/${name}`;
+    try {
+      const res = await fetch(url);
+      if (!res.ok) continue;
+      fs.mkdirSync(CACHE_DIR, { recursive: true });
+      const buffer = Buffer.from(await res.arrayBuffer());
+      const cachePath = path.join(CACHE_DIR, name);
+      fs.writeFileSync(cachePath, buffer);
+      console.log(`Downloaded ${name}`);
+      return cachePath;
+    } catch {
+      /* try next candidate */
+    }
   }
 
-  const url = `${SITE}/${file}`;
-  try {
-    const res = await fetch(url);
-    if (!res.ok) return null;
-    fs.mkdirSync(CACHE_DIR, { recursive: true });
-    const buffer = Buffer.from(await res.arrayBuffer());
-    fs.writeFileSync(cachePath, buffer);
-    console.log(`Downloaded ${file}`);
-    return cachePath;
-  } catch {
-    return null;
-  }
+  return null;
 }
 
 async function optimizeOne(job) {
-  const sourcePath = await ensureSource(job.file);
+  const sourcePath = await ensureSource(job.file, job.fallbacks ?? []);
   if (!sourcePath) {
     console.warn(`Skip (missing): ${job.file}`);
     return;
@@ -93,24 +100,6 @@ async function optimizeOne(job) {
   }
 }
 
-async function optimizeFavicon() {
-  const sourcePath = await ensureSource("bestastrology.png");
-  if (!sourcePath) {
-    console.warn("Skip favicon (missing bestastrology.png)");
-    return;
-  }
-
-  const outPath = path.join(PUBLIC_DIR, "bestastrology.png");
-  await sharp(sourcePath)
-    .rotate()
-    .resize({ width: 192, height: 192, fit: "cover" })
-    .png({ quality: 80, compressionLevel: 9 })
-    .toFile(outPath);
-
-  const kb = (fs.statSync(outPath).size / 1024).toFixed(1);
-  console.log(`  bestastrology.png favicon (${kb} KiB)`);
-}
-
 fs.mkdirSync(OUT_DIR, { recursive: true });
 
 console.log("Optimizing images...\n");
@@ -119,6 +108,4 @@ for (const job of JOBS) {
   await optimizeOne(job);
 }
 
-console.log("\nbestastrology.png");
-await optimizeFavicon();
 console.log("\nDone.");

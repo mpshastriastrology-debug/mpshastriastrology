@@ -10,8 +10,8 @@ function Home() {
   return (
     <div className="homePage">
       <Seo
-        title="Best Astrologer in Bangalore | Vedic Astrology & Vastu | MP Shastri"
-        description="Consult MP Shastri, a trusted best astrologer in Bangalore, for Vedic astrology, Kundali matching, and Vastu solutions. Book online or in-person today."
+        title="Best Astrologer in Bangalore - MP Shastri | Vedic Astrology Expert"
+        description="Shri MP Shastri offers private Vedic astrology and Vastu consultations in Mahalakshmi Layout, Bangalore. Clear chart analysis and practical remedies—in person or online."
         path="/"
         faqs={HOME_FAQS}
       />

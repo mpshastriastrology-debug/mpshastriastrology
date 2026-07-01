@@ -50,9 +50,9 @@ function Hero() {
         <h1>Best Astrologer in Bangalore.</h1>
 
         <p>
-          Find clarity and alignment in your life. Shri MP Shastri provides trusted,
-          insightful solutions across India for career growth, marriage compatibility,
-          and home Vastu corrections through both online and in-person consultations.
+          Find clarity on marriage, career, and home Vastu. Book an astrology consultation in Bangalore
+          at our Mahalakshmi Layout office, or connect online from anywhere in India—same careful chart
+          work and practical remedies either way.
         </p>
 
         <div className="heroButtons">

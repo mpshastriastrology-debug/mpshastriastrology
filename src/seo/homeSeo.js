@@ -1,22 +1,22 @@
 import { BENGALURU_SERVICE_AREAS, LOCALITY_SEO_PARAGRAPH } from "./localAreas.js";
 
 export const HOME_INTRO_PARAGRAPHS = [
-  "Shri MP Shastri is a trusted Vedic astrologer and Vastu consultant based in Mahalakshmi Layout, Bengaluru (Bangalore). For more than seventeen years, families, professionals, and business owners across Karnataka and India have turned to his office for clear answers on marriage timing, career direction, financial stability, health patterns, and residential energy balance. Every consultation begins with accurate birth chart calculation or on-site Vastu assessment, followed by practical remedies you can apply without unnecessary fear or superstition.",
+  "Shri MP Shastri is a trusted Vedic astrologer in Bangalore, with a consultation office in Mahalakshmi Layout. For more than seventeen years, families, professionals, and business owners across Karnataka and India have turned to him for clear answers on marriage timing, career direction, financial stability, health patterns, and residential energy balance. Every session begins with accurate birth chart calculation or an on-site Vastu assessment, followed by practical remedies you can apply without unnecessary fear or superstition.",
   "Whether you visit the consultation center in North Bangalore or book a phone or video session from another city, you receive the same methodical analysis rooted in classical Jyotish and Vastu Shastra texts. Sessions are private, unhurried, and focused on actionable guidance—not vague predictions.",
 ];
 
 export const HOME_SERVICES_SECTION = {
   title: "Vedic Astrology, Vastu Shastra, and Spiritual Guidance",
   intro:
-    "MP Shastri Astrology brings together horoscope reading, structural Vastu audits, numerology, face reading, and ethical spiritual remedies under one trusted practice. Each service is tailored to your chart, your property layout, or your current life phase.",
+    "Horoscope reading, Kundali matching, career timing, and Vastu audits sit under one roof at MP Shastri Astrology. Each service below is tailored to your chart, your property layout, or your current life phase.",
   items: [
     {
       title: "Horoscope Reading and Dasha Analysis",
-      text: "Your natal chart maps planetary positions at birth, active dasha periods, and house influences that shape career moves, relationships, and health cycles. Shri MP Shastri interprets these patterns in plain language and suggests timed remedies such as gemstone guidance, mantra practice, or charitable acts aligned with your chart.",
+      text: "Horoscope reading in Bangalore starts with verifying your birth time and place, then mapping dasha periods and house influences that shape career moves, relationships, and health cycles. Shri MP Shastri interprets these patterns in plain language and suggests timed remedies such as gemstone guidance, mantra practice, or charitable acts aligned with your chart.",
     },
     {
       title: "Marriage Matching and Relationship Guidance",
-      text: "Kundali matching and Guna Milan help families evaluate long-term compatibility before engagement or marriage. For couples facing friction, astrological timing and relationship remedies clarify when to communicate, when to wait, and how to reduce recurring conflict without blaming either partner.",
+      text: "Kundali matching in Bangalore helps families assess compatibility before engagement or marriage—through Guna Milan and a full review of both charts. For couples facing friction, astrological timing and relationship remedies clarify when to communicate, when to wait, and how to reduce recurring conflict without blaming either partner.",
     },
     {
       title: "Career, Business, and Financial Astrology",
@@ -24,7 +24,7 @@ export const HOME_SERVICES_SECTION = {
     },
     {
       title: "Vastu Consultation for Homes and Offices",
-      text: "Vastu Shastra aligns your living or working space with directional energy flows. Audits cover plot shape, main entrance, kitchen and bedroom placement, office seating, and factory layout. Most corrections use non-destructive remedies—element balancing, room function changes, and symbolic adjustments—rather than costly demolition.",
+      text: "As a Vastu consultant in Bangalore, Shri MP Shastri audits homes, offices, and factories for directional energy flow. Reviews cover plot shape, main entrance, kitchen and bedroom placement, and seating layout. Most corrections use non-destructive remedies—element balancing, room function changes, and symbolic adjustments—rather than costly demolition.",
     },
   ],
 };

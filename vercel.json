@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "/:path((?!sitemap\\.xml|robots\\.txt|llms\\.txt|humans\\.txt|manifest\\.json|favicon\\.svg|bestastrology\\.png|images|assets|fonts|videos).*)",
+      "source": "/:path((?!sitemap\\.xml|robots\\.txt|llms\\.txt|humans\\.txt|manifest\\.json|favicon\\.svg|images|assets|fonts|videos).*)",
       "has": [{ "type": "host", "value": "mpshastriastrology.com" }],
       "destination": "https://www.mpshastriastrology.com/:path",
       "permanent": true

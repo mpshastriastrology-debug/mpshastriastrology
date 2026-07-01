@@ -4,7 +4,6 @@ import path from "path";
 const PUBLIC_DIR = "public";
 
 const KEEP_ROOT = new Set([
-  "bestastrology.png",
   "favicon.svg",
   "icons.svg",
   "manifest.json",

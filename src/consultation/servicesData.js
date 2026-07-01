@@ -16,7 +16,7 @@ export const CONSULTATION_SERVICES = [
     heroTitle: "Professional Horoscope Reading Consultation",
     heroSubtitle:
       "Understand your natal chart, active planetary periods, and life direction through precise Vedic calculations tailored to your birth details.",
-    image: "/topastronuts.avif",
+    image: "/topastronuts.webp",
     intro:
       "A Vedic horoscope reading maps the exact planetary positions at your time of birth. Shri MP Shastri interprets your Lagna, Moon sign, house placements, and running dasha cycles to give clear answers about career timing, relationships, health patterns, and spiritual growth—without vague predictions.",
     problems: [

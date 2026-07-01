@@ -11,9 +11,9 @@ const NOINDEX_PATHS = new Set([
 
 const STATIC_ROUTE_META = {
   "/": {
-    title: "Best Astrologer in Bangalore | Vedic Astrology & Vastu | MP Shastri",
+    title: "Best Astrologer in Bangalore - MP Shastri | Vedic Astrology Expert",
     description:
-      "Consult MP Shastri, a trusted best astrologer in Bangalore, for Vedic astrology, Kundali matching, and Vastu solutions. Book online or in-person today.",
+      "Shri MP Shastri offers private Vedic astrology and Vastu consultations in Mahalakshmi Layout, Bangalore. Clear chart analysis and practical remedies—in person or online.",
     h1: "Best Astrologer in Bangalore.",
     intro: HOME_PRERENDER_INTRO,
   },

@@ -7,6 +7,7 @@
     "dev": "vite",
     "dev:backend": "npm --prefix backend start",
     "optimize-images": "node scripts/optimize-images.mjs",
+    "audit-images": "node scripts/audit-image-formats.mjs",
     "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-route-meta.mjs && node scripts/prepare-hero-video.mjs && node scripts/optimize-images.mjs && node scripts/copy-fonts.mjs && node scripts/prune-public-assets.mjs",
     "build": "vite build",
     "postbuild": "node scripts/prerender-meta.mjs",

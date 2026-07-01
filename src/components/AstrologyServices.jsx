@@ -31,13 +31,10 @@ function Astrologyservices({ seo = true, showIntro = false }) {
       {(seo || showIntro) && (
         <Reveal className="astroServicesIntro" animation="fade-up">
           <p>
-            Shri MP Shastri offers specialized Vedic astrology and Vastu consultations from
-            Mahalakshmi Layout, Bengaluru. Explore horoscope reading, career timing, Kundali
-            matching, financial remedies, relationship guidance, family harmony, business
-            planning, residential and commercial Vastu, numerology, foreign settlement, and
-            health patterns. Each card below links to a detailed consultation page. Sessions are
-            available in person at the Bengaluru office or online via phone and video for clients
-            across Karnataka, India, and abroad.
+            Shri MP Shastri offers specialized consultations from Mahalakshmi Layout,
+            Bengaluru. Each card below links to a dedicated page with full details on scope,
+            process, and booking—in person at the office or online for clients across Karnataka,
+            India, and abroad.
           </p>
           {seo && (
             <p>
