@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { lazy, Suspense, useEffect, useState } from 'react'
 import './Hero.css'
 import Reveal from './Reveal'
+import { HOME_H1 } from '../seo/homeSeo'
 
 const JyotishyaChakra = lazy(() => import('./JyotishyaChakra'))
 const HERO_VIDEO = '/videos/hanuman-hero.mp4'
@@ -47,7 +48,7 @@ function Hero() {
           </video>
         </div>
 
-        <h1>Best Astrologer in Bangalore.</h1>
+        <h1>{HOME_H1}</h1>
 
         <p>
           Find clarity on marriage, career, and home Vastu. Book an astrology consultation in Bangalore

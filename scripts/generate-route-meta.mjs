@@ -2,7 +2,7 @@ import fs from "fs";
 import { CONSULTATION_SERVICES } from "../src/consultation/servicesData.js";
 import { CONTACT_PAGE_PUBLIC } from "../src/config/site.js";
 import { CONTACT_PRERENDER_INTRO } from "../src/seo/contactSeo.js";
-import { HOME_PRERENDER_INTRO } from "../src/seo/homeSeo.js";
+import { HOME_PRERENDER_INTRO, HOME_H1 } from "../src/seo/homeSeo.js";
 
 const NOINDEX_PATHS = new Set([
   ...(CONTACT_PAGE_PUBLIC ? [] : ["/contact"]),
@@ -14,7 +14,7 @@ const STATIC_ROUTE_META = {
     title: "Best Astrologer in Bangalore - MP Shastri | Vedic Astrology Expert",
     description:
       "Shri MP Shastri offers private Vedic astrology and Vastu consultations in Mahalakshmi Layout, Bangalore. Clear chart analysis and practical remedies—in person or online.",
-    h1: "Best Astrologer in Bangalore.",
+    h1: HOME_H1,
     intro: HOME_PRERENDER_INTRO,
   },
   "/about": {

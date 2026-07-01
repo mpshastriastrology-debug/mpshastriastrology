@@ -1,5 +1,7 @@
 import { BENGALURU_SERVICE_AREAS, LOCALITY_SEO_PARAGRAPH } from "./localAreas.js";
 
+export const HOME_H1 = "Best Astrologer in Bangalore | MP Shastri Astrology";
+
 export const HOME_INTRO_PARAGRAPHS = [
   "Shri MP Shastri is a trusted Vedic astrologer in Bangalore, with a consultation office in Mahalakshmi Layout. For more than seventeen years, families, professionals, and business owners across Karnataka and India have turned to him for clear answers on marriage timing, career direction, financial stability, health patterns, and residential energy balance. Every session begins with accurate birth chart calculation or an on-site Vastu assessment, followed by practical remedies you can apply without unnecessary fear or superstition.",
   "Whether you visit the consultation center in North Bangalore or book a phone or video session from another city, you receive the same methodical analysis rooted in classical Jyotish and Vastu Shastra texts. Sessions are private, unhurried, and focused on actionable guidance—not vague predictions.",
