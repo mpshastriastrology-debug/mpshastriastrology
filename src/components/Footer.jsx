@@ -1,5 +1,6 @@
 import "./Footer.css";
 import Reveal from "./Reveal";
+import { INSTAGRAM_URL } from "../seo/schema.js";
 import {
   FaFacebookF,
   FaInstagram,
@@ -99,7 +100,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://www.instagram.com/manjunatha_bhat_astrologer?igsh=MW95eDR3NnJwc21oaw%3D%3D&utm_source=qr"
+            href={INSTAGRAM_URL}
             target="_blank"
             rel="noreferrer"
             aria-label="Visit our official Instagram feed portfolio"

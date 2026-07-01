@@ -22,6 +22,8 @@ export const OFFICE_ADDRESS = {
 export const GOOGLE_BUSINESS_URL =
   "https://www.google.com/maps/place/MP+Shastri+Astrology/@13.0118837,77.5447832,17z/data=!3m1!4b1!4m6!3m5!1s0x16aa14d0ea09c97:0xa9986dcd989e9ba4!8m2!3d13.0118837!4d77.5447832";
 
+export const INSTAGRAM_URL = "https://www.instagram.com/mp_shastri_astrology/";
+
 export const ROUTE_LABELS = {
   "/": "Home",
   "/about": "About",
@@ -65,6 +67,7 @@ const organizationSchema = {
   sameAs: [
     GOOGLE_BUSINESS_URL,
     "https://www.facebook.com/share/1Zr42k8BYn/?mibextid=wwXIfr",
+    INSTAGRAM_URL,
   ],
   contactPoint: {
     "@type": "ContactPoint",
@@ -197,7 +200,7 @@ const personSchema = {
   worksFor: { "@id": ORG_ID },
   address: localBusinessSchema.address,
   knowsAbout: localBusinessSchema.knowsAbout,
-  sameAs: [GOOGLE_BUSINESS_URL],
+  sameAs: [GOOGLE_BUSINESS_URL, INSTAGRAM_URL],
 };
 
 export function buildFaqSchema(faqs, path) {

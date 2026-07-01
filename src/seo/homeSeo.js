@@ -5,6 +5,28 @@ export const HOME_INTRO_PARAGRAPHS = [
   "Whether you visit the consultation center in North Bangalore or book a phone or video session from another city, you receive the same methodical analysis rooted in classical Jyotish and Vastu Shastra texts. Sessions are private, unhurried, and focused on actionable guidance—not vague predictions.",
 ];
 
+export const HOME_CONSULTATION_AVAILABILITY = {
+  title: "Online & In-Person Consultations",
+  intro:
+    "Book the format that suits you. In-person and online sessions follow the same process—private, unhurried, and focused on clear answers.",
+  modes: [
+    {
+      label: "In-person",
+      title: "Visit our Bangalore office",
+      text:
+        "Meet Shri MP Shastri at the consultation center in Mahalakshmi Layout for horoscope readings, Kundali matching, and Vastu discussions. On-site Vastu walkthroughs can be arranged when needed.",
+      link: { to: "/contact", label: "Office address & directions" },
+    },
+    {
+      label: "Online",
+      title: "Phone, WhatsApp, or video",
+      text:
+        "Connect from anywhere in India or abroad. Share birth details or floor plans digitally at the start of the session—chart work and guidance match what you receive in the office.",
+      link: { to: "/online-astrologer", label: "How online sessions work" },
+    },
+  ],
+};
+
 export const HOME_SERVICES_SECTION = {
   title: "Vedic Astrology, Vastu Shastra, and Spiritual Guidance",
   intro:

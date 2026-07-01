@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import {
+  HOME_CONSULTATION_AVAILABILITY,
   HOME_INTRO_PARAGRAPHS,
   HOME_LOCAL_SECTION,
   HOME_PROCESS_SECTION,
@@ -19,6 +20,26 @@ function HomeContent() {
           {HOME_INTRO_PARAGRAPHS.map((paragraph) => (
             <p key={paragraph.slice(0, 40)}>{paragraph}</p>
           ))}
+        </div>
+      </Reveal>
+
+      <Reveal as="section" className="homeContentBlock" animation="fade-up">
+        <div className="homeContentInner">
+          <p className="homeContentEyebrow">✦ HOW TO CONSULT</p>
+          <h2>{HOME_CONSULTATION_AVAILABILITY.title}</h2>
+          <p>{HOME_CONSULTATION_AVAILABILITY.intro}</p>
+          <div className="homeConsultModes">
+            {HOME_CONSULTATION_AVAILABILITY.modes.map(({ label, title, text, link }, index) => (
+              <Reveal className="homeConsultModeCard" key={label} animation="fade-up" delay={index * 80}>
+                <span className="homeConsultModeLabel">{label}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+                <Link to={link.to} className="homeConsultModeLink">
+                  {link.label}
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </Reveal>
 
