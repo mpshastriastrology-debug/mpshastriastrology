@@ -10,6 +10,7 @@ export default function PoojaStrip() {
       <img
         src={COMPANY_LOGO_SRC}
         alt=""
+        aria-hidden="true"
         className="poojaStripMandala"
         width={48}
         height={48}
