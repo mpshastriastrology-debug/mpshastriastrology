@@ -7,7 +7,6 @@ import { COMPANY_LOGO_SRC, COMPANY_NAME, CONTACT_PAGE_PUBLIC, PHONE_HREF } from 
 import { NAV_ALTS } from "../seo/imageAlt";
 import { mergeQuoraGenerateLeadClick, quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 import HeaderSearch from "./HeaderSearch";
-import KannadaTranslator from "./KannadaTranslator";
 
 const MOBILE_SECTIONS = [
   {
@@ -132,8 +131,6 @@ function Header() {
             <span className="headerCallText">+91 80732 58799</span>
           </a>
         </div>
-
-        <KannadaTranslator variant="header" />
 
         <div className="headerMobileTools">
           <HeaderSearch className="headerSearchCompact" />
