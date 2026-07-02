@@ -1,9 +1,10 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import { CONSULTATION_NAV } from "../consultation/consultationNav";
-import { COMPANY_LOGO_SRC, COMPANY_NAME, CONTACT_PAGE_PUBLIC, PHONE_HREF } from "../config/site";
+import { COMPANY_LOGO_SRC, COMPANY_NAME, CONTACT_PAGE_PUBLIC, PHONE_HREF, WHATSAPP_BOOKING_URL } from "../config/site";
 import { NAV_ALTS } from "../seo/imageAlt";
 import { mergeQuoraGenerateLeadClick, quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 import HeaderSearch from "./HeaderSearch";
@@ -130,6 +131,16 @@ function Header() {
             <Phone size={18} strokeWidth={2} aria-hidden="true" />
             <span className="headerCallText">+91 80732 58799</span>
           </a>
+          <a
+            href={WHATSAPP_BOOKING_URL}
+            className="headerWhatsApp"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Chat on WhatsApp"
+            {...quoraGenerateLeadClickProps}
+          >
+            <FaWhatsapp size={18} aria-hidden="true" />
+          </a>
         </div>
 
         <div className="headerMobileTools">
@@ -141,6 +152,16 @@ function Header() {
             {...quoraGenerateLeadClickProps}
           >
             <Phone size={20} strokeWidth={2} aria-hidden="true" />
+          </a>
+          <a
+            href={WHATSAPP_BOOKING_URL}
+            className="headerMobileWhatsApp"
+            aria-label="Chat on WhatsApp"
+            target="_blank"
+            rel="noreferrer"
+            {...quoraGenerateLeadClickProps}
+          >
+            <FaWhatsapp size={20} aria-hidden="true" />
           </a>
           <button
             type="button"
