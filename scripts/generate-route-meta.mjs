@@ -1,8 +1,22 @@
 import fs from "fs";
 import { CONSULTATION_SERVICES } from "../src/consultation/servicesData.js";
 import { CONTACT_PAGE_PUBLIC } from "../src/config/site.js";
-import { CONTACT_PRERENDER_INTRO } from "../src/seo/contactSeo.js";
 import { HOME_PRERENDER_INTRO, HOME_H1 } from "../src/seo/homeSeo.js";
+
+let CONTACT_PRERENDER_INTRO =
+  "Book a Vedic astrology or Vastu consultation with Shri MP Shastri, in person or online from anywhere in India.";
+
+try {
+  const contactSeo = await import("../src/seo/contactSeo.js");
+  if (contactSeo?.CONTACT_PRERENDER_INTRO) {
+    CONTACT_PRERENDER_INTRO = contactSeo.CONTACT_PRERENDER_INTRO;
+  }
+} catch (error) {
+  console.warn(
+    "Warning: could not import src/seo/contactSeo.js; using fallback contact page intro.",
+    error.message
+  );
+}
 
 const NOINDEX_PATHS = new Set([
   ...(CONTACT_PAGE_PUBLIC ? [] : ["/contact"]),
