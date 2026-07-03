@@ -3,6 +3,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Breadcrumbs from './components/Breadcrumbs';
 import Footer from './components/Footer';
+import FloatingContactActions from './components/FloatingContactActions';
 import VedicBackdrop from './components/VedicBackdrop';
 import PoojaStrip from './components/PoojaStrip';
 import AstrologyBgPattern from './components/AstrologyBgPattern';
@@ -89,6 +90,7 @@ function App() {
       </main>
 
       <Footer />
+      <FloatingContactActions />
       {showChat && (
         <Suspense fallback={null}>
         </Suspense>

@@ -1,5 +1,4 @@
 import "./Services1.css";
-import { PhoneCall } from "lucide-react";
 import { FaOm, FaHome, FaEye, FaWhatsapp } from "react-icons/fa";
 import { GiMeditation } from "react-icons/gi";
 import { Link } from "react-router-dom";
@@ -142,22 +141,6 @@ function Services() {
             ))}
           </div>
         </section>
-
-        {/* PERSISTENT VIEWPORT TOUCHPOINT OVERLAYS */}
-        <div className="floatingContact">
-          <a href="tel:+918073258799" className="floatingCall" aria-label="Call Office Immediately">
-            <PhoneCall size={26} />
-          </a>
-          <a
-            href="https://wa.me/918073258799"
-            target="_blank"
-            rel="noreferrer"
-            className="floatingWhatsapp"
-            aria-label="Open Secure WhatsApp Consultation Chat Thread"
-          >
-            <FaWhatsapp size={28} />
-          </a>
-        </div>
 
         {/* FREQUENTLY ASKED QUESTIONS DROPDOWN SIMULATION */}
         <section className="faqSection">

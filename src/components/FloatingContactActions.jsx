@@ -1,11 +1,18 @@
+import { useLocation } from "react-router-dom";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { PHONE_HREF, WHATSAPP_BOOKING_URL } from "../config/site";
 import { quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 import "./FloatingContactActions.css";
 
 export default function FloatingContactActions() {
+  const { pathname } = useLocation();
+  const aboveQuoraSticky = pathname === "/quora-consultation";
+
   return (
-    <div className="floatingContactActions" aria-label="Quick contact actions">
+    <div
+      className={`floatingContactActions${aboveQuoraSticky ? " floatingContactActions--aboveSticky" : ""}`}
+      aria-label="Quick contact actions"
+    >
       <a
         href={PHONE_HREF}
         className="floatingContactAction floatingContactActionCall"

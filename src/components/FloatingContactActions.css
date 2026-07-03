@@ -1,0 +1,53 @@
+.floatingContactActions {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+.floatingContactAction {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 28px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floatingContactActionCall {
+  background: #d4af37;
+  color: #111;
+}
+
+.floatingContactActionWhatsApp {
+  background: #25d366;
+  color: #fff;
+}
+
+.floatingContactAction:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .floatingContactActions {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .floatingContactActions--aboveSticky {
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .floatingContactAction {
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+  }
+}
