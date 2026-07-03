@@ -6,6 +6,11 @@ import FaqSection from "./FaqSection";
 import Reveal from "./Reveal";
 import { CONTACT_FAQS } from "../seo/faqData";
 import { LOCALITY_SEO_PARAGRAPH } from "../seo/localAreas";
+import {
+  CONTACT_LEAD_PARAGRAPH,
+  CONTACT_SEO_DESCRIPTION,
+  CONTACT_SEO_TITLE,
+} from "../seo/contactSeo";
 import { CONTACT_PAGE_PUBLIC, PHONE_HREF, WHATSAPP_BOOKING_URL } from "../config/site";
 import { quoraGenerateLeadClickProps } from "../utils/quoraPixel";
 
@@ -13,8 +18,8 @@ function Contact() {
   return (
     <section className="contactPage">
       <Seo
-        title="Contact MP Shastri — Astrology & Vastu Office in Bengaluru"
-        description="Visit Shri MP Shastri at the Vedic consultation center in Mahalakshmi Layout, Bengaluru (Bangalore). Call +91 80732 58799, WhatsApp, email, and Google Maps directions."
+        title={CONTACT_SEO_TITLE}
+        description={CONTACT_SEO_DESCRIPTION}
         path="/contact"
         breadcrumbLabel="Contact"
         faqs={CONTACT_FAQS}
@@ -28,7 +33,7 @@ function Contact() {
             <h1>Vedic Consultation Center in Bengaluru</h1>
             <h2>Visit Shri MP Shastri — Mahalakshmi Layout, Bangalore</h2>
             <p className="contactText">
-              In-person astrology and Vastu consultations at our Bangalore office, or book a phone or video session from anywhere in India.
+              {CONTACT_LEAD_PARAGRAPH}
             </p>
 
             <div className="contactDetails">
