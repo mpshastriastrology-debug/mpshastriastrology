@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Seo from './Seo';
 import FaqSection from './FaqSection';
 import { VASTU_FAQS } from '../seo/faqData';
-import { VASTU_PAGE_ALTS } from '../seo/imageAlt';
 import Reveal from './Reveal';
 import OptimizedImage from './OptimizedImage';
 
@@ -44,7 +43,7 @@ function Vastu() {
           <Reveal className="vastuImage" animation="fade-right">
             <OptimizedImage
               src="/vasthu.webp"
-              alt={VASTU_PAGE_ALTS.intro}
+              alt="Traditional Vastu Purusha alignment map balancing elemental directional fields"
               widths={[400, 800]}
               sizes="(max-width: 768px) 100vw, 480px"
               width={480}
@@ -87,13 +86,10 @@ function Vastu() {
           <div className="vastuServiceGrid">
             {/* CARD 1 */}
             <Reveal className="vastuCard" animation="fade-up" delay={0}>
-              <OptimizedImage
-                src="/vasthu.webp"
-                alt={VASTU_PAGE_ALTS.residential}
-                widths={[400, 800]}
-                sizes="(max-width: 640px) 100vw, 360px"
-                width={360}
-                height={220}
+              <img
+                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop"
+                alt="Modern home interior layout configured for positive residential flow"
+                loading="lazy"
               />
               <div className="vastuCardContent">
                 <h3>Residential Vastu</h3>
@@ -105,13 +101,10 @@ function Vastu() {
 
             {/* CARD 2 */}
             <Reveal className="vastuCard" animation="fade-up" delay={100}>
-              <OptimizedImage
-                src="/businessproblem.webp"
-                alt={VASTU_PAGE_ALTS.workplace}
-                widths={[400, 800]}
-                sizes="(max-width: 640px) 100vw, 360px"
-                width={360}
-                height={220}
+              <img
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop"
+                alt="Corporate office layout optimized for corporate team productivity"
+                loading="lazy"
               />
               <div className="vastuCardContent">
                 <h3>Workplace Vastu</h3>
@@ -123,13 +116,10 @@ function Vastu() {
 
             {/* CARD 3 */}
             <Reveal className="vastuCard" animation="fade-up" delay={200}>
-              <OptimizedImage
-                src="/vastuproblem.webp"
-                alt={VASTU_PAGE_ALTS.industrial}
-                widths={[400, 800]}
-                sizes="(max-width: 640px) 100vw, 360px"
-                width={360}
-                height={220}
+              <img
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop"
+                alt="Commercial inventory factory building structured for streamlined distribution"
+                loading="lazy"
               />
               <div className="vastuCardContent">
                 <h3>Industrial Vastu</h3>
