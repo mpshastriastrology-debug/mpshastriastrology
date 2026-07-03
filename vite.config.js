@@ -50,6 +50,8 @@ export default defineConfig({
     asyncCssPlugin(),
   ],
   build: {
+    target: "es2020",
+    cssMinify: true,
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -64,6 +66,12 @@ export default defineConfig({
           }
           if (id.includes("node_modules/aos")) {
             return "aos";
+          }
+          if (id.includes("node_modules/lucide-react")) {
+            return "icons-lucide";
+          }
+          if (id.includes("node_modules/react-icons")) {
+            return "icons-fa";
           }
         },
       },

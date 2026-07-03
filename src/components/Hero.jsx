@@ -42,6 +42,7 @@ function Hero() {
             playsInline
             poster={HERO_POSTER}
             preload="metadata"
+            fetchPriority="high"
             aria-label="Vedic astrology guidance video"
           >
             <source src={HERO_VIDEO} type="video/mp4" />
