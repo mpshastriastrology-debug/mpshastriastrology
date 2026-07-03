@@ -42,11 +42,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <!-- Favicon & app icons (MP Shastri logo — used in browser tab and Google search) -->
+  <!-- Prefer PNG for broad crawler/browser compatibility; keep WebP as fallback. -->
+  <link rel="icon" href="/images/opt/MPShastriLogo-192w.png" type="image/png" sizes="192x192" />
+  <link rel="icon" href="/images/opt/MPShastriLogo-96w.png" type="image/png" sizes="96x96" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/images/opt/MPShastriLogo-192w.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <!-- Fallbacks (keep existing WebP links for modern browsers that prefer WebP) -->
   <link rel="icon" href="/images/opt/MPShastriLogo-192w.webp" type="image/webp" sizes="192x192" />
   <link rel="icon" href="/images/opt/MPShastriLogo-96w.webp" type="image/webp" sizes="96x96" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/images/opt/MPShastriLogo-192w.webp" />
-  <link rel="manifest" href="/manifest.json" />
 
   <!-- LCP image preload (mobile homepage hero) — only preload hero, not fonts -->
   <link rel="preload" as="image" href="/images/opt/mp-shastri-astrology-480w.webp" fetchpriority="high" imagesrcset="/images/opt/mp-shastri-astrology-480w.webp 480w, /images/opt/mp-shastri-astrology-960w.webp 960w" imagesizes="100vw" />
@@ -130,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "@id": "https://www.mpshastriastrology.com/#organization",
         "name": "MP Shastri Astrology",
         "url": "https://www.mpshastriastrology.com",
-        "logo": "https://www.mpshastriastrology.com/images/opt/MPShastriLogo-192w.webp",
+        "logo": "https://www.mpshastriastrology.com/images/opt/MPShastriLogo-192w.png",
         "telephone": "+918073258799",
         "email": "mpshastriastrology@gmail.com",
         "sameAs": [
